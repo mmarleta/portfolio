@@ -2719,9 +2719,9 @@
       "intelligentCacheKey": {
         "title": "Cache Key Inteligente",
         "description": "Normalização de queries para maximizar cache hits.",
-        "intro": "Em vez de hash da query bruta (que falha com variações), usamos assinatura semântica baseada nos itens detectados:",
-        "semanticSignature": "Em vez de hash da query bruta (que falha com variações), usamos assinatura semântica baseada nos itens detectados:",
-        "basedOnItems": "Em vez de hash da query bruta (que falha com variações), usamos assinatura semântica baseada nos itens detectados:",
+        "intro": "En lugar de hash de la query bruta (que falla con variaciones), usamos",
+        "semanticSignature": "firma semántica",
+        "basedOnItems": "basada en los elementos detectados:",
         "traditional": "Cache Key Tradicional",
         "semantic": "Cache Key Semântica"
       },
