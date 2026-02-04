@@ -314,6 +314,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- Test Tools -->
+              <NuxtLink 
+                to="/projetos/test-tools" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">🧪</span>
+                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                  AI Testing Tools
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Hallucination detector, quality scorer, cenários realísticos 
+                  com personalidades, interface de simulação multi-canal.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">pytest</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Flask</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
+                </div>
+              </NuxtLink>
+
               <!-- Infra DevOps -->
               <NuxtLink 
                 to="/projetos/infra-devops" 
