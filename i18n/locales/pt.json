@@ -3,7 +3,8 @@
     "projects": "Projetos",
     "stack": "Stack",
     "about": "Sobre",
-    "backToPortfolio": "Voltar ao Portfolio"
+    "backToPortfolio": "Voltar ao Portfolio",
+    "back": "Voltar"
   },
   "hero": {
     "title": "Marcelo Marleta",
@@ -996,7 +997,12 @@
           "comment2": "# 2. 🎯 Tentar Rules Engine (primary)",
           "comment3": "# Cache para reuso futuro",
           "comment4": "# 3. 🔄 Fallback para Redis cache",
-          "comment5": "# 4. 🚨 Basic fallback (keyword-based, nunca falha)"
+          "comment5": "# 4. 🚨 Basic fallback (keyword-based, nunca falha)",
+          "responsibilities[0]": "1. Proxy inteligente para Rules Engine com &lt;50ms target",
+          "responsibilities[1]": "2. Cache Redis para performance otimizada",
+          "responsibilities[2]": "3. Integração com Memory Coordinator para contexto enriquecido",
+          "responsibilities[3]": "4. Fallback quando Rules Engine falha",
+          "responsibilities[4]": "5. Circuit breaker para proteção contra falhas"
         },
         "enrichment": {
           "title": "Context Enrichment: Regras com Contexto Histórico",
@@ -1279,21 +1285,48 @@
           "sentinel": "Overlay: topologia Redis master/replica/sentinel para HA. Serviços recebem vars REDIS_SENTINEL_*.",
           "dev": "Overlay: volumes de código montados, debug habilitado, hot reload, portas expostas diretamente."
         },
-        "compositionTitle": "Composição de Overlays"
+        "compositionTitle": "Composição de Overlays",
+        "resourceLimitsTitle": "Resource Limits & Reservations"
       },
       "scaling": {
         "title": "Scaling Horizontal",
         "description": "Sistema de scaling que vai de 1 a N instâncias sem mudança de código. Load balancer nginx distribui tráfego, session affinity via Redis, e health checks determinam routing.",
         "nginxTitle": "Nginx Load Balancer",
         "scriptTitle": "Script de Scaling",
-        "sessionAffinityTitle": "Session Affinity"
+        "sessionAffinityTitle": "Session Affinity",
+        "architectureTitle": "Arquitetura de Scaling",
+        "externalTraffic": "External Traffic",
+        "dynamicDns": "least_conn + dynamic DNS",
+        "nginxLbTitle": "Nginx Load Balancer",
+        "migrationJobTitle": "Migration Job Isolado",
+        "migrationJobDescription": "Quando você escala serviços, todos tentam rodar migrations ao iniciar — race condition garantida. A solução foi um job dedicado que roda ANTES das replicas subirem, usando depends_on: condition: service_completed_successfully.",
+        "scaleUpScriptTitle": "Scale-Up Script",
+        "statefulConsiderations": {
+          "title": "Considerações Stateful",
+          "description": "Memory Engine é stateful — mantém connection pools com PostgreSQL. Escalar de 2 para 6 replicas cria 6x mais conexões ao banco. Por isso configuramos DB_POOL_SIZE e DB_MAX_OVERFLOW via env vars, permitindo ajuste dinâmico: DB_POOL_SIZE=5 DB_MAX_OVERFLOW=10 = máx 15 conexões/replica."
+        }
       },
       "ha": {
         "title": "Alta Disponibilidade",
         "description": "Redis Sentinel para failover automático. Três sentinels monitoram o master e promovem replica automaticamente em caso de falha.",
         "topologyTitle": "Topologia Sentinel",
         "failoverTitle": "Failover Automático",
-        "clientConfigTitle": "Configuração do Cliente"
+        "clientConfigTitle": "Configuração do Cliente",
+        "quorum": "quorum: 2 (2 de 3 precisam concordar)",
+        "monitors": "monitora",
+        "writes": "(writes)",
+        "reads": "(reads)",
+        "failoverSteps": {
+          "step1": "Master fica inacessível (crash, network partition, ou qualquer falha)",
+          "step2": "Sentinels detectam (configurable timeout, default 30s)",
+          "step3": "Quorum de 2 sentinels concorda que master está down",
+          "step4": "Eleição de novo master entre replicas (baseia-se em replication offset)",
+          "step5": "Sentinels atualizam configuração; clientes reconectam automaticamente"
+        },
+        "whyThreeSentinels": {
+          "title": "Por que 3 Sentinels?",
+          "description": "Com quorum de 2, você precisa de no mínimo 3 sentinels para tolerar 1 falha. Se tiver só 2 sentinels e 1 falhar, não atinge quorum e failover não acontece. Número ímpar evita split-brain (empate de votos)."
+        }
       },
       "cicd": {
         "title": "CI/CD Pipeline",
@@ -1303,23 +1336,75 @@
           "lint": "Lint & Format: black, isort, flake8, mypy",
           "test": "Testes: pytest com coverage mínimo de 80%",
           "build": "Build: Docker multi-stage com cache",
-          "deploy": "Deploy: Rolling update com health checks"
+          "deploy": "Deploy: Rolling update com health checks",
+          "ci": {
+            "title": "ci.yml",
+            "description": "Ruff lint, mypy type-check, pytest, Docker build. Roda em todo push/PR."
+          },
+          "guardrails": {
+            "title": "guardrails.yml",
+            "description": "Validação de arquitetura. Bloqueia PRs que violam patterns definidos em policy.yaml."
+          },
+          "e2e": {
+            "title": "e2e-tests.yml",
+            "description": "Testes end-to-end com pgvector + Redis reais. Valida fluxos multi-ERP."
+          },
+          "llmEval": {
+            "title": "llm-eval.yml",
+            "description": "Avaliação de qualidade de outputs do AI Engine. Detecta regressões em prompts."
+          }
         },
-        "archGuardsTitle": "Architecture Guards"
+        "archGuardsTitle": "Architecture Guards",
+        "guardrailsTitle": "Architecture Guardrails",
+        "guardrailsDescription": "O sistema de guardrails usa um MCP server que analisa diffs e valida contra regras. Se um PR viola um pattern (ex: import direto entre camadas, SQL raw em controllers), o workflow falha e posta um comentário detalhado no PR.",
+        "e2eTestsTitle": "E2E Tests com Services"
       },
       "security": {
         "title": "Segurança",
         "description": "Múltiplas camadas de segurança: secrets management, network isolation, e scanning automatizado.",
         "secretsTitle": "Secrets Management",
         "networkTitle": "Network Isolation",
-        "scanningTitle": "Scanning Automatizado"
+        "scanningTitle": "Scanning Automatizado",
+        "secretsSeparationTitle": "Separação de Secrets",
+        "secretsFiles": {
+          "secrets": "API keys, passwords, tokens. Nunca commitado. Gitignore'd.",
+          "models": "Configurações de modelos LLM. Pode ser commitado (sem keys).",
+          "example": "Template com placeholders. Commitado para documentação."
+        },
+        "containerSecurityTitle": "Container Security",
+        "containerSecurity": {
+          "nonRoot": "Todos os containers rodam como usuário não-root (appuser:1001 ou similar). Mitiga privilege escalation.",
+          "slimImages": "python:3.12-slim em vez de full. Menos pacotes = menos superfície de ataque.",
+          "readOnlyConfigs": "Arquivos de config montados como :ro (read-only). Containers não podem modificar.",
+          "networkIsolation": "Rede bridge dedicada (optimus). Services só acessíveis via LB.",
+          "internalEngine": "Porta 8050 não exposta ao host — só acessível via nginx-lb internamente."
+        }
       },
       "operations": {
         "title": "Operações",
         "description": "Ferramentas de operação para gerenciar o ciclo de vida dos serviços.",
         "backupTitle": "Backup & Restore",
         "logsTitle": "Log Aggregation",
-        "monitoringTitle": "Monitoring"
+        "monitoringTitle": "Monitoring",
+        "scripts": {
+          "scaleUp": {
+            "title": "scale-up.sh",
+            "description": "Scaling completo com build, migrations, e tail de logs."
+          },
+          "validateRedis": {
+            "title": "validate_redis.sh",
+            "description": "Health check de Redis: ping, memory, connected clients."
+          },
+          "loadTests": {
+            "title": "run_load_tests.sh",
+            "description": "Load testing com k6 ou locust. Gera relatório."
+          },
+          "traceSmokeTest": {
+            "title": "trace_smoke_test.sh",
+            "description": "Valida tracing E2E: gera trace, verifica no Tempo."
+          }
+        },
+        "healthChecksTitle": "Health Checks Úteis"
       },
       "techStack": "Stack Técnico",
       "results": {
@@ -1328,7 +1413,17 @@
           "uptime": "Uptime",
           "deployTime": "Deploy Time",
           "scalingTime": "Scaling Time",
-          "mttr": "MTTR"
+          "mttr": "MTTR",
+          "secretsExposed": "Secrets expostos (validação automática)",
+          "failover": "Failover automático Redis"
+        },
+        "lessonsLearned": {
+          "title": "Lições Aprendidas",
+          "overlays": "Compose overlays > monolítico: Manutenção muito mais fácil quando cada concern está isolado",
+          "migrations": "Migrations job separado: Evita race conditions e permite escalar replicas livremente",
+          "healthChecks": "Health checks reais: Testar o endpoint /health, não só se o processo existe",
+          "dynamicDns": "DNS dinâmico no LB: Sem isso, nginx não descobre novas replicas",
+          "sentinelQuorum": "Sentinel quorum ímpar: 3 sentinels com quorum 2 é o mínimo para HA real"
         }
       },
       "cta": {
@@ -1376,7 +1471,12 @@
           "users": "Gestão de usuários e permissões",
           "config": "Configuração global da plataforma",
           "monitoring": "Monitoramento cross-tenant",
-          "analytics": "Analytics e relatórios"
+          "analytics": "Analytics e relatórios",
+          "provisioning": "Provisionamento de novos tenants",
+          "prompts": "Configuração de prompts por tenant",
+          "llmPools": "LLM Pools & Key Groups management",
+          "preflight": "Preflight panel (health checks)",
+          "defaults": "System defaults (global configs)"
         }
       },
       "websocket": {
@@ -1401,15 +1501,126 @@
         "title": "Componentes Reutilizáveis",
         "description": "Biblioteca de componentes Vue.js compartilhados entre as duas aplicações."
       },
-      "techStack": "Stack Técnico",
+      "techStack": {
+        "title": "Stack Técnico",
+        "framework": "Framework",
+        "styling": "Styling",
+        "state": "State",
+        "realtime": "Real-time",
+        "router": "Router",
+        "http": "HTTP",
+        "build": "Build",
+        "container": "Container",
+        "backendIntegration": {
+          "title": "Integração com Backend",
+          "restApis": "REST APIs",
+          "websocket": "WebSocket"
+        }
+      },
       "cta": {
         "title": "Explore Outros Case Studies",
-        "description": "Veja como outros componentes do Optimus foram construídos"
+        "description": "Veja como outros componentes do Optimus foram construídos",
+        "button": "Entrar em Contato"
       },
       "footer": "Case Study: Frontend Apps — Optimus AI Platform",
       "meta": {
         "title": "Frontend Apps - Optimus AI | Marcelo Marleta",
         "description": "Case study: Aplicações Vue.js 3 para gestão de atendimento com WebSocket real-time e RBAC."
+      },
+      "chatRealtime": {
+        "title": "Chat Real-time com WebSocket",
+        "description": "A interface de chat usa WebSocket para atualizações em tempo real. Quando uma nova mensagem chega (WhatsApp, web, etc.), o operador vê instantaneamente sem refresh.",
+        "flowTitle": "Fluxo WebSocket",
+        "eventsTitle": "Eventos Suportados",
+        "events": {
+          "newMessage": "Nova mensagem na conversa",
+          "conversationUpdated": "Status ou metadata alterados",
+          "handoverStarted": "Operador assumiu conversa",
+          "handoverEnded": "Conversa retornou para IA",
+          "typing": "Cliente está digitando"
+        }
+      },
+      "handoverManagement": {
+        "title": "Handover Management",
+        "description": "Quando um operador assume uma conversa (handover), a UI mostra um timer de 30 minutos. Se não houver interação, a conversa retorna automaticamente para a IA.",
+        "states": {
+          "aiServing": {
+            "title": "1. IA Atendendo",
+            "description": "Estado normal. IA responde automaticamente. Operador pode visualizar mas não intervém."
+          },
+          "handoverActive": {
+            "title": "2. Handover Ativo",
+            "description": "Operador assumiu. Timer de 30 min visível. IA pausa, mensagens vão direto pro operador."
+          },
+          "timerExpires": {
+            "title": "3. Timer Expira",
+            "description": "Sem ação em 30min → auto-return para IA. Operador é notificado antes (warning em 5min)."
+          }
+        },
+        "timerUiTitle": "Timer UI Component",
+        "extend": "Estender +15min",
+        "returningSoon": "Retorno em breve!",
+        "timeRemaining": "Tempo restante"
+      },
+      "superAdminFeatures": {
+        "title": "SuperAdmin: Gestão Global",
+        "tenantManagement": {
+          "title": "Gestão de Tenants",
+          "list": "Lista de tenants com status, vertical, e última atividade",
+          "create": "Criar tenant via wizard (escolhe vertical, configura identity)",
+          "edit": "Editar tenant (nome, timezone, locale, features)",
+          "deactivate": "Desativar/Deletar com confirmação e soft-delete"
+        },
+        "promptConfig": {
+          "title": "Configuração de Prompts",
+          "systemPrompt": "System prompt customizado por tenant",
+          "greeting": "Greeting message (primeira mensagem da IA)",
+          "intent": "Intent classification prompt",
+          "handoverContext": "Handover context (resumo para operador)",
+          "variables": "Variables override (assistant_name, rules, etc.)"
+        },
+        "llmPools": {
+          "title": "LLM Pools & Keys",
+          "globalPools": "Pools globais (chat, tools, embeddings)",
+          "keyGroups": "Key Groups com múltiplas API keys",
+          "reveal": "Reveal protegido (só superadmin vê keys)",
+          "health": "Health status de cada key/pool"
+        },
+        "preflightPanel": {
+          "title": "Preflight Panel",
+          "ok": "OK - Todas configs válidas",
+          "warning": "Warning - Usando defaults genéricos",
+          "critical": "Critical - Falta assistant_name ou template vazio",
+          "sourceBadges": "Source badges - Seeded vs Override vs Default"
+        }
+      },
+      "dashboard": {
+        "title": "Dashboard Multi-tenant",
+        "description": "O Admin Dashboard mostra métricas específicas do tenant logado. Conversas ativas, tempo médio de resposta, handovers, e mais.",
+        "metrics": {
+          "conversationsToday": "Conversas Hoje",
+          "activeNow": "Ativas Agora",
+          "inHandover": "Em Handover",
+          "responseTime": "Tempo Resposta"
+        },
+        "conversationsList": {
+          "title": "Lista de Conversas",
+          "lastMsg": "Última msg",
+          "aiResponding": "IA Respondendo",
+          "handover": "Handover",
+          "operator": "Operador"
+        }
+      },
+      "results": {
+        "title": "Resultados",
+        "websocketLatency": "Latência WebSocket",
+        "websocketLatencyDesc": "Mensagens em tempo real",
+        "specializedApps": "Apps Especializadas",
+        "specializedAppsDesc": "Admin + SuperAdmin",
+        "accessControl": "Controle de Acesso",
+        "accessControlDesc": "admin vs superadmin",
+        "autoReturnHandover": "Auto-return Handover",
+        "autoReturnHandoverDesc": "Timer configurável"
       }
     },
     "pricing": {
@@ -1443,11 +1654,23 @@
           "description": "Threshold de similaridade dinâmico baseado nas características da query:",
           "shortQuery": "Query curta",
           "mediumQuery": "Query média",
-          "longQuery": "Query longa"
+          "longQuery": "Query longa",
+          "shortQueryDesc": "(&lt;3 palavras): threshold mais baixo (0.75)",
+          "numbersQuery": "Query com números",
+          "numbersQueryDesc": "threshold ajustado para abbreviations",
+          "multiItemQuery": "Query multi-item",
+          "multiItemQueryDesc": "threshold relaxado + diversificação",
+          "llmOverride": "LLM override",
+          "llmOverrideDesc": "modelo pode sugerir threshold específico"
         },
         "requestCoalescing": {
           "title": "Request Coalescing",
-          "description": "Múltiplas requests para o mesmo procedimento são agrupadas em uma única busca:"
+          "description": "Múltiplas requests para o mesmo procedimento são agrupadas em uma única busca:",
+          "intro": "Quando múltiplas requests chegam para a mesma query:",
+          "step1": "Primeira request adquire lock e computa resultado",
+          "step2": "Requests subsequentes aguardam (com timeout)",
+          "step3": "Resultado é compartilhado entre todas",
+          "step4": "Cache é populado para próximas requests"
         }
       },
       "cacheArchitecture": {
@@ -1456,7 +1679,12 @@
       },
       "intelligentCacheKey": {
         "title": "Cache Key Inteligente",
-        "description": "Normalização de queries para maximizar cache hits."
+        "description": "Normalização de queries para maximizar cache hits.",
+        "intro": "Em vez de hash da query bruta (que falha com variações), usamos assinatura semântica baseada nos itens detectados:",
+        "semanticSignature": "Em vez de hash da query bruta (que falha com variações), usamos assinatura semântica baseada nos itens detectados:",
+        "basedOnItems": "Em vez de hash da query bruta (que falha com variações), usamos assinatura semântica baseada nos itens detectados:",
+        "traditional": "Cache Key Tradicional",
+        "semantic": "Cache Key Semântica"
       },
       "techStack": "Stack Técnico",
       "cta": {
@@ -1467,7 +1695,8 @@
       "meta": {
         "title": "Pricing Intelligence - Optimus AI | Marcelo Marleta",
         "description": "Case study: Sistema de consulta de preços com RAG otimizado, threshold adaptativo e cache multi-tier."
-      }
+      },
+      "nextProject": "Próximo: Document Processing →"
     },
     "llmPool": {
       "back": "← Voltar",
@@ -1498,15 +1727,47 @@
         "title": "A Solução",
         "poolArchitecture": {
           "title": "Arquitetura de Pools Separados",
-          "intro": "Sistema de pools com separação explícita entre"
+          "intro": "Sistema de pools com separação explícita entre",
+          "chatPool": "Chat Pool",
+          "chatPoolOptimized": "Modelo otimizado para conversação",
+          "chatPoolLowerCost": "Custo mais baixo (gpt-4o-mini)",
+          "chatPoolHumanized": "Usado para respostas humanizadas",
+          "toolsPool": "Tools Pool",
+          "toolsPoolFunctionCalling": "Modelo com function calling",
+          "toolsPoolHigherCost": "Custo mais alto (gpt-4o)",
+          "toolsPoolOnlyWhenNeeded": "Usado só quando precisa chamar tools",
+          "resultLabel": "Resultado",
+          "chat": "chat",
+          "chatDesc": "(conversação)",
+          "and": "e",
+          "tools": "tools",
+          "toolsDesc": "(function calling)",
+          "resultText": "40% de redução de custos usando modelo barato para chat e modelo premium só para operações que realmente precisam de tool calling."
         },
         "keyGroups": {
           "title": "Key Groups",
-          "description": "Agrupamento de API keys com rotação automática e rate limiting distribuído."
+          "description": "Agrupamento de API keys com rotação automática e rate limiting distribuído.",
+          "intro": "Separação entre pools (configuração de modelo) e key groups (vault de chaves):",
+          "fernetEncryption": "Criptografia Fernet",
+          "fernetEncryptionDesc": "Chaves armazenadas criptografadas em repouso",
+          "fingerprint": "Fingerprint",
+          "fingerprintDesc": "UI mostra apenas fingerprint (sk-...7f2a), nunca a chave completa",
+          "autoValidation": "Validação automática",
+          "autoValidationDesc": "Sistema valida chaves periodicamente e marca status",
+          "pools": "pools",
+          "poolsDesc": "(configuração de modelo)",
+          "and": "e",
+          "keyGroupsLabel": "key groups",
+          "keyGroupsDesc": "(vault de chaves)"
         },
         "automaticSelection": {
           "title": "Seleção Automática",
-          "description": "Escolha inteligente de modelo baseada em tipo de tarefa, custo e disponibilidade."
+          "description": "Escolha inteligente de modelo baseada em tipo de tarefa, custo e disponibilidade.",
+          "step1": "Request chega para pool",
+          "step2": "Sistema busca key_group",
+          "step3": "Filtra apenas chaves com",
+          "step4": "Seleciona chave (round-robin ou random)",
+          "step5": "Se rate limit → marca cooldown → tenta próxima chave"
         },
         "globalDefaults": {
           "title": "Defaults Globais",
@@ -1514,11 +1775,27 @@
         },
         "crossPoolFallback": {
           "title": "Fallback Cross-Pool",
-          "description": "Se um pool falha, o sistema tenta automaticamente outro."
+          "description": "Se um pool falha, o sistema tenta automaticamente outro.",
+          "exhausted": "Chat pool exausto (todas as chaves em rate limit)",
+          "tryTools": "Tenta tools_pool (se suporta chat)",
+          "tryGlobal": "Tenta global defaults",
+          "success": "Request completa com latência mínima adicional",
+          "quotaEnforcerLabel": "QuotaEnforcer",
+          "quotaEnforcerText": "Tracked provider health com cooldown de 60s por chave."
         },
         "frontendIntegration": {
           "title": "Integração Frontend",
-          "description": "Dashboard para monitoramento de custos e uso em tempo real."
+          "description": "Dashboard para monitoramento de custos e uso em tempo real.",
+          "poolManagement": "Pool Management",
+          "poolCrud": "CRUD de pools",
+          "toggleTools": "Toggle <code>supports_tools</code>",
+          "toggleActive": "Toggle <code>is_active</code>",
+          "keyGroupSelection": "Seleção de key_group",
+          "keyManagement": "Key Management",
+          "addRemoveKeys": "Adicionar/remover chaves",
+          "revealVault": "Reveal com vault password",
+          "batchValidation": "Validação em batch",
+          "statusPerKey": "Status por chave (valid/invalid)"
         }
       },
       "architecture": {
@@ -1553,6 +1830,1116 @@
       "meta": {
         "title": "LLM Pool Management - Optimus AI | Marcelo Marleta",
         "description": "Case study: Sistema de gestão de pools LLM com separação tool-calling vs chat, rotação de keys e 40% de redução de custos."
+      },
+      "technicalDecisions": {
+        "title": "Decisões Técnicas",
+        "whySeparate": "Por que separar pools e key groups?",
+        "whySeparateAnswer": "Pools definem configuração de modelo (model, temperature, supports_tools). Key groups definem credenciais (provider_type, base_url, keys). Essa separação permite reusar o mesmo vault de chaves em múltiplos pools com modelos diferentes.",
+        "whyFailFast": "Por que fail-fast e não fallback para env vars?",
+        "whyFailFastAnswer": "Em produção, chaves em código/env vars são anti-pattern de segurança. Fail-fast força configuração correta no sistema e evita \"funciona na minha máquina\" com chaves diferentes.",
+        "whyCache60s": "Por que cache de 60s para provider configs?",
+        "whyCache60sAnswer": "Balance entre consistência e performance. 60s é suficiente para propagar mudanças de configuração sem bombardear Memory Engine a cada request. TTLCache com lock thread-safe.",
+        "whyCooldown60s": "Por que QuotaEnforcer com cooldown de 60s?",
+        "whyCooldown60sAnswer": "Rate limits de providers (OpenAI, Groq) tipicamente resetam em 60s. Cooldown evita retry storms que piorariam o rate limit. Cross-pool fallback garante continuidade."
+      },
+      "nextProject": "Próximo: AI Conversation Engine →"
+    },
+    "whatsapp": {
+      "backToPortfolio": "Voltar ao Portfolio",
+      "badge": "Messaging Infrastructure",
+      "title": "WhatsApp Integration",
+      "description": "Serviço enterprise para WhatsApp com Message Aggregator inteligente, Redis isolado, graceful degradation e integração bidirecional com Evolution API.",
+      "tags": {
+        "aggregator": "Message Aggregator",
+        "debounce": "5s Debounce",
+        "evolution": "Evolution API",
+        "redis": "Redis Isolado",
+        "degradation": "Graceful Degradation",
+        "websocket": "WebSocket"
+      },
+      "problem": {
+        "title": "O Problema: \"Split Messages\" do WhatsApp",
+        "naturalBehavior": "❌ Comportamento Natural dos Usuários",
+        "userFragmented": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas. Isso é comportamento normal no WhatsApp.",
+        "normalBehavior": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas. Isso é comportamento normal no WhatsApp.",
+        "inWhatsApp": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas. Isso é comportamento normal no WhatsApp.",
+        "withoutAggregation": "Sem Agregação (caos):",
+        "issue1": "5 chamadas à API de IA para UMA intenção",
+        "issue2": "5 respostas confusas (\"Oi!\", \"Bem!\", \"Agendar o quê?\"...)",
+        "issue3": "Custo de tokens 5x maior",
+        "issue4": "UX horrível para o cliente"
+      },
+      "solution": {
+        "title": "✅ Message Aggregator (5s Debounce)",
+        "messagesReceived": "// Mensagens recebidas em 14s...",
+        "aggregatedIn": "// Agregadas em UMA mensagem:",
+        "aggregatedResult": "\"Oi, tudo bem? Queria agendar uma consulta pra amanhã às 10h\"",
+        "description": "O Message Aggregator espera 5 segundos após cada mensagem.",
+        "withAggregation": "Com Agregação (elegante):",
+        "benefit1": "1 chamada à API de IA com contexto completo",
+        "benefit2": "1 resposta precisa (\"Perfeito! Agendei para amanhã 10h.\")",
+        "benefit3": "Custo de tokens 5x menor",
+        "benefit4": "UX natural e fluida",
+        "extendsTimeout": "estende o timeout"
+      },
+      "aggregatorFlow": {
+        "title": "📊 Fluxo do Message Aggregator",
+        "timeline": "Message Aggregator Timeline",
+        "message": "Mensagem",
+        "timeout": "Timeout",
+        "send": "ENVIAR",
+        "timer": "5s timer",
+        "reset": "RESET!",
+        "timerExtended": "Timer estendido",
+        "timerExpired": "Timer expirou",
+        "aggregatedMessage": "Mensagem Agregada:",
+        "backendOrch": "→ Backend Orch.",
+        "aiEngine": "→ AI Engine"
+      },
+      "typingDetection": {
+        "title": "🔄 Typing Detection: O Segredo da Fluidez",
+        "description": "O WhatsApp envia eventos de \"digitando...\" via webhook. O Message Aggregator",
+        "realScenario": "Cenário Real:",
+        "step1": "Usuário envia \"Oi\" → timer 5s inicia",
+        "step2": "Webhook: \"usuário digitando\" → timer pausado",
+        "step3": "Usuário envia \"quero agendar\" → timer 5s reinicia",
+        "step4": "Sem typing, timer expira → mensagem agregada enviada",
+        "result": "Resultado: O usuário pode digitar no seu ritmo natural. O sistema \"espera\" inteligentemente até ele terminar o pensamento completo.",
+        "safetyLimits": "Limites de Segurança",
+        "maxTimeout": "Max Timeout Total",
+        "maxMessages": "Max Mensagens por Agregação",
+        "debounceBase": "Debounce Base",
+        "limitsDesc": "Esses limites previnem DoS e garantem que mensagens não fiquem \"presas\" indefinidamente se o usuário ficar digitando sem parar.",
+        "extendIntelligently": "estender o timeout inteligentemente",
+        "resultDesc": "O usuário pode digitar no seu ritmo natural. O sistema \"espera\" inteligentemente até ele terminar o pensamento completo."
+      },
+      "redisIsolated": {
+        "title": "🔒 Redis Isolado: Separação de Tráfego",
+        "description": "WhatsApp gera <strong class=\"text-green-400\">muito tráfego de webhook</strong> -",
+        "mixingBad": "Misturar isso com o Redis principal é receita para disaster.",
+        "archTitle": "REDIS ISOLATED ARCHITECTURE",
+        "mainRedis": "🔴 Redis Principal (Porta 6379/6380)",
+        "aiEngineCache": "AI Engine ✅ Cache de conversas",
+        "orchestratorCache": "Backend Orchestrator ✅ Rate limiting, cache",
+        "memoryCache": "Memory Engine ✅ Hot/Warm storage",
+        "rulesCache": "Rules Engine ✅ Cache de regras",
+        "celeryQueues": "Celery Workers ✅ Task queues",
+        "whatsappRedis": "🟢 Redis WhatsApp (Porta 6382) - ISOLADO",
+        "whatsappOnly": "WhatsApp Integration ONLY",
+        "messageBuffers": "Message buffers (agregação)",
+        "typingState": "Typing state tracking",
+        "webhookDedupe": "Webhook deduplication",
+        "instanceMapping": "Instance → Tenant mapping",
+        "deliveryCache": "Delivery status cache",
+        "benefits": "⚡ Benefícios:",
+        "benefit1": "• WhatsApp broadcast não afeta cache de conversas",
+        "benefit2": "• Falha no Redis WhatsApp não derruba sistema principal",
+        "benefit3": "• Métricas separadas para debugging",
+        "benefit4": "• Escala independente se necessário",
+        "faultIsolation": "🛡️",
+        "faultIsolationTitle": "Isolamento de Falhas",
+        "faultIsolationDesc": "Se Redis WhatsApp cair ou ficar lento, o sistema principal (AI, Memory, Rules) continua funcionando normalmente.",
+        "separateMetrics": "📊",
+        "separateMetricsTitle": "Métricas Separadas",
+        "separateMetricsDesc": "Monitoring independente: latência do Redis WhatsApp não polui métricas do sistema core. Debug mais fácil.",
+        "independentScale": "📈",
+        "independentScaleTitle": "Escala Independente",
+        "independentScaleDesc": "Alta demanda de WhatsApp? Escala só o Redis WhatsApp. Não precisa mexer na infra principal.",
+        "highWebhookTraffic": "muito tráfego de webhook"
+      },
+      "gracefulDegradation": {
+        "title": "⚡ Graceful Degradation: Sistema que não cai",
+        "description": "Sob alta carga, o sistema degrada features não-essenciais para manter o core funcionando. Níveis configuráveis de degradação.",
+        "degradesNonEssential": "Sob alta carga, o sistema degrada features não-essenciais para manter o core funcionando. Níveis configuráveis de degradação.",
+        "toKeepCore": "Sob alta carga, o sistema degrada features não-essenciais para manter o core funcionando. Níveis configuráveis de degradação.",
+        "normal": "NORMAL",
+        "normalUsers": "Usuários &lt; 500",
+        "normalFeature1": "✅ Full aggregation (5s)",
+        "normalFeature2": "✅ Typing detection ativo",
+        "normalFeature3": "✅ WebSocket real-time",
+        "normalFeature4": "✅ Todas as features",
+        "degradedLow": "DEGRADED_LOW",
+        "degradedLowUsers": "500-2000 usuários",
+        "degradedLowFeature1": "⚠️ Aggregation reduzido (3s)",
+        "degradedLowFeature2": "⚠️ Typing detection limitado",
+        "degradedLowFeature3": "✅ WebSocket ativo",
+        "degradedLowFeature4": "⚠️ Métricas reduzidas",
+        "degradedHigh": "DEGRADED_HIGH",
+        "degradedHighUsers": "&gt; 2000 usuários",
+        "degradedHighFeature1": "❌ Aggregation mínimo (1s)",
+        "degradedHighFeature2": "❌ Typing detection off",
+        "degradedHighFeature3": "⚠️ WebSocket pooled",
+        "degradedHighFeature4": "❌ Só métricas críticas",
+        "configurableThresholds": "Thresholds Configuráveis",
+        "degradationBasedOn": "Degradação baseada em:",
+        "pendingUsers": "Número de usuários pendentes",
+        "redisLatency": "Latência do Redis",
+        "webhookErrorRate": "Taxa de erros de webhook",
+        "messageQueueSize": "Tamanho da fila de mensagens"
+      },
+      "deterministicId": {
+        "title": "🎯 1 Conversa por Telefone (Deterministic ID)",
+        "description": "No WhatsApp, cada telefone = uma conversa. Não importa qual header chega,",
+        "forSamePhone": "Isso elimina sessões paralelas e cross-user pollution.",
+        "deterministicCalc": "Cálculo Determinístico",
+        "example": "Exemplo:",
+        "alwaysSameUuid": "SEMPRE o mesmo UUID para mesmos inputs",
+        "ignoresHeaders": "Ignora headers externos completamente",
+        "headersIgnored": "Headers de X-Conversation-ID são <strong class=\"text-red-400\">ignorados</strong>.",
+        "phoneNormalization": "Normalização de Telefone",
+        "allBecomeSameUuid": "// Todos viram o MESMO UUID:",
+        "normalizedBefore": "// Phone é normalizado antes do hash:",
+        "removeSpaces": "// 1. Remove espaços, hífens, parênteses",
+        "removePrefix": "// 2. Remove \"+\" prefix",
+        "ensureNumeric": "// 3. Garante formato numérico puro",
+        "noMatterHow": "Não importa como o telefone chega (WhatsApp, Evolution, manual), a normalização garante consistência.",
+        "alwaysCalculates": "sempre calcula o mesmo UUID",
+        "ignored": "ignorados",
+        "preventsHijack": ". Previne que um cliente malicioso \"pule\" para conversa de outro usuário."
+      },
+      "handoverIntegration": {
+        "title": "👥 Integração com Handover",
+        "description": "Quando um atendente humano assume a conversa, o comportamento do",
+        "duringHandover": "Durante Handover:",
+        "aggregationPaused": "⏸️",
+        "aggregationPausedTitle": "Aggregation Pausado",
+        "aggregationPausedDesc": "Mensagens do cliente vão direto pro operador, sem delay de 5s.",
+        "immediateDelivery": "⚡",
+        "immediateDeliveryTitle": "Immediate Delivery",
+        "immediateDeliveryDesc": "Respostas do operador são enviadas instantaneamente.",
+        "websocketRealtime": "🔄",
+        "websocketRealtimeTitle": "WebSocket Real-time",
+        "websocketRealtimeDesc": "Frontend do operador recebe mensagens em tempo real.",
+        "handoverConfig": "Configuração Handover",
+        "supportRealtime": "suportar interação em tempo real"
+      },
+      "evolutionApi": {
+        "title": "🚀 Evolution API Integration",
+        "multiTenantInstances": "Multi-tenant Instances",
+        "multiTenantDesc": "Cada tenant pode ter múltiplas instâncias WhatsApp. O sistema resolve automaticamente qual tenant \"dono\" de cada instância via cache O(1).",
+        "instanceMapping": "// Instance → Tenant mapping",
+        "lookupO1": "// Lookup O(1) via Redis:",
+        "webhookSecurity": "Webhook Security",
+        "webhookSecurityDesc": "API keys são validadas via HMAC com secret dedicado. Hash do API key (não a key em si) é cacheada para lookups rápidos.",
+        "validationFlow": "// API Key validation flow:",
+        "step1": "1. Webhook chega com X-API-Key header",
+        "step2": "2. HMAC(apikey, EVOLUTION_SECRET) → hash",
+        "step3": "3. Redis lookup: apikeyhash:tenant:{hash}",
+        "step4": "4. Se match → autorizado",
+        "step5": "5. Se não → schema scan (fallback)",
+        "audioSupport": "🎤 Audio Message Support",
+        "voiceNotes": "🎙️",
+        "voiceNotesTitle": "Voice Notes",
+        "voiceNotesDesc": "Cliente envia áudio → Audio Processor transcreve → Texto vai pro AI Engine",
+        "audioReply": "🔊",
+        "audioReplyTitle": "Audio Reply",
+        "audioReplyDesc": "Resposta do AI → TTS (Text-to-Speech) → Áudio enviado ao cliente",
+        "minioStorage": "📁",
+        "minioStorageTitle": "MinIO Storage",
+        "minioStorageDesc": "Arquivos de áudio armazenados no MinIO para processamento assíncrono"
+      },
+      "results": {
+        "title": "Resultados em Produção",
+        "aiReduction": "~80%",
+        "aiReductionLabel": "Redução de Chamadas IA",
+        "aiReductionDesc": "Via message aggregation",
+        "webhookLatency": "&lt;100ms",
+        "webhookLatencyLabel": "Latência Webhook",
+        "webhookLatencyDesc": "P95 end-to-end",
+        "redisIsolation": "100%",
+        "redisIsolationLabel": "Isolamento Redis",
+        "redisIsolationDesc": "Zero cross-pollution",
+        "simultaneousUsers": "2000+",
+        "simultaneousUsersLabel": "Usuários Simultâneos",
+        "simultaneousUsersDesc": "Antes de degradation",
+        "techStack": "Stack Técnico",
+        "framework": "Framework",
+        "storage": "Storage",
+        "realtime": "Real-time",
+        "whatsappApi": "WhatsApp API",
+        "audio": "Audio",
+        "observability": "Observability",
+        "rateLimiting": "Rate Limiting",
+        "httpClient": "HTTP Client"
+      },
+      "cta": {
+        "title": "Interessado em integrações WhatsApp?",
+        "description": "Message aggregation, webhooks, multi-tenant instances - tenho experiência prática com os desafios reais.",
+        "contact": "Entrar em Contato"
+      }
+    },
+    "audio": {
+      "backToPortfolio": "Voltar ao Portfolio",
+      "badge": "Media Processing",
+      "title": "Audio Processor",
+      "description": "Microsserviço de processamento de áudio com multi-provider STT/TTS, processamento assíncrono via Celery, storage MinIO e fallback inteligente entre providers.",
+      "tags": {
+        "multiProvider": "Multi-Provider",
+        "groqWhisper": "Groq Whisper",
+        "elevenLabs": "ElevenLabs",
+        "celery": "Celery",
+        "minio": "MinIO",
+        "formats": "8 Formatos"
+      },
+      "challenge": {
+        "title": "O Desafio: Áudio em Chatbots Enterprise",
+        "voiceNotes": "🎤 Voice Notes no WhatsApp",
+        "voiceNotesDesc": "Usuários de WhatsApp adoram enviar áudios. Em alguns segmentos (clínicas,",
+        "issue1": "Áudios longos (1-3 minutos) com múltiplas informações",
+        "issue2": "Sotaques regionais, ruído de fundo, gírias",
+        "issue3": "Expectativa de resposta em áudio também",
+        "commonProblems": "⚠️ Problemas Comuns",
+        "problem1": "Single provider",
+        "problem1Desc": "- se cair, sistema para",
+        "problem2": "Processamento síncrono",
+        "problem2Desc": "- bloqueia a thread",
+        "problem3": "Sem fallback",
+        "problem3Desc": "- erro = mensagem perdida",
+        "problem4": "Custo fixo",
+        "problem4Desc": "- mesmo provider pra tudo",
+        "problem5": "Formatos limitados",
+        "problem5Desc": "- só MP3/WAV",
+        "audioPercentage": "mais de 40% das mensagens são áudio"
+      },
+      "architecture": {
+        "title": "Arquitetura Multi-Provider",
+        "diagramTitle": "Audio Processor Architecture",
+        "whatsappVoice": "WhatsApp Voice Note",
+        "webMobileAudio": "Web/Mobile Audio",
+        "textResponse": "Text Response",
+        "stt": "STT",
+        "tts": "TTS",
+        "primary": "Primary",
+        "fallback": "Fallback",
+        "storage": "Storage",
+        "workers": "Workers",
+        "sttTitle": "🎤 STT (Speech-to-Text)",
+        "groqWhisperTitle": "Groq Whisper",
+        "groqWhisperDesc": "Whisper Large v3 via Groq API. Extremamente rápido (hardware dedicado), excelente para português brasileiro.",
+        "openaiWhisperTitle": "OpenAI Whisper",
+        "openaiWhisperDesc": "API oficial da OpenAI. Mais lento que Groq, mas extremamente confiável como backup.",
+        "otherProvidersTitle": "Google / Azure / AWS",
+        "available": "Disponível",
+        "otherProvidersDesc": "Providers adicionais configuráveis para casos específicos ou requisitos de compliance.",
+        "ttsTitle": "🔊 TTS (Text-to-Speech)",
+        "elevenLabsTitle": "ElevenLabs",
+        "elevenLabsDesc": "Model: eleven_multilingual_v2. Vozes ultra-realistas, excelente entonação em português.",
+        "openaiTtsTitle": "OpenAI TTS",
+        "openaiTtsDesc": "Model: tts-1-hd, Voice: shimmer. Qualidade alta, bom backup quando ElevenLabs indisponível.",
+        "edgeTtsTitle": "Edge TTS",
+        "freeTier": "Free Tier",
+        "edgeTtsDesc": "Voice: pt-BR-FranciscaNeural. Gratuito (Microsoft Edge), usado para desenvolvimento/testes ou fallback de emergência."
+      },
+      "asyncProcessing": {
+        "title": "⚡ Processamento Assíncrono com Celery",
+        "description": "Áudio é pesado. Um voice note de 2 minutos pode levar 5-10 segundos para transcrever. Processar sincronamente bloquearia o servidor. A solução: Celery workers dedicados.",
+        "wouldBlock": "Áudio é pesado. Um voice note de 2 minutos pode levar 5-10 segundos para transcrever. Processar sincronamente bloquearia o servidor. A solução: Celery workers dedicados.",
+        "step1Icon": "📥",
+        "step1Title": "1. Recebe Áudio",
+        "step1Desc": "API recebe o arquivo de áudio (qualquer formato), valida e salva no MinIO. Retorna job_id imediatamente.",
+        "step2Icon": "⚙️",
+        "step2Title": "2. Celery Processa",
+        "step2Desc": "Worker pega da fila, baixa do MinIO, converte formato se necessário, envia pro provider STT, salva resultado.",
+        "step3Icon": "📤",
+        "step3Title": "3. Callback/Poll",
+        "step3Desc": "Resultado disponível via polling (GET /status/job_id) ou webhook callback quando configurado.",
+        "flowTitle": "Fluxo de Transcrição",
+        "clientSends": "# 1. Cliente envia áudio",
+        "immediateResponse": "# Response imediata (~50ms)",
+        "workerProcesses": "# 2. Celery worker processa em background",
+        "downloadingFrom": "[Worker] Downloading from MinIO:",
+        "converting": "[Worker] Converting OGG → WAV (ffmpeg)",
+        "sendingTo": "[Worker] Sending to Groq Whisper...",
+        "savingResult": "[Worker] Saving result to Redis",
+        "clientChecks": "# 3. Cliente verifica status",
+        "solution": ". A solução: Celery workers dedicados.",
+        "transcriptionComplete": "[Worker] Transcription complete: \"Oi, quero marcar uma consulta...\""
+      },
+      "formats": {
+        "title": "🎵 8 Formatos de Áudio Suportados",
+        "description": "WhatsApp usa OGG/OPUS. Navegadores usam WebM. iPhones usam M4A. O Audio Processor aceita qualquer um e converte internamente via FFmpeg.",
+        "mp3": "MP3",
+        "mp3Desc": "Mais comum",
+        "wav": "WAV",
+        "wavDesc": "Sem compressão",
+        "ogg": "OGG",
+        "oggDesc": "WhatsApp Android",
+        "opus": "OPUS",
+        "opusDesc": "WhatsApp codec",
+        "m4a": "M4A",
+        "m4aDesc": "iPhone/AAC",
+        "flac": "FLAC",
+        "flacDesc": "Lossless",
+        "aac": "AAC",
+        "aacDesc": "Alta qualidade",
+        "wma": "WMA",
+        "wmaDesc": "Windows legacy",
+        "autoConversion": "Conversão Automática",
+        "autoConversionDesc": "O sistema detecta o formato automaticamente (magic bytes, não extensão). Se o provider STT não suporta o formato, converte para WAV via FFmpeg antes de enviar. Tudo transparente para o chamador."
+      },
+      "minio": {
+        "title": "📦 Storage com MinIO",
+        "whyMinio": "Por que MinIO?",
+        "s3Compatible": "S3-compatible",
+        "s3CompatibleDesc": "- mesma API do AWS S3, sem vendor lock",
+        "selfHosted": "Self-hosted",
+        "selfHostedDesc": "- dados ficam no seu controle",
+        "highPerformance": "High performance",
+        "highPerformanceDesc": "- otimizado para arquivos médios",
+        "webConsole": "Web console",
+        "webConsoleDesc": "- UI para debug e gestão",
+        "configuration": "Configuração",
+        "managementConsole": "# Console de gestão",
+        "lifecycle": "Lifecycle do Arquivo",
+        "upload": "📥",
+        "uploadTitle": "Upload",
+        "uploadDesc": "Cliente envia",
+        "store": "💾",
+        "storeTitle": "Store",
+        "storeDesc": "MinIO salva",
+        "process": "⚙️",
+        "processTitle": "Process",
+        "processDesc": "Worker baixa, processa",
+        "cleanup": "🗑️",
+        "cleanupTitle": "Cleanup",
+        "cleanupDesc": "TTL expira, deleta"
+      },
+      "fallback": {
+        "title": "🔄 Fallback Inteligente",
+        "description": "Providers de IA falham. Groq pode ter pico de latência, ElevenLabs pode estar em manutenção. O sistema tenta automaticamente o próximo provider na cadeia de fallback.",
+        "sttChain": "# Cadeia de fallback STT",
+        "sttPrimary": "# Primary",
+        "groqFailed": "Groq failed, falling back to OpenAI",
+        "allSttFailed": "All STT providers failed",
+        "ttsChain": "# Cadeia de fallback TTS",
+        "ttsPrimary": "# Primary",
+        "elevenLabsFailed": "ElevenLabs failed, falling back to OpenAI",
+        "paidTtsFailed": "Paid TTS failed, using free Edge TTS",
+        "alwaysAvailable": "# Always available",
+        "timeoutIcon": "⏱️",
+        "timeoutTitle": "Timeout Detection",
+        "timeoutDesc": "Se provider não responde em 30s, assume falha e tenta próximo.",
+        "quotaIcon": "💰",
+        "quotaTitle": "Quota Handling",
+        "quotaDesc": "Rate limit ou quota excedida? Fallback automático sem perder a mensagem.",
+        "freeIcon": "🆓",
+        "freeTitle": "Free Tier Backup",
+        "freeDesc": "Edge TTS é gratuito e sempre disponível como último recurso."
+      },
+      "tenantConfig": {
+        "title": "🏢 Configuração por Tenant",
+        "description": "Cada tenant pode ter configurações de TTS personalizadas: voz diferente, provider preferido, velocidade de fala. Armazenado no Memory Engine e carregado em runtime.",
+        "dentalClinic": "Exemplo: Clínica Dental",
+        "ecommerce": "Exemplo: E-commerce"
+      },
+      "whatsappIntegration": {
+        "title": "📱 Integração com WhatsApp",
+        "diagramTitle": "WhatsApp Voice Note Flow",
+        "clientSendsAudio": "Cliente envia áudio",
+        "audioProcessor": "Audio Processor",
+        "aiEngine": "AI Engine",
+        "evolutionApi": "Evolution API",
+        "whatsappIntegration": "WhatsApp Integration",
+        "celeryProcesses": "[Celery processa]",
+        "clientReceivesAudio": "Cliente recebe áudio",
+        "responseMode": "Modo de Resposta Configurável",
+        "modeAudio": "audio",
+        "modeAudioDesc": "Sempre responde em áudio. Ideal para usuários que preferem ouvir.",
+        "modeText": "text",
+        "modeTextDesc": "Sempre responde em texto. Economia de custo de TTS.",
+        "modeMatch": "match",
+        "modeMatchDesc": "Responde no mesmo formato que recebeu (áudio → áudio, texto → texto)."
+      },
+      "results": {
+        "title": "Resultados",
+        "uptime": "99.5%",
+        "uptimeLabel": "Uptime Transcrição",
+        "uptimeDesc": "Com fallback multi-provider",
+        "transcriptionTime": "&lt;3s",
+        "transcriptionTimeLabel": "Transcrição (1min áudio)",
+        "transcriptionTimeDesc": "Groq Whisper P95",
+        "formatsCount": "8",
+        "formatsCountLabel": "Formatos Suportados",
+        "formatsCountDesc": "Conversão automática",
+        "providersCount": "5",
+        "providersCountLabel": "Providers TTS",
+        "providersCountDesc": "Incluindo free tier",
+        "techStack": "Stack Técnico",
+        "framework": "Framework",
+        "taskQueue": "Task Queue",
+        "storage": "Storage",
+        "audioProcessing": "Audio Processing",
+        "sttPrimary": "STT Primary",
+        "ttsPrimary": "TTS Primary",
+        "ttsBackup": "TTS Backup",
+        "ttsFree": "TTS Free"
+      },
+      "cta": {
+        "title": "Precisa de processamento de áudio?",
+        "description": "STT, TTS, conversão de formatos, integração com chatbots - tenho experiência com os desafios de produção.",
+        "contact": "Entrar em Contato"
+      }
+    },
+    "observability": {
+      "backToPortfolio": "← Voltar",
+      "badge": "Observabilidade Enterprise",
+      "title": "Observability Stack",
+      "description": "Sistema completo de observabilidade com métricas de negócio, tracing distribuído, monitoramento de custos de tokens, telemetria de decisões de IA e alertas em tempo real.",
+      "metrics": {
+        "meltPillars": "4",
+        "meltPillarsLabel": "Pilares MELT",
+        "customMetrics": "50+",
+        "customMetricsLabel": "Métricas Custom",
+        "traceCoverage": "100%",
+        "traceCoverageLabel": "Trace Coverage",
+        "mttrDebug": "&lt;5min",
+        "mttrDebugLabel": "MTTR Debug"
+      },
+      "whyObservability": {
+        "intro": "Em sistemas de IA conversacional, \"não funcionou\" não é um diagnóstico. Precisamos responder perguntas específicas:",
+        "debug": "Debug",
+        "debugQ": ": Por que o AI não entendeu \"quero marcar amanhã\"?",
+        "performance": "Performance",
+        "performanceQ": ": Qual nó do LangGraph está lento?",
+        "costs": "Custos",
+        "costsQ": ": Quanto estamos gastando em tokens por tenant?",
+        "business": "Negócio",
+        "businessQ": ": Qual % das conversas resolvemos sem humano?",
+        "quality": "Qualidade",
+        "qualityQ": ": O RAG está retornando preços corretos?",
+        "title": "Por Que Observabilidade é Crítica"
+      },
+      "stack": {
+        "businessMetrics": {
+          "title": "📊 Business Metrics (Prometheus)",
+          "description": "Métricas de negócio com ownership claro por serviço (evita double counting):",
+          "tableMetric": "Métrica",
+          "tableOwner": "Owner",
+          "tableLabels": "Labels",
+          "ownershipNote": "Ownership Table: Cada métrica tem um único serviço responsável por emiti-la, evitando contagem dupla em sistemas distribuídos.",
+          "ownershipDesc": ": Cada métrica tem um único serviço responsável por emiti-la, evitando contagem dupla em sistemas distribuídos."
+        },
+        "tracing": {
+          "title": "🔍 Distributed Tracing (OpenTelemetry)",
+          "description": "Tracing end-to-end com propagação de contexto entre serviços:",
+          "propagatedVia": "trace_id: a1b2c3d4... (propagado via headers)",
+          "autoInstrumentation": "Instrumentação Automática",
+          "fastapiRequests": "• FastAPI requests/responses",
+          "httpxCalls": "• HTTPX client calls",
+          "sqlalchemyQueries": "• SQLAlchemy queries",
+          "redisOps": "• Redis operations",
+          "customSpans": "Spans Customizados",
+          "langGraphNode": "• LangGraph node execution",
+          "ragDecisions": "• RAG search decisions",
+          "bookingFsm": "• Booking FSM transitions",
+          "llmCalls": "• LLM API calls + tokens"
+        },
+        "tokenUsage": {
+          "title": "💰 Token Usage & Cost Tracking",
+          "description": "Relatórios de uso de tokens via Jaeger traces para controle de custos:",
+          "dataExtracted": "Dados extraídos de spans OpenTelemetry com atributos"
+        },
+        "stateSnapshot": {
+          "title": "📸 State Snapshot Telemetry",
+          "description": "Cada response inclui snapshot do estado para debug de conversas:"
+        },
+        "ragTelemetry": {
+          "title": "🎯 RAG Decision Telemetry",
+          "description": "Explicabilidade de decisões do pipeline de pricing/RAG:",
+          "allowsIdentify": "Permite identificar: catálogo incompleto, aliases faltando, threshold de score inadequado."
+        },
+        "usageMonitoring": {
+          "title": "📡 Usage Monitoring Middleware",
+          "description": "Monitoramento de endpoints para decisões de deprecação:",
+          "nonIntrusive": "Non-intrusive",
+          "nonIntrusiveDesc": ": Não bloqueia requests, apenas observa",
+          "sampleRate": "Sample rate",
+          "sampleRateDesc": ": Configurável por ambiente (prod: 1%, dev: 100%)",
+          "thirtyDaysData": "30+ days data",
+          "thirtyDaysDesc": ": Coleta dados antes de decisões de remoção",
+          "endpointTracking": "Endpoint tracking",
+          "endpointTrackingDesc": ": Identifica endpoints legados ainda em uso"
+        },
+        "performanceThresholds": {
+          "title": "📈 Performance Thresholds",
+          "description": "Thresholds automáticos para alertas:",
+          "warning": "⚠️ Warning",
+          "critical": "🚨 Critical"
+        },
+        "title": "Stack Completo"
+      },
+      "architecture": {
+        "stackTitle": "OBSERVABILITY STACK",
+        "orchestrator": "Orchestrator",
+        "aiEngine": "AI Engine",
+        "memoryEngine": "Memory Engine",
+        "metricsLabel": "metrics",
+        "prometheusSection": "PROMETHEUS",
+        "prometheusLine1": "- Business metrics (handover, booking, AI)",
+        "prometheusLine2": "- System metrics (latency, errors, cache)",
+        "prometheusLine3": "- Custom metrics (RAG, tool budget)",
+        "grafanaSection": "GRAFANA DASHBOARDS",
+        "grafanaLine1": "- Real-time KPIs per tenant",
+        "grafanaLine2": "- Cost tracking & forecasting",
+        "grafanaLine3": "- Alert rules & notifications",
+        "otelSection": "OPENTELEMETRY + JAEGER",
+        "otelLine1": "- Distributed traces across services",
+        "otelLine2": "- Token usage extraction from spans",
+        "otelLine3": "- Latency breakdown per operation",
+        "lokiSection": "LOKI + JSON LOGS",
+        "lokiLine1": "- Structured logging with trace correlation",
+        "lokiLine2": "- trace_id + span_id in every log entry",
+        "lokiLine3": "- Searchable by tenant, operation, error",
+        "title": "Arquitetura"
+      },
+      "decisions": {
+        "ownershipQ": "Por que ownership table para métricas?",
+        "ownershipA": "Em sistemas distribuídos, múltiplos serviços podem observar o mesmo evento. Sem ownership claro, métricas de handover seriam emitidas pelo Orchestrator E pelo AI Engine, causando double counting. Ownership table define um único emissor por métrica.",
+        "tracesQ": "Por que extrair tokens de traces e não de logs?",
+        "tracesA": "Traces têm estrutura padronizada (span attributes) e contexto (trace_id liga request a response). Logs são texto livre que requer parsing. Jaeger já indexa spans por atributo, facilitando queries como \"total tokens por modelo no último mês\".",
+        "snapshotQ": "Por que state snapshot em response_metadata?",
+        "snapshotA": "Debugging de conversas requer saber o estado exato após cada turno. Incluir snapshot no response permite reproduzir problemas sem acessar logs ou traces. Frontend pode mostrar \"estado interno\" em modo debug.",
+        "sampleRateQ": "Por que sample rate configurável?",
+        "sampleRateA": "Em produção com milhões de requests, 100% sampling é caro (storage, processing). 1-10% sampling captura anomalias suficientes para debug. Em dev/staging, 100% permite debug completo de cada request.",
+        "title": "Decisões Técnicas"
+      },
+      "techStack": {
+        "title": "Stack Técnica"
+      },
+      "cta": {
+        "next": "Próximo: Backend Orchestrator →"
+      }
+    },
+    "optimus": {
+      "back": "← Voltar",
+      "title": "Optimus",
+      "subtitle": "Plataforma de Chatbots AI para Milhões de Usuários",
+      "problem": {
+        "title": "O Problema Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes. Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir.",
+        "p1": "O Problema Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes. Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir.",
+        "p2": "O Problema Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes. Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir."
+      },
+      "solution": {
+        "title": "A Solução",
+        "intro": "Arquitetura de microserviços do zero, pensada pra produção desde o dia um:",
+        "orchestrator": "Gateway único. Rate limiting, cache, circuit breaker.",
+        "aiEngine": "Processa conversas com LangChain. Zero acesso a banco.",
+        "memoryEngine": "Dono do PostgreSQL. Memória hierárquica (hot/warm/cold).",
+        "rulesEngine": "Automações de negócio por vertical."
+      },
+      "multiTenancy": {
+        "title": "Multi-Tenancy de Verdade",
+        "p1": "Cada cliente tem seu próprio schema no PostgreSQL ({clinicExample}, {storeExample}). Não é só um tenant_id numa tabela compartilhada — é isolamento real. Um bug no código de um tenant não vaza dados de outro."
+      },
+      "forgetting": {
+        "title": "O Problema do \"Esquecimento\" Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h. Resolvi com memória em três camadas:",
+        "p1": "O Problema do \"Esquecimento\" Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h. Resolvi com memória em três camadas:",
+        "p2": "O Problema do \"Esquecimento\" Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h. Resolvi com memória em três camadas:",
+        "hot": "Redis, últimas mensagens, acesso instantâneo",
+        "warm": "Redis, contexto recente, TTL maior",
+        "cold": "PostgreSQL, histórico completo",
+        "p3": "Quando um operador humano devolve pro bot, o sistema gera resumo via GPT-4 com templates específicos por vertical. Numa clínica, ele sabe que \"dente 36\" e \"amoxicilina 500mg\" são críticos."
+      },
+      "numbers": {
+        "title": "Números",
+        "latency": "Latência P95",
+        "cacheHit": "Cache hit",
+        "uptime": "Uptime",
+        "throughput": "Throughput"
+      },
+      "stack": {
+        "title": "Stack"
+      },
+      "learnings": {
+        "title": "O que aprendi",
+        "p1Label": "Separação de responsabilidades não é frescura.",
+        "p1": "Depois de 6 meses, quando você precisa mudar o cache sem quebrar o AI Engine, agradece.",
+        "p2Label": "Multi-tenancy precisa ser pensado desde o dia um.",
+        "p2": "Schema por tenant no PostgreSQL é mais trabalho inicial, mas dorme tranquilo.",
+        "p3Label": "Memória de chatbot é subestimada.",
+        "p3": "Todo mundo foca no modelo. Ninguém fala do que acontece com 200 mensagens."
+      },
+      "cta": {
+        "interested": "Interessado em construir algo parecido?",
+        "letsChat": "Vamos conversar"
+      }
+    },
+    "aiEngine": {
+      "back": "Voltar",
+      "platformName": "Optimus AI Platform",
+      "badge1": "Core Service",
+      "badge2": "Arquitetura de IA",
+      "title": "AI Conversation",
+      "titleHighlight": "Engine",
+      "subtitle": "Motor de conversação enterprise que separa lógica determinística de linguagem natural. LangGraph orquestra 20+ nós especializados, FSM de 8 estados garante comportamentos críticos, e Semantic Router decide em &lt;10ms quando o LLM pode ser bypassado.",
+      "stats": {
+        "nodes": "Nós LangGraph",
+        "states": "Estados FSM",
+        "routing": "Semantic Routing",
+        "uptime": "Uptime"
+      },
+      "nav": {
+        "problem": "Problema",
+        "architecture": "Arquitetura",
+        "semanticRouting": "Semantic Routing",
+        "fsm": "Booking FSM",
+        "contextComposer": "Context Composer",
+        "fastLane": "Pricing Fast Lane",
+        "reducer": "Flow Reducer",
+        "retry": "Retry Policies",
+        "results": "Resultados"
+      },
+      "sections": {
+        "problem": {
+          "title": "O Problema",
+          "content1": "Chatbots baseados puramente em LLMs sofrem de um problema fundamental: não-determinismo. O mesmo input pode gerar outputs diferentes, e decisões críticas de negócio ficam à mercê de \"temperatura\" e contexto aleatório.",
+          "nonDeterminism": "Chatbots baseados puramente em LLMs sofrem de um problema fundamental: não-determinismo. O mesmo input pode gerar outputs diferentes, e decisões críticas de negócio ficam à mercê de \"temperatura\" e contexto aleatório.",
+          "scenariosTitle": "Cenários Inaceitáveis",
+          "scenarios": {
+            "hallucination": {
+              "title": "\"Alucinação de horário\":",
+              "content": "LLM confirma consulta às 14h quando o usuário disse 15h. Paciente perde consulta, clínica perde receita."
+            },
+            "ambiguous": {
+              "title": "\"Confirmação ambígua\":",
+              "content": "Usuário diz \"ok\", LLM interpreta como confirmação. Mas era \"ok, entendi\" (acknowledgement), não \"ok, confirma\"."
+            },
+            "drift": {
+              "title": "\"Intent drift\":",
+              "content": "Conversa sobre preço vira agendamento sem o usuário pedir. LLM \"ajudando demais\"."
+            },
+            "loop": {
+              "title": "\"Loop infinito\":",
+              "content": "LLM chama ferramenta, falha, chama de novo, falha... até timeout ou custo explodir."
+            }
+          },
+          "conclusion": "Para um sistema de agendamento médico/odontológico enterprise, isso é inaceitável. A solução não é \"melhorar o prompt\" — é separar o que precisa ser determinístico (decisões de negócio) do que pode ser probabilístico (geração de linguagem natural).",
+          "content2": ". O mesmo input pode gerar outputs diferentes, e decisões críticas de negócio ficam à mercê de \"temperatura\" e contexto aleatório."
+        },
+        "architecture": {
+          "title": "Arquitetura Híbrida",
+          "intro1": "O AI Engine implementa uma arquitetura híbrida onde a lógica de negócio é 100% determinística (FSM + regras) e o LLM é usado apenas para tarefas onde criatividade é desejável (humanização, clarificação).",
+          "introHighlight2": "tarefas onde criatividade é desejável",
+          "diagramTitle": "Fluxo de Execução",
+          "langGraphTitle": "LangGraph: Por que não chains simples?",
+          "langGraphExplanation": "Chains são lineares — entrada → processamento → saída. Booking flow precisa de ramificações complexas: usuário pode cancelar no meio de um reschedule, pedir clarificação, ou escalar para humano a qualquer momento. LangGraph permite modelar isso como um grafo real.",
+          "intro2": "(FSM + regras) e o LLM é usado apenas para",
+          "intro3": "(humanização, clarificação).",
+          "introHighlight1": "lógica de negócio é 100% determinística"
+        },
+        "semanticRouting": {
+          "title": "Semantic Routing",
+          "intro": "Antes de chamar o LLM para análise estruturada (caro, ~200ms), o Semantic Router tenta classificar o intent via embeddings (barato, &lt;10ms). Se a confiança for alta, bypassa o LLM completamente.",
+          "hybridAlphaTitle": "Hybrid Alpha: Embeddings + Keywords",
+          "hybridAlphaExplanation": "Embeddings puros falham em casos onde palavras-chave são críticas (ex: \"cancelar\" vs \"gostaria de remarcar\"). O Semantic Router usa classificação híbrida:",
+          "hybridAlphaConfig": "Configurável via env:",
+          "params": {
+            "hybridAlpha": {
+              "title": "HYBRID_ALPHA",
+              "description": "0.7 = 70% embeddings. Valores menores priorizam keywords."
+            },
+            "abstainThreshold": {
+              "title": "ABSTAIN_THRESHOLD",
+              "description": "0.55 = confiança mínima. Abaixo disso, passa pro LLM."
+            },
+            "biasWeight": {
+              "title": "BIAS_WEIGHT",
+              "description": "0.03 = boost para intents críticos (booking > greeting)."
+            }
+          },
+          "resultTitle": "✓ Resultado",
+          "resultContent": "~40% das requests são classificadas com alta confiança e bypassam o LLM completamente. Economia de ~$0.002/request × 40% = redução significativa de custo OpenAI."
+        },
+        "fsm": {
+          "title": "Booking State Machine",
+          "intro": "O coração do booking flow é uma FSM (Finite State Machine) que define exatamente quais transições são válidas. Não importa o que o LLM \"ache\" — se a transição não está na tabela, não acontece.",
+          "diagramTitle": "Estados e Transições",
+          "transitionsTitle": "Transições Válidas (SSoT)",
+          "operationsTitle": "Operações Suportadas",
+          "operations": {
+            "schedule": {
+              "title": "schedule",
+              "description": "Novo agendamento. Busca slots → seleção → confirmação → ERP create."
+            },
+            "reschedule": {
+              "title": "reschedule",
+              "description": "Remarcar existente. Busca booking → slots → confirmação → ERP update."
+            },
+            "cancel": {
+              "title": "cancel",
+              "description": "Cancelar existente. Busca booking → confirmação → ERP delete."
+            }
+          }
+        },
+        "contextComposer": {
+          "title": "Context Composer (ECA)",
+          "intro": "O Context Composer implementa a Enhanced Context Architecture (ECA) — um sistema de montagem de contexto determinístico que busca dados de múltiplas fontes, aplica budget de tokens, e formata em blocos ordenados para o LLM.",
+          "budgetTitle": "Budget Management",
+          "budgetIntro": "Com contexto de 1200 tokens e múltiplas fontes, é fácil estourar o budget. O Context Composer usa truncation inteligente:",
+          "budgetRules": {
+            "untouchable": {
+              "title": "Blocos intocáveis:",
+              "content": "IDENTITY, RULES, INPUT nunca são truncados"
+            },
+            "semantic": {
+              "title": "Compressão semântica:",
+              "content": "MEMORY pode ser comprimido (90% redução via Memory Engine)"
+            },
+            "priority": {
+              "title": "Truncation por prioridade:",
+              "content": "FOCUS (RAG) é truncado primeiro se necessário"
+            }
+          }
+        },
+        "fastLane": {
+          "title": "Pricing Fast Lane",
+          "intro": "Consultas de preço são o caso de uso mais comum (~35% das mensagens) e têm um padrão previsível: busca RAG + formatação. O Pricing Fast Lane executa isso diretamente, sem passar pelo agent_node (que faz iterações LLM caras).",
+          "resultTitle": "⚡ Resultado",
+          "resultContent": "Fast lane reduz latência de ~2s (agent iteration) para ~200ms (RAG direto). Cache hit: &lt;50ms. Sem custo de tokens LLM para ~35% das requests."
+        },
+        "reducer": {
+          "title": "Booking Flow Reducer",
+          "intro": "O Reducer é o guardião do booking_flow state. Todo update passa por ele, que valida whitelist de sources, monotonicity de turn_seq, e transições válidas. Se algo violar as invariantes, o update é rejeitado.",
+          "whyReducerTitle": "Por que Reducer?",
+          "reasons": {
+            "raceConditions": {
+              "title": "Previne race conditions:",
+              "content": "Múltiplos nós podem tentar atualizar o state simultaneamente. Reducer serializa e valida."
+            },
+            "audit": {
+              "title": "Auditoria:",
+              "content": "Cada update é logado com source, turn_seq, e transição. Facilita debugging."
+            },
+            "metrics": {
+              "title": "Métricas:",
+              "content": "Prometheus counters para updates e rejections por reason."
+            }
+          }
+        },
+        "retry": {
+          "title": "Retry Policies",
+          "intro": "Nem todo erro merece retry. Erros transientes (timeout, rate limit) são retriáveis. Erros permanentes (auth failure, bad request) não são — retry só gasta tempo e dinheiro.",
+          "warningTitle": "⚠️ Por que whitelist e não blacklist?",
+          "warningContent": "Blacklist é perigosa: se um novo tipo de erro permanente aparecer (ex: nova exception do OpenAI SDK), ele seria retriado por default. Whitelist é fail-safe: só retria o que conhecemos como transiente."
+        },
+        "results": {
+          "title": "Resultados",
+          "metrics": {
+            "bypass": {
+              "value": "~40%",
+              "label": "Requests bypassam LLM via Semantic Routing"
+            },
+            "classification": {
+              "value": "&lt;10ms",
+              "label": "Classificação via embeddings (p95)"
+            },
+            "transitions": {
+              "value": "0",
+              "label": "Transições inválidas de FSM em produção"
+            },
+            "fastLane": {
+              "value": "~200ms",
+              "label": "Pricing Fast Lane (vs ~2s agent)"
+            }
+          },
+          "decisionsTitle": "Decisões Técnicas Chave",
+          "decisions": {
+            "fsmSeparated": {
+              "title": "FSM separada do LLM:",
+              "content": "Decisões de negócio são determinísticas. LLM só humaniza."
+            },
+            "semanticPreLlm": {
+              "title": "Semantic routing pre-LLM:",
+              "content": "Classificação barata antes de gastar tokens."
+            },
+            "reducerWhitelist": {
+              "title": "Reducer com whitelist:",
+              "content": "Só sources autorizados atualizam estado crítico."
+            },
+            "retryWhitelist": {
+              "title": "Retry com whitelist:",
+              "content": "Só transient exceptions são retriadas."
+            },
+            "fastLanes": {
+              "title": "Fast lanes para padrões conhecidos:",
+              "content": "Pricing não precisa de iteração LLM."
+            }
+          }
+        }
+      },
+      "techStack": {
+        "title": "Stack Técnico"
+      },
+      "cta": {
+        "title": "Explore Outros Case Studies",
+        "description": "Veja como outros componentes do Optimus foram construídos",
+        "rulesEngine": "Rules Engine →",
+        "memoryEngine": "Memory Engine →",
+        "llmPool": "LLM Pool Management →"
+      },
+      "footer": "Case Study: AI Conversation Engine — Optimus AI Platform"
+    },
+    "mcpServers": {
+      "tag": "Developer Tools",
+      "title": "MCP Servers",
+      "description": "Servidores Model Context Protocol customizados para desenvolvimento com Claude Code. Ferramentas de debugging, validação arquitetural e navegação inteligente de codebase.",
+      "whatIsMcp": {
+        "title": "O que é MCP?",
+        "intro": "<strong class=\"text-white\">Model Context Protocol</strong> é um padrão da Anthropic \nque permite estender assistentes de IA (como Claude) com ferramentas customizadas. \nEm vez do AI \"adivinhar\" sobre seu codebase, você dá a ele acesso real à sua \narquitetura, contratos e convenções.",
+        "comment": "# Adicionar servidor MCP ao Claude Code"
+      },
+      "servers": {
+        "title": "Servidores Disponíveis",
+        "orchestrator": {
+          "title": "backend_orchestrator_mcp",
+          "intro": "Ferramentas de debugging para o Backend Orchestrator:",
+          "diagnoseGateway": "Health check completo do gateway",
+          "analyzeCache": "Performance do cache PubSub",
+          "analyzeRateLimiting": "Status de rate limiting por tenant",
+          "generateRouter": "Template de router seguindo padrões"
+        },
+        "optimus": {
+          "title": "optimus_project_mcp",
+          "intro": "12 ferramentas para navegação inteligente do codebase:",
+          "systemOverview": "Visão geral da arquitetura",
+          "serviceContract": "Contratos de cada microserviço",
+          "validateDiff": "Validar mudanças contra guardrails",
+          "planChange": "Orientações arquiteturais para mudanças"
+        }
+      },
+      "validation": {
+        "title": "Validação Arquitetural",
+        "intro": "O <code class=\"text-cyan-400\">validate_diff verifica se um diff respeita \nos guardrails arquiteturais do projeto:",
+        "violationDetected": "❌ Violação Detectada ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine não pode acessar DB diretamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
+        "violationExample": "❌ Violação Detectada ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine não pode acessar DB diretamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
+        "validDiff": "✅ Diff Válido ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary",
+        "validExample": "✅ Diff Válido ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary"
+      },
+      "hotReload": {
+        "title": "Hot Reload",
+        "intro": "Módulos são recarregados sem reiniciar o servidor MCP:"
+      },
+      "stack": {
+        "title": "Stack Técnica"
+      },
+      "cta": {
+        "next": "Próximo: Feed-RSS Monitor →"
+      }
+    },
+    "feedRss": {
+      "tag": "Automação",
+      "title": "Feed-RSS Monitor",
+      "description": "Pipeline de automação de conteúdo que monitora feeds RSS, filtra por keywords, gera roteiros via OpenAI e notifica em Telegram/Discord.",
+      "stats": {
+        "monitoredFeeds": "Feeds Monitorados",
+        "aiKeywords": "Keywords AI",
+        "asyncPipeline": "Python Pipeline"
+      },
+      "overview": {
+        "title": "Visão Geral",
+        "intro": "Solução para criadores de conteúdo que precisam acompanhar notícias de IA/tech e transformá-las rapidamente em conteúdo para redes sociais.",
+        "input": "Input",
+        "inputDesc": "TechCrunch, The Verge, Wired, Ars Technica, MIT Tech Review, Engadget",
+        "output": "Output",
+        "outputDesc": "Roteiros para YouTube Shorts (50s) entregues via Telegram/Discord"
+      },
+      "architecture": {
+        "title": "Arquitetura"
+      },
+      "services": {
+        "title": "Arquitetura Modular",
+        "feedService": {
+          "title": "FeedService",
+          "desc": "Busca assíncrona de feeds com aiohttp. Timeout configurável, retry em falhas, normalização de entries para modelo Pydantic."
+        },
+        "filterService": {
+          "title": "FilterService",
+          "desc": "Filtra notícias por keywords (case-insensitive). Keywords configuráveis via .env ou arquivo externo. Combina título + resumo para matching."
+        },
+        "aiService": {
+          "title": "AIService",
+          "desc": "Integração OpenAI com prompt otimizado para roteiros de Shorts. Formato estruturado: gancho impactante → 3-5 frases de essência → CTA com pergunta."
+        },
+        "stateService": {
+          "title": "StateService",
+          "desc": "Persiste IDs de notícias já processadas em JSON. Evita reprocessamento e spam de notificações repetidas."
+        }
+      },
+      "prompt": {
+        "title": "Prompt Engineering",
+        "intro": "O prompt foi otimizado para gerar roteiros concisos e impactantes:",
+        "systemPrompt": "System Prompt:",
+        "promptText": "\"Você é roteirista do canal Cyber Inteligente. Crie roteiros para YouTube Shorts de até 50 segundos, em português claro e direto. Tom energético, futurista, sem enrolação. Formato: (1) Gancho em 1 frase; (2) Essência em 3-5 frases curtas; (3) CTA com pergunta.\""
+      },
+      "usage": {
+        "title": "Uso",
+        "basicExecution": "# Execução básica",
+        "withOptions": "# Com opções"
+      },
+      "stack": {
+        "title": "Stack Técnica"
+      },
+      "cta": {
+        "backToHome": "← Voltar para Home"
+      }
+    },
+    "common": {
+      "personalProject": "Projeto Pessoal",
+      "technicalStack": "Stack Técnico",
+      "results": "Resultados"
+    },
+    "pvcoach": {
+      "tag": "Chess + AI",
+      "tagSecondary": "Training Tool",
+      "title": "PVCoach",
+      "description": "Coach de xadrez que combina Stockfish com LLM para explicar movimentos. Análise MultiPV, hints progressivos, explicações fundamentadas nas variações do engine, e validação automática para evitar alucinações.",
+      "stats": {
+        "llmProviders": "LLM Providers",
+        "topNAnalysis": "Top-N Analysis",
+        "hintLevels": "Hint Levels",
+        "groundedExplanations": "Explanations"
+      },
+      "nav": {
+        "problem": "Problema",
+        "architecture": "Arquitetura",
+        "multipv": "MultiPV",
+        "grounded": "Grounded Explanations",
+        "hints": "Progressive Hints",
+        "providers": "Multi-Provider",
+        "api": "API"
+      },
+      "problem": {
+        "title": "O Problema",
+        "intro": "Engines de xadrez como Stockfish são extremamente fortes, mas suas \"explicações\" são \napenas números (centipawns) e variações brutas. Jogadores intermediários não conseguem \nentender <em>por que</em> um lance é melhor.",
+        "gapTitle": "O Gap de Entendimento",
+        "engineSays": "Engine diz:",
+        "engineExample": "\"e4 +0.35, d4 +0.20\" — Ok, mas por quê?",
+        "llmHallucinates": "LLM puro alucina:",
+        "llmExample": "\"Nf3 ataca a dama\" — Não, não ataca.",
+        "humanExpensive": "Análises humanas são caras:",
+        "humanExample": "Coaches cobram $50-100/hora.",
+        "solution": "A solução foi combinar a precisão do Stockfish com a capacidade explicativa do LLM, \nmas <strong class=\"text-white\">ancorando as explicações nas variações reais do engine</strong> \npara evitar alucinações."
+      },
+      "architecture": {
+        "title": "Arquitetura",
+        "pipelineTitle": "Pipeline de Análise",
+        "fenPosition": "FEN Position",
+        "stockfishMultipv": "Stockfish MultiPV",
+        "depthMultipv": "depth=14, multipv=3",
+        "llmGrounded": "LLM (Grounded Prompt)",
+        "explanationPv": "Explicação baseada nas PVs",
+        "validation": "Validation",
+        "crossCheck": "Cross-check com engine"
+      },
+      "multipv": {
+        "title": "MultiPV Analysis",
+        "intro": "Em vez de pedir só o \"melhor lance\", o sistema pede os top-N lances com suas variações \ncompletas. Isso permite comparar alternativas e explicar <em>por que</em> um lance é \nmelhor que outro.",
+        "deltaExplanation": "O <code>delta_cp</code> mostra quanto cada alternativa \"perde\" em relação ao melhor lance. \nEx: se e4 = +35cp e d4 = +20cp, então delta_cp de d4 = 15cp (perde 0.15 peões)."
+      },
+      "grounded": {
+        "title": "Grounded Explanations",
+        "intro": "O segredo para evitar alucinações é <strong class=\"text-white\">ancorar o LLM nas variações \nreais do engine</strong>. O prompt inclui as PVs formatadas, e a validação verifica se a \nexplicação menciona lances que realmente existem.",
+        "validationTitle": "Validação Automática",
+        "resultTitle": "Resultado",
+        "resultText": "Se o LLM menciona um lance que não existe nas PVs, o sistema retorna um warning. Isso permite detectar alucinações antes de mostrar ao usuário."
+      },
+      "hints": {
+        "title": "Progressive Hints",
+        "intro": "Para treino, revelar o lance imediatamente não ajuda. O sistema oferece dicas progressivas em 3 níveis, do mais vago ao mais específico.",
+        "level1Title": "Level 1: Pista",
+        "level1Example": "\"Pense em mover seu cavalo.\"",
+        "level1Desc": "Indica a peça, não a casa. Se há captura ou xeque, adiciona nota.",
+        "level2Title": "Level 2: Plano",
+        "level2Example": "\"Melhor lance: Nf3. Compare com d4, Nc3.\"",
+        "level2Desc": "Revela o lance + alternativas + delta_cp.",
+        "level3Title": "Level 3: Variante",
+        "level3Example": "\"Nf3 → d5 d4 Nf6 c4 e6\"",
+        "level3Desc": "PV completa + explicação LLM (opcional)."
+      },
+      "providers": {
+        "title": "Multi-Provider LLM",
+        "intro": "O sistema suporta 5 providers de LLM, permitindo escolher por custo, velocidade, ou preferência. Configurável via env vars ou per-request.",
+        "openai": "GPT-4, GPT-3.5 — Chat Completions API.",
+        "anthropic": "Claude 3.5 Sonnet, Haiku — Messages API.",
+        "google": "Gemini 1.5 Flash, Pro — GenerativeAI.",
+        "openrouter": "Proxy para múltiplos modelos — OpenAI-compatible."
+      },
+      "api": {
+        "title": "API Endpoints",
+        "evaluatePosition": "Avaliação MultiPV pura (sem LLM). Retorna top-N candidatos com PVs e scores.",
+        "explainPosition": "Avaliação + explicação LLM grounded. Inclui warnings de validação.",
+        "hintsPosition": "Hints progressivos (level 1-3). Level 3 pode incluir explicação.",
+        "analyze": "Baixa partidas do Lichess e analisa em batch."
+      },
+      "results": {
+        "hallucinations": "Alucinações com validação ativa",
+        "providers": "Providers LLM suportados",
+        "cache": "TTL para avaliações e explicações",
+        "hintLevels": "Níveis de hints progressivos"
+      },
+      "cta": {
+        "title": "Explore Outros Projetos",
+        "subtitle": "Veja outros sistemas que construí"
+      },
+      "footer": "Case Study: PVCoach — Chess Training with AI"
+    },
+    "documentProcessing": {
+      "tag": "Document AI",
+      "title": "Document Processing Pipeline",
+      "description": "Pipeline de processamento de documentos com detecção automática de tabelas de preço, chunking estratégico e geração automática de catálogos para RAG.",
+      "stats": {
+        "autoDetect": "Auto-detect Tables",
+        "brokenChunks": "Broken Price Chunks",
+        "indexUpdate": "Index Update",
+        "multiTenant": "Tenant Isolated"
+      },
+      "problem": {
+        "title": "O Problema",
+        "intro": "Clínicas enviam tabelas de preço em formatos diversos (PDF, Excel, Word). Chunking tradicional quebra tabelas no meio, destruindo a relação entre procedimento e preço:",
+        "brokenChunk": "❌ Chunk quebrado no meio da tabela:",
+        "chunkEnd": "--- FIM DO CHUNK ---"
+      },
+      "solution": {
+        "title": "A Solução",
+        "docling": {
+          "title": "Detecção Automática de Tabelas (Docling)",
+          "intro": "Análise estrutural do documento para identificar tabelas de preço vs texto corrido (FAQ, políticas):",
+          "layout": "Heurísticas de layout (colunas, bordas, alinhamento)",
+          "currency": "Detecção de padrões monetários (R$, $, €)",
+          "headers": "Headers típicos (\"Procedimento\", \"Valor\", \"Preço\")"
+        },
+        "chunking": {
+          "title": "Chunking Estratégico",
+          "intro": "Estratégias diferentes para tipos de conteúdo diferentes:",
+          "tables": {
+            "title": "📊 Tabelas de Preço TableRow Strategy: Cada linha da tabela vira um chunk atômico. Nunca quebra no meio de um preço.",
+            "desc": "<p class=\"text-gray-500 text-sm\">\n<strong class=\"text-white\">TableRow Strategy:</strong> Cada linha da tabela \nvira um chunk atômico. Nunca quebra no meio de um preço."
+          },
+          "faq": {
+            "title": "📝 FAQ / Políticas Semantic Chunking: Chunks por parágrafo ou seção semântica, com overlap para contexto.",
+            "desc": "<p class=\"text-gray-500 text-sm\">\n<strong class=\"text-white\">Semantic Chunking:</strong> Chunks por parágrafo \nou seção semântica, com overlap para contexto."
+          }
+        },
+        "catalog": {
+          "title": "Catálogo Automático",
+          "intro": "Extração estruturada gera catálogo JSON pronto para busca:"
+        }
+      },
+      "pipeline": {
+        "title": "Pipeline de Processamento"
+      },
+      "hnsw": {
+        "title": "HNSW Index Auto-Update",
+        "intro": "Índices HNSW são atualizados automaticamente via Celery workers, garantindo que novos documentos estejam disponíveis para busca em minutos:",
+        "trigger": "Trigger: Upload de documento ou schedule periódico",
+        "rebuild": "Rebuild: Incremental quando possível, full rebuild se necessário",
+        "zeroDowntime": "Zero-downtime: Novo índice é criado em paralelo, swap atômico"
+      },
+      "stack": {
+        "title": "Stack Técnica"
+      },
+      "cta": {
+        "next": "Próximo: MCP Servers →"
       }
     }
   }

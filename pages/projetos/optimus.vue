@@ -120,7 +120,7 @@
 
     <div class="mt-16 pt-8 border-t border-gray-800">
       <p class="text-gray-400 mb-4">{{ $t('cases.optimus.cta.interested') }}</p>
-      <a href="mailto:contato@webotify.io" class="inline-block px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-medium">
+      <a href="mailto:marcelomarleta@gmail.com" class="inline-block px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-medium">
         {{ $t('cases.optimus.cta.letsChat') }}
       </a>
     </div>

@@ -31,7 +31,7 @@
         <span>© 2026 Marcelo Marleta</span>
         <div class="flex gap-4">
           <a href="https://github.com/mmarleta" target="_blank" class="hover:text-white">GitHub</a>
-          <a href="https://linkedin.com/in/marcelomarleta" target="_blank" class="hover:text-white">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/marcelo-marleta-026403190/" target="_blank" class="hover:text-white">LinkedIn</a>
         </div>
       </div>
     </footer>

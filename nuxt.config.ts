@@ -25,6 +25,10 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_locale',
       fallbackLocale: 'pt',
     },
+    compilation: {
+      strictMessage: false,
+      escapeHtml: false,
+    },
   },
 
   tailwindcss: {

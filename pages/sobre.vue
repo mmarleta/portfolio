@@ -34,7 +34,7 @@
       </p>
 
       <div class="mt-12 pt-8 border-t border-gray-800">
-        <a href="mailto:contato@webotify.io" class="inline-block px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-medium">
+        <a href="mailto:marcelomarleta@gmail.com" class="inline-block px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-medium">
           Entrar em contato
         </a>
       </div>

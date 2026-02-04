@@ -614,15 +614,15 @@ lambda facts: (
         <p class="text-gray-400 mb-8">
           {{ $t('cases.rules.cta.desc') }}
         </p>
-        <NuxtLink 
-          to="/contato" 
+        <a 
+          href="mailto:marcelomarleta@gmail.com" 
           class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-lg transition-colors"
         >
           {{ $t('cases.rules.cta.contact') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </NuxtLink>
+        </a>
       </div>
     </section>
   </div>

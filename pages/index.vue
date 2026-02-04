@@ -35,7 +35,7 @@
               {{ $t('hero.github') }}
             </a>
             <a 
-              href="https://linkedin.com/in/mmarleta" 
+              href="https://www.linkedin.com/in/marcelo-marleta-026403190/" 
               target="_blank"
               class="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition-colors"
             >

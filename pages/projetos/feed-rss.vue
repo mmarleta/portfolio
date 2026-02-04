@@ -20,13 +20,13 @@
       <!-- Hero -->
       <div class="mb-16">
         <span class="inline-block px-3 py-1 bg-pink-500/10 text-pink-400 rounded-full text-sm mb-4">
-          {{ $t('caseStudies.feedRss.tag') }}
+          {{ $t('cases.feedRss.tag') }}
         </span>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {{ $t('caseStudies.feedRss.title') }}
+          {{ $t('cases.feedRss.title') }}
         </h1>
         <p class="text-xl text-gray-400 leading-relaxed">
-          {{ $t('caseStudies.feedRss.description') }}
+          {{ $t('cases.feedRss.description') }}
         </p>
       </div>
 
@@ -34,38 +34,38 @@
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-pink-400">6+</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('caseStudies.feedRss.stats.monitoredFeeds') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.feedRss.stats.monitoredFeeds') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-pink-400">15+</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('caseStudies.feedRss.stats.aiKeywords') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.feedRss.stats.aiKeywords') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-pink-400">Async</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('caseStudies.feedRss.stats.asyncPipeline') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.feedRss.stats.asyncPipeline') }}</div>
         </div>
       </div>
 
       <!-- Visão Geral -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-pink-400">📡</span> {{ $t('caseStudies.feedRss.overview.title') }}
+          <span class="text-pink-400">📡</span> {{ $t('cases.feedRss.overview.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
-            {{ $t('caseStudies.feedRss.overview.intro') }}
+            {{ $t('cases.feedRss.overview.intro') }}
           </p>
           <div class="grid md:grid-cols-2 gap-4 mt-6">
             <div class="bg-gray-800/50 rounded-lg p-4">
-              <div class="text-pink-400 font-semibold mb-2">{{ $t('caseStudies.feedRss.overview.input') }}</div>
+              <div class="text-pink-400 font-semibold mb-2">{{ $t('cases.feedRss.overview.input') }}</div>
               <p class="text-gray-500 text-sm">
-                {{ $t('caseStudies.feedRss.overview.inputDesc') }}
+                {{ $t('cases.feedRss.overview.inputDesc') }}
               </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4">
-              <div class="text-pink-400 font-semibold mb-2">{{ $t('caseStudies.feedRss.overview.output') }}</div>
+              <div class="text-pink-400 font-semibold mb-2">{{ $t('cases.feedRss.overview.output') }}</div>
               <p class="text-gray-500 text-sm">
-                {{ $t('caseStudies.feedRss.overview.outputDesc') }}
+                {{ $t('cases.feedRss.overview.outputDesc') }}
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@
       <!-- Arquitetura -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-blue-400">🏗️</span> {{ $t('caseStudies.feedRss.architecture.title') }}
+          <span class="text-blue-400">🏗️</span> {{ $t('cases.feedRss.architecture.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8 overflow-x-auto">
           <pre class="text-sm text-gray-400 font-mono leading-relaxed">
@@ -117,39 +117,39 @@
       <!-- Services -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-emerald-400">🧩</span> {{ $t('caseStudies.feedRss.services.title') }}
+          <span class="text-emerald-400">🧩</span> {{ $t('cases.feedRss.services.title') }}
         </h2>
         <div class="space-y-4">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">📥</span> {{ $t('caseStudies.feedRss.services.feedService.title') }}
+              <span class="text-pink-400">📥</span> {{ $t('cases.feedRss.services.feedService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
-              {{ $t('caseStudies.feedRss.services.feedService.desc') }}
+              {{ $t('cases.feedRss.services.feedService.desc') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">🔍</span> {{ $t('caseStudies.feedRss.services.filterService.title') }}
+              <span class="text-pink-400">🔍</span> {{ $t('cases.feedRss.services.filterService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
-              {{ $t('caseStudies.feedRss.services.filterService.desc') }}
+              {{ $t('cases.feedRss.services.filterService.desc') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">🤖</span> {{ $t('caseStudies.feedRss.services.aiService.title') }}
+              <span class="text-pink-400">🤖</span> {{ $t('cases.feedRss.services.aiService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
-              {{ $t('caseStudies.feedRss.services.aiService.desc') }}
+              {{ $t('cases.feedRss.services.aiService.desc') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">💾</span> {{ $t('caseStudies.feedRss.services.stateService.title') }}
+              <span class="text-pink-400">💾</span> {{ $t('cases.feedRss.services.stateService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
-              {{ $t('caseStudies.feedRss.services.stateService.desc') }}
+              {{ $t('cases.feedRss.services.stateService.desc') }}
             </p>
           </div>
         </div>
@@ -158,16 +158,16 @@
       <!-- Prompt -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-yellow-400">📝</span> {{ $t('caseStudies.feedRss.prompt.title') }}
+          <span class="text-yellow-400">📝</span> {{ $t('cases.feedRss.prompt.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
-            {{ $t('caseStudies.feedRss.prompt.intro') }}
+            {{ $t('cases.feedRss.prompt.intro') }}
           </p>
           <div class="bg-gray-800/50 rounded-lg p-4 text-sm">
-            <div class="text-gray-500 mb-2">{{ $t('caseStudies.feedRss.prompt.systemPrompt') }}</div>
+            <div class="text-gray-500 mb-2">{{ $t('cases.feedRss.prompt.systemPrompt') }}</div>
             <p class="text-gray-400 italic">
-              {{ $t('caseStudies.feedRss.prompt.promptText') }}
+              {{ $t('cases.feedRss.prompt.promptText') }}
             </p>
           </div>
         </div>
@@ -176,13 +176,13 @@
       <!-- Uso -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-cyan-400">🚀</span> {{ $t('caseStudies.feedRss.usage.title') }}
+          <span class="text-cyan-400">🚀</span> {{ $t('cases.feedRss.usage.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm">
-            <span class="text-gray-500">{{ $t('caseStudies.feedRss.usage.basicExecution') }}</span><br/>
+            <span class="text-gray-500">{{ $t('cases.feedRss.usage.basicExecution') }}</span><br/>
             <span class="text-cyan-400">python</span> -m rss_monitor.main<br/><br/>
-            <span class="text-gray-500">{{ $t('caseStudies.feedRss.usage.withOptions') }}</span><br/>
+            <span class="text-gray-500">{{ $t('cases.feedRss.usage.withOptions') }}</span><br/>
             <span class="text-cyan-400">python</span> -m rss_monitor.main \<br/>
             <span class="pl-4">--limit 5 \</span><br/>
             <span class="pl-4">--telegram \</span><br/>
@@ -193,7 +193,7 @@
 
       <!-- Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">{{ $t('caseStudies.feedRss.stack.title') }}</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('cases.feedRss.stack.title') }}</h2>
         <div class="flex flex-wrap gap-3">
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">Python 3.11+</span>
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">asyncio</span>
@@ -212,7 +212,7 @@
           to="/" 
           class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
         >
-          {{ $t('caseStudies.feedRss.cta.backToHome') }}
+          {{ $t('cases.feedRss.cta.backToHome') }}
         </NuxtLink>
       </div>
     </main>
