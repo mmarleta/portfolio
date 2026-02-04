@@ -2132,8 +2132,8 @@
       },
       "asyncProcessing": {
         "title": "⚡ Processamento Assíncrono com Celery",
-        "description": "Áudio é pesado. Um voice note de 2 minutos pode levar 5-10 segundos para transcrever. Processar sincronamente bloquearia o servidor. A solução: Celery workers dedicados.",
-        "wouldBlock": "Áudio é pesado. Um voice note de 2 minutos pode levar 5-10 segundos para transcrever. Processar sincronamente bloquearia o servidor. A solução: Celery workers dedicados.",
+        "description": "Áudio é pesado. Um voice note de 2 minutos pode levar 5-10 segundos para transcrever. Processar sincronamente bloquearia o servidor.",
+        "wouldBlock": "A solução:",
         "step1Icon": "📥",
         "step1Title": "1. Recebe Áudio",
         "step1Desc": "API recebe o arquivo de áudio (qualquer formato), valida e salva no MinIO. Retorna job_id imediatamente.",
@@ -2152,7 +2152,7 @@
         "sendingTo": "[Worker] Sending to Groq Whisper...",
         "savingResult": "[Worker] Saving result to Redis",
         "clientChecks": "# 3. Cliente verifica status",
-        "solution": ". A solução: Celery workers dedicados.",
+        "solution": "Celery workers dedicados.",
         "transcriptionComplete": "[Worker] Transcription complete: \"Oi, quero marcar uma consulta...\""
       },
       "formats": {
