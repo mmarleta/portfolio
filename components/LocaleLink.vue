@@ -16,10 +16,5 @@ const props = defineProps<{
 const attrs = useAttrs()
 const localePath = useLocalePath()
 
-const localizedTo = computed(() => {
-  if (typeof props.to === 'string') {
-    return localePath(props.to)
-  }
-  return localePath(props.to)
-})
+const localizedTo = computed(() => localePath(props.to))
 </script>

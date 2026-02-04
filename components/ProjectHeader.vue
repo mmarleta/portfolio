@@ -1,7 +1,7 @@
 <template>
   <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <NuxtLink :to="backTo" :class="backLinkClass">
+      <LocaleLink :to="backTo" :class="backLinkClass">
         <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path
             fill-rule="evenodd"
@@ -10,7 +10,7 @@
           />
         </svg>
         {{ backLabel }}
-      </NuxtLink>
+      </LocaleLink>
       <a
         v-if="rightLink"
         :href="rightLink.href"
@@ -38,9 +38,7 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
-const localePath = useLocalePath()
-
-const backTo = computed(() => localePath(props.backTo ?? '/'))
+const backTo = computed(() => props.backTo ?? '/')
 const backLabel = computed(() => t(props.backLabelKey))
 const subtitle = computed(() => props.subtitle ?? (props.subtitleKey ? t(props.subtitleKey) : ''))
 const backLinkClass = computed(

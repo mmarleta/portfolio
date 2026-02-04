@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHero :config="heroConfig" />
 
     <!-- O Problema -->
@@ -654,7 +654,7 @@ except Exception:
         </a>
       </template>
     </ProjectCTA>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

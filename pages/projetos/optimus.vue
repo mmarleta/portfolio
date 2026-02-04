@@ -1,9 +1,10 @@
 <template>
-  <article class="max-w-3xl mx-auto px-6 py-20">
-    <LocaleLink to="/#projetos" class="text-emerald-400 hover:text-emerald-300 text-sm">{{ $t('cases.optimus.back') }}</LocaleLink>
-    
-    <h1 class="text-4xl font-bold text-white mt-6 mb-4">{{ $t('cases.optimus.title') }}</h1>
-    <p class="text-xl text-gray-400 mb-12">{{ $t('cases.optimus.subtitle') }}</p>
+  <ProjectPage class="text-gray-100">
+    <article class="max-w-3xl mx-auto px-6 py-20">
+      <LocaleLink to="/#projetos" class="text-emerald-400 hover:text-emerald-300 text-sm">{{ $t('cases.optimus.back') }}</LocaleLink>
+      
+      <h1 class="text-4xl font-bold text-white mt-6 mb-4">{{ $t('cases.optimus.title') }}</h1>
+      <p class="text-xl text-gray-400 mb-12">{{ $t('cases.optimus.subtitle') }}</p>
 
     <div class="space-y-8 text-gray-300 leading-relaxed">
       
@@ -124,5 +125,6 @@
         {{ $t('cases.optimus.cta.letsChat') }}
       </a>
     </div>
-  </article>
+    </article>
+  </ProjectPage>
 </template>

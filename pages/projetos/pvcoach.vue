@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader back-label-key="nav.back" subtitle-key="cases.common.personalProject" />
 
     <ProjectHeroBlock :config="heroConfig" />
@@ -478,7 +478,7 @@ Top candidates for this position:
         <p>{{ $t('cases.pvcoach.footer') }}</p>
       </div>
     </section>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

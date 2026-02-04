@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950">
+  <ProjectPage>
     <ProjectHero :config="heroConfig" />
 
     <!-- Visão Geral -->
@@ -777,7 +777,7 @@ final goRouter = GoRouter(
         </LocaleLink>
       </template>
     </ProjectCTA>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

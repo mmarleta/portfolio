@@ -48,8 +48,8 @@
             </h3>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- AI Engine -->
-              <NuxtLink 
-                :to="localePath('/projetos/ai-engine')" 
+              <LocaleLink 
+                to="/projetos/ai-engine" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -67,11 +67,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">FSM</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">OpenAI</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- LLM Pool Management -->
-              <NuxtLink 
-                :to="localePath('/projetos/llm-pool-management')" 
+              <LocaleLink 
+                to="/projetos/llm-pool-management" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -89,11 +89,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Key Vault</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fallback</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Pricing Intelligence -->
-              <NuxtLink 
-                :to="localePath('/projetos/pricing-intelligence')" 
+              <LocaleLink 
+                to="/projetos/pricing-intelligence" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -111,11 +111,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">HNSW</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Redis</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Memory Engine -->
-              <NuxtLink 
-                :to="localePath('/projetos/memory-engine')" 
+              <LocaleLink 
+                to="/projetos/memory-engine" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -133,11 +133,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">LGPD</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Compression</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Backend Orchestrator -->
-              <NuxtLink 
-                :to="localePath('/projetos/backend-orchestrator')" 
+              <LocaleLink 
+                to="/projetos/backend-orchestrator" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-orange-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -155,11 +155,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fail-closed</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Rules Engine -->
-              <NuxtLink 
-                :to="localePath('/projetos/rules-engine')" 
+              <LocaleLink 
+                to="/projetos/rules-engine" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-red-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -177,11 +177,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">YAML</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fast-lane</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- WhatsApp Integration -->
-              <NuxtLink 
-                :to="localePath('/projetos/whatsapp-integration')" 
+              <LocaleLink 
+                to="/projetos/whatsapp-integration" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-green-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -199,11 +199,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Webhooks</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Audio Processor -->
-              <NuxtLink 
-                :to="localePath('/projetos/audio-processor')" 
+              <LocaleLink 
+                to="/projetos/audio-processor" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-pink-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -221,11 +221,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">ElevenLabs</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Celery</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Observability -->
-              <NuxtLink 
-                :to="localePath('/projetos/observability')" 
+              <LocaleLink 
+                to="/projetos/observability" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -243,11 +243,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">OpenTelemetry</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">structlog</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Frontend Apps -->
-              <NuxtLink 
-                :to="localePath('/projetos/frontend')" 
+              <LocaleLink 
+                to="/projetos/frontend" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-blue-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -265,11 +265,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Test Tools -->
-              <NuxtLink 
-                :to="localePath('/projetos/test-tools')" 
+              <LocaleLink 
+                to="/projetos/test-tools" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -287,11 +287,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Flask</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Infra DevOps -->
-              <NuxtLink 
-                :to="localePath('/projetos/infra-devops')" 
+              <LocaleLink 
+                to="/projetos/infra-devops" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -309,11 +309,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Redis Sentinel</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">GitHub Actions</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Optimus Case Study -->
-              <NuxtLink 
-                :to="localePath('/projetos/optimus')" 
+              <LocaleLink 
+                to="/projetos/optimus" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -331,7 +331,7 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">WhatsApp</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
             </div>
           </div>
 
@@ -343,8 +343,8 @@
             </h3>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- MCP Servers -->
-              <NuxtLink 
-                :to="localePath('/projetos/mcp-servers')" 
+              <LocaleLink 
+                to="/projetos/mcp-servers" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -362,11 +362,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Claude</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Python</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- AutoMark -->
-              <NuxtLink 
-                :to="localePath('/projetos/automark')" 
+              <LocaleLink 
+                to="/projetos/automark" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-orange-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -384,11 +384,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Celery</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Anti-Ban</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- iContei -->
-              <NuxtLink 
-                :to="localePath('/projetos/icontei')" 
+              <LocaleLink 
+                to="/projetos/icontei" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -406,11 +406,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">FastAPI</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- GratiDiem -->
-              <NuxtLink 
-                :to="localePath('/projetos/gratidiem')" 
+              <LocaleLink 
+                to="/projetos/gratidiem" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-amber-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -428,11 +428,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Firebase</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Gemini</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- PVCoach -->
-              <NuxtLink 
-                :to="localePath('/projetos/pvcoach')" 
+              <LocaleLink 
+                to="/projetos/pvcoach" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-amber-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -450,11 +450,11 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-LLM</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">FastAPI</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
 
               <!-- Feed-RSS -->
-              <NuxtLink 
-                :to="localePath('/projetos/feed-rss')" 
+              <LocaleLink 
+                to="/projetos/feed-rss" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-pink-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -472,7 +472,7 @@
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">OpenAI</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">aiohttp</span>
                 </div>
-              </NuxtLink>
+              </LocaleLink>
             </div>
           </div>
         </div>
@@ -525,8 +525,6 @@
 
 <script setup>
 import { SITE } from '~/data/site'
-
-const localePath = useLocalePath()
 
 useHead({
   title: 'Marcelo Marleta | Full-Stack Developer',

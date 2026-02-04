@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader back-label-key="nav.back" />
 
     <main class="max-w-4xl mx-auto px-6 py-16">
@@ -279,7 +279,7 @@ CustomerFact:
         </template>
       </ProjectCTA>
     </main>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

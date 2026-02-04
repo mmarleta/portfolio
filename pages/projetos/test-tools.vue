@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader back-label-key="cases.testTools.back" subtitle-key="cases.testTools.platformName" />
 
     <ProjectHeroBlock :config="heroConfig" />
@@ -507,7 +507,7 @@ scenario = generator.generate_scenario(
         <p>{{ $t('cases.testTools.footer') }}</p>
       </div>
     </section>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

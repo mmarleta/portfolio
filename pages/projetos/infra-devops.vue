@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader back-label-key="cases.infraDevops.back" subtitle-key="cases.infraDevops.platformName" />
 
     <ProjectHeroBlock :config="heroConfig" />
@@ -812,7 +812,7 @@ docker exec optimus_redis_8_production redis-cli info memory</code></pre>
         <p>{{ $t('cases.infraDevops.footer') }}</p>
       </div>
     </section>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

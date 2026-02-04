@@ -5,12 +5,12 @@
     <div :class="config.glowBottomClass"></div>
 
     <div class="container mx-auto px-6 relative z-10" :class="config.contentClass">
-      <NuxtLink :to="backTo" :class="backLinkClass">
+      <LocaleLink :to="backTo" :class="backLinkClass">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
         {{ t(config.backLabelKey) }}
-      </NuxtLink>
+      </LocaleLink>
 
       <div v-if="badges.length" class="flex items-center gap-4 mb-6">
         <span v-for="badge in badges" :key="badge.text" :class="badge.class">
@@ -50,7 +50,6 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
-const localePath = useLocalePath()
 
 const badges = computed(() =>
   (props.config.badgeItems ?? [])
@@ -66,7 +65,7 @@ const tags = computed(() => {
   return [...translated, ...(props.config.tags ?? [])]
 })
 
-const backTo = computed(() => localePath(props.config.backTo))
+const backTo = computed(() => props.config.backTo ?? '/')
 const sectionClass = computed(() => props.config.sectionClass ?? 'relative py-20 overflow-hidden')
 const backLinkClass = computed(
   () =>

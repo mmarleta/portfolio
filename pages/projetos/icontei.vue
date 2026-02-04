@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950">
+  <ProjectPage>
     <ProjectHero :config="heroConfig" />
 
     <!-- Visão Geral -->
@@ -866,7 +866,7 @@ async def update_rankings(self, period: str = "24h") -> dict:
         </LocaleLink>
       </template>
     </ProjectCTA>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

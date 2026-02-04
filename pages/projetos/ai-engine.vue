@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader back-label-key="cases.aiEngine.back" subtitle-key="cases.aiEngine.platformName" />
 
     <ProjectHeroBlock :config="heroConfig" />
@@ -801,7 +801,7 @@ retry_policy = RetryPolicy(
         <p>{{ $t('cases.aiEngine.footer') }}</p>
       </div>
     </section>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

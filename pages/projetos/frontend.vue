@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHero :config="heroConfig" />
 
     <!-- Duas Aplicações -->
@@ -567,7 +567,7 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
         </a>
       </template>
     </ProjectCTA>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

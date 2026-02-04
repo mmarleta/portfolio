@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader back-label-key="cases.automark.header.back" subtitle-key="cases.automark.header.projectType" />
 
     <ProjectHeroBlock :config="heroConfig" />
@@ -628,7 +628,7 @@ high_commission: commission > 20% → -1.0</code></pre>
         <p>{{ $t('cases.automark.footer.caseStudy') }}</p>
       </div>
     </section>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>

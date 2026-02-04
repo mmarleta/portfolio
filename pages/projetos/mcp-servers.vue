@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-950 text-gray-100">
+  <ProjectPage class="text-gray-100">
     <ProjectHeader
       back-label-key="nav.back"
       right-href="https://github.com/mmarleta/mcp_servers"
@@ -148,7 +148,7 @@
         </template>
       </ProjectCTA>
     </main>
-  </div>
+  </ProjectPage>
 </template>
 
 <script setup>
