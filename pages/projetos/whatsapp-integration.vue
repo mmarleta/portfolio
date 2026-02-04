@@ -624,7 +624,6 @@ import { heroGradientBySlug } from '~/data/project-heroes'
 import { SITE } from '~/data/site'
 
 const heroConfig = heroGradientBySlug.whatsappIntegration
-const { t } = useI18n()
 
 useHead({
   title: 'WhatsApp Integration - Message Aggregator, Isolated Redis | Marcelo Marleta',

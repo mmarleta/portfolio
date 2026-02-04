@@ -662,7 +662,6 @@ import { heroGradientBySlug } from '~/data/project-heroes'
 import { SITE } from '~/data/site'
 
 const heroConfig = heroGradientBySlug.audioProcessor
-const { t } = useI18n()
 
 useHead({
   title: 'Audio Processor - Multi-Provider STT/TTS, Celery, MinIO | Marcelo Marleta',

@@ -384,7 +384,6 @@ response_metadata.state_snapshot = {
 import { heroBlocksBySlug } from '~/data/project-heroes'
 
 const heroConfig = heroBlocksBySlug.observability
-const { t } = useI18n()
 
 useHead({
   title: 'Observability Stack - Prometheus, OpenTelemetry, Grafana | Marcelo Marleta',

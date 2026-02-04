@@ -1,8 +1,8 @@
 <template>
   <div class="relative">
-    <button 
-      @click="isOpen = !isOpen"
+    <button
       class="flex items-center gap-2 px-3 py-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-gray-800/50"
+      @click="isOpen = !isOpen"
     >
       <span class="text-lg">{{ currentFlag }}</span>
       <span class="text-sm hidden sm:inline">{{ currentLocale?.name }}</span>
@@ -32,9 +32,9 @@
         <button
           v-for="locale in availableLocales"
           :key="locale.code"
-          @click="switchLocale(locale.code)"
           class="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
           :class="{ 'bg-gray-800/50 text-emerald-400': locale.code === $i18n.locale }"
+          @click="switchLocale(locale.code)"
         >
           <span class="text-lg">{{ getFlag(locale.code) }}</span>
           <span class="text-sm">{{ locale.name }}</span>
@@ -48,8 +48,6 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const { locale, locales, setLocale } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-
 const isOpen = ref(false)
 
 const availableLocales = computed(() => locales.value)
