@@ -11,7 +11,7 @@ const browserGlobals = {
   setTimeout: 'readonly',
   clearTimeout: 'readonly',
   setInterval: 'readonly',
-  clearInterval: 'readonly'
+  clearInterval: 'readonly',
 }
 const nuxtGlobals = {
   defineNuxtConfig: 'readonly',
@@ -37,14 +37,14 @@ const nuxtGlobals = {
   defineEmits: 'readonly',
   defineExpose: 'readonly',
   defineOptions: 'readonly',
-  withDefaults: 'readonly'
+  withDefaults: 'readonly',
 }
 const nodeGlobals = {
   console: 'readonly',
   process: 'readonly',
   __dirname: 'readonly',
   __filename: 'readonly',
-  Buffer: 'readonly'
+  Buffer: 'readonly',
 }
 
 export default [
@@ -59,18 +59,18 @@ export default [
       globals: {
         console: 'readonly',
         ...browserGlobals,
-        ...nuxtGlobals
-      }
+        ...nuxtGlobals,
+      },
     },
     rules: {
-      'no-console': 'off'
-    }
+      'no-console': 'off',
+    },
   },
   {
     files: ['scripts/**/*.js'],
     languageOptions: {
-      globals: nodeGlobals
-    }
+      globals: nodeGlobals,
+    },
   },
   {
     files: ['**/*.vue'],
@@ -80,19 +80,19 @@ export default [
         parser: tsParser,
         sourceType: 'module',
         ecmaVersion: 'latest',
-        extraFileExtensions: ['.vue']
+        extraFileExtensions: ['.vue'],
       },
       globals: {
         console: 'readonly',
         ...browserGlobals,
-        ...nuxtGlobals
-      }
+        ...nuxtGlobals,
+      },
     },
     plugins: { vue },
     rules: {
       ...vue.configs['vue3-recommended'].rules,
       'vue/multi-word-component-names': 'off',
-      'vue/no-v-html': 'off'
-    }
-  }
+      'vue/no-v-html': 'off',
+    },
+  },
 ]

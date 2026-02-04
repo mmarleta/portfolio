@@ -17,23 +17,40 @@
           <ul class="space-y-3 text-gray-400">
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.llmPool.problem.explosiveCosts') }}</strong>: {{ $t('cases.llmPool.problem.explosiveCostsDesc') }}</span>
+              <span
+                ><strong class="text-white">{{ $t('cases.llmPool.problem.explosiveCosts') }}</strong
+                >: {{ $t('cases.llmPool.problem.explosiveCostsDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.llmPool.problem.toolCallingExpensive') }}</strong>: {{ $t('cases.llmPool.problem.toolCallingExpensiveDesc') }}</span>
+              <span
+                ><strong class="text-white">{{
+                  $t('cases.llmPool.problem.toolCallingExpensive')
+                }}</strong
+                >: {{ $t('cases.llmPool.problem.toolCallingExpensiveDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.llmPool.problem.rateLimits') }}</strong>: {{ $t('cases.llmPool.problem.rateLimitsDesc') }}</span>
+              <span
+                ><strong class="text-white">{{ $t('cases.llmPool.problem.rateLimits') }}</strong
+                >: {{ $t('cases.llmPool.problem.rateLimitsDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.llmPool.problem.vendorLockIn') }}</strong>: {{ $t('cases.llmPool.problem.vendorLockInDesc') }}</span>
+              <span
+                ><strong class="text-white">{{ $t('cases.llmPool.problem.vendorLockIn') }}</strong
+                >: {{ $t('cases.llmPool.problem.vendorLockInDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.llmPool.problem.keyManagement') }}</strong>: {{ $t('cases.llmPool.problem.keyManagementDesc') }}</span>
+              <span
+                ><strong class="text-white">{{ $t('cases.llmPool.problem.keyManagement') }}</strong
+                >: {{ $t('cases.llmPool.problem.keyManagementDesc') }}</span
+              >
             </li>
           </ul>
         </div>
@@ -47,13 +64,26 @@
         <div class="space-y-6">
           <!-- Pool Architecture -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-4">{{ $t('cases.llmPool.solution.poolArchitecture.title') }}</h3>
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">
+              {{ $t('cases.llmPool.solution.poolArchitecture.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              {{ $t('cases.llmPool.solution.poolArchitecture.intro') }} <strong class="text-white">{{ $t('cases.llmPool.solution.poolArchitecture.chat') }}</strong> {{ $t('cases.llmPool.solution.poolArchitecture.chatDesc') }} {{ $t('cases.llmPool.solution.poolArchitecture.and') }} <strong class="text-white">{{ $t('cases.llmPool.solution.poolArchitecture.tools') }}</strong> {{ $t('cases.llmPool.solution.poolArchitecture.toolsDesc') }}
+              {{ $t('cases.llmPool.solution.poolArchitecture.intro') }}
+              <strong class="text-white">{{
+                $t('cases.llmPool.solution.poolArchitecture.chat')
+              }}</strong>
+              {{ $t('cases.llmPool.solution.poolArchitecture.chatDesc') }}
+              {{ $t('cases.llmPool.solution.poolArchitecture.and') }}
+              <strong class="text-white">{{
+                $t('cases.llmPool.solution.poolArchitecture.tools')
+              }}</strong>
+              {{ $t('cases.llmPool.solution.poolArchitecture.toolsDesc') }}
             </p>
             <div class="grid md:grid-cols-2 gap-4 mb-4">
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-emerald-400 font-semibold mb-2">💬 {{ $t('cases.llmPool.solution.poolArchitecture.chatPool') }}</div>
+                <div class="text-emerald-400 font-semibold mb-2">
+                  💬 {{ $t('cases.llmPool.solution.poolArchitecture.chatPool') }}
+                </div>
                 <ul class="text-gray-500 text-sm space-y-1">
                   <li>• {{ $t('cases.llmPool.solution.poolArchitecture.chatPoolOptimized') }}</li>
                   <li>• <code class="text-yellow-400">supports_tools: false</code></li>
@@ -62,25 +92,43 @@
                 </ul>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-purple-400 font-semibold mb-2">🔧 {{ $t('cases.llmPool.solution.poolArchitecture.toolsPool') }}</div>
+                <div class="text-purple-400 font-semibold mb-2">
+                  🔧 {{ $t('cases.llmPool.solution.poolArchitecture.toolsPool') }}
+                </div>
                 <ul class="text-gray-500 text-sm space-y-1">
-                  <li>• {{ $t('cases.llmPool.solution.poolArchitecture.toolsPoolFunctionCalling') }}</li>
+                  <li>
+                    • {{ $t('cases.llmPool.solution.poolArchitecture.toolsPoolFunctionCalling') }}
+                  </li>
                   <li>• <code class="text-yellow-400">supports_tools: true</code></li>
                   <li>• {{ $t('cases.llmPool.solution.poolArchitecture.toolsPoolHigherCost') }}</li>
-                  <li>• {{ $t('cases.llmPool.solution.poolArchitecture.toolsPoolOnlyWhenNeeded') }}</li>
+                  <li>
+                    • {{ $t('cases.llmPool.solution.poolArchitecture.toolsPoolOnlyWhenNeeded') }}
+                  </li>
                 </ul>
               </div>
             </div>
             <p class="text-gray-500 text-sm">
-              <strong class="text-gray-300">{{ $t('cases.llmPool.solution.poolArchitecture.resultLabel') }}</strong>: {{ $t('cases.llmPool.solution.poolArchitecture.resultText') }}
+              <strong class="text-gray-300">{{
+                $t('cases.llmPool.solution.poolArchitecture.resultLabel')
+              }}</strong
+              >: {{ $t('cases.llmPool.solution.poolArchitecture.resultText') }}
             </p>
           </div>
 
           <!-- Key Groups -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-4">{{ $t('cases.llmPool.solution.keyGroups.title') }}</h3>
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">
+              {{ $t('cases.llmPool.solution.keyGroups.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              {{ $t('cases.llmPool.solution.keyGroups.intro') }} <strong class="text-white">{{ $t('cases.llmPool.solution.keyGroups.pools') }}</strong> {{ $t('cases.llmPool.solution.keyGroups.poolsDesc') }} {{ $t('cases.llmPool.solution.keyGroups.and') }} <strong class="text-white">{{ $t('cases.llmPool.solution.keyGroups.keyGroupsLabel') }}</strong> {{ $t('cases.llmPool.solution.keyGroups.keyGroupsDesc') }}
+              {{ $t('cases.llmPool.solution.keyGroups.intro') }}
+              <strong class="text-white">{{ $t('cases.llmPool.solution.keyGroups.pools') }}</strong>
+              {{ $t('cases.llmPool.solution.keyGroups.poolsDesc') }}
+              {{ $t('cases.llmPool.solution.keyGroups.and') }}
+              <strong class="text-white">{{
+                $t('cases.llmPool.solution.keyGroups.keyGroupsLabel')
+              }}</strong>
+              {{ $t('cases.llmPool.solution.keyGroups.keyGroupsDesc') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4">
               <pre class="text-gray-300">
@@ -103,52 +151,84 @@ Pool: "gpt4o-mini-chat"
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">{{ $t('cases.llmPool.solution.keyGroups.fernetEncryption') }}</strong>: {{ $t('cases.llmPool.solution.keyGroups.fernetEncryptionDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.llmPool.solution.keyGroups.fernetEncryption')
+                  }}</strong
+                  >: {{ $t('cases.llmPool.solution.keyGroups.fernetEncryptionDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">{{ $t('cases.llmPool.solution.keyGroups.fingerprint') }}</strong>: {{ $t('cases.llmPool.solution.keyGroups.fingerprintDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.llmPool.solution.keyGroups.fingerprint')
+                  }}</strong
+                  >: {{ $t('cases.llmPool.solution.keyGroups.fingerprintDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">{{ $t('cases.llmPool.solution.keyGroups.autoValidation') }}</strong>: {{ $t('cases.llmPool.solution.keyGroups.autoValidationDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.llmPool.solution.keyGroups.autoValidation')
+                  }}</strong
+                  >: {{ $t('cases.llmPool.solution.keyGroups.autoValidationDesc') }}</span
+                >
               </li>
             </ul>
           </div>
 
           <!-- Automatic Selection -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-4">{{ $t('cases.llmPool.solution.automaticSelection.title') }}</h3>
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">
+              {{ $t('cases.llmPool.solution.automaticSelection.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.llmPool.solution.automaticSelection.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 text-sm">
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">1</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.automaticSelection.step1') }} <code class="text-emerald-400">gpt4o-mini-chat</code></span>
+                <span class="text-gray-300"
+                  >{{ $t('cases.llmPool.solution.automaticSelection.step1') }}
+                  <code class="text-emerald-400">gpt4o-mini-chat</code></span
+                >
               </div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">2</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.automaticSelection.step2') }} <code class="text-emerald-400">openai-production</code></span>
+                <span class="text-gray-300"
+                  >{{ $t('cases.llmPool.solution.automaticSelection.step2') }}
+                  <code class="text-emerald-400">openai-production</code></span
+                >
               </div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">3</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.automaticSelection.step3') }} <code class="text-emerald-400">status: valid|active</code></span>
+                <span class="text-gray-300"
+                  >{{ $t('cases.llmPool.solution.automaticSelection.step3') }}
+                  <code class="text-emerald-400">status: valid|active</code></span
+                >
               </div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">4</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.automaticSelection.step4') }}</span>
+                <span class="text-gray-300">{{
+                  $t('cases.llmPool.solution.automaticSelection.step4')
+                }}</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">5</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.automaticSelection.step5') }}</span>
+                <span class="text-gray-300">{{
+                  $t('cases.llmPool.solution.automaticSelection.step5')
+                }}</span>
               </div>
             </div>
           </div>
 
           <!-- Global Defaults -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-4">{{ $t('cases.llmPool.solution.globalDefaults.title') }}</h3>
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">
+              {{ $t('cases.llmPool.solution.globalDefaults.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.llmPool.solution.globalDefaults.description') }}
             </p>
@@ -169,51 +249,72 @@ Pool: "gpt4o-mini-chat"
 
           <!-- Cross-Pool Fallback -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-4">{{ $t('cases.llmPool.solution.crossPoolFallback.title') }}</h3>
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">
+              {{ $t('cases.llmPool.solution.crossPoolFallback.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.llmPool.solution.crossPoolFallback.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 text-sm">
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">!</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.crossPoolFallback.exhausted') }}</span>
+                <span class="text-gray-300">{{
+                  $t('cases.llmPool.solution.crossPoolFallback.exhausted')
+                }}</span>
               </div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">→</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.crossPoolFallback.tryTools') }}</span>
+                <span class="text-gray-300">{{
+                  $t('cases.llmPool.solution.crossPoolFallback.tryTools')
+                }}</span>
               </div>
               <div class="flex items-center gap-2 mb-2">
                 <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">→</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.crossPoolFallback.tryGlobal') }}</span>
+                <span class="text-gray-300">{{
+                  $t('cases.llmPool.solution.crossPoolFallback.tryGlobal')
+                }}</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded text-xs">✓</span>
-                <span class="text-gray-300">{{ $t('cases.llmPool.solution.crossPoolFallback.success') }}</span>
+                <span class="text-gray-300">{{
+                  $t('cases.llmPool.solution.crossPoolFallback.success')
+                }}</span>
               </div>
             </div>
             <p class="text-gray-500 text-sm mt-4">
-              <strong class="text-gray-300">{{ $t('cases.llmPool.solution.crossPoolFallback.quotaEnforcerLabel') }}</strong>: {{ $t('cases.llmPool.solution.crossPoolFallback.quotaEnforcerText') }}
+              <strong class="text-gray-300">{{
+                $t('cases.llmPool.solution.crossPoolFallback.quotaEnforcerLabel')
+              }}</strong
+              >: {{ $t('cases.llmPool.solution.crossPoolFallback.quotaEnforcerText') }}
             </p>
           </div>
 
           <!-- Frontend Integration -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-4">{{ $t('cases.llmPool.solution.frontendIntegration.title') }}</h3>
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">
+              {{ $t('cases.llmPool.solution.frontendIntegration.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.llmPool.solution.frontendIntegration.description') }}
             </p>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-emerald-400 font-semibold mb-2">{{ $t('cases.llmPool.solution.frontendIntegration.poolManagement') }}</div>
+                <div class="text-emerald-400 font-semibold mb-2">
+                  {{ $t('cases.llmPool.solution.frontendIntegration.poolManagement') }}
+                </div>
                 <ul class="text-gray-500 text-sm space-y-1">
                   <li>• {{ $t('cases.llmPool.solution.frontendIntegration.poolCrud') }}</li>
                   <li>• {{ $t('cases.llmPool.solution.frontendIntegration.toggleTools') }}</li>
                   <li>• {{ $t('cases.llmPool.solution.frontendIntegration.toggleActive') }}</li>
-                  <li>• {{ $t('cases.llmPool.solution.frontendIntegration.keyGroupSelection') }}</li>
+                  <li>
+                    • {{ $t('cases.llmPool.solution.frontendIntegration.keyGroupSelection') }}
+                  </li>
                 </ul>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-purple-400 font-semibold mb-2">{{ $t('cases.llmPool.solution.frontendIntegration.keyManagement') }}</div>
+                <div class="text-purple-400 font-semibold mb-2">
+                  {{ $t('cases.llmPool.solution.frontendIntegration.keyManagement') }}
+                </div>
                 <ul class="text-gray-500 text-sm space-y-1">
                   <li>• {{ $t('cases.llmPool.solution.frontendIntegration.addRemoveKeys') }}</li>
                   <li>• {{ $t('cases.llmPool.solution.frontendIntegration.revealVault') }}</li>
@@ -268,7 +369,8 @@ Pool: "gpt4o-mini-chat"
 │   │  tenant_B.chat_provider_id: null (uses default)     │  │
 │   └─────────────────────────────────────────────────────┘  │
 │                                                             │
-└─────────────────────────────────────────────────────────────┘</pre>
+└─────────────────────────────────────────────────────────────┘</pre
+          >
         </div>
       </section>
 
@@ -279,25 +381,33 @@ Pool: "gpt4o-mini-chat"
         </h2>
         <div class="space-y-4">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.llmPool.technicalDecisions.whySeparate') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.llmPool.technicalDecisions.whySeparate') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.llmPool.technicalDecisions.whySeparateAnswer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.llmPool.technicalDecisions.whyFailFast') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.llmPool.technicalDecisions.whyFailFast') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.llmPool.technicalDecisions.whyFailFastAnswer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.llmPool.technicalDecisions.whyCache60s') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.llmPool.technicalDecisions.whyCache60s') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.llmPool.technicalDecisions.whyCache60sAnswer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.llmPool.technicalDecisions.whyCooldown60s') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.llmPool.technicalDecisions.whyCooldown60s') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.llmPool.technicalDecisions.whyCooldown60sAnswer') }}
             </p>
@@ -321,10 +431,14 @@ Pool: "gpt4o-mini-chat"
       </section>
 
       <!-- CTA -->
-      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+      <ProjectCTA
+        section-class="pt-8 border-t border-gray-800"
+        container-class="text-center"
+        actions-class="flex justify-center"
+      >
         <template #actions>
-          <LocaleLink 
-            to="/projetos/ai-engine" 
+          <LocaleLink
+            to="/projetos/ai-engine"
             class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-600 hover:bg-yellow-500 rounded-lg transition-colors"
           >
             {{ $t('cases.llmPool.nextProject') }}

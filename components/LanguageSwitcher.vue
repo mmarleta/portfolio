@@ -6,17 +6,22 @@
     >
       <span class="text-lg">{{ currentFlag }}</span>
       <span class="text-sm hidden sm:inline">{{ currentLocale?.name }}</span>
-      <svg 
-        class="w-4 h-4 transition-transform" 
+      <svg
+        class="w-4 h-4 transition-transform"
         :class="{ 'rotate-180': isOpen }"
-        fill="none" 
-        stroke="currentColor" 
+        fill="none"
+        stroke="currentColor"
         viewBox="0 0 24 24"
       >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
       </svg>
     </button>
-    
+
     <Transition
       enter-active-class="transition ease-out duration-100"
       enter-from-class="transform opacity-0 scale-95"
@@ -25,8 +30,8 @@
       leave-from-class="transform opacity-100 scale-100"
       leave-to-class="transform opacity-0 scale-95"
     >
-      <div 
-        v-if="isOpen" 
+      <div
+        v-if="isOpen"
         class="absolute right-0 mt-2 w-40 bg-gray-900 border border-gray-800 rounded-lg shadow-xl z-50 overflow-hidden"
       >
         <button
@@ -52,14 +57,12 @@ const isOpen = ref(false)
 
 const availableLocales = computed(() => locales.value)
 
-const currentLocale = computed(() => 
-  locales.value.find(l => l.code === locale.value)
-)
+const currentLocale = computed(() => locales.value.find((l) => l.code === locale.value))
 
 const flags = {
   pt: '🇧🇷',
   en: '🇺🇸',
-  es: '🇪🇸'
+  es: '🇪🇸',
 }
 
 const currentFlag = computed(() => flags[locale.value] || '🌐')

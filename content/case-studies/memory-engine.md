@@ -63,6 +63,7 @@ class CustomerFact:
 ```
 
 **Por que isso importa?**
+
 - Cliente disse "prefiro horários de manhã" → fato armazenado
 - 3 meses depois disse "agora prefiro tarde" → fato anterior invalidado, novo criado
 - Sistema mantém histórico temporal completo para auditoria
@@ -77,9 +78,9 @@ async def compose(self, ...) -> tuple[ContextContractV1, str]:
     # Busca paralela de múltiplas fontes
     handover_task = self._fetch_handover(tenant_id, conversation_id)
     memory_task = self._fetch_memory_context(tenant_id, conversation_id)
-    
+
     handover, memory = await asyncio.gather(handover_task, memory_task)
-    
+
     # Monta contrato estruturado
     contract = ContextContractV1(
         identity=self._build_identity(tenant_config),
@@ -89,7 +90,7 @@ async def compose(self, ...) -> tuple[ContextContractV1, str]:
         recent=self._build_recent(history),
         input={"text": message}
     )
-    
+
     # Flatten determinístico com ordem fixa de blocos
     return contract, self._flatten(contract)
 ```
@@ -103,23 +104,23 @@ Conversas longas são comprimidas usando OpenAI com templates verticais específ
 ```python
 class SemanticCompressor:
     async def compress_content(
-        self, content: dict, vertical: VerticalType, 
+        self, content: dict, vertical: VerticalType,
         compression_level: int = 5
     ) -> tuple[dict, float, float]:
-        
+
         # Templates específicos por vertical
         template = self.templates.get(vertical)  # dental, medical, legal...
-        
+
         # Compressão semântica preserva:
         # - Fatos críticos (nome, telefone, histórico médico)
         # - Decisões tomadas
         # - Próximos passos acordados
-        
+
         # Remove:
         # - Saudações e despedidas
         # - Confirmações redundantes
         # - Detalhes operacionais
-        
+
         return compressed, compression_ratio, processing_time
 ```
 
@@ -136,11 +137,11 @@ class ComplianceManager:
     CFM = "CFM"        # Conselho Federal de Medicina
     OAB = "OAB"        # Ordem dos Advogados
     GDPR = "GDPR"      # Europa
-    
+
     async def classify_data_compliance(
         self, content: dict, vertical: VerticalType
     ) -> ComplianceMetadata:
-        
+
         # Classifica automaticamente:
         # - data_classification: public/internal/confidential/sensitive
         # - retention_days: baseado no vertical (saúde = 20 anos)
@@ -150,13 +151,14 @@ class ComplianceManager:
 ```
 
 **Anonimização Inteligente**:
+
 ```python
 async def anonymize_sensitive_data(self, content: dict) -> dict:
     # CPF: 123.456.789-00 → ***.***.***.00
     # Phone: 11999998888 → 11*****88
     # Email: joao@email.com → ***@email.com
     # Nome: João Silva → João S***
-    
+
     content["_anonymized"] = True
     content["_anonymization_reason"] = "LGPD/CFO compliance"
     return content
@@ -175,15 +177,15 @@ async def generate_handover_summary(
     self, tenant_id: str, conversation_id: str,
     operator_id: str, resolution_status: str
 ) -> dict:
-    
+
     # Coleta interações do Redis buffer
     interactions = await self._get_human_interactions(tenant_id, conversation_id)
-    
+
     # Gera resumo para AI com OpenAI
     ai_context = await self._generate_ai_context(
         handover_data, interactions, resolution_status
     )
-    
+
     return {
         "handover_occurred": True,
         "ai_resumption_context": ai_context,  # O que o AI precisa saber
@@ -228,15 +230,19 @@ def decrypt_value(encrypted: str) -> str:
 ## Decisões Técnicas Importantes
 
 ### Por que Write-Through e não Write-Behind?
+
 Write-Behind (async write to DB) é mais performático mas arriscado. Em atendimento ao cliente, perder uma mensagem é inaceitável. Write-Through garante durabilidade imediata com performance aceitável.
 
 ### Por que schema isolation e não row-level security?
+
 RLS adiciona overhead em cada query. Com schemas separados (`t_{tenant_id}`), o isolamento é físico e a performance é máxima. Trade-off: mais complexidade operacional.
 
 ### Por que Customer Facts temporais?
+
 LLMs são péssimos em "esquecer". Se o cliente mudou de preferência, o modelo antigo com histórico completo continuaria usando a preferência antiga. Facts temporais resolvem isso elegantemente.
 
 ### Por que não usar vector DB para tudo?
+
 Vectors são ótimos para busca semântica, mas péssimos para dados estruturados que precisam de ACID, joins, e queries complexas. Híbrido: PostgreSQL + pgvector para embeddings.
 
 ---

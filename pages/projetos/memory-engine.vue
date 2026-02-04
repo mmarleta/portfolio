@@ -17,19 +17,35 @@
           <ul class="space-y-3 text-gray-400">
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.memory.problem.tokensCost') }}</strong>: {{ $t('cases.memory.problem.tokensCostDesc') }}</span>
+              <span
+                ><strong class="text-white">{{ $t('cases.memory.problem.tokensCost') }}</strong
+                >: {{ $t('cases.memory.problem.tokensCostDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.memory.problem.latencyKillsUx') }}</strong>: {{ $t('cases.memory.problem.latencyKillsUxDesc') }}</span>
+              <span
+                ><strong class="text-white">{{ $t('cases.memory.problem.latencyKillsUx') }}</strong
+                >: {{ $t('cases.memory.problem.latencyKillsUxDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.memory.problem.complianceMandatory') }}</strong>: {{ $t('cases.memory.problem.complianceMandatoryDesc') }}</span>
+              <span
+                ><strong class="text-white">{{
+                  $t('cases.memory.problem.complianceMandatory')
+                }}</strong
+                >: {{ $t('cases.memory.problem.complianceMandatoryDesc') }}</span
+              >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">{{ $t('cases.memory.problem.handoverComplicates') }}</strong>: {{ $t('cases.memory.problem.handoverComplicatesDesc') }}</span>
+              <span
+                ><strong class="text-white">{{
+                  $t('cases.memory.problem.handoverComplicates')
+                }}</strong
+                >: {{ $t('cases.memory.problem.handoverComplicatesDesc') }}</span
+              >
             </li>
           </ul>
         </div>
@@ -43,38 +59,63 @@
         <div class="space-y-6">
           <!-- Hot/Warm/Cold -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.hotWarmCold.title') }}</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">
+              {{ $t('cases.memory.solution.hotWarmCold.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.memory.solution.hotWarmCold.intro') }}
             </p>
             <div class="grid md:grid-cols-3 gap-4 mb-4">
               <div class="bg-gray-800/50 rounded-lg p-4 text-center">
                 <div class="text-2xl mb-2">🔥</div>
-                <div class="text-emerald-400 font-mono font-semibold">{{ $t('cases.memory.solution.hotWarmCold.hot') }}</div>
-                <div class="text-gray-500 text-sm">{{ $t('cases.memory.solution.hotWarmCold.hotDesc') }}</div>
-                <div class="text-gray-600 text-xs mt-1">{{ $t('cases.memory.solution.hotWarmCold.hotLatency') }}</div>
+                <div class="text-emerald-400 font-mono font-semibold">
+                  {{ $t('cases.memory.solution.hotWarmCold.hot') }}
+                </div>
+                <div class="text-gray-500 text-sm">
+                  {{ $t('cases.memory.solution.hotWarmCold.hotDesc') }}
+                </div>
+                <div class="text-gray-600 text-xs mt-1">
+                  {{ $t('cases.memory.solution.hotWarmCold.hotLatency') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4 text-center">
                 <div class="text-2xl mb-2">🌡️</div>
-                <div class="text-orange-400 font-mono font-semibold">{{ $t('cases.memory.solution.hotWarmCold.warm') }}</div>
-                <div class="text-gray-500 text-sm">{{ $t('cases.memory.solution.hotWarmCold.warmDesc') }}</div>
-                <div class="text-gray-600 text-xs mt-1">{{ $t('cases.memory.solution.hotWarmCold.warmLatency') }}</div>
+                <div class="text-orange-400 font-mono font-semibold">
+                  {{ $t('cases.memory.solution.hotWarmCold.warm') }}
+                </div>
+                <div class="text-gray-500 text-sm">
+                  {{ $t('cases.memory.solution.hotWarmCold.warmDesc') }}
+                </div>
+                <div class="text-gray-600 text-xs mt-1">
+                  {{ $t('cases.memory.solution.hotWarmCold.warmLatency') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4 text-center">
                 <div class="text-2xl mb-2">🧊</div>
-                <div class="text-blue-400 font-mono font-semibold">{{ $t('cases.memory.solution.hotWarmCold.cold') }}</div>
-                <div class="text-gray-500 text-sm">{{ $t('cases.memory.solution.hotWarmCold.coldDesc') }}</div>
-                <div class="text-gray-600 text-xs mt-1">{{ $t('cases.memory.solution.hotWarmCold.coldLatency') }}</div>
+                <div class="text-blue-400 font-mono font-semibold">
+                  {{ $t('cases.memory.solution.hotWarmCold.cold') }}
+                </div>
+                <div class="text-gray-500 text-sm">
+                  {{ $t('cases.memory.solution.hotWarmCold.coldDesc') }}
+                </div>
+                <div class="text-gray-600 text-xs mt-1">
+                  {{ $t('cases.memory.solution.hotWarmCold.coldLatency') }}
+                </div>
               </div>
             </div>
             <p class="text-gray-500 text-sm">
-              <strong class="text-gray-300">{{ $t('cases.memory.solution.hotWarmCold.writeThrough') }}</strong>: {{ $t('cases.memory.solution.hotWarmCold.writeThroughDesc') }}
+              <strong class="text-gray-300">{{
+                $t('cases.memory.solution.hotWarmCold.writeThrough')
+              }}</strong
+              >: {{ $t('cases.memory.solution.hotWarmCold.writeThroughDesc') }}
             </p>
           </div>
 
           <!-- Customer Facts -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.customerFacts.title') }}</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">
+              {{ $t('cases.memory.solution.customerFacts.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.memory.solution.customerFacts.intro') }}
             </p>
@@ -100,56 +141,99 @@ CustomerFact:
 
           <!-- Compressão Semântica -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.semanticCompression.title') }}</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">
+              {{ $t('cases.memory.solution.semanticCompression.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.memory.solution.semanticCompression.intro') }}
             </p>
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">{{ $t('cases.memory.solution.semanticCompression.preserves') }}</strong>: {{ $t('cases.memory.solution.semanticCompression.preservesDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.memory.solution.semanticCompression.preserves')
+                  }}</strong
+                  >: {{ $t('cases.memory.solution.semanticCompression.preservesDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">{{ $t('cases.memory.solution.semanticCompression.removes') }}</strong>: {{ $t('cases.memory.solution.semanticCompression.removesDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.memory.solution.semanticCompression.removes')
+                  }}</strong
+                  >: {{ $t('cases.memory.solution.semanticCompression.removesDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">{{ $t('cases.memory.solution.semanticCompression.result') }}</strong>: {{ $t('cases.memory.solution.semanticCompression.resultDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.memory.solution.semanticCompression.result')
+                  }}</strong
+                  >: {{ $t('cases.memory.solution.semanticCompression.resultDesc') }}</span
+                >
               </li>
             </ul>
           </div>
 
           <!-- Compliance -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.compliance.title') }}</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">
+              {{ $t('cases.memory.solution.compliance.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.memory.solution.compliance.intro') }}
             </p>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.lgpd') }}</div>
-                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.lgpdDesc') }}</div>
+                <div class="text-sm font-semibold text-white">
+                  {{ $t('cases.memory.solution.compliance.lgpd') }}
+                </div>
+                <div class="text-xs text-gray-500">
+                  {{ $t('cases.memory.solution.compliance.lgpdDesc') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.hipaa') }}</div>
-                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.hipaaDesc') }}</div>
+                <div class="text-sm font-semibold text-white">
+                  {{ $t('cases.memory.solution.compliance.hipaa') }}
+                </div>
+                <div class="text-xs text-gray-500">
+                  {{ $t('cases.memory.solution.compliance.hipaaDesc') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.cfo') }}</div>
-                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.cfoDesc') }}</div>
+                <div class="text-sm font-semibold text-white">
+                  {{ $t('cases.memory.solution.compliance.cfo') }}
+                </div>
+                <div class="text-xs text-gray-500">
+                  {{ $t('cases.memory.solution.compliance.cfoDesc') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.cfm') }}</div>
-                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.cfmDesc') }}</div>
+                <div class="text-sm font-semibold text-white">
+                  {{ $t('cases.memory.solution.compliance.cfm') }}
+                </div>
+                <div class="text-xs text-gray-500">
+                  {{ $t('cases.memory.solution.compliance.cfmDesc') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.oab') }}</div>
-                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.oabDesc') }}</div>
+                <div class="text-sm font-semibold text-white">
+                  {{ $t('cases.memory.solution.compliance.oab') }}
+                </div>
+                <div class="text-xs text-gray-500">
+                  {{ $t('cases.memory.solution.compliance.oabDesc') }}
+                </div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.gdpr') }}</div>
-                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.gdprDesc') }}</div>
+                <div class="text-sm font-semibold text-white">
+                  {{ $t('cases.memory.solution.compliance.gdpr') }}
+                </div>
+                <div class="text-xs text-gray-500">
+                  {{ $t('cases.memory.solution.compliance.gdprDesc') }}
+                </div>
               </div>
             </div>
             <p class="text-gray-500 text-sm">
@@ -159,7 +243,9 @@ CustomerFact:
 
           <!-- Handover Summary -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.handover.title') }}</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">
+              {{ $t('cases.memory.solution.handover.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.memory.solution.handover.intro') }}
             </p>
@@ -197,7 +283,9 @@ CustomerFact:
 │   Latency: &lt;10ms     Latency: &lt;50ms       Latency: ~100ms   │
 │                                                             │
 │   ┌─────────┐        ┌─────────┐         ┌─────────────┐   │
-│   │ {{ $t('cases.memory.architecture.lastMsg') }}  │        │ {{ $t('cases.memory.architecture.activeSession') }} │         │ {{ $t('cases.memory.architecture.completeHistory') }}   │   │
+│   │ {{ $t('cases.memory.architecture.lastMsg') }}  │        │ {{
+              $t('cases.memory.architecture.activeSession')
+            }} │         │ {{ $t('cases.memory.architecture.completeHistory') }}   │   │
 │   │         │───────▶│         │────────▶│             │   │
 │   └─────────┘        └─────────┘         └─────────────┘   │
 │        │                   │                    │           │
@@ -209,12 +297,15 @@ CustomerFact:
 ┌─────────────────────────────────────────────────────────────┐
 │                  {{ $t('cases.memory.architecture.contextComposer') }}                         │
 ├─────────────────────────────────────────────────────────────┤
-│  {{ $t('cases.memory.architecture.factsLogic') }}  │  {{ $t('cases.memory.architecture.summaryLanguage') }}  │  {{ $t('cases.memory.architecture.recentChat') }}   │
+│  {{ $t('cases.memory.architecture.factsLogic') }}  │  {{
+              $t('cases.memory.architecture.summaryLanguage')
+            }}  │  {{ $t('cases.memory.architecture.recentChat') }}   │
 │  ───────────────  │  ────────────────────  │  ─────────────   │
 │  name: "João"     │  "Customer preferred" │  {{ $t('cases.memory.architecture.lastMsgs') }}│
 │  phone: "11..."   │  "morning, already"   │                  │
 │  pref: morning    │  "scheduled 2..."     │                  │
-└─────────────────────────────────────────────────────────────┘</pre>
+└─────────────────────────────────────────────────────────────┘</pre
+          >
         </div>
       </section>
 
@@ -225,25 +316,33 @@ CustomerFact:
         </h2>
         <div class="space-y-4">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.writeThrough.question') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.memory.decisions.writeThrough.question') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.memory.decisions.writeThrough.answer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.schemaIsolation.question') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.memory.decisions.schemaIsolation.question') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.memory.decisions.schemaIsolation.answer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.temporalFacts.question') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.memory.decisions.temporalFacts.question') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.memory.decisions.temporalFacts.answer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.factsSummary.question') }}</h3>
+            <h3 class="font-semibold text-white mb-2">
+              {{ $t('cases.memory.decisions.factsSummary.question') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.memory.decisions.factsSummary.answer') }}
             </p>
@@ -268,10 +367,14 @@ CustomerFact:
       </section>
 
       <!-- CTA -->
-      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+      <ProjectCTA
+        section-class="pt-8 border-t border-gray-800"
+        container-class="text-center"
+        actions-class="flex justify-center"
+      >
         <template #actions>
-          <LocaleLink 
-            to="/projetos/ai-engine" 
+          <LocaleLink
+            to="/projetos/ai-engine"
             class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
           >
             {{ $t('cases.memory.nextProject') }}

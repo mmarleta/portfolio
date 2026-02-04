@@ -21,7 +21,11 @@
           </span>
         </h1>
 
-        <p v-if="config.descriptionHtml" :class="descriptionClass" v-html="t(config.descriptionKey)"></p>
+        <p
+          v-if="config.descriptionHtml"
+          :class="descriptionClass"
+          v-html="t(config.descriptionKey)"
+        ></p>
         <p v-else :class="descriptionClass">
           {{ t(config.descriptionKey) }}
         </p>
@@ -49,7 +53,9 @@ const { t } = useI18n()
 const wrapperTag = computed(() => props.config.wrapperTag ?? 'div')
 const wrapperClass = computed(() => props.config.wrapperClass ?? '')
 const containerClass = computed(() => props.config.containerClass ?? '')
-const badgesWrapperClass = computed(() => props.config.badgesWrapperClass ?? 'flex items-center gap-3 mb-6')
+const badgesWrapperClass = computed(
+  () => props.config.badgesWrapperClass ?? 'flex items-center gap-3 mb-6'
+)
 const titleClass = computed(() => props.config.titleClass ?? 'text-4xl md:text-5xl font-bold mb-6')
 const descriptionClass = computed(
   () => props.config.descriptionClass ?? 'text-xl text-gray-400 leading-relaxed'
@@ -63,20 +69,22 @@ const badges = computed(() =>
   (props.config.badgeItems ?? [])
     .map((badge) => ({
       class: badge.class,
-      text: badge.text ?? (badge.textKey ? t(badge.textKey) : '')
+      text: badge.text ?? (badge.textKey ? t(badge.textKey) : ''),
     }))
     .filter((badge) => badge.text)
 )
 
 const metrics = computed(() =>
   (props.config.metrics ?? []).map((metric) => ({
-    value:
-      metric.value ??
-      (metric.valueKey ? t(metric.valueKey) : ''),
+    value: metric.value ?? (metric.valueKey ? t(metric.valueKey) : ''),
     label: t(metric.labelKey),
-    valueClass: metric.valueClass ?? props.config.metricValueClass ?? 'text-3xl font-bold text-gray-200',
+    valueClass:
+      metric.valueClass ?? props.config.metricValueClass ?? 'text-3xl font-bold text-gray-200',
     labelClass: metric.labelClass ?? props.config.metricLabelClass ?? 'text-sm text-gray-500 mt-1',
-    cardClass: metric.cardClass ?? props.config.metricCardClass ?? 'bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center'
+    cardClass:
+      metric.cardClass ??
+      props.config.metricCardClass ??
+      'bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center',
   }))
 )
 </script>

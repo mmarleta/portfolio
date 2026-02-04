@@ -14,15 +14,15 @@
             {{ $t('hero.description') }}
           </p>
           <div class="flex gap-4">
-            <a 
-              :href="SITE.githubUrl" 
+            <a
+              :href="SITE.githubUrl"
               target="_blank"
               class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
             >
               {{ $t('hero.github') }}
             </a>
-            <a 
-              :href="SITE.linkedinUrl" 
+            <a
+              :href="SITE.linkedinUrl"
               target="_blank"
               class="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition-colors"
             >
@@ -48,15 +48,19 @@
             </h3>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- AI Engine -->
-              <LocaleLink 
-                to="/projetos/ai-engine" 
+              <LocaleLink
+                to="/projetos/ai-engine"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🤖</span>
-                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors"
+                >
                   {{ $t('cards.aiEngine.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -70,15 +74,19 @@
               </LocaleLink>
 
               <!-- LLM Pool Management -->
-              <LocaleLink 
-                to="/projetos/llm-pool-management" 
+              <LocaleLink
+                to="/projetos/llm-pool-management"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">💰</span>
-                  <span class="text-xs text-gray-600 group-hover:text-yellow-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-yellow-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors"
+                >
                   {{ $t('cards.llmPool.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -92,15 +100,19 @@
               </LocaleLink>
 
               <!-- Pricing Intelligence -->
-              <LocaleLink 
-                to="/projetos/pricing-intelligence" 
+              <LocaleLink
+                to="/projetos/pricing-intelligence"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">💰</span>
-                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors"
+                >
                   {{ $t('cards.pricing.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -114,13 +126,15 @@
               </LocaleLink>
 
               <!-- Memory Engine -->
-              <LocaleLink 
-                to="/projetos/memory-engine" 
+              <LocaleLink
+                to="/projetos/memory-engine"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🧠</span>
-                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
                   {{ $t('cards.memory.title') }}
@@ -136,15 +150,19 @@
               </LocaleLink>
 
               <!-- Backend Orchestrator -->
-              <LocaleLink 
-                to="/projetos/backend-orchestrator" 
+              <LocaleLink
+                to="/projetos/backend-orchestrator"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-orange-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">⚙️</span>
-                  <span class="text-xs text-gray-600 group-hover:text-orange-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-orange-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-orange-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-orange-400 transition-colors"
+                >
                   {{ $t('cards.backend.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -158,13 +176,15 @@
               </LocaleLink>
 
               <!-- Rules Engine -->
-              <LocaleLink 
-                to="/projetos/rules-engine" 
+              <LocaleLink
+                to="/projetos/rules-engine"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-red-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">📜</span>
-                  <span class="text-xs text-gray-600 group-hover:text-red-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-red-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-red-400 transition-colors">
                   {{ $t('cards.rules.title') }}
@@ -180,13 +200,15 @@
               </LocaleLink>
 
               <!-- WhatsApp Integration -->
-              <LocaleLink 
-                to="/projetos/whatsapp-integration" 
+              <LocaleLink
+                to="/projetos/whatsapp-integration"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-green-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">💬</span>
-                  <span class="text-xs text-gray-600 group-hover:text-green-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-green-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-green-400 transition-colors">
                   {{ $t('cards.whatsapp.title') }}
@@ -202,13 +224,15 @@
               </LocaleLink>
 
               <!-- Audio Processor -->
-              <LocaleLink 
-                to="/projetos/audio-processor" 
+              <LocaleLink
+                to="/projetos/audio-processor"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-pink-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🎙️</span>
-                  <span class="text-xs text-gray-600 group-hover:text-pink-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-pink-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-pink-400 transition-colors">
                   {{ $t('cards.audio.title') }}
@@ -224,15 +248,19 @@
               </LocaleLink>
 
               <!-- Observability -->
-              <LocaleLink 
-                to="/projetos/observability" 
+              <LocaleLink
+                to="/projetos/observability"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">📊</span>
-                  <span class="text-xs text-gray-600 group-hover:text-yellow-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-yellow-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors"
+                >
                   {{ $t('cards.observability.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -246,13 +274,15 @@
               </LocaleLink>
 
               <!-- Frontend Apps -->
-              <LocaleLink 
-                to="/projetos/frontend" 
+              <LocaleLink
+                to="/projetos/frontend"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-blue-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🖥️</span>
-                  <span class="text-xs text-gray-600 group-hover:text-blue-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-blue-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
                   {{ $t('cards.frontend.title') }}
@@ -268,15 +298,19 @@
               </LocaleLink>
 
               <!-- Test Tools -->
-              <LocaleLink 
-                to="/projetos/test-tools" 
+              <LocaleLink
+                to="/projetos/test-tools"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🧪</span>
-                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors"
+                >
                   {{ $t('cards.testTools.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -290,13 +324,15 @@
               </LocaleLink>
 
               <!-- Infra DevOps -->
-              <LocaleLink 
-                to="/projetos/infra-devops" 
+              <LocaleLink
+                to="/projetos/infra-devops"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🐳</span>
-                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
                   {{ $t('cards.infraDevops.title') }}
@@ -312,15 +348,19 @@
               </LocaleLink>
 
               <!-- Optimus Case Study -->
-              <LocaleLink 
-                to="/projetos/optimus" 
+              <LocaleLink
+                to="/projetos/optimus"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🏗️</span>
-                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors"
+                >
                   {{ $t('cards.architecture.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -343,13 +383,15 @@
             </h3>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- MCP Servers -->
-              <LocaleLink 
-                to="/projetos/mcp-servers" 
+              <LocaleLink
+                to="/projetos/mcp-servers"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🛠️</span>
-                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
                   {{ $t('cards.mcp.title') }}
@@ -365,15 +407,19 @@
               </LocaleLink>
 
               <!-- AutoMark -->
-              <LocaleLink 
-                to="/projetos/automark" 
+              <LocaleLink
+                to="/projetos/automark"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-orange-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🛒</span>
-                  <span class="text-xs text-gray-600 group-hover:text-orange-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-orange-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-orange-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-orange-400 transition-colors"
+                >
                   {{ $t('cards.automark.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -387,15 +433,19 @@
               </LocaleLink>
 
               <!-- iContei -->
-              <LocaleLink 
-                to="/projetos/icontei" 
+              <LocaleLink
+                to="/projetos/icontei"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🕐</span>
-                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors"
+                    >→</span
+                  >
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
+                <h4
+                  class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors"
+                >
                   {{ $t('cards.icontei.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
@@ -409,13 +459,15 @@
               </LocaleLink>
 
               <!-- GratiDiem -->
-              <LocaleLink 
-                to="/projetos/gratidiem" 
+              <LocaleLink
+                to="/projetos/gratidiem"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-amber-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">🙏</span>
-                  <span class="text-xs text-gray-600 group-hover:text-amber-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-amber-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-amber-400 transition-colors">
                   {{ $t('cards.gratidiem.title') }}
@@ -431,13 +483,15 @@
               </LocaleLink>
 
               <!-- PVCoach -->
-              <LocaleLink 
-                to="/projetos/pvcoach" 
+              <LocaleLink
+                to="/projetos/pvcoach"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-amber-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">♔</span>
-                  <span class="text-xs text-gray-600 group-hover:text-amber-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-amber-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-amber-400 transition-colors">
                   {{ $t('cards.pvcoach.title') }}
@@ -453,13 +507,15 @@
               </LocaleLink>
 
               <!-- Feed-RSS -->
-              <LocaleLink 
-                to="/projetos/feed-rss" 
+              <LocaleLink
+                to="/projetos/feed-rss"
                 class="group bg-gray-900/50 border border-gray-800 hover:border-pink-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
                   <span class="text-2xl">📡</span>
-                  <span class="text-xs text-gray-600 group-hover:text-pink-400 transition-colors">→</span>
+                  <span class="text-xs text-gray-600 group-hover:text-pink-400 transition-colors"
+                    >→</span
+                  >
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-pink-400 transition-colors">
                   {{ $t('cards.feedRss.title') }}
@@ -493,7 +549,7 @@
                 <li>Docker / Kubernetes</li>
               </ul>
             </div>
-            
+
             <!-- AI/ML -->
             <div>
               <h3 class="text-emerald-400 font-semibold mb-4">{{ $t('stack.ai') }}</h3>
@@ -504,7 +560,7 @@
                 <li>Whisper / ElevenLabs</li>
               </ul>
             </div>
-            
+
             <!-- Infra -->
             <div>
               <h3 class="text-emerald-400 font-semibold mb-4">{{ $t('stack.infra') }}</h3>
@@ -519,7 +575,6 @@
         </div>
       </section>
     </main>
-
   </div>
 </template>
 
@@ -529,7 +584,10 @@ import { SITE } from '~/data/site'
 useHead({
   title: 'Marcelo Marleta | Full-Stack Developer',
   meta: [
-    { name: 'description', content: 'Full-Stack Developer especializado em sistemas AI/LLM e arquiteturas escaláveis.' },
+    {
+      name: 'description',
+      content: 'Full-Stack Developer especializado em sistemas AI/LLM e arquiteturas escaláveis.',
+    },
   ],
 })
 </script>

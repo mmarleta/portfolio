@@ -20,13 +20,17 @@
           </p>
           <div class="grid md:grid-cols-2 gap-4 mt-6">
             <div class="bg-gray-800/50 rounded-lg p-4">
-              <div class="text-pink-400 font-semibold mb-2">{{ $t('cases.feedRss.overview.input') }}</div>
+              <div class="text-pink-400 font-semibold mb-2">
+                {{ $t('cases.feedRss.overview.input') }}
+              </div>
               <p class="text-gray-500 text-sm">
                 {{ $t('cases.feedRss.overview.inputDesc') }}
               </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4">
-              <div class="text-pink-400 font-semibold mb-2">{{ $t('cases.feedRss.overview.output') }}</div>
+              <div class="text-pink-400 font-semibold mb-2">
+                {{ $t('cases.feedRss.overview.output') }}
+              </div>
               <p class="text-gray-500 text-sm">
                 {{ $t('cases.feedRss.overview.outputDesc') }}
               </p>
@@ -73,7 +77,8 @@
 │  - Telegram Bot API                                         │
 │  - Discord Webhooks                                         │
 │  - Async parallel delivery                                  │
-└─────────────────────────────────────────────────────────────┘</pre>
+└─────────────────────────────────────────────────────────────┘</pre
+          >
         </div>
       </section>
 
@@ -85,7 +90,8 @@
         <div class="space-y-4">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">📥</span> {{ $t('cases.feedRss.services.feedService.title') }}
+              <span class="text-pink-400">📥</span>
+              {{ $t('cases.feedRss.services.feedService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.feedRss.services.feedService.desc') }}
@@ -93,7 +99,8 @@
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">🔍</span> {{ $t('cases.feedRss.services.filterService.title') }}
+              <span class="text-pink-400">🔍</span>
+              {{ $t('cases.feedRss.services.filterService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.feedRss.services.filterService.desc') }}
@@ -101,7 +108,8 @@
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">🤖</span> {{ $t('cases.feedRss.services.aiService.title') }}
+              <span class="text-pink-400">🤖</span>
+              {{ $t('cases.feedRss.services.aiService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.feedRss.services.aiService.desc') }}
@@ -109,7 +117,8 @@
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
-              <span class="text-pink-400">💾</span> {{ $t('cases.feedRss.services.stateService.title') }}
+              <span class="text-pink-400">💾</span>
+              {{ $t('cases.feedRss.services.stateService.title') }}
             </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.feedRss.services.stateService.desc') }}
@@ -143,12 +152,14 @@
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm">
-            <span class="text-gray-500">{{ $t('cases.feedRss.usage.basicExecution') }}</span><br/>
-            <span class="text-cyan-400">python</span> -m rss_monitor.main<br/><br/>
-            <span class="text-gray-500">{{ $t('cases.feedRss.usage.withOptions') }}</span><br/>
-            <span class="text-cyan-400">python</span> -m rss_monitor.main \<br/>
-            <span class="pl-4">--limit 5 \</span><br/>
-            <span class="pl-4">--telegram \</span><br/>
+            <span class="text-gray-500">{{ $t('cases.feedRss.usage.basicExecution') }}</span
+            ><br />
+            <span class="text-cyan-400">python</span> -m rss_monitor.main<br /><br />
+            <span class="text-gray-500">{{ $t('cases.feedRss.usage.withOptions') }}</span
+            ><br />
+            <span class="text-cyan-400">python</span> -m rss_monitor.main \<br />
+            <span class="pl-4">--limit 5 \</span><br />
+            <span class="pl-4">--telegram \</span><br />
             <span class="pl-4">--save-dir ./output</span>
           </div>
         </div>
@@ -170,10 +181,14 @@
       </section>
 
       <!-- CTA -->
-      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+      <ProjectCTA
+        section-class="pt-8 border-t border-gray-800"
+        container-class="text-center"
+        actions-class="flex justify-center"
+      >
         <template #actions>
-          <LocaleLink 
-            to="/" 
+          <LocaleLink
+            to="/"
             class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
           >
             {{ $t('cases.feedRss.cta.backToHome') }}

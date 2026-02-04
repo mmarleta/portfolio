@@ -38,50 +38,87 @@
         </h2>
         <div class="space-y-6">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">{{ $t('cases.pricing.solution.pricingFastLane.title') }}</h3>
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">
+              {{ $t('cases.pricing.solution.pricingFastLane.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.pricing.solution.pricingFastLane.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm text-gray-400">
-              <div class="text-green-400">{{ $t('cases.pricing.solution.pricingFastLane.fastLaneComment') }}</div>
-              <div>semantic_routing → <span class="text-purple-400">pricing_fast_lane</span> → format_response</div>
-              <div class="text-gray-600 mt-2">{{ $t('cases.pricing.solution.pricingFastLane.normalFlowComment') }}</div>
-              <div class="text-gray-600">semantic_routing → structured_analysis → agent → tools → format</div>
+              <div class="text-green-400">
+                {{ $t('cases.pricing.solution.pricingFastLane.fastLaneComment') }}
+              </div>
+              <div>
+                semantic_routing → <span class="text-purple-400">pricing_fast_lane</span> →
+                format_response
+              </div>
+              <div class="text-gray-600 mt-2">
+                {{ $t('cases.pricing.solution.pricingFastLane.normalFlowComment') }}
+              </div>
+              <div class="text-gray-600">
+                semantic_routing → structured_analysis → agent → tools → format
+              </div>
             </div>
           </div>
 
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">{{ $t('cases.pricing.solution.adaptiveThreshold.title') }}</h3>
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">
+              {{ $t('cases.pricing.solution.adaptiveThreshold.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.pricing.solution.adaptiveThreshold.description') }}
             </p>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.shortQuery') }}</strong> {{ $t('cases.pricing.solution.adaptiveThreshold.shortQueryDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.pricing.solution.adaptiveThreshold.shortQuery')
+                  }}</strong>
+                  {{ $t('cases.pricing.solution.adaptiveThreshold.shortQueryDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.numbersQuery') }}</strong>: {{ $t('cases.pricing.solution.adaptiveThreshold.numbersQueryDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.pricing.solution.adaptiveThreshold.numbersQuery')
+                  }}</strong
+                  >: {{ $t('cases.pricing.solution.adaptiveThreshold.numbersQueryDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.multiItemQuery') }}</strong>: {{ $t('cases.pricing.solution.adaptiveThreshold.multiItemQueryDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.pricing.solution.adaptiveThreshold.multiItemQuery')
+                  }}</strong
+                  >: {{ $t('cases.pricing.solution.adaptiveThreshold.multiItemQueryDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.llmOverride') }}</strong>: {{ $t('cases.pricing.solution.adaptiveThreshold.llmOverrideDesc') }}</span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.pricing.solution.adaptiveThreshold.llmOverride')
+                  }}</strong
+                  >: {{ $t('cases.pricing.solution.adaptiveThreshold.llmOverrideDesc') }}</span
+                >
               </li>
             </ul>
           </div>
 
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">{{ $t('cases.pricing.solution.requestCoalescing.title') }}</h3>
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">
+              {{ $t('cases.pricing.solution.requestCoalescing.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.pricing.solution.requestCoalescing.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 text-sm">
-              <p class="text-gray-400 mb-2">{{ $t('cases.pricing.solution.requestCoalescing.intro') }}</p>
+              <p class="text-gray-400 mb-2">
+                {{ $t('cases.pricing.solution.requestCoalescing.intro') }}
+              </p>
               <ol class="space-y-1 text-gray-500">
                 <li>1. {{ $t('cases.pricing.solution.requestCoalescing.step1') }}</li>
                 <li>2. {{ $t('cases.pricing.solution.requestCoalescing.step2') }}</li>
@@ -122,33 +159,41 @@
 │  - Embeddings: text-embedding-3-large (3072d)               │
 │  - Reranking: BM25 + semantic score fusion                  │
 │  - Alias map: fuzzy match recovery                          │
-└─────────────────────────────────────────────────────────────┘</pre>
+└─────────────────────────────────────────────────────────────┘</pre
+          >
         </div>
       </section>
 
       <!-- Intelligent Cache Key -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-yellow-400">🔑</span> {{ $t('cases.pricing.intelligentCacheKey.title') }}
+          <span class="text-yellow-400">🔑</span>
+          {{ $t('cases.pricing.intelligentCacheKey.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
             {{ $t('cases.pricing.intelligentCacheKey.intro') }}
-            <strong class="text-white">{{ $t('cases.pricing.intelligentCacheKey.semanticSignature') }}</strong>
+            <strong class="text-white">{{
+              $t('cases.pricing.intelligentCacheKey.semanticSignature')
+            }}</strong>
             {{ $t('cases.pricing.intelligentCacheKey.basedOnItems') }}
           </p>
           <div class="grid md:grid-cols-2 gap-4 text-sm">
             <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
-              <div class="text-red-400 font-semibold mb-2">❌ {{ $t('cases.pricing.intelligentCacheKey.traditional') }}</div>
+              <div class="text-red-400 font-semibold mb-2">
+                ❌ {{ $t('cases.pricing.intelligentCacheKey.traditional') }}
+              </div>
               <div class="text-gray-500 font-mono">
-                hash("how much does cleaning cost?") ≠<br/>
+                hash("how much does cleaning cost?") ≠<br />
                 hash("price of dental cleaning")
               </div>
             </div>
             <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
-              <div class="text-emerald-400 font-semibold mb-2">✅ {{ $t('cases.pricing.intelligentCacheKey.semantic') }}</div>
+              <div class="text-emerald-400 font-semibold mb-2">
+                ✅ {{ $t('cases.pricing.intelligentCacheKey.semantic') }}
+              </div>
               <div class="text-gray-500 font-mono">
-                signature(["cleaning"]) ==<br/>
+                signature(["cleaning"]) ==<br />
                 signature(["cleaning"])
               </div>
             </div>
@@ -171,10 +216,14 @@
       </section>
 
       <!-- CTA -->
-      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+      <ProjectCTA
+        section-class="pt-8 border-t border-gray-800"
+        container-class="text-center"
+        actions-class="flex justify-center"
+      >
         <template #actions>
-          <LocaleLink 
-            to="/projetos/document-processing" 
+          <LocaleLink
+            to="/projetos/document-processing"
             class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
           >
             {{ $t('cases.pricing.nextProject') }}

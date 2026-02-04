@@ -6,9 +6,11 @@
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.frontend.architectureTitle') }}</h2>
-        
+
         <div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800 mb-12">
-          <pre class="text-sm text-blue-400 overflow-x-auto"><code>┌─────────────────────────────────────────────────────────────────────────┐
+          <pre
+            class="text-sm text-blue-400 overflow-x-auto"
+          ><code>┌─────────────────────────────────────────────────────────────────────────┐
 │                      Frontend Architecture                               │
 └─────────────────────────────────────────────────────────────────────────┘
 
@@ -47,16 +49,20 @@
                 <span class="text-2xl">🖥️</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-blue-400">{{ $t('cases.frontend.adminDashboard.title') }}</h3>
+                <h3 class="text-xl font-bold text-blue-400">
+                  {{ $t('cases.frontend.adminDashboard.title') }}
+                </h3>
                 <p class="text-sm text-gray-500">{{ $t('cases.frontend.adminDashboard.port') }}</p>
               </div>
             </div>
-            
+
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.frontend.adminDashboard.description') }}
             </p>
 
-            <h4 class="text-blue-300 font-bold mb-3">{{ $t('cases.frontend.adminDashboard.featuresTitle') }}</h4>
+            <h4 class="text-blue-300 font-bold mb-3">
+              {{ $t('cases.frontend.adminDashboard.featuresTitle') }}
+            </h4>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">💬</span>
@@ -92,16 +98,20 @@
                 <span class="text-2xl">👑</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-purple-400">{{ $t('cases.frontend.superAdminPanel.title') }}</h3>
+                <h3 class="text-xl font-bold text-purple-400">
+                  {{ $t('cases.frontend.superAdminPanel.title') }}
+                </h3>
                 <p class="text-sm text-gray-500">{{ $t('cases.frontend.superAdminPanel.port') }}</p>
               </div>
             </div>
-            
+
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.frontend.superAdminPanel.description') }}
             </p>
 
-            <h4 class="text-purple-300 font-bold mb-3">{{ $t('cases.frontend.superAdminPanel.featuresTitle') }}</h4>
+            <h4 class="text-purple-300 font-bold mb-3">
+              {{ $t('cases.frontend.superAdminPanel.featuresTitle') }}
+            </h4>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">🏢</span>
@@ -137,16 +147,20 @@
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">💬 {{ $t('cases.frontend.chatRealtime.title') }}</h2>
-        
+
         <p class="text-gray-400 mb-8 max-w-3xl">
           {{ $t('cases.frontend.chatRealtime.description') }}
         </p>
 
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-blue-400">{{ $t('cases.frontend.chatRealtime.flowTitle') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-blue-400">
+              {{ $t('cases.frontend.chatRealtime.flowTitle') }}
+            </h3>
             <div class="bg-gray-800 rounded-lg p-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code>// Frontend connects to WebSocket
+              <pre
+                class="text-sm text-gray-300 overflow-x-auto"
+              ><code>// Frontend connects to WebSocket
 const ws = new WebSocket(
   'wss://api.webotify.io/api/conversations/ws'
 );
@@ -175,41 +189,53 @@ ws.onmessage = (event) => {
           </div>
 
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-blue-400">{{ $t('cases.frontend.chatRealtime.eventsTitle') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-blue-400">
+              {{ $t('cases.frontend.chatRealtime.eventsTitle') }}
+            </h3>
             <div class="space-y-3">
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-green-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">new_message</div>
-                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.newMessage') }}</div>
+                  <div class="text-xs text-gray-500">
+                    {{ $t('cases.frontend.chatRealtime.events.newMessage') }}
+                  </div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-yellow-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">conversation_updated</div>
-                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.conversationUpdated') }}</div>
+                  <div class="text-xs text-gray-500">
+                    {{ $t('cases.frontend.chatRealtime.events.conversationUpdated') }}
+                  </div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-blue-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">handover_started</div>
-                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.handoverStarted') }}</div>
+                  <div class="text-xs text-gray-500">
+                    {{ $t('cases.frontend.chatRealtime.events.handoverStarted') }}
+                  </div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-purple-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">handover_ended</div>
-                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.handoverEnded') }}</div>
+                  <div class="text-xs text-gray-500">
+                    {{ $t('cases.frontend.chatRealtime.events.handoverEnded') }}
+                  </div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-red-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">typing</div>
-                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.typing') }}</div>
+                  <div class="text-xs text-gray-500">
+                    {{ $t('cases.frontend.chatRealtime.events.typing') }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -221,8 +247,10 @@ ws.onmessage = (event) => {
     <!-- Handover Management -->
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">⏰ {{ $t('cases.frontend.handoverManagement.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold mb-8">
+          ⏰ {{ $t('cases.frontend.handoverManagement.title') }}
+        </h2>
+
         <p class="text-gray-400 mb-8 max-w-3xl">
           {{ $t('cases.frontend.handoverManagement.description') }}
         </p>
@@ -230,7 +258,9 @@ ws.onmessage = (event) => {
         <div class="grid md:grid-cols-3 gap-6 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">🤖</div>
-            <h3 class="text-lg font-bold mb-3 text-blue-400">{{ $t('cases.frontend.handoverManagement.states.aiServing.title') }}</h3>
+            <h3 class="text-lg font-bold mb-3 text-blue-400">
+              {{ $t('cases.frontend.handoverManagement.states.aiServing.title') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.frontend.handoverManagement.states.aiServing.description') }}
             </p>
@@ -238,7 +268,9 @@ ws.onmessage = (event) => {
 
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">👤</div>
-            <h3 class="text-lg font-bold mb-3 text-yellow-400">{{ $t('cases.frontend.handoverManagement.states.handoverActive.title') }}</h3>
+            <h3 class="text-lg font-bold mb-3 text-yellow-400">
+              {{ $t('cases.frontend.handoverManagement.states.handoverActive.title') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.frontend.handoverManagement.states.handoverActive.description') }}
             </p>
@@ -246,7 +278,9 @@ ws.onmessage = (event) => {
 
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">⏰</div>
-            <h3 class="text-lg font-bold mb-3 text-red-400">{{ $t('cases.frontend.handoverManagement.states.timerExpires.title') }}</h3>
+            <h3 class="text-lg font-bold mb-3 text-red-400">
+              {{ $t('cases.frontend.handoverManagement.states.timerExpires.title') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.frontend.handoverManagement.states.timerExpires.description') }}
             </p>
@@ -254,7 +288,9 @@ ws.onmessage = (event) => {
         </div>
 
         <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-          <h4 class="text-blue-400 font-bold mb-4">{{ $t('cases.frontend.handoverManagement.timerUiTitle') }}</h4>
+          <h4 class="text-blue-400 font-bold mb-4">
+            {{ $t('cases.frontend.handoverManagement.timerUiTitle') }}
+          </h4>
           <div class="bg-gray-800 rounded-lg p-4">
             <pre class="text-sm text-gray-300 overflow-x-auto"><code>&lt;template&gt;
   &lt;div class="handover-timer" :class="timerClass"&gt;
@@ -289,101 +325,179 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <!-- SuperAdmin Features -->
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">👑 {{ $t('cases.frontend.superAdminFeatures.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold mb-8">
+          👑 {{ $t('cases.frontend.superAdminFeatures.title') }}
+        </h2>
+
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <!-- Tenant Management -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">🏢 {{ $t('cases.frontend.superAdminFeatures.tenantManagement.title') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">
+              🏢 {{ $t('cases.frontend.superAdminFeatures.tenantManagement.title') }}
+            </h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.list') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.tenantManagement.list')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.create') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.tenantManagement.create')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.edit') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.tenantManagement.edit')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.deactivate') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.tenantManagement.deactivate')
+                  }}</strong></span
+                >
               </li>
             </ul>
           </div>
 
           <!-- Prompt Configuration -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">📝 {{ $t('cases.frontend.superAdminFeatures.promptConfig.title') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">
+              📝 {{ $t('cases.frontend.superAdminFeatures.promptConfig.title') }}
+            </h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.systemPrompt') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.promptConfig.systemPrompt')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.greeting') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.promptConfig.greeting')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.intent') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.promptConfig.intent')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.handoverContext') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.promptConfig.handoverContext')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.variables') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.promptConfig.variables')
+                  }}</strong></span
+                >
               </li>
             </ul>
           </div>
 
           <!-- LLM Pools -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">🔑 {{ $t('cases.frontend.superAdminFeatures.llmPools.title') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">
+              🔑 {{ $t('cases.frontend.superAdminFeatures.llmPools.title') }}
+            </h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.globalPools') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.llmPools.globalPools')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.keyGroups') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.llmPools.keyGroups')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.reveal') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.llmPools.reveal')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.health') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.llmPools.health')
+                  }}</strong></span
+                >
               </li>
             </ul>
           </div>
 
           <!-- Preflight Panel -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">🚦 {{ $t('cases.frontend.superAdminFeatures.preflightPanel.title') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">
+              🚦 {{ $t('cases.frontend.superAdminFeatures.preflightPanel.title') }}
+            </h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-green-400">●</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.ok') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.preflightPanel.ok')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-yellow-400">●</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.warning') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.preflightPanel.warning')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-red-400">●</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.critical') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.preflightPanel.critical')
+                  }}</strong></span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.sourceBadges') }}</strong></span>
+                <span
+                  ><strong class="text-white">{{
+                    $t('cases.frontend.superAdminFeatures.preflightPanel.sourceBadges')
+                  }}</strong></span
+                >
               </li>
             </ul>
           </div>
@@ -395,7 +509,7 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">📊 {{ $t('cases.frontend.dashboard.title') }}</h2>
-        
+
         <p class="text-gray-400 mb-8 max-w-3xl">
           {{ $t('cases.frontend.dashboard.description') }}
         </p>
@@ -403,24 +517,34 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
         <div class="grid md:grid-cols-4 gap-4 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-blue-400 mb-2">247</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.conversationsToday') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.dashboard.metrics.conversationsToday') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-green-400 mb-2">12</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.activeNow') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.dashboard.metrics.activeNow') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-yellow-400 mb-2">3</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.inHandover') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.dashboard.metrics.inHandover') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-purple-400 mb-2">1.2s</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.responseTime') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.dashboard.metrics.responseTime') }}
+            </div>
           </div>
         </div>
 
         <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-          <h4 class="text-blue-400 font-bold mb-4">{{ $t('cases.frontend.dashboard.conversationsList.title') }}</h4>
+          <h4 class="text-blue-400 font-bold mb-4">
+            {{ $t('cases.frontend.dashboard.conversationsList.title') }}
+          </h4>
           <div class="space-y-3">
             <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
               <div class="flex items-center gap-3">
@@ -433,13 +557,21 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-400">{{ $t('cases.frontend.dashboard.conversationsList.lastMsg') }}: 2min</div>
-                <span class="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded">{{ $t('cases.frontend.dashboard.conversationsList.aiResponding') }}</span>
+                <div class="text-sm text-gray-400">
+                  {{ $t('cases.frontend.dashboard.conversationsList.lastMsg') }}: 2min
+                </div>
+                <span class="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded">{{
+                  $t('cases.frontend.dashboard.conversationsList.aiResponding')
+                }}</span>
               </div>
             </div>
-            <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg border border-yellow-500/30">
+            <div
+              class="flex items-center justify-between p-4 bg-gray-800 rounded-lg border border-yellow-500/30"
+            >
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center">
+                <div
+                  class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center"
+                >
                   <span class="text-yellow-400">AS</span>
                 </div>
                 <div>
@@ -448,8 +580,12 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-400">{{ $t('cases.frontend.dashboard.conversationsList.handover') }}: 12min</div>
-                <span class="text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded">{{ $t('cases.frontend.dashboard.conversationsList.operator') }}: Carlos</span>
+                <div class="text-sm text-gray-400">
+                  {{ $t('cases.frontend.dashboard.conversationsList.handover') }}: 12min
+                </div>
+                <span class="text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded"
+                  >{{ $t('cases.frontend.dashboard.conversationsList.operator') }}: Carlos</span
+                >
               </div>
             </div>
           </div>
@@ -461,60 +597,82 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.frontend.techStack.title') }}</h2>
-        
+
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.framework') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.framework') }}
+            </div>
             <p class="text-gray-400 text-sm">Vue.js 3 (Composition API)</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.styling') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.styling') }}
+            </div>
             <p class="text-gray-400 text-sm">Tailwind CSS</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.state') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.state') }}
+            </div>
             <p class="text-gray-400 text-sm">Pinia (Vue Store)</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.realtime') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.realtime') }}
+            </div>
             <p class="text-gray-400 text-sm">WebSocket</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.router') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.router') }}
+            </div>
             <p class="text-gray-400 text-sm">Vue Router 4</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.http') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.http') }}
+            </div>
             <p class="text-gray-400 text-sm">Axios / Fetch API</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.build') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.build') }}
+            </div>
             <p class="text-gray-400 text-sm">Vite</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.container') }}</div>
+            <div class="text-blue-400 font-bold mb-2">
+              {{ $t('cases.frontend.techStack.container') }}
+            </div>
             <p class="text-gray-400 text-sm">Docker (2 ports)</p>
           </div>
         </div>
 
         <!-- API Integration -->
         <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-          <h4 class="text-blue-400 font-bold mb-4">{{ $t('cases.frontend.techStack.backendIntegration.title') }}</h4>
+          <h4 class="text-blue-400 font-bold mb-4">
+            {{ $t('cases.frontend.techStack.backendIntegration.title') }}
+          </h4>
           <div class="grid md:grid-cols-2 gap-4">
             <div class="bg-gray-800 rounded-lg p-4">
-              <div class="font-bold text-white mb-2">{{ $t('cases.frontend.techStack.backendIntegration.restApis') }}</div>
+              <div class="font-bold text-white mb-2">
+                {{ $t('cases.frontend.techStack.backendIntegration.restApis') }}
+              </div>
               <code class="text-xs text-gray-400">
-                GET /api/conversations<br>
-                POST /api/chat<br>
-                GET /api/tenant-configs/{id}<br>
+                GET /api/conversations<br />
+                POST /api/chat<br />
+                GET /api/tenant-configs/{id}<br />
                 PUT /api/prompts/override/{tenant}/{prompt}
               </code>
             </div>
             <div class="bg-gray-800 rounded-lg p-4">
-              <div class="font-bold text-white mb-2">{{ $t('cases.frontend.techStack.backendIntegration.websocket') }}</div>
+              <div class="font-bold text-white mb-2">
+                {{ $t('cases.frontend.techStack.backendIntegration.websocket') }}
+              </div>
               <code class="text-xs text-gray-400">
-                wss://api.webotify.io/api/conversations/ws<br>
-                Events: new_message, handover_*, typing<br>
+                wss://api.webotify.io/api/conversations/ws<br />
+                Events: new_message, handover_*, typing<br />
                 Auth: JWT token in connection params
               </code>
             </div>
@@ -527,34 +685,53 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.frontend.results.title') }}</h2>
-        
+
         <div class="grid md:grid-cols-4 gap-6 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">&lt;100ms</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.websocketLatency') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.websocketLatencyDesc') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.results.websocketLatency') }}
+            </div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.frontend.results.websocketLatencyDesc') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">2</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.specializedApps') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.specializedAppsDesc') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.results.specializedApps') }}
+            </div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.frontend.results.specializedAppsDesc') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">RBAC</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.accessControl') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.accessControlDesc') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.results.accessControl') }}
+            </div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.frontend.results.accessControlDesc') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">30min</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.autoReturnHandover') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.autoReturnHandoverDesc') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.frontend.results.autoReturnHandover') }}
+            </div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.frontend.results.autoReturnHandoverDesc') }}
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <ProjectCTA title-key="cases.frontend.cta.title" description-key="cases.frontend.cta.description">
+    <ProjectCTA
+      title-key="cases.frontend.cta.title"
+      description-key="cases.frontend.cta.description"
+    >
       <template #actions>
         <a
           :href="`mailto:${SITE.contactEmail}`"
@@ -562,7 +739,12 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
         >
           {{ $t('cases.frontend.cta.button') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
           </svg>
         </a>
       </template>
@@ -580,10 +762,10 @@ const { t } = useI18n()
 useHead({
   title: t('cases.frontend.meta.title'),
   meta: [
-    { 
-      name: 'description', 
-      content: t('cases.frontend.meta.description')
-    }
-  ]
+    {
+      name: 'description',
+      content: t('cases.frontend.meta.description'),
+    },
+  ],
 })
 </script>

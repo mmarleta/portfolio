@@ -5,11 +5,15 @@
     <!-- Visão Geral -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.overview.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.overview.title') }}
+        </h2>
+
         <div class="grid lg:grid-cols-2 gap-12">
           <div>
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.overview.productTitle') }}</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">
+              {{ $t('cases.gratidiem.overview.productTitle') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-6">
               {{ $t('cases.gratidiem.overview.productDesc1') }}
             </p>
@@ -17,25 +21,43 @@
               {{ $t('cases.gratidiem.overview.productDesc2') }}
             </p>
           </div>
-          
+
           <div>
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.overview.metricsTitle') }}</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">
+              {{ $t('cases.gratidiem.overview.metricsTitle') }}
+            </h3>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricFilesValue') }}</div>
-                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricFilesLabel') }}</div>
+                <div class="text-3xl font-bold text-amber-400">
+                  {{ $t('cases.gratidiem.overview.metricFilesValue') }}
+                </div>
+                <div class="text-gray-400 text-sm">
+                  {{ $t('cases.gratidiem.overview.metricFilesLabel') }}
+                </div>
               </div>
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricScreensValue') }}</div>
-                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricScreensLabel') }}</div>
+                <div class="text-3xl font-bold text-amber-400">
+                  {{ $t('cases.gratidiem.overview.metricScreensValue') }}
+                </div>
+                <div class="text-gray-400 text-sm">
+                  {{ $t('cases.gratidiem.overview.metricScreensLabel') }}
+                </div>
               </div>
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricServicesValue') }}</div>
-                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricServicesLabel') }}</div>
+                <div class="text-3xl font-bold text-amber-400">
+                  {{ $t('cases.gratidiem.overview.metricServicesValue') }}
+                </div>
+                <div class="text-gray-400 text-sm">
+                  {{ $t('cases.gratidiem.overview.metricServicesLabel') }}
+                </div>
               </div>
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricModelsValue') }}</div>
-                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricModelsLabel') }}</div>
+                <div class="text-3xl font-bold text-amber-400">
+                  {{ $t('cases.gratidiem.overview.metricModelsValue') }}
+                </div>
+                <div class="text-gray-400 text-sm">
+                  {{ $t('cases.gratidiem.overview.metricModelsLabel') }}
+                </div>
               </div>
             </div>
           </div>
@@ -46,10 +68,14 @@
     <!-- Arquitetura -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.architecture.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.architecture.title') }}
+        </h2>
+
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-8 mb-12">
-          <pre class="text-sm text-gray-300 overflow-x-auto"><code>┌─────────────────────────────────────────────────────────────────────────┐
+          <pre
+            class="text-sm text-gray-300 overflow-x-auto"
+          ><code>┌─────────────────────────────────────────────────────────────────────────┐
 │                      PRESENTATION LAYER (UI)                            │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────────┐  │
 │  │    Home      │  │  Meditation  │  │   Circles    │  │  Settings  │  │
@@ -83,44 +109,56 @@
 │  └──────────────────────────┘      └────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────────────┘</code></pre>
         </div>
-        
+
         <!-- Architecture Cards -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
             <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">📱</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.presentationTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.architecture.presentationTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.architecture.presentationDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+            <div
+              class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4"
+            >
               <span class="text-2xl">🔄</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.stateTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.architecture.stateTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.architecture.stateDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
             <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">⚙️</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.businessTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.architecture.businessTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.architecture.businessDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+            <div
+              class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4"
+            >
               <span class="text-2xl">💾</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.dataTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.architecture.dataTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.architecture.dataDesc') }}
             </p>
@@ -132,67 +170,87 @@
     <!-- Features -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.features.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.features.title') }}
+        </h2>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.gratitudeTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.gratitudeTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.gratitudeDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.meditationTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.meditationTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.meditationDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.circlesTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.circlesTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.circlesDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.challengesTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.challengesTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.challengesDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.nightRitualTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.nightRitualTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.nightRitualDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.adversityTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.adversityTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.adversityDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.timeCapsuleTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.timeCapsuleTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.timeCapsuleDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.valuesTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.valuesTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.valuesDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.analyticsTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.features.analyticsTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm">
               {{ $t('cases.gratidiem.features.analyticsDesc') }}
             </p>
@@ -208,12 +266,16 @@
         <p class="text-gray-400 mb-12 max-w-3xl">
           {{ $t('cases.gratidiem.ai.description') }}
         </p>
-        
+
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.ai.engineTitle') }}</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">
+              {{ $t('cases.gratidiem.ai.engineTitle') }}
+            </h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">class AIEngine {
+              <pre
+                class="text-sm text-gray-300 overflow-x-auto"
+              ><code class="language-dart">class AIEngine {
   factory AIEngine() => _instance;
   static final AIEngine _instance = AIEngine._internal();
 
@@ -254,43 +316,57 @@
 }</code></pre>
             </div>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.ai.capabilitiesTitle') }}</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">
+              {{ $t('cases.gratidiem.ai.capabilitiesTitle') }}
+            </h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.sentimentTitle') }}</span>
+                  <span class="text-white font-medium">{{
+                    $t('cases.gratidiem.ai.sentimentTitle')
+                  }}</span>
                   <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.sentimentDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.themesTitle') }}</span>
+                  <span class="text-white font-medium">{{
+                    $t('cases.gratidiem.ai.themesTitle')
+                  }}</span>
                   <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.themesDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.responsesTitle') }}</span>
+                  <span class="text-white font-medium">{{
+                    $t('cases.gratidiem.ai.responsesTitle')
+                  }}</span>
                   <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.responsesDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.premiumTitle') }}</span>
+                  <span class="text-white font-medium">{{
+                    $t('cases.gratidiem.ai.premiumTitle')
+                  }}</span>
                   <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.premiumDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.aiAnalyticsTitle') }}</span>
-                  <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.aiAnalyticsDesc') }}</p>
+                  <span class="text-white font-medium">{{
+                    $t('cases.gratidiem.ai.aiAnalyticsTitle')
+                  }}</span>
+                  <p class="text-gray-400 text-sm">
+                    {{ $t('cases.gratidiem.ai.aiAnalyticsDesc') }}
+                  </p>
                 </div>
               </li>
             </ul>
@@ -302,14 +378,18 @@
     <!-- Monetization System -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.monetization.title') }}</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">
+          {{ $t('cases.gratidiem.monetization.title') }}
+        </h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
           {{ $t('cases.gratidiem.monetization.description') }}
         </p>
-        
+
         <div class="grid lg:grid-cols-3 gap-6 mb-12">
           <div class="bg-gray-900/50 rounded-xl border border-amber-500/30 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.monetization.appealsTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.monetization.appealsTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.gratidiem.monetization.appealsDesc') }}
             </p>
@@ -320,9 +400,11 @@
               <li>• {{ $t('cases.gratidiem.monetization.appealsExample4') }}</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.monetization.tokensTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.monetization.tokensTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.gratidiem.monetization.tokensDesc') }}
             </p>
@@ -333,9 +415,11 @@
               <li>• {{ $t('cases.gratidiem.monetization.tokensExample4') }}</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.monetization.remoteConfigTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.monetization.remoteConfigTitle') }}
+            </h3>
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.gratidiem.monetization.remoteConfigDesc') }}
             </p>
@@ -347,11 +431,15 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-          <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.monetization.triggersTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-amber-400 mb-4">
+            {{ $t('cases.gratidiem.monetization.triggersTitle') }}
+          </h3>
           <div class="bg-gray-950 rounded-lg p-4">
-            <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">class GratitudeTriggersService {
+            <pre
+              class="text-sm text-gray-300 overflow-x-auto"
+            ><code class="language-dart">class GratitudeTriggersService {
   /// Detecta o momento ideal para exibir apelo de gratidão
   Future&lt;GratitudeTrigger?&gt; detectTrigger(BuildContext context) async {
     final userState = await _getUserState();
@@ -388,11 +476,15 @@
     <!-- Firebase Stack -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.firebase.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.firebase.title') }}
+        </h2>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.authTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.firebase.authTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Firebase Auth</li>
               <li>• Google Sign-In</li>
@@ -401,9 +493,11 @@
               <li>• Token Refresh Manager</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.storageTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.firebase.storageTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Cloud Firestore</li>
               <li>• Firebase Storage</li>
@@ -412,9 +506,11 @@
               <li>• Conflict resolution</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.analyticsTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.firebase.analyticsTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Firebase Analytics</li>
               <li>• Crashlytics</li>
@@ -423,9 +519,11 @@
               <li>• User properties</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.messagingTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.firebase.messagingTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• FCM Push Notifications</li>
               <li>• Local Notifications</li>
@@ -441,16 +539,22 @@
     <!-- Dual Persistence -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.persistence.title') }}</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">
+          {{ $t('cases.gratidiem.persistence.title') }}
+        </h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
           {{ $t('cases.gratidiem.persistence.description') }}
         </p>
-        
+
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.persistence.hiveTitle') }}</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">
+              {{ $t('cases.gratidiem.persistence.hiveTitle') }}
+            </h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">// 126 models com TypeAdapters
+              <pre
+                class="text-sm text-gray-300 overflow-x-auto"
+              ><code class="language-dart">// 126 models com TypeAdapters
 @HiveType(typeId: HiveTypeIds.gratitudeEntry)
 class GratitudeEntry extends HiveObject {
   @HiveField(0)
@@ -484,11 +588,15 @@ class HiveTypeIds {
               {{ $t('cases.gratidiem.persistence.hiveDesc') }}
             </p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.persistence.syncTitle') }}</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">
+              {{ $t('cases.gratidiem.persistence.syncTitle') }}
+            </h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">class SyncService {
+              <pre
+                class="text-sm text-gray-300 overflow-x-auto"
+              ><code class="language-dart">class SyncService {
   /// Sync com conflict resolution
   Future&lt;void&gt; syncToCloud() async {
     final localChanges = await _getLocalChanges();
@@ -529,14 +637,18 @@ class HiveTypeIds {
     <!-- Navigation -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.navigation.title') }}</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">
+          {{ $t('cases.gratidiem.navigation.title') }}
+        </h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
           {{ $t('cases.gratidiem.navigation.description') }}
         </p>
-        
+
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
           <div class="bg-gray-950 rounded-lg p-4">
-            <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">// app_router.dart - 31,941 bytes, 100+ routes
+            <pre
+              class="text-sm text-gray-300 overflow-x-auto"
+            ><code class="language-dart">// app_router.dart - 31,941 bytes, 100+ routes
 final goRouter = GoRouter(
   initialLocation: '/',
   redirect: (context, state) {
@@ -589,27 +701,33 @@ final goRouter = GoRouter(
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.i18n.title') }}</h2>
-        
+
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-center">
             <div class="text-4xl mb-4">🇧🇷</div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.i18n.portuguese') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.i18n.portuguese') }}
+            </h3>
             <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.i18n.portugueseDesc') }}</p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-center">
             <div class="text-4xl mb-4">🇺🇸</div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.i18n.english') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.i18n.english') }}
+            </h3>
             <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.i18n.englishDesc') }}</p>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-center">
             <div class="text-4xl mb-4">🇪🇸</div>
-            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.i18n.spanish') }}</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">
+              {{ $t('cases.gratidiem.i18n.spanish') }}
+            </h3>
             <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.i18n.spanishDesc') }}</p>
           </div>
         </div>
-        
+
         <div class="mt-8 bg-gray-900/50 rounded-xl border border-gray-800 p-6">
           <p class="text-gray-400 text-sm">
             {{ $t('cases.gratidiem.i18n.summary') }}
@@ -621,8 +739,10 @@ final goRouter = GoRouter(
     <!-- Platforms -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.platforms.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.platforms.title') }}
+        </h2>
+
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">🤖</div>
@@ -655,11 +775,15 @@ final goRouter = GoRouter(
     <!-- Testing -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.testing.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.testing.title') }}
+        </h2>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.unitTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.testing.unitTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• flutter_test</li>
               <li>• mockito + mocktail</li>
@@ -667,27 +791,33 @@ final goRouter = GoRouter(
               <li>• coverage reports</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.widgetTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.testing.widgetTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• alchemist (golden tests)</li>
               <li>• bloc_test</li>
               <li>• network_image_mock</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.integrationTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.testing.integrationTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• integration_test</li>
               <li>• flutter_driver</li>
               <li>• patrol (E2E)</li>
             </ul>
           </div>
-          
+
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.qualityTitle') }}</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">
+              {{ $t('cases.gratidiem.testing.qualityTitle') }}
+            </h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• flutter analyze</li>
               <li>• very_good_analysis</li>
@@ -701,8 +831,10 @@ final goRouter = GoRouter(
     <!-- Stack -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.stackSection.title') }}</h2>
-        
+        <h2 class="text-3xl font-bold text-white mb-12">
+          {{ $t('cases.gratidiem.stackSection.title') }}
+        </h2>
+
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-2xl mb-2">💙</div>
@@ -766,13 +898,18 @@ final goRouter = GoRouter(
       description-class="text-gray-400 mb-8 max-w-2xl mx-auto"
     >
       <template #actions>
-        <LocaleLink 
-          to="/" 
+        <LocaleLink
+          to="/"
           class="inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
         >
           {{ $t('common.viewAllProjects') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
           </svg>
         </LocaleLink>
       </template>
@@ -788,8 +925,6 @@ const { t } = useI18n()
 
 useHead({
   title: t('cases.gratidiem.meta.title'),
-  meta: [
-    { name: 'description', content: t('cases.gratidiem.meta.description') }
-  ]
+  meta: [{ name: 'description', content: t('cases.gratidiem.meta.description') }],
 })
 </script>

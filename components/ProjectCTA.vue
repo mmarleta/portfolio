@@ -2,7 +2,11 @@
   <section :class="sectionClass">
     <div :class="containerClass">
       <h2 v-if="titleKey" :class="titleClass">{{ t(titleKey) }}</h2>
-      <p v-if="descriptionKey && descriptionHtml" :class="descriptionClass" v-html="t(descriptionKey)"></p>
+      <p
+        v-if="descriptionKey && descriptionHtml"
+        :class="descriptionClass"
+        v-html="t(descriptionKey)"
+      ></p>
       <p v-else-if="descriptionKey" :class="descriptionClass">{{ t(descriptionKey) }}</p>
       <div v-if="$slots.actions" :class="actionsClass">
         <slot name="actions" />

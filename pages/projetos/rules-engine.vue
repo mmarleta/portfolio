@@ -6,14 +6,18 @@
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8 text-red-400">{{ $t('cases.rules.problem.title') }}</h2>
-        
+
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <!-- JSONLogic Problems -->
           <div class="bg-red-950/20 rounded-xl p-6 border border-red-900/30">
-            <h3 class="text-xl font-bold mb-4 text-red-400">❌ {{ $t('cases.rules.problem.jsonLogicTrap') }}</h3>
-            
+            <h3 class="text-xl font-bold mb-4 text-red-400">
+              ❌ {{ $t('cases.rules.problem.jsonLogicTrap') }}
+            </h3>
+
             <div class="bg-gray-900 rounded-lg p-4 mb-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code>{{ $t('cases.rules.problem.simpleRule') }}
+              <pre
+                class="text-sm text-gray-300 overflow-x-auto"
+              ><code>{{ $t('cases.rules.problem.simpleRule') }}
 {
   "and": [
     {"&lt;": [{"var": "last_visit_days"}, 180]},
@@ -25,37 +29,66 @@
   ]
 }</code></pre>
             </div>
-            
+
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-2">
                 <span class="text-red-400 mt-1">⚠️</span>
-                <span><strong class="text-red-300">{{ $t('cases.rules.problem.issues.interpreted') }}</strong> - {{ $t('cases.rules.problem.issues.interpretedDesc') }}</span>
+                <span
+                  ><strong class="text-red-300">{{
+                    $t('cases.rules.problem.issues.interpreted')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.issues.interpretedDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-red-400 mt-1">⚠️</span>
-                <span><strong class="text-red-300">{{ $t('cases.rules.problem.issues.limitedOps') }}</strong> - {{ $t('cases.rules.problem.issues.limitedOpsDesc') }}</span>
+                <span
+                  ><strong class="text-red-300">{{
+                    $t('cases.rules.problem.issues.limitedOps')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.issues.limitedOpsDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-red-400 mt-1">⚠️</span>
-                <span><strong class="text-red-300">{{ $t('cases.rules.problem.issues.noTypeCheck') }}</strong> - {{ $t('cases.rules.problem.issues.noTypeCheckDesc') }}</span>
+                <span
+                  ><strong class="text-red-300">{{
+                    $t('cases.rules.problem.issues.noTypeCheck')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.issues.noTypeCheckDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-red-400 mt-1">⚠️</span>
-                <span><strong class="text-red-300">{{ $t('cases.rules.problem.issues.debugImpossible') }}</strong> - {{ $t('cases.rules.problem.issues.debugImpossibleDesc') }}</span>
+                <span
+                  ><strong class="text-red-300">{{
+                    $t('cases.rules.problem.issues.debugImpossible')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.issues.debugImpossibleDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-red-400 mt-1">⚠️</span>
-                <span><strong class="text-red-300">{{ $t('cases.rules.problem.issues.slowPerf') }}</strong> {{ $t('cases.rules.problem.issues.slowPerfDesc') }}</span>
+                <span
+                  ><strong class="text-red-300">{{
+                    $t('cases.rules.problem.issues.slowPerf')
+                  }}</strong>
+                  {{ $t('cases.rules.problem.issues.slowPerfDesc') }}</span
+                >
               </li>
             </ul>
           </div>
 
           <!-- Python Native -->
           <div class="bg-emerald-950/20 rounded-xl p-6 border border-emerald-900/30">
-            <h3 class="text-xl font-bold mb-4 text-emerald-400">✅ {{ $t('cases.rules.problem.pythonNativeSolution') }}</h3>
-            
+            <h3 class="text-xl font-bold mb-4 text-emerald-400">
+              ✅ {{ $t('cases.rules.problem.pythonNativeSolution') }}
+            </h3>
+
             <div class="bg-gray-900 rounded-lg p-4 mb-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code>{{ $t('cases.rules.problem.sameRule') }}
+              <pre
+                class="text-sm text-gray-300 overflow-x-auto"
+              ><code>{{ $t('cases.rules.problem.sameRule') }}
 lambda facts: (
     facts.get('last_visit_days', 999) &lt; 180 and
     facts.get('has_insurance') is True and
@@ -63,27 +96,52 @@ lambda facts: (
      facts.get('vertical') in ('dental', 'medical'))
 )</code></pre>
             </div>
-            
+
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-emerald-300">{{ $t('cases.rules.problem.benefits.compiledOnce') }}</strong> - {{ $t('cases.rules.problem.benefits.compiledOnceDesc') }}</span>
+                <span
+                  ><strong class="text-emerald-300">{{
+                    $t('cases.rules.problem.benefits.compiledOnce')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.benefits.compiledOnceDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-emerald-300">{{ $t('cases.rules.problem.benefits.fullPower') }}</strong> - {{ $t('cases.rules.problem.benefits.fullPowerDesc') }}</span>
+                <span
+                  ><strong class="text-emerald-300">{{
+                    $t('cases.rules.problem.benefits.fullPower')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.benefits.fullPowerDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-emerald-300">{{ $t('cases.rules.problem.benefits.typeHints') }}</strong> - {{ $t('cases.rules.problem.benefits.typeHintsDesc') }}</span>
+                <span
+                  ><strong class="text-emerald-300">{{
+                    $t('cases.rules.problem.benefits.typeHints')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.benefits.typeHintsDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-emerald-300">{{ $t('cases.rules.problem.benefits.normalDebug') }}</strong> - {{ $t('cases.rules.problem.benefits.normalDebugDesc') }}</span>
+                <span
+                  ><strong class="text-emerald-300">{{
+                    $t('cases.rules.problem.benefits.normalDebug')
+                  }}</strong>
+                  - {{ $t('cases.rules.problem.benefits.normalDebugDesc') }}</span
+                >
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-emerald-300">{{ $t('cases.rules.problem.benefits.fastPerf') }}</strong> {{ $t('cases.rules.problem.benefits.fastPerfDesc') }}</span>
+                <span
+                  ><strong class="text-emerald-300">{{
+                    $t('cases.rules.problem.benefits.fastPerf')
+                  }}</strong>
+                  {{ $t('cases.rules.problem.benefits.fastPerfDesc') }}</span
+                >
               </li>
             </ul>
           </div>
@@ -91,24 +149,34 @@ lambda facts: (
 
         <!-- Benchmark -->
         <div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
-          <h3 class="text-xl font-bold mb-6 text-emerald-400">📊 {{ $t('cases.rules.problem.benchmark.title') }}</h3>
-          
+          <h3 class="text-xl font-bold mb-6 text-emerald-400">
+            📊 {{ $t('cases.rules.problem.benchmark.title') }}
+          </h3>
+
           <div class="grid md:grid-cols-4 gap-6">
             <div class="text-center p-4 bg-gray-800/50 rounded-lg">
               <div class="text-4xl font-bold text-red-400 mb-2">~150ms</div>
-              <div class="text-sm text-gray-400">{{ $t('cases.rules.problem.benchmark.jsonLogic') }}</div>
+              <div class="text-sm text-gray-400">
+                {{ $t('cases.rules.problem.benchmark.jsonLogic') }}
+              </div>
             </div>
             <div class="text-center p-4 bg-gray-800/50 rounded-lg">
               <div class="text-4xl font-bold text-emerald-400 mb-2">&lt;0.5ms</div>
-              <div class="text-sm text-gray-400">{{ $t('cases.rules.problem.benchmark.pythonNative') }}</div>
+              <div class="text-sm text-gray-400">
+                {{ $t('cases.rules.problem.benchmark.pythonNative') }}
+              </div>
             </div>
             <div class="text-center p-4 bg-gray-800/50 rounded-lg">
               <div class="text-4xl font-bold text-emerald-400 mb-2">300x</div>
-              <div class="text-sm text-gray-400">{{ $t('cases.rules.problem.benchmark.fasterCold') }}</div>
+              <div class="text-sm text-gray-400">
+                {{ $t('cases.rules.problem.benchmark.fasterCold') }}
+              </div>
             </div>
             <div class="text-center p-4 bg-gray-800/50 rounded-lg">
               <div class="text-4xl font-bold text-emerald-400 mb-2">1000x</div>
-              <div class="text-sm text-gray-400">{{ $t('cases.rules.problem.benchmark.fasterCached') }}</div>
+              <div class="text-sm text-gray-400">
+                {{ $t('cases.rules.problem.benchmark.fasterCached') }}
+              </div>
             </div>
           </div>
         </div>
@@ -119,9 +187,11 @@ lambda facts: (
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.rules.architecture.title') }}</h2>
-        
+
         <div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800 mb-8">
-          <pre class="text-sm text-emerald-400 overflow-x-auto"><code>┌─────────────────────────────────────────────────────────────────────────┐
+          <pre
+            class="text-sm text-emerald-400 overflow-x-auto"
+          ><code>┌─────────────────────────────────────────────────────────────────────────┐
 │                        {{ $t('cases.rules.architecture.requestFlow') }}                      │
 └─────────────────────────────────────────────────────────────────────────┘
 
@@ -152,34 +222,61 @@ lambda facts: (
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">🎯</div>
-            <h3 class="text-lg font-bold mb-3 text-emerald-400">{{ $t('cases.rules.architecture.components.rulesEngine.title') }}</h3>
+            <h3 class="text-lg font-bold mb-3 text-emerald-400">
+              {{ $t('cases.rules.architecture.components.rulesEngine.title') }}
+            </h3>
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.rules.architecture.components.rulesEngine.desc') }}
             </p>
             <ul class="text-sm text-gray-400 space-y-2">
-              <li v-for="(item, index) in $tm('cases.rules.architecture.components.rulesEngine.items')" :key="index">• {{ item }}</li>
+              <li
+                v-for="(item, index) in $tm(
+                  'cases.rules.architecture.components.rulesEngine.items'
+                )"
+                :key="index"
+              >
+                • {{ item }}
+              </li>
             </ul>
           </div>
 
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">🔄</div>
-            <h3 class="text-lg font-bold mb-3 text-emerald-400">{{ $t('cases.rules.architecture.components.rulesCoordinator.title') }}</h3>
+            <h3 class="text-lg font-bold mb-3 text-emerald-400">
+              {{ $t('cases.rules.architecture.components.rulesCoordinator.title') }}
+            </h3>
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.rules.architecture.components.rulesCoordinator.desc') }}
             </p>
             <ul class="text-sm text-gray-400 space-y-2">
-              <li v-for="(item, index) in $tm('cases.rules.architecture.components.rulesCoordinator.items')" :key="index">• {{ item }}</li>
+              <li
+                v-for="(item, index) in $tm(
+                  'cases.rules.architecture.components.rulesCoordinator.items'
+                )"
+                :key="index"
+              >
+                • {{ item }}
+              </li>
             </ul>
           </div>
 
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">🧠</div>
-            <h3 class="text-lg font-bold mb-3 text-emerald-400">{{ $t('cases.rules.architecture.components.contextEnrichment.title') }}</h3>
+            <h3 class="text-lg font-bold mb-3 text-emerald-400">
+              {{ $t('cases.rules.architecture.components.contextEnrichment.title') }}
+            </h3>
             <p class="text-gray-400 text-sm mb-4">
               {{ $t('cases.rules.architecture.components.contextEnrichment.desc') }}
             </p>
             <ul class="text-sm text-gray-400 space-y-2">
-              <li v-for="(item, index) in $tm('cases.rules.architecture.components.contextEnrichment.items')" :key="index">• {{ item }}</li>
+              <li
+                v-for="(item, index) in $tm(
+                  'cases.rules.architecture.components.contextEnrichment.items'
+                )"
+                :key="index"
+              >
+                • {{ item }}
+              </li>
             </ul>
           </div>
         </div>
@@ -190,7 +287,7 @@ lambda facts: (
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.rules.runtimeCreation.title') }}</h2>
-        
+
         <p class="text-gray-400 mb-8 max-w-3xl">
           {{ $t('cases.rules.runtimeCreation.intro') }}
         </p>
@@ -198,7 +295,9 @@ lambda facts: (
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <!-- API para criar regras -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-emerald-400">{{ $t('cases.rules.runtimeCreation.apiTitle') }}</h3>
+            <h3 class="text-lg font-bold mb-4 text-emerald-400">
+              {{ $t('cases.rules.runtimeCreation.apiTitle') }}
+            </h3>
             <div class="bg-gray-800 rounded-lg p-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code>POST /api/rules/
 {
@@ -229,21 +328,27 @@ lambda facts: (
           <!-- Exemplos por vertical -->
           <div class="space-y-4">
             <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-              <h4 class="font-bold text-emerald-400 mb-2">{{ $t('cases.rules.runtimeCreation.examples.dental.title') }}</h4>
+              <h4 class="font-bold text-emerald-400 mb-2">
+                {{ $t('cases.rules.runtimeCreation.examples.dental.title') }}
+              </h4>
               <p class="text-sm text-gray-400">
                 {{ $t('cases.rules.runtimeCreation.examples.dental.desc') }}
               </p>
             </div>
 
             <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-              <h4 class="font-bold text-emerald-400 mb-2">{{ $t('cases.rules.runtimeCreation.examples.ecommerce.title') }}</h4>
+              <h4 class="font-bold text-emerald-400 mb-2">
+                {{ $t('cases.rules.runtimeCreation.examples.ecommerce.title') }}
+              </h4>
               <p class="text-sm text-gray-400">
                 {{ $t('cases.rules.runtimeCreation.examples.ecommerce.desc') }}
               </p>
             </div>
 
             <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-              <h4 class="font-bold text-emerald-400 mb-2">{{ $t('cases.rules.runtimeCreation.examples.legal.title') }}</h4>
+              <h4 class="font-bold text-emerald-400 mb-2">
+                {{ $t('cases.rules.runtimeCreation.examples.legal.title') }}
+              </h4>
               <p class="text-sm text-gray-400">
                 {{ $t('cases.rules.runtimeCreation.examples.legal.desc') }}
               </p>
@@ -253,38 +358,46 @@ lambda facts: (
 
         <!-- Isolamento Multi-tenant -->
         <div class="bg-emerald-950/20 rounded-xl p-8 border border-emerald-900/30">
-          <h3 class="text-xl font-bold mb-6 text-emerald-400">{{ $t('cases.rules.runtimeCreation.multiTenant.title') }}</h3>
-          
+          <h3 class="text-xl font-bold mb-6 text-emerald-400">
+            {{ $t('cases.rules.runtimeCreation.multiTenant.title') }}
+          </h3>
+
           <div class="grid md:grid-cols-3 gap-6">
             <div class="text-center">
               <div class="text-4xl mb-3">🏥</div>
-              <div class="font-bold text-white mb-2">{{ $t('cases.rules.runtimeCreation.multiTenant.clinic.name') }}</div>
+              <div class="font-bold text-white mb-2">
+                {{ $t('cases.rules.runtimeCreation.multiTenant.clinic.name') }}
+              </div>
               <div class="text-sm text-gray-400">
-                {{ $t('cases.rules.runtimeCreation.multiTenant.clinic.rules') }}<br>
-                {{ $t('cases.rules.runtimeCreation.multiTenant.clinic.vertical') }}<br>
+                {{ $t('cases.rules.runtimeCreation.multiTenant.clinic.rules') }}<br />
+                {{ $t('cases.rules.runtimeCreation.multiTenant.clinic.vertical') }}<br />
                 {{ $t('cases.rules.runtimeCreation.multiTenant.clinic.focus') }}
               </div>
             </div>
             <div class="text-center">
               <div class="text-4xl mb-3">🛍️</div>
-              <div class="font-bold text-white mb-2">{{ $t('cases.rules.runtimeCreation.multiTenant.store.name') }}</div>
+              <div class="font-bold text-white mb-2">
+                {{ $t('cases.rules.runtimeCreation.multiTenant.store.name') }}
+              </div>
               <div class="text-sm text-gray-400">
-                {{ $t('cases.rules.runtimeCreation.multiTenant.store.rules') }}<br>
-                {{ $t('cases.rules.runtimeCreation.multiTenant.store.vertical') }}<br>
+                {{ $t('cases.rules.runtimeCreation.multiTenant.store.rules') }}<br />
+                {{ $t('cases.rules.runtimeCreation.multiTenant.store.vertical') }}<br />
                 {{ $t('cases.rules.runtimeCreation.multiTenant.store.focus') }}
               </div>
             </div>
             <div class="text-center">
               <div class="text-4xl mb-3">⚖️</div>
-              <div class="font-bold text-white mb-2">{{ $t('cases.rules.runtimeCreation.multiTenant.law.name') }}</div>
+              <div class="font-bold text-white mb-2">
+                {{ $t('cases.rules.runtimeCreation.multiTenant.law.name') }}
+              </div>
               <div class="text-sm text-gray-400">
-                {{ $t('cases.rules.runtimeCreation.multiTenant.law.rules') }}<br>
-                {{ $t('cases.rules.runtimeCreation.multiTenant.law.vertical') }}<br>
+                {{ $t('cases.rules.runtimeCreation.multiTenant.law.rules') }}<br />
+                {{ $t('cases.rules.runtimeCreation.multiTenant.law.vertical') }}<br />
                 {{ $t('cases.rules.runtimeCreation.multiTenant.law.focus') }}
               </div>
             </div>
           </div>
-          
+
           <p class="text-gray-400 text-sm mt-6 text-center">
             {{ $t('cases.rules.runtimeCreation.multiTenant.footer') }}
           </p>
@@ -296,10 +409,12 @@ lambda facts: (
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.rules.deepDive.title') }}</h2>
-        
+
         <!-- Rules Coordinator -->
         <div class="mb-12">
-          <h3 class="text-xl font-bold mb-4 text-emerald-400">{{ $t('cases.rules.deepDive.coordinator.title') }}</h3>
+          <h3 class="text-xl font-bold mb-4 text-emerald-400">
+            {{ $t('cases.rules.deepDive.coordinator.title') }}
+          </h3>
           <div class="bg-gray-900 rounded-xl p-6 border border-gray-800">
             <pre class="text-sm text-gray-300 overflow-x-auto"><code>class RulesCoordinator:
     """
@@ -359,9 +474,13 @@ lambda facts: (
 
         <!-- Memory Context Enrichment -->
         <div class="mb-12">
-          <h3 class="text-xl font-bold mb-4 text-emerald-400">{{ $t('cases.rules.deepDive.enrichment.title') }}</h3>
+          <h3 class="text-xl font-bold mb-4 text-emerald-400">
+            {{ $t('cases.rules.deepDive.enrichment.title') }}
+          </h3>
           <div class="bg-gray-900 rounded-xl p-6 border border-gray-800">
-            <pre class="text-sm text-gray-300 overflow-x-auto"><code>def _extract_intelligent_patterns(self, memory_context: dict) -> dict:
+            <pre
+              class="text-sm text-gray-300 overflow-x-auto"
+            ><code>def _extract_intelligent_patterns(self, memory_context: dict) -> dict:
     """
     {{ $t('cases.rules.deepDive.enrichment.docstring') }}
     """
@@ -407,39 +526,73 @@ lambda facts: (
 
         <!-- Event Types -->
         <div>
-          <h3 class="text-xl font-bold mb-4 text-emerald-400">{{ $t('cases.rules.deepDive.eventTypes.title') }}</h3>
+          <h3 class="text-xl font-bold mb-4 text-emerald-400">
+            {{ $t('cases.rules.deepDive.eventTypes.title') }}
+          </h3>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.messageReceived') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.messageReceivedDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.messageReceived') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.messageReceivedDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.conversationStarted') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.conversationStartedDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.conversationStarted') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.conversationStartedDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.handoverCompleted') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.handoverCompletedDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.handoverCompleted') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.handoverCompletedDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.appointmentScheduled') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.appointmentScheduledDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.appointmentScheduled') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.appointmentScheduledDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.cartAbandoned') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.cartAbandonedDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.cartAbandoned') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.cartAbandonedDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.deadlineApproaching') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.deadlineApproachingDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.deadlineApproaching') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.deadlineApproachingDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.sentimentNegative') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.sentimentNegativeDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.sentimentNegative') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.sentimentNegativeDesc') }}
+              </p>
             </div>
             <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-              <div class="text-emerald-400 font-mono text-sm mb-2">{{ $t('cases.rules.deepDive.eventTypes.timeBased') }}</div>
-              <p class="text-gray-400 text-xs">{{ $t('cases.rules.deepDive.eventTypes.timeBasedDesc') }}</p>
+              <div class="text-emerald-400 font-mono text-sm mb-2">
+                {{ $t('cases.rules.deepDive.eventTypes.timeBased') }}
+              </div>
+              <p class="text-gray-400 text-xs">
+                {{ $t('cases.rules.deepDive.eventTypes.timeBasedDesc') }}
+              </p>
             </div>
           </div>
         </div>
@@ -450,39 +603,55 @@ lambda facts: (
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.rules.results.title') }}</h2>
-        
+
         <div class="grid md:grid-cols-4 gap-6 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-emerald-400 mb-2">&lt;50ms</div>
             <div class="text-gray-400 text-sm">{{ $t('cases.rules.results.latencyP95') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.rules.results.latencyP95Desc') }}</div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.rules.results.latencyP95Desc') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-emerald-400 mb-2">1000x</div>
             <div class="text-gray-400 text-sm">{{ $t('cases.rules.results.vsJsonLogic') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.rules.results.vsJsonLogicDesc') }}</div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.rules.results.vsJsonLogicDesc') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-emerald-400 mb-2">3000+</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.rules.results.rulesInProduction') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.rules.results.rulesInProductionDesc') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.rules.results.rulesInProduction') }}
+            </div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.rules.results.rulesInProductionDesc') }}
+            </div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-emerald-400 mb-2">100%</div>
-            <div class="text-gray-400 text-sm">{{ $t('cases.rules.results.evaluationUptime') }}</div>
-            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.rules.results.evaluationUptimeDesc') }}</div>
+            <div class="text-gray-400 text-sm">
+              {{ $t('cases.rules.results.evaluationUptime') }}
+            </div>
+            <div class="text-gray-500 text-xs mt-1">
+              {{ $t('cases.rules.results.evaluationUptimeDesc') }}
+            </div>
           </div>
         </div>
 
         <!-- Decisões técnicas -->
         <div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800">
-          <h3 class="text-xl font-bold mb-6 text-emerald-400">{{ $t('cases.rules.results.decisions.title') }}</h3>
-          
+          <h3 class="text-xl font-bold mb-6 text-emerald-400">
+            {{ $t('cases.rules.results.decisions.title') }}
+          </h3>
+
           <div class="space-y-6">
             <div class="flex gap-4">
               <div class="text-emerald-400 text-2xl">1</div>
               <div>
-                <h4 class="font-bold text-white mb-2">{{ $t('cases.rules.results.decisions.pythonLambda.title') }}</h4>
+                <h4 class="font-bold text-white mb-2">
+                  {{ $t('cases.rules.results.decisions.pythonLambda.title') }}
+                </h4>
                 <p class="text-gray-400 text-sm">
                   {{ $t('cases.rules.results.decisions.pythonLambda.desc') }}
                 </p>
@@ -492,7 +661,9 @@ lambda facts: (
             <div class="flex gap-4">
               <div class="text-emerald-400 text-2xl">2</div>
               <div>
-                <h4 class="font-bold text-white mb-2">{{ $t('cases.rules.results.decisions.cache15min.title') }}</h4>
+                <h4 class="font-bold text-white mb-2">
+                  {{ $t('cases.rules.results.decisions.cache15min.title') }}
+                </h4>
                 <p class="text-gray-400 text-sm">
                   {{ $t('cases.rules.results.decisions.cache15min.desc') }}
                 </p>
@@ -502,7 +673,9 @@ lambda facts: (
             <div class="flex gap-4">
               <div class="text-emerald-400 text-2xl">3</div>
               <div>
-                <h4 class="font-bold text-white mb-2">{{ $t('cases.rules.results.decisions.keywordFallback.title') }}</h4>
+                <h4 class="font-bold text-white mb-2">
+                  {{ $t('cases.rules.results.decisions.keywordFallback.title') }}
+                </h4>
                 <p class="text-gray-400 text-sm">
                   {{ $t('cases.rules.results.decisions.keywordFallback.desc') }}
                 </p>
@@ -512,7 +685,9 @@ lambda facts: (
             <div class="flex gap-4">
               <div class="text-emerald-400 text-2xl">4</div>
               <div>
-                <h4 class="font-bold text-white mb-2">{{ $t('cases.rules.results.decisions.separateMicroservice.title') }}</h4>
+                <h4 class="font-bold text-white mb-2">
+                  {{ $t('cases.rules.results.decisions.separateMicroservice.title') }}
+                </h4>
                 <p class="text-gray-400 text-sm">
                   {{ $t('cases.rules.results.decisions.separateMicroservice.desc') }}
                 </p>
@@ -527,38 +702,62 @@ lambda facts: (
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8">{{ $t('cases.rules.technicalStack.title') }}</h2>
-        
+
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.runtime') }}</div>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.runtime') }}
+            </div>
             <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.runtimeDesc') }}</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.framework') }}</div>
-            <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.frameworkDesc') }}</p>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.framework') }}
+            </div>
+            <p class="text-gray-400 text-sm">
+              {{ $t('cases.rules.technicalStack.frameworkDesc') }}
+            </p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.cache') }}</div>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.cache') }}
+            </div>
             <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.cacheDesc') }}</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.storage') }}</div>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.storage') }}
+            </div>
             <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.storageDesc') }}</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.isolation') }}</div>
-            <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.isolationDesc') }}</p>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.isolation') }}
+            </div>
+            <p class="text-gray-400 text-sm">
+              {{ $t('cases.rules.technicalStack.isolationDesc') }}
+            </p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.circuitBreaker') }}</div>
-            <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.circuitBreakerDesc') }}</p>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.circuitBreaker') }}
+            </div>
+            <p class="text-gray-400 text-sm">
+              {{ $t('cases.rules.technicalStack.circuitBreakerDesc') }}
+            </p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.httpClient') }}</div>
-            <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.httpClientDesc') }}</p>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.httpClient') }}
+            </div>
+            <p class="text-gray-400 text-sm">
+              {{ $t('cases.rules.technicalStack.httpClientDesc') }}
+            </p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-emerald-400 font-bold mb-2">{{ $t('cases.rules.technicalStack.metrics') }}</div>
+            <div class="text-emerald-400 font-bold mb-2">
+              {{ $t('cases.rules.technicalStack.metrics') }}
+            </div>
             <p class="text-gray-400 text-sm">{{ $t('cases.rules.technicalStack.metricsDesc') }}</p>
           </div>
         </div>
@@ -574,7 +773,12 @@ lambda facts: (
         >
           {{ $t('cases.rules.cta.contact') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
           </svg>
         </a>
       </template>
@@ -592,10 +796,10 @@ const { t } = useI18n()
 useHead({
   title: t('cases.rules.meta.title'),
   meta: [
-    { 
-      name: 'description', 
-      content: t('cases.rules.meta.description')
-    }
-  ]
+    {
+      name: 'description',
+      content: t('cases.rules.meta.description'),
+    },
+  ],
 })
 </script>

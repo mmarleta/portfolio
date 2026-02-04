@@ -15,13 +15,16 @@
             {{ $t('cases.documentProcessing.problem.intro') }}
           </p>
           <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mt-4 font-mono text-sm">
-            <div class="text-red-400 mb-2">{{ $t('cases.documentProcessing.problem.brokenChunk') }}</div>
+            <div class="text-red-400 mb-2">
+              {{ $t('cases.documentProcessing.problem.brokenChunk') }}
+            </div>
             <div class="text-gray-500">
-              "...Limpeza dental R$ 150,00<br/>
-              Clareamento R$ 800,00<br/>
-              Extração simples R$..."<br/>
-              <span class="text-red-400">{{ $t('cases.documentProcessing.problem.chunkEnd') }}</span><br/>
-              "...250,00<br/>
+              "...Limpeza dental R$ 150,00<br />
+              Clareamento R$ 800,00<br />
+              Extração simples R$..."<br />
+              <span class="text-red-400">{{ $t('cases.documentProcessing.problem.chunkEnd') }}</span
+              ><br />
+              "...250,00<br />
               Canal R$ 600,00..."
             </div>
           </div>
@@ -31,11 +34,14 @@
       <!-- Solução -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-emerald-400">✨</span> {{ $t('cases.documentProcessing.solution.title') }}
+          <span class="text-emerald-400">✨</span>
+          {{ $t('cases.documentProcessing.solution.title') }}
         </h2>
         <div class="space-y-6">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-orange-400 mb-4">{{ $t('cases.documentProcessing.solution.docling.title') }}</h3>
+            <h3 class="text-xl font-semibold text-orange-400 mb-4">
+              {{ $t('cases.documentProcessing.solution.docling.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.documentProcessing.solution.docling.intro') }}
             </p>
@@ -56,29 +62,44 @@
           </div>
 
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-orange-400 mb-4">{{ $t('cases.documentProcessing.solution.chunking.title') }}</h3>
+            <h3 class="text-xl font-semibold text-orange-400 mb-4">
+              {{ $t('cases.documentProcessing.solution.chunking.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.documentProcessing.solution.chunking.intro') }}
             </p>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-orange-400 font-semibold mb-2">{{ $t('cases.documentProcessing.solution.chunking.tables.title') }}</div>
-                <p class="text-gray-500 text-sm" v-html="$t('cases.documentProcessing.solution.chunking.tables.desc')"></p>
+                <div class="text-orange-400 font-semibold mb-2">
+                  {{ $t('cases.documentProcessing.solution.chunking.tables.title') }}
+                </div>
+                <p
+                  class="text-gray-500 text-sm"
+                  v-html="$t('cases.documentProcessing.solution.chunking.tables.desc')"
+                ></p>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-orange-400 font-semibold mb-2">{{ $t('cases.documentProcessing.solution.chunking.faq.title') }}</div>
-                <p class="text-gray-500 text-sm" v-html="$t('cases.documentProcessing.solution.chunking.faq.desc')"></p>
+                <div class="text-orange-400 font-semibold mb-2">
+                  {{ $t('cases.documentProcessing.solution.chunking.faq.title') }}
+                </div>
+                <p
+                  class="text-gray-500 text-sm"
+                  v-html="$t('cases.documentProcessing.solution.chunking.faq.desc')"
+                ></p>
               </div>
             </div>
           </div>
 
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-orange-400 mb-4">{{ $t('cases.documentProcessing.solution.catalog.title') }}</h3>
+            <h3 class="text-xl font-semibold text-orange-400 mb-4">
+              {{ $t('cases.documentProcessing.solution.catalog.title') }}
+            </h3>
             <p class="text-gray-300 leading-relaxed mb-4">
               {{ $t('cases.documentProcessing.solution.catalog.intro') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm">
-              <pre class="text-gray-400">{
+              <pre class="text-gray-400">
+{
   "catalog_id": "clinica_demo_pricing",
   "items": [
     {
@@ -92,7 +113,8 @@
     }
   ],
   "match": { "min_score": 0.82 }
-}</pre>
+}</pre
+              >
             </div>
           </div>
         </div>
@@ -143,7 +165,8 @@
 │     - Chunks → pgvector                                     │
 │     - Catalog → pricing_catalogs table                      │
 │     - HNSW index update (async via Celery)                  │
-└─────────────────────────────────────────────────────────────┘</pre>
+└─────────────────────────────────────────────────────────────┘</pre
+          >
         </div>
       </section>
 
@@ -188,10 +211,14 @@
       </section>
 
       <!-- CTA -->
-      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+      <ProjectCTA
+        section-class="pt-8 border-t border-gray-800"
+        container-class="text-center"
+        actions-class="flex justify-center"
+      >
         <template #actions>
-          <LocaleLink 
-            to="/projetos/mcp-servers" 
+          <LocaleLink
+            to="/projetos/mcp-servers"
             class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
           >
             {{ $t('cases.documentProcessing.cta.next') }}

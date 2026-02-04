@@ -5,10 +5,16 @@
         {{ SITE.brand }}
       </LocaleLink>
       <div class="flex items-center gap-6">
-        <LocaleLink :to="{ path: '/', hash: '#projetos' }" class="text-gray-400 hover:text-white transition-colors">
+        <LocaleLink
+          :to="{ path: '/', hash: '#projetos' }"
+          class="text-gray-400 hover:text-white transition-colors"
+        >
           {{ $t('nav.projects') }}
         </LocaleLink>
-        <LocaleLink :to="{ path: '/', hash: '#stack' }" class="text-gray-400 hover:text-white transition-colors">
+        <LocaleLink
+          :to="{ path: '/', hash: '#stack' }"
+          class="text-gray-400 hover:text-white transition-colors"
+        >
           {{ $t('nav.stack') }}
         </LocaleLink>
         <LocaleLink to="/sobre" class="text-gray-400 hover:text-white transition-colors">

@@ -2,14 +2,18 @@ import { resolve } from 'pathe'
 
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
-  
+
   app: {
     head: {
       title: 'Marcelo Marleta | Full-Stack Developer',
       meta: [
-        { name: 'description', content: 'Full-Stack Developer especializado em sistemas AI/LLM e arquiteturas escaláveis.' },
+        {
+          name: 'description',
+          content:
+            'Full-Stack Developer especializado em sistemas AI/LLM e arquiteturas escaláveis.',
+        },
       ],
-    }
+    },
   },
 
   i18n: {
@@ -44,11 +48,11 @@ export default defineNuxtConfig({
               400: '#34d399',
               500: '#10b981',
               600: '#059669',
-            }
-          }
-        }
-      }
-    }
+            },
+          },
+        },
+      },
+    },
   },
 
   vite: {
@@ -59,5 +63,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-04-03'
+  compatibilityDate: '2024-04-03',
 })

@@ -7,7 +7,12 @@
     <div class="container mx-auto px-6 relative z-10" :class="config.contentClass">
       <LocaleLink :to="backTo" :class="backLinkClass">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
         {{ t(config.backLabelKey) }}
       </LocaleLink>
@@ -25,10 +30,16 @@
         <span v-else :class="config.titleTextClass">
           {{ t(config.titleKey) }}
         </span>
-        <span v-if="config.titleSuffix" :class="config.titleSuffixClass">{{ config.titleSuffix }}</span>
+        <span v-if="config.titleSuffix" :class="config.titleSuffixClass">{{
+          config.titleSuffix
+        }}</span>
       </h1>
 
-      <p v-if="config.descriptionHtml" :class="descriptionClass" v-html="t(config.descriptionKey)"></p>
+      <p
+        v-if="config.descriptionHtml"
+        :class="descriptionClass"
+        v-html="t(config.descriptionKey)"
+      ></p>
       <p v-else :class="descriptionClass">
         {{ t(config.descriptionKey) }}
       </p>
@@ -55,7 +66,7 @@ const badges = computed(() =>
   (props.config.badgeItems ?? [])
     .map((badge) => ({
       class: badge.class,
-      text: badge.text ?? (badge.textKey ? t(badge.textKey) : '')
+      text: badge.text ?? (badge.textKey ? t(badge.textKey) : ''),
     }))
     .filter((badge) => badge.text)
 )

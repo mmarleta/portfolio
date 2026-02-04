@@ -1,6 +1,9 @@
 <template>
   <ProjectPage class="text-gray-100">
-    <ProjectHeader back-label-key="cases.aiEngine.back" subtitle-key="cases.aiEngine.platformName" />
+    <ProjectHeader
+      back-label-key="cases.aiEngine.back"
+      subtitle-key="cases.aiEngine.platformName"
+    />
 
     <ProjectHeroBlock :config="heroConfig" />
 
@@ -8,53 +11,116 @@
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <div class="flex gap-6 overflow-x-auto py-4 text-sm">
-          <a href="#problema" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.problem') }}</a>
-          <a href="#arquitetura" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.architecture') }}</a>
-          <a href="#semantic-routing" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.semanticRouting') }}</a>
-          <a href="#fsm" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.fsm') }}</a>
-          <a href="#context-composer" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.contextComposer') }}</a>
-          <a href="#fast-lane" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.fastLane') }}</a>
-          <a href="#reducer" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.reducer') }}</a>
-          <a href="#retry" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.retry') }}</a>
-          <a href="#resultados" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.results') }}</a>
+          <a
+            href="#problema"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.problem') }}</a
+          >
+          <a
+            href="#arquitetura"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.architecture') }}</a
+          >
+          <a
+            href="#semantic-routing"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.semanticRouting') }}</a
+          >
+          <a
+            href="#fsm"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.fsm') }}</a
+          >
+          <a
+            href="#context-composer"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.contextComposer') }}</a
+          >
+          <a
+            href="#fast-lane"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.fastLane') }}</a
+          >
+          <a
+            href="#reducer"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.reducer') }}</a
+          >
+          <a
+            href="#retry"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.retry') }}</a
+          >
+          <a
+            href="#resultados"
+            class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.aiEngine.nav.results') }}</a
+          >
         </div>
       </div>
     </nav>
 
     <!-- Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
-      
       <!-- Problema -->
       <section id="problema" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
+          <span
+            class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400"
+            >!</span
+          >
           {{ $t('cases.aiEngine.sections.problem.title') }}
         </h2>
-        
+
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-4">
             {{ $t('cases.aiEngine.sections.problem.content1') }}
-            <strong class="text-white">{{ $t('cases.aiEngine.sections.problem.nonDeterminism') }}</strong>{{ $t('cases.aiEngine.sections.problem.content2') }}
+            <strong class="text-white">{{
+              $t('cases.aiEngine.sections.problem.nonDeterminism')
+            }}</strong
+            >{{ $t('cases.aiEngine.sections.problem.content2') }}
           </p>
-          
+
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4">{{ $t('cases.aiEngine.sections.problem.scenariosTitle') }}</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4">
+              {{ $t('cases.aiEngine.sections.problem.scenariosTitle') }}
+            </h4>
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.hallucination.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.hallucination.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.problem.scenarios.hallucination.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.problem.scenarios.hallucination.content') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.ambiguous.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.ambiguous.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.problem.scenarios.ambiguous.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.problem.scenarios.ambiguous.content') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.drift.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.drift.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.problem.scenarios.drift.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.problem.scenarios.drift.content') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.loop.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.loop.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.problem.scenarios.loop.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.problem.scenarios.loop.content') }}</span
+                >
               </li>
             </ul>
           </div>
@@ -68,19 +134,31 @@
       <!-- Arquitetura -->
       <section id="arquitetura" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">🏗️</span>
+          <span
+            class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400"
+            >🏗️</span
+          >
           {{ $t('cases.aiEngine.sections.architecture.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            {{ $t('cases.aiEngine.sections.architecture.intro1') }} <strong class="text-white">{{ $t('cases.aiEngine.sections.architecture.introHighlight1') }}</strong> {{ $t('cases.aiEngine.sections.architecture.intro2') }}
-            <strong class="text-white">{{ $t('cases.aiEngine.sections.architecture.introHighlight2') }}</strong> {{ $t('cases.aiEngine.sections.architecture.intro3') }}
+            {{ $t('cases.aiEngine.sections.architecture.intro1') }}
+            <strong class="text-white">{{
+              $t('cases.aiEngine.sections.architecture.introHighlight1')
+            }}</strong>
+            {{ $t('cases.aiEngine.sections.architecture.intro2') }}
+            <strong class="text-white">{{
+              $t('cases.aiEngine.sections.architecture.introHighlight2')
+            }}</strong>
+            {{ $t('cases.aiEngine.sections.architecture.intro3') }}
           </p>
 
           <!-- Architecture Diagram -->
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">{{ $t('cases.aiEngine.sections.architecture.diagramTitle') }}</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">
+              {{ $t('cases.aiEngine.sections.architecture.diagramTitle') }}
+            </h4>
             <div class="font-mono text-xs overflow-x-auto">
               <pre class="text-gray-400 leading-relaxed">
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -132,15 +210,22 @@
                                        ▼
                         ┌──────────────────────────────┐
                         │      FINAL RESPONSE          │
-                        └──────────────────────────────┘</pre>
+                        └──────────────────────────────┘</pre
+              >
             </div>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.architecture.langGraphTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.aiEngine.sections.architecture.langGraphTitle') }}
+          </h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">graph_builder.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># LangGraph offers granular control over flow
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              graph_builder.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300"># LangGraph offers granular control over flow
 graph = StateGraph(
     state_schema=ConversationState,  # State typed
     context_schema=ContextSchema,    # Injected context
@@ -176,7 +261,10 @@ retry_policy = RetryPolicy(
       <!-- Semantic Routing -->
       <section id="semantic-routing" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">🎯</span>
+          <span
+            class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400"
+            >🎯</span
+          >
           {{ $t('cases.aiEngine.sections.semanticRouting.title') }}
         </h2>
 
@@ -186,8 +274,12 @@ retry_policy = RetryPolicy(
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">semantic_routing.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">async def semantic_routing_node(state: dict, service: Any, config: Any):
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              semantic_routing.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300">async def semantic_routing_node(state: dict, service: Any, config: Any):
     """
     Semantic Routing (Pre-LLM).
     
@@ -229,39 +321,58 @@ retry_policy = RetryPolicy(
         }</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaTitle') }}
+          </h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <p class="text-gray-400 mb-4">
               {{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaExplanation') }}
             </p>
             <div class="font-mono text-sm bg-gray-800 rounded p-4">
-              <span class="text-purple-400">score_final</span> = 
-              <span class="text-emerald-400">0.7</span> × embedding_similarity + 
+              <span class="text-purple-400">score_final</span> =
+              <span class="text-emerald-400">0.7</span> × embedding_similarity +
               <span class="text-emerald-400">0.3</span> × keyword_match
             </div>
             <p class="text-gray-500 text-sm mt-4">
-              {{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaConfig') }} <code>SEMANTIC_ROUTER_HYBRID_ALPHA=0.7</code>
+              {{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaConfig') }}
+              <code>SEMANTIC_ROUTER_HYBRID_ALPHA=0.7</code>
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.params.hybridAlpha.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.semanticRouting.params.hybridAlpha.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                {{ $t('cases.aiEngine.sections.semanticRouting.params.hybridAlpha.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.aiEngine.sections.semanticRouting.params.hybridAlpha.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.params.abstainThreshold.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.semanticRouting.params.abstainThreshold.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                {{ $t('cases.aiEngine.sections.semanticRouting.params.abstainThreshold.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{
+                  $t('cases.aiEngine.sections.semanticRouting.params.abstainThreshold.description')
+                }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.params.biasWeight.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.semanticRouting.params.biasWeight.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                {{ $t('cases.aiEngine.sections.semanticRouting.params.biasWeight.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.aiEngine.sections.semanticRouting.params.biasWeight.description') }}
+              </p>
             </div>
           </div>
 
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-green-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.resultTitle') }}</h4>
+            <h4 class="font-semibold text-green-400 mb-2">
+              {{ $t('cases.aiEngine.sections.semanticRouting.resultTitle') }}
+            </h4>
             <p class="text-sm text-gray-300">
               {{ $t('cases.aiEngine.sections.semanticRouting.resultContent') }}
             </p>
@@ -272,7 +383,10 @@ retry_policy = RetryPolicy(
       <!-- Booking FSM -->
       <section id="fsm" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">🔄</span>
+          <span
+            class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400"
+            >🔄</span
+          >
           {{ $t('cases.aiEngine.sections.fsm.title') }}
         </h2>
 
@@ -283,7 +397,9 @@ retry_policy = RetryPolicy(
 
           <!-- FSM Diagram -->
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">{{ $t('cases.aiEngine.sections.fsm.diagramTitle') }}</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">
+              {{ $t('cases.aiEngine.sections.fsm.diagramTitle') }}
+            </h4>
             <div class="font-mono text-xs overflow-x-auto">
               <pre class="text-gray-400 leading-relaxed">
                                     ┌──────────┐
@@ -313,15 +429,22 @@ retry_policy = RetryPolicy(
         ┌───────────┐  ┌────────────┐  ┌─────────────┐
         │ completed │  │  handover  │  │ (back loop) │
         │ (success) │  │ (human)    │  │             │
-        └───────────┘  └────────────┘  └─────────────┘</pre>
+        └───────────┘  └────────────┘  └─────────────┘</pre
+              >
             </div>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.fsm.transitionsTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.aiEngine.sections.fsm.transitionsTitle') }}
+          </h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">booking_fsm_contract.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Single Source of Truth for transitions
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              booking_fsm_contract.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300"># Single Source of Truth for transitions
 FSM_TRANSITIONS = {
     "detect": {
         "discover_booking",   # Search existing appointment
@@ -365,20 +488,34 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
     return to_state in FSM_TRANSITIONS.get(from_state, set())</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.fsm.operationsTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.aiEngine.sections.fsm.operationsTitle') }}
+          </h3>
 
           <div class="grid md:grid-cols-3 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-blue-400 mb-2">{{ $t('cases.aiEngine.sections.fsm.operations.schedule.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.fsm.operations.schedule.description') }}</p>
+              <h4 class="font-semibold text-blue-400 mb-2">
+                {{ $t('cases.aiEngine.sections.fsm.operations.schedule.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.aiEngine.sections.fsm.operations.schedule.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('cases.aiEngine.sections.fsm.operations.reschedule.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.fsm.operations.reschedule.description') }}</p>
+              <h4 class="font-semibold text-yellow-400 mb-2">
+                {{ $t('cases.aiEngine.sections.fsm.operations.reschedule.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.aiEngine.sections.fsm.operations.reschedule.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">{{ $t('cases.aiEngine.sections.fsm.operations.cancel.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.fsm.operations.cancel.description') }}</p>
+              <h4 class="font-semibold text-red-400 mb-2">
+                {{ $t('cases.aiEngine.sections.fsm.operations.cancel.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.aiEngine.sections.fsm.operations.cancel.description') }}
+              </p>
             </div>
           </div>
         </div>
@@ -387,7 +524,10 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
       <!-- Context Composer -->
       <section id="context-composer" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">📝</span>
+          <span
+            class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400"
+            >📝</span
+          >
           {{ $t('cases.aiEngine.sections.contextComposer.title') }}
         </h2>
 
@@ -397,8 +537,12 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">context_composer.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">class ContextComposer:
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              context_composer.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300">class ContextComposer:
     """
     Composes unified context from multiple sources.
     
@@ -457,7 +601,9 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
         )</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.contextComposer.budgetTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.aiEngine.sections.contextComposer.budgetTitle') }}
+          </h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <p class="text-gray-400 mb-4">
@@ -466,15 +612,36 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-cyan-400 mt-1">1.</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.contextComposer.budgetRules.untouchable.title') }}</strong> {{ $t('cases.aiEngine.sections.contextComposer.budgetRules.untouchable.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.contextComposer.budgetRules.untouchable.title')
+                  }}</strong>
+                  {{
+                    $t('cases.aiEngine.sections.contextComposer.budgetRules.untouchable.content')
+                  }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-cyan-400 mt-1">2.</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.contextComposer.budgetRules.semantic.title') }}</strong> {{ $t('cases.aiEngine.sections.contextComposer.budgetRules.semantic.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.contextComposer.budgetRules.semantic.title')
+                  }}</strong>
+                  {{
+                    $t('cases.aiEngine.sections.contextComposer.budgetRules.semantic.content')
+                  }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-cyan-400 mt-1">3.</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.contextComposer.budgetRules.priority.title') }}</strong> {{ $t('cases.aiEngine.sections.contextComposer.budgetRules.priority.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.contextComposer.budgetRules.priority.title')
+                  }}</strong>
+                  {{
+                    $t('cases.aiEngine.sections.contextComposer.budgetRules.priority.content')
+                  }}</span
+                >
               </li>
             </ul>
           </div>
@@ -484,7 +651,10 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
       <!-- Pricing Fast Lane -->
       <section id="fast-lane" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400">⚡</span>
+          <span
+            class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400"
+            >⚡</span
+          >
           {{ $t('cases.aiEngine.sections.fastLane.title') }}
         </h2>
 
@@ -494,8 +664,12 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">pricing_fast_lane.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># ==============================================================================
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              pricing_fast_lane.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300"># ==============================================================================
 # 🔧 NOTE ON TOOL BUDGET (Tech Lead Review)
 # ==============================================================================
 # This module (pricing_fast_lane) is NOT subject to tool_budget because:
@@ -552,7 +726,9 @@ async def pricing_fast_lane_node(state: dict, service: Any, config: Any):
           </div>
 
           <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('cases.aiEngine.sections.fastLane.resultTitle') }}</h4>
+            <h4 class="font-semibold text-yellow-400 mb-2">
+              {{ $t('cases.aiEngine.sections.fastLane.resultTitle') }}
+            </h4>
             <p class="text-sm text-gray-300">
               {{ $t('cases.aiEngine.sections.fastLane.resultContent') }}
             </p>
@@ -563,7 +739,10 @@ async def pricing_fast_lane_node(state: dict, service: Any, config: Any):
       <!-- Booking Flow Reducer -->
       <section id="reducer" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">🔒</span>
+          <span
+            class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400"
+            >🔒</span
+          >
           {{ $t('cases.aiEngine.sections.reducer.title') }}
         </h2>
 
@@ -573,8 +752,12 @@ async def pricing_fast_lane_node(state: dict, service: Any, config: Any):
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">booking_flow_reducer.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Whitelist of allowed sources
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              booking_flow_reducer.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300"># Whitelist of allowed sources
 ALLOWED_UPDATERS = {
     "booking_flow_router",      # Main state machine router
     "discover_booking_node",    # Booking discovery (IO task)
@@ -625,21 +808,38 @@ class BookingFlowUpdate:
             )</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.reducer.whyReducerTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.aiEngine.sections.reducer.whyReducerTitle') }}
+          </h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-green-400 mt-1">✓</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.reducer.reasons.raceConditions.title') }}</strong> {{ $t('cases.aiEngine.sections.reducer.reasons.raceConditions.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.reducer.reasons.raceConditions.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.reducer.reasons.raceConditions.content') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 mt-1">✓</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.reducer.reasons.audit.title') }}</strong> {{ $t('cases.aiEngine.sections.reducer.reasons.audit.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.reducer.reasons.audit.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.reducer.reasons.audit.content') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 mt-1">✓</span>
-                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.reducer.reasons.metrics.title') }}</strong> {{ $t('cases.aiEngine.sections.reducer.reasons.metrics.content') }}</span>
+                <span
+                  ><strong class="text-gray-200">{{
+                    $t('cases.aiEngine.sections.reducer.reasons.metrics.title')
+                  }}</strong>
+                  {{ $t('cases.aiEngine.sections.reducer.reasons.metrics.content') }}</span
+                >
               </li>
             </ul>
           </div>
@@ -649,7 +849,10 @@ class BookingFlowUpdate:
       <!-- Retry Policies -->
       <section id="retry" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400">🔁</span>
+          <span
+            class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400"
+            >🔁</span
+          >
           {{ $t('cases.aiEngine.sections.retry.title') }}
         </h2>
 
@@ -659,8 +862,12 @@ class BookingFlowUpdate:
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">graph_builder.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># SOTA FIX (December 2025): Transient vs Permanent Exceptions
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              graph_builder.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300"># SOTA FIX (December 2025): Transient vs Permanent Exceptions
 
 TRANSIENT_EXCEPTIONS = (
     httpx.TimeoutException,
@@ -694,7 +901,9 @@ retry_policy = RetryPolicy(
           </div>
 
           <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.aiEngine.sections.retry.warningTitle') }}</h4>
+            <h4 class="font-semibold text-orange-400 mb-2">
+              {{ $t('cases.aiEngine.sections.retry.warningTitle') }}
+            </h4>
             <p class="text-sm text-gray-300">
               {{ $t('cases.aiEngine.sections.retry.warningContent') }}
             </p>
@@ -705,51 +914,105 @@ retry_policy = RetryPolicy(
       <!-- Results -->
       <section id="resultados" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
+          <span
+            class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400"
+            >📊</span
+          >
           {{ $t('cases.aiEngine.sections.results.title') }}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.bypass.value') }}</div>
-            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.bypass.label') }}</div>
+          <div
+            class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6"
+          >
+            <div class="text-3xl font-bold text-emerald-400 mb-2">
+              {{ $t('cases.aiEngine.sections.results.metrics.bypass.value') }}
+            </div>
+            <div class="text-gray-400">
+              {{ $t('cases.aiEngine.sections.results.metrics.bypass.label') }}
+            </div>
           </div>
-          <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.classification.value') }}</div>
-            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.classification.label') }}</div>
+          <div
+            class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6"
+          >
+            <div class="text-3xl font-bold text-emerald-400 mb-2">
+              {{ $t('cases.aiEngine.sections.results.metrics.classification.value') }}
+            </div>
+            <div class="text-gray-400">
+              {{ $t('cases.aiEngine.sections.results.metrics.classification.label') }}
+            </div>
           </div>
-          <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.transitions.value') }}</div>
-            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.transitions.label') }}</div>
+          <div
+            class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6"
+          >
+            <div class="text-3xl font-bold text-emerald-400 mb-2">
+              {{ $t('cases.aiEngine.sections.results.metrics.transitions.value') }}
+            </div>
+            <div class="text-gray-400">
+              {{ $t('cases.aiEngine.sections.results.metrics.transitions.label') }}
+            </div>
           </div>
-          <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.fastLane.value') }}</div>
-            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.fastLane.label') }}</div>
+          <div
+            class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6"
+          >
+            <div class="text-3xl font-bold text-emerald-400 mb-2">
+              {{ $t('cases.aiEngine.sections.results.metrics.fastLane.value') }}
+            </div>
+            <div class="text-gray-400">
+              {{ $t('cases.aiEngine.sections.results.metrics.fastLane.label') }}
+            </div>
           </div>
         </div>
 
         <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 mt-8">
-          <h3 class="text-xl font-semibold text-gray-200 mb-4">{{ $t('cases.aiEngine.sections.results.decisionsTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mb-4">
+            {{ $t('cases.aiEngine.sections.results.decisionsTitle') }}
+          </h3>
           <ul class="space-y-3 text-gray-400">
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.fsmSeparated.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.fsmSeparated.content') }}</span>
+              <span
+                ><strong class="text-gray-200">{{
+                  $t('cases.aiEngine.sections.results.decisions.fsmSeparated.title')
+                }}</strong>
+                {{ $t('cases.aiEngine.sections.results.decisions.fsmSeparated.content') }}</span
+              >
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.semanticPreLlm.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.semanticPreLlm.content') }}</span>
+              <span
+                ><strong class="text-gray-200">{{
+                  $t('cases.aiEngine.sections.results.decisions.semanticPreLlm.title')
+                }}</strong>
+                {{ $t('cases.aiEngine.sections.results.decisions.semanticPreLlm.content') }}</span
+              >
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.reducerWhitelist.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.reducerWhitelist.content') }}</span>
+              <span
+                ><strong class="text-gray-200">{{
+                  $t('cases.aiEngine.sections.results.decisions.reducerWhitelist.title')
+                }}</strong>
+                {{ $t('cases.aiEngine.sections.results.decisions.reducerWhitelist.content') }}</span
+              >
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.retryWhitelist.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.retryWhitelist.content') }}</span>
+              <span
+                ><strong class="text-gray-200">{{
+                  $t('cases.aiEngine.sections.results.decisions.retryWhitelist.title')
+                }}</strong>
+                {{ $t('cases.aiEngine.sections.results.decisions.retryWhitelist.content') }}</span
+              >
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.fastLanes.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.fastLanes.content') }}</span>
+              <span
+                ><strong class="text-gray-200">{{
+                  $t('cases.aiEngine.sections.results.decisions.fastLanes.title')
+                }}</strong>
+                {{ $t('cases.aiEngine.sections.results.decisions.fastLanes.content') }}</span
+              >
             </li>
           </ul>
         </div>
@@ -781,18 +1044,26 @@ retry_policy = RetryPolicy(
         title-class="text-2xl font-bold mb-4"
       >
         <template #actions>
-          <LocaleLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+          <LocaleLink
+            to="/projetos/rules-engine"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors"
+          >
             {{ $t('cases.aiEngine.cta.rulesEngine') }}
           </LocaleLink>
-          <LocaleLink to="/projetos/memory-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+          <LocaleLink
+            to="/projetos/memory-engine"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors"
+          >
             {{ $t('cases.aiEngine.cta.memoryEngine') }}
           </LocaleLink>
-          <LocaleLink to="/projetos/llm-pool-management" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+          <LocaleLink
+            to="/projetos/llm-pool-management"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors"
+          >
             {{ $t('cases.aiEngine.cta.llmPool') }}
           </LocaleLink>
         </template>
       </ProjectCTA>
-
     </main>
 
     <!-- Closing Note -->
@@ -812,8 +1083,6 @@ const { t } = useI18n()
 
 useHead({
   title: t('cases.aiEngine.meta.title'),
-  meta: [
-    { name: 'description', content: t('cases.aiEngine.meta.description') }
-  ]
+  meta: [{ name: 'description', content: t('cases.aiEngine.meta.description') }],
 })
 </script>

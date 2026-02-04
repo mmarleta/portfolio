@@ -1,6 +1,9 @@
 <template>
   <ProjectPage class="text-gray-100">
-    <ProjectHeader back-label-key="cases.testTools.back" subtitle-key="cases.testTools.platformName" />
+    <ProjectHeader
+      back-label-key="cases.testTools.back"
+      subtitle-key="cases.testTools.platformName"
+    />
 
     <ProjectHeroBlock :config="heroConfig" />
 
@@ -8,49 +11,89 @@
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <div class="flex gap-6 overflow-x-auto py-4 text-sm">
-          <a href="#problema" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.problem') }}</a>
-          <a href="#interface" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.interface') }}</a>
-          <a href="#hallucination" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.hallucination') }}</a>
-          <a href="#quality" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.quality') }}</a>
-          <a href="#scenarios" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.scenarios') }}</a>
-          <a href="#runner" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.runner') }}</a>
+          <a
+            href="#problema"
+            class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.testTools.nav.problem') }}</a
+          >
+          <a
+            href="#interface"
+            class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.testTools.nav.interface') }}</a
+          >
+          <a
+            href="#hallucination"
+            class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.testTools.nav.hallucination') }}</a
+          >
+          <a
+            href="#quality"
+            class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.testTools.nav.quality') }}</a
+          >
+          <a
+            href="#scenarios"
+            class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.testTools.nav.scenarios') }}</a
+          >
+          <a
+            href="#runner"
+            class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors"
+            >{{ $t('cases.testTools.nav.runner') }}</a
+          >
         </div>
       </div>
     </nav>
 
     <!-- Content -->
     <main class="max-w-4xl mx-auto px-4 py-12">
-      
       <!-- Problema -->
       <section id="problema" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
+          <span
+            class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400"
+            >!</span
+          >
           {{ $t('cases.testTools.problem.title') }}
         </h2>
-        
+
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-4">
             {{ $t('cases.testTools.problem.description') }}
           </p>
-          
+
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4">{{ $t('cases.testTools.problem.challengesTitle') }}</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4">
+              {{ $t('cases.testTools.problem.challengesTitle') }}
+            </h4>
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Hallucinations:</strong> {{ $t('cases.testTools.problem.challenges.hallucinations') }}</span>
+                <span
+                  ><strong class="text-gray-200">Hallucinations:</strong>
+                  {{ $t('cases.testTools.problem.challenges.hallucinations') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Consistency:</strong> {{ $t('cases.testTools.problem.challenges.consistency') }}</span>
+                <span
+                  ><strong class="text-gray-200">Consistency:</strong>
+                  {{ $t('cases.testTools.problem.challenges.consistency') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Multi-turn context:</strong> {{ $t('cases.testTools.problem.challenges.multiTurn') }}</span>
+                <span
+                  ><strong class="text-gray-200">Multi-turn context:</strong>
+                  {{ $t('cases.testTools.problem.challenges.multiTurn') }}</span
+                >
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Subjectivity:</strong> {{ $t('cases.testTools.problem.challenges.subjectivity') }}</span>
+                <span
+                  ><strong class="text-gray-200">Subjectivity:</strong>
+                  {{ $t('cases.testTools.problem.challenges.subjectivity') }}</span
+                >
               </li>
             </ul>
           </div>
@@ -64,7 +107,10 @@
       <!-- Interface de Testes -->
       <section id="interface" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">🎭</span>
+          <span
+            class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400"
+            >🎭</span
+          >
           {{ $t('cases.testTools.interface.title') }}
         </h2>
 
@@ -75,20 +121,36 @@
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">🎭 {{ $t('cases.testTools.interface.features.channelProfiles.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.channelProfiles.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                🎭 {{ $t('cases.testTools.interface.features.channelProfiles.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.interface.features.channelProfiles.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">🤝 {{ $t('cases.testTools.interface.features.handover.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.handover.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                🤝 {{ $t('cases.testTools.interface.features.handover.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.interface.features.handover.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">📱 {{ $t('cases.testTools.interface.features.multiSession.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.multiSession.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                📱 {{ $t('cases.testTools.interface.features.multiSession.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.interface.features.multiSession.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">⚡ {{ $t('cases.testTools.interface.features.realtime.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.realtime.description') }}</p>
+              <h4 class="font-semibold text-purple-400 mb-2">
+                ⚡ {{ $t('cases.testTools.interface.features.realtime.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.interface.features.realtime.description') }}
+              </p>
             </div>
           </div>
 
@@ -125,10 +187,14 @@ def _get_channel_headers(self, session: TestSession, sender_type: str):
     return headers</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.interface.scenariosTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.testTools.interface.scenariosTitle') }}
+          </h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Built-in Scenarios</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              Built-in Scenarios
+            </div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">scenarios = [
     TestScenario(
         name="Basic Greeting",
@@ -153,7 +219,10 @@ def _get_channel_headers(self, session: TestSession, sender_type: str):
       <!-- Hallucination Detector -->
       <section id="hallucination" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">🚨</span>
+          <span
+            class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400"
+            >🚨</span
+          >
           {{ $t('cases.testTools.hallucination.title') }}
         </h2>
 
@@ -163,7 +232,9 @@ def _get_channel_headers(self, session: TestSession, sender_type: str):
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">analyzers/hallucination_detector.py</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              analyzers/hallucination_detector.py
+            </div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">@dataclass
 class HallucinationInstance:
     """A detected hallucination instance."""
@@ -187,30 +258,52 @@ class HallucinationAnalysisResult:
     warnings: List[str]</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.hallucination.typesTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.testTools.hallucination.typesTitle') }}
+          </h3>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-red-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">{{ $t('cases.testTools.hallucination.types.factualError.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.factualError.description') }}</p>
+              <h4 class="font-semibold text-red-400 mb-2">
+                {{ $t('cases.testTools.hallucination.types.factualError.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.hallucination.types.factualError.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-orange-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.testTools.hallucination.types.inventedInfo.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.inventedInfo.description') }}</p>
+              <h4 class="font-semibold text-orange-400 mb-2">
+                {{ $t('cases.testTools.hallucination.types.inventedInfo.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.hallucination.types.inventedInfo.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-yellow-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('cases.testTools.hallucination.types.impossibleClaim.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.impossibleClaim.description') }}</p>
+              <h4 class="font-semibold text-yellow-400 mb-2">
+                {{ $t('cases.testTools.hallucination.types.impossibleClaim.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.hallucination.types.impossibleClaim.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-red-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">{{ $t('cases.testTools.hallucination.types.medicalMisinfo.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.medicalMisinfo.description') }}</p>
+              <h4 class="font-semibold text-red-400 mb-2">
+                {{ $t('cases.testTools.hallucination.types.medicalMisinfo.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.hallucination.types.medicalMisinfo.description') }}
+              </p>
             </div>
           </div>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.testTools.hallucination.knowledgeBaseTitle') }}</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Known dental facts for validation
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              {{ $t('cases.testTools.hallucination.knowledgeBaseTitle') }}
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300"># Known dental facts for validation
 dental_facts = {
     "pricing": {
         "ranges": {
@@ -237,7 +330,10 @@ dental_facts = {
       <!-- Quality Scorer -->
       <section id="quality" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">📊</span>
+          <span
+            class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400"
+            >📊</span
+          >
           {{ $t('cases.testTools.quality.title') }}
         </h2>
 
@@ -247,7 +343,9 @@ dental_facts = {
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">analyzers/quality_scorer.py</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              analyzers/quality_scorer.py
+            </div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">@dataclass
 class QualityMetrics:
     """Quality metrics for an AI response."""
@@ -263,7 +361,9 @@ class QualityMetrics:
     recommendations: List[str]</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.quality.dimensionsTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.testTools.quality.dimensionsTitle') }}
+          </h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <ul class="space-y-3 text-gray-400">
@@ -287,8 +387,12 @@ class QualityMetrics:
           </div>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.testTools.quality.detractorsTitle') }}</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">quality_detractors = {
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              {{ $t('cases.testTools.quality.detractorsTitle') }}
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300">quality_detractors = {
     "vague_responses": [
         r"\bmaybe\b",
         r"\bpossible\b",
@@ -311,7 +415,10 @@ class QualityMetrics:
       <!-- Realistic Scenarios -->
       <section id="scenarios" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">🎭</span>
+          <span
+            class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400"
+            >🎭</span
+          >
           {{ $t('cases.testTools.scenarios.title') }}
         </h2>
 
@@ -321,8 +428,12 @@ class QualityMetrics:
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">suites/integration/test_realistic_scenarios.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">class ScenarioComplexity(Enum):
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              suites/integration/test_realistic_scenarios.py
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300">class ScenarioComplexity(Enum):
     SIMPLE = "simple"       # 2-3 turns, direct intent
     MEDIUM = "medium"       # 4-6 turns, context change
     COMPLEX = "complex"     # 7+ turns, handover, edge cases
@@ -342,11 +453,17 @@ scenario = generator.generate_scenario(
 )</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.scenarios.validationsTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.testTools.scenarios.validationsTitle') }}
+          </h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Scenario Assertions</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">def test_complex_emergency_scenario(self):
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">
+              Scenario Assertions
+            </div>
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300">def test_complex_emergency_scenario(self):
     """Test complex emergency dental scenario."""
     scenario = generator.generate_scenario(
         scenario_type="emergency_dental",
@@ -369,7 +486,10 @@ scenario = generator.generate_scenario(
       <!-- Test Runner -->
       <section id="runner" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">🏃</span>
+          <span
+            class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400"
+            >🏃</span
+          >
           {{ $t('cases.testTools.runner.title') }}
         </h2>
 
@@ -380,7 +500,9 @@ scenario = generator.generate_scenario(
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">run_tests.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">class TestSuiteRunner:
+            <pre
+              class="p-4 overflow-x-auto text-sm"
+            ><code class="text-gray-300">class TestSuiteRunner:
     def run_test_suite(
         self,
         suite: str = "all",        # all, functional, integration
@@ -412,24 +534,42 @@ scenario = generator.generate_scenario(
         return subprocess.run(cmd)</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.runner.markersTitle') }}</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">
+            {{ $t('cases.testTools.runner.markersTitle') }}
+          </h3>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.slow.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.slow.description') }}</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">
+                {{ $t('cases.testTools.runner.markers.slow.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.runner.markers.slow.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.integration.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.integration.description') }}</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">
+                {{ $t('cases.testTools.runner.markers.integration.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.runner.markers.integration.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.aiQuality.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.aiQuality.description') }}</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">
+                {{ $t('cases.testTools.runner.markers.aiQuality.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.runner.markers.aiQuality.description') }}
+              </p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.security.title') }}</h4>
-              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.security.description') }}</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">
+                {{ $t('cases.testTools.runner.markers.security.title') }}
+              </h4>
+              <p class="text-sm text-gray-400">
+                {{ $t('cases.testTools.runner.markers.security.description') }}
+              </p>
             </div>
           </div>
         </div>
@@ -441,7 +581,9 @@ scenario = generator.generate_scenario(
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Python 3.12</span>
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Flask</span>
-          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Flask-SocketIO</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm"
+            >Flask-SocketIO</span
+          >
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">pytest</span>
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">pytest-xdist</span>
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Rich</span>
@@ -454,24 +596,37 @@ scenario = generator.generate_scenario(
       <!-- Results -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
+          <span
+            class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400"
+            >📊</span
+          >
           {{ $t('cases.testTools.results.title') }}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
+          <div
+            class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6"
+          >
             <div class="text-3xl font-bold text-purple-400 mb-2">5</div>
             <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.analyzers') }}</div>
           </div>
-          <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
+          <div
+            class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6"
+          >
             <div class="text-3xl font-bold text-purple-400 mb-2">100%</div>
             <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.coverage') }}</div>
           </div>
-          <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
+          <div
+            class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6"
+          >
             <div class="text-3xl font-bold text-purple-400 mb-2">&lt;0.1%</div>
-            <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.hallucinations') }}</div>
+            <div class="text-gray-400">
+              {{ $t('cases.testTools.results.metrics.hallucinations') }}
+            </div>
           </div>
-          <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
+          <div
+            class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6"
+          >
             <div class="text-3xl font-bold text-purple-400 mb-2">Real-time</div>
             <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.realtime') }}</div>
           </div>
@@ -487,18 +642,26 @@ scenario = generator.generate_scenario(
         title-class="text-2xl font-bold mb-4"
       >
         <template #actions>
-          <LocaleLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+          <LocaleLink
+            to="/projetos/ai-engine"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors"
+          >
             AI Conversation Engine →
           </LocaleLink>
-          <LocaleLink to="/projetos/observability" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+          <LocaleLink
+            to="/projetos/observability"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors"
+          >
             Observability Stack →
           </LocaleLink>
-          <LocaleLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+          <LocaleLink
+            to="/projetos/rules-engine"
+            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors"
+          >
             Rules Engine →
           </LocaleLink>
         </template>
       </ProjectCTA>
-
     </main>
 
     <!-- Closing Note -->
@@ -518,8 +681,6 @@ const { t } = useI18n()
 
 useHead({
   title: t('cases.testTools.meta.title'),
-  meta: [
-    { name: 'description', content: t('cases.testTools.meta.description') }
-  ]
+  meta: [{ name: 'description', content: t('cases.testTools.meta.description') }],
 })
 </script>
