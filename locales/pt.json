@@ -1949,9 +1949,9 @@
       },
       "gracefulDegradation": {
         "title": "⚡ Graceful Degradation: Sistema que não cai",
-        "description": "Sob alta carga, o sistema degrada features não-essenciais para manter o core funcionando. Níveis configuráveis de degradação.",
-        "degradesNonEssential": "Sob alta carga, o sistema degrada features não-essenciais para manter o core funcionando. Níveis configuráveis de degradação.",
-        "toKeepCore": "Sob alta carga, o sistema degrada features não-essenciais para manter o core funcionando. Níveis configuráveis de degradação.",
+        "description": "Sob alta carga, o sistema degrada",
+        "degradesNonEssential": "features não-essenciais",
+        "toKeepCore": "para manter o core funcionando. Níveis configuráveis de degradação.",
         "normal": "NORMAL",
         "normalUsers": "Usuários &lt; 500",
         "normalFeature1": "✅ Full aggregation (5s)",

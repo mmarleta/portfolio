@@ -1949,9 +1949,9 @@
       },
       "gracefulDegradation": {
         "title": "⚡ Graceful Degradation: A System That Doesn't Go Down",
-        "description": "Under high load, the system degrades non-essential features to keep the core running. Configurable degradation levels.",
-        "degradesNonEssential": "Under high load, the system degrades non-essential features to keep the core running. Configurable degradation levels.",
-        "toKeepCore": "Under high load, the system degrades non-essential features to keep the core running. Configurable degradation levels.",
+        "description": "Under high load, the system degrades",
+        "degradesNonEssential": "non-essential features",
+        "toKeepCore": "to keep the core running. Configurable degradation levels.",
         "normal": "NORMAL",
         "normalUsers": "Users &lt; 500",
         "normalFeature1": "✅ Full aggregation (5s)",
