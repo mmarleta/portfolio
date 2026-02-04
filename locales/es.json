@@ -137,9 +137,9 @@
       "problem": {
         "title": "El problema: \"Split Messages\" de WhatsApp",
         "naturalBehavior": "❌ Comportamiento natural de los usuarios",
-        "userFragmented": "Los usuarios envían pensamientos fragmentados en múltiples mensajes rápidos. Esto es un comportamiento normal en WhatsApp.",
-        "normalBehavior": "Los usuarios envían pensamientos fragmentados en múltiples mensajes rápidos. Esto es un comportamiento normal en WhatsApp.",
-        "inWhatsApp": "Los usuarios envían pensamientos fragmentados en múltiples mensajes rápidos. Esto es un comportamiento normal en WhatsApp.",
+        "userFragmented": "Los usuarios envían pensamientos fragmentados en múltiples mensajes rápidos.",
+        "normalBehavior": "Esto es un comportamiento normal",
+        "inWhatsApp": "en WhatsApp.",
         "withoutAggregation": "Sin agregación (caos):",
         "issue1": "5 llamadas a la API de IA para UNA intención",
         "issue2": "5 respuestas confusas (\"¡Hola!\", \"¡Bien!\", \"¿Agendar qué?\"...)",
@@ -896,9 +896,9 @@
         "p1": "Cada cliente tiene su propio esquema en PostgreSQL ({clinicExample}, {storeExample}). No es solo un tenant_id en una tabla compartida — es aislamiento real. Un bug en el código de un tenant no filtra datos de otro."
       },
       "forgetting": {
-        "title": "El problema del \"olvido\" Los chatbots pierden contexto. Después de 50 mensajes, olvidan que reservaste una cita para el martes a las 14h. Lo resolví con memoria en tres capas:",
-        "p1": "El problema del \"olvido\" Los chatbots pierden contexto. Después de 50 mensajes, olvidan que reservaste una cita para el martes a las 14h. Lo resolví con memoria en tres capas:",
-        "p2": "El problema del \"olvido\" Los chatbots pierden contexto. Después de 50 mensajes, olvidan que reservaste una cita para el martes a las 14h. Lo resolví con memoria en tres capas:",
+        "title": "El problema del \"olvido\"",
+        "p1": "Los chatbots pierden contexto. Después de 50 mensajes, olvidan que reservaste una cita para el martes a las 14:00.",
+        "p2": "Lo resolví con memoria de tres capas:",
         "hot": "Redis, últimos mensajes, acceso instantáneo",
         "warm": "Redis, contexto reciente, TTL mayor",
         "cold": "PostgreSQL, historial completo",
@@ -1174,10 +1174,10 @@
       "validation": {
         "title": "Validación arquitectural",
         "intro": "El <code class=\"text-cyan-400\">validate_diff verifica si un diff respeta los guardrails arquitecturales del proyecto:",
-        "violationDetected": "❌ Violación Detectada ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← ¡AI Engine no puede acceder a la BD directamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
-        "violationExample": "❌ Violación Detectada ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← ¡AI Engine no puede acceder a la BD directamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
-        "validDiff": "✅ Diff válido ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respeta el límite de la API de Memory Engine",
-        "validExample": "✅ Diff válido ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respeta el límite de la API de Memory Engine"
+        "violationDetected": "❌ Violación Detectada",
+        "violationExample": "ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← ¡AI Engine no puede acceder a la BD directamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
+        "validDiff": "✅ Diff válido",
+        "validExample": "ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respeta el límite de la API de Memory Engine"
       },
       "hotReload": {
         "title": "Hot Reload",

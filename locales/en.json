@@ -1860,9 +1860,9 @@
       "problem": {
         "title": "The Problem: WhatsApp \"Split Messages\"",
         "naturalBehavior": "❌ Natural User Behavior",
-        "userFragmented": "Users send fragmented thoughts across multiple quick messages. This is normal behavior on WhatsApp.",
-        "normalBehavior": "Users send fragmented thoughts across multiple quick messages. This is normal behavior on WhatsApp.",
-        "inWhatsApp": "Users send fragmented thoughts across multiple quick messages. This is normal behavior on WhatsApp.",
+        "userFragmented": "Users send fragmented thoughts across multiple quick messages.",
+        "normalBehavior": "This is normal behavior",
+        "inWhatsApp": "on WhatsApp.",
         "withoutAggregation": "Without Aggregation (chaos):",
         "issue1": "5 AI API calls for ONE intent",
         "issue2": "5 confusing replies (\"Hi!\", \"Good!\", \"Schedule what?\"...)",
@@ -2432,9 +2432,9 @@
         "p1": "Each client has its own PostgreSQL schema ({clinicExample}, {storeExample}). It's not just a tenant_id in a shared table — it's real isolation. A bug in one tenant's code doesn't leak another's data."
       },
       "forgetting": {
-        "title": "The \"Forgetting\" Problem Chatbots lose context. After 50 messages, they forget you booked an appointment for Tuesday at 2pm. I solved it with three-layer memory:",
-        "p1": "The \"Forgetting\" Problem Chatbots lose context. After 50 messages, they forget you booked an appointment for Tuesday at 2pm. I solved it with three-layer memory:",
-        "p2": "The \"Forgetting\" Problem Chatbots lose context. After 50 messages, they forget you booked an appointment for Tuesday at 2pm. I solved it with three-layer memory:",
+        "title": "The \"Forgetting\" Problem",
+        "p1": "Chatbots lose context. After 50 messages, they forget you booked an appointment for Tuesday at 2pm.",
+        "p2": "I solved it with three-layer memory:",
         "hot": "Redis, latest messages, instant access",
         "warm": "Redis, recent context, longer TTL",
         "cold": "PostgreSQL, full history",
@@ -2710,10 +2710,10 @@
       "validation": {
         "title": "Architectural Validation",
         "intro": "The <code class=\"text-cyan-400\">validate_diff checks whether a diff respects the project's architectural guardrails:",
-        "violationDetected": "❌ Violation Detected ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine cannot access DB directly! Guardrail: \"All data operations must go through Memory Engine APIs\"",
-        "violationExample": "❌ Violation Detected ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine cannot access DB directly! Guardrail: \"All data operations must go through Memory Engine APIs\"",
-        "validDiff": "✅ Valid Diff ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary",
-        "validExample": "✅ Valid Diff ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary"
+        "violationDetected": "❌ Violation Detected",
+        "violationExample": "ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine cannot access DB directly! Guardrail: \"All data operations must go through Memory Engine APIs\"",
+        "validDiff": "✅ Valid Diff",
+        "validExample": "ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary"
       },
       "hotReload": {
         "title": "Hot Reload",

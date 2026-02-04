@@ -1860,9 +1860,9 @@
       "problem": {
         "title": "O Problema: \"Split Messages\" do WhatsApp",
         "naturalBehavior": "❌ Comportamento Natural dos Usuários",
-        "userFragmented": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas. Isso é comportamento normal no WhatsApp.",
-        "normalBehavior": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas. Isso é comportamento normal no WhatsApp.",
-        "inWhatsApp": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas. Isso é comportamento normal no WhatsApp.",
+        "userFragmented": "Usuários enviam pensamentos fragmentados em múltiplas mensagens rápidas.",
+        "normalBehavior": "Isso é comportamento normal",
+        "inWhatsApp": "no WhatsApp.",
         "withoutAggregation": "Sem Agregação (caos):",
         "issue1": "5 chamadas à API de IA para UMA intenção",
         "issue2": "5 respostas confusas (\"Oi!\", \"Bem!\", \"Agendar o quê?\"...)",
@@ -2432,9 +2432,9 @@
         "p1": "Cada cliente tem seu próprio schema no PostgreSQL ({clinicExample}, {storeExample}). Não é só um tenant_id numa tabela compartilhada — é isolamento real. Um bug no código de um tenant não vaza dados de outro."
       },
       "forgetting": {
-        "title": "O Problema do \"Esquecimento\" Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h. Resolvi com memória em três camadas:",
-        "p1": "O Problema do \"Esquecimento\" Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h. Resolvi com memória em três camadas:",
-        "p2": "O Problema do \"Esquecimento\" Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h. Resolvi com memória em três camadas:",
+        "title": "O Problema do \"Esquecimento\"",
+        "p1": "Chatbots perdem contexto. Depois de 50 mensagens, esquecem que você marcou consulta pra terça às 14h.",
+        "p2": "Resolvi com memória em três camadas:",
         "hot": "Redis, últimas mensagens, acesso instantâneo",
         "warm": "Redis, contexto recente, TTL maior",
         "cold": "PostgreSQL, histórico completo",
@@ -2710,10 +2710,10 @@
       "validation": {
         "title": "Validação Arquitetural",
         "intro": "O <code class=\"text-cyan-400\">validate_diff verifica se um diff respeita \nos guardrails arquiteturais do projeto:",
-        "violationDetected": "❌ Violação Detectada ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine não pode acessar DB diretamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
-        "violationExample": "❌ Violação Detectada ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine não pode acessar DB diretamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
-        "validDiff": "✅ Diff Válido ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary",
-        "validExample": "✅ Diff Válido ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary"
+        "violationDetected": "❌ Violação Detectada",
+        "violationExample": "ai-engine/src/service.py: Line 42 \"import sqlalchemy\" ← AI Engine não pode acessar DB diretamente! Guardrail: \"All data operations must go through Memory Engine APIs\"",
+        "validDiff": "✅ Diff Válido",
+        "validExample": "ai-engine/src/service.py: Line 42 \"await memory_engine_client.get_data(...)\" ✓ Respects Memory Engine API boundary"
       },
       "hotReload": {
         "title": "Hot Reload",
