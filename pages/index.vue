@@ -222,6 +222,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- Rules Engine -->
+              <NuxtLink 
+                to="/projetos/rules-engine" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-rose-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">⚡</span>
+                  <span class="text-xs text-gray-600 group-hover:text-rose-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-rose-400 transition-colors">
+                  Rules Engine
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Motor Python-native 1000x mais rápido que JSONLogic. Regras em runtime 
+                  por tenant, avaliação sub-millisecond, multi-vertical.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Python Lambda</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Event-driven</span>
+                </div>
+              </NuxtLink>
+
               <!-- Optimus Case Study -->
               <NuxtLink 
                 to="/projetos/optimus" 
