@@ -596,7 +596,7 @@ ai-engine:
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">.github/workflows/guardrails.yml (excerpt)</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Roda só em PRs que tocam código Python
+            <pre v-pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Roda só em PRs que tocam código Python
 on:
   pull_request:
     paths:
