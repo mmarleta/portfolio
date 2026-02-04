@@ -438,6 +438,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- iContei -->
+              <NuxtLink 
+                to="/projetos/icontei" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">🕐</span>
+                  <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
+                  iContei
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Rede social de contadores compartilháveis. Next.js 16, FastAPI, 
+                  WebSocket real-time, verificação por IA, rankings com Redis.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Next.js 16</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">FastAPI</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
+                </div>
+              </NuxtLink>
+
               <!-- PVCoach -->
               <NuxtLink 
                 to="/projetos/pvcoach" 
