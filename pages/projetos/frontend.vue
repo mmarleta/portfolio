@@ -11,7 +11,7 @@
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
-          Voltar ao Portfolio
+          {{ $t('cases.frontend.backToPortfolio') }}
         </NuxtLink>
         
         <div class="flex items-center gap-4 mb-6">
@@ -19,20 +19,18 @@
             Optimus Platform
           </span>
           <span class="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm">
-            User Interface
+            {{ $t('cases.frontend.badge') }}
           </span>
         </div>
         
         <h1 class="text-5xl md:text-6xl font-bold mb-6">
           <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
-            Frontend Apps
+            {{ $t('cases.frontend.title') }}
           </span>
         </h1>
         
         <p class="text-xl text-gray-400 max-w-3xl mb-8">
-          Duas aplicações Vue.js 3 especializadas: Admin Dashboard para operadores de cada tenant 
-          e SuperAdmin Panel para gestão global da plataforma. WebSocket real-time, 
-          handover management, e interfaces responsivas.
+          {{ $t('cases.frontend.description') }}
         </p>
 
         <div class="flex flex-wrap gap-3">
@@ -49,7 +47,7 @@
     <!-- Duas Aplicações -->
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">Arquitetura: 2 Apps, 2 Propósitos</h2>
+        <h2 class="text-3xl font-bold mb-8">{{ $t('cases.frontend.architectureTitle') }}</h2>
         
         <div class="bg-gray-900/50 rounded-xl p-8 border border-gray-800 mb-12">
           <pre class="text-sm text-blue-400 overflow-x-auto"><code>┌─────────────────────────────────────────────────────────────────────────┐
@@ -76,10 +74,10 @@
 └───────┘     └───────────┘  └─────────────┘  └────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────┐
-│  RBAC (Role-Based Access Control)                                       │
+│  {{ $t('cases.frontend.rbac.title') }}                                       │
 ├─────────────────────────────────────────────────────────────────────────┤
-│  admin      → Acesso ao Admin App (3000) do seu tenant                  │
-│  superadmin → Acesso ao SuperAdmin (3001) + todos os tenants            │
+│  {{ $t('cases.frontend.rbac.admin') }}                  │
+│  {{ $t('cases.frontend.rbac.superadmin') }}            │
 └─────────────────────────────────────────────────────────────────────────┘</code></pre>
         </div>
 
@@ -91,41 +89,40 @@
                 <span class="text-2xl">🖥️</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-blue-400">Admin Dashboard</h3>
-                <p class="text-sm text-gray-500">Porta 3000</p>
+                <h3 class="text-xl font-bold text-blue-400">{{ $t('cases.frontend.adminDashboard.title') }}</h3>
+                <p class="text-sm text-gray-500">{{ $t('cases.frontend.adminDashboard.port') }}</p>
               </div>
             </div>
             
             <p class="text-gray-400 text-sm mb-4">
-              Interface para <strong class="text-blue-300">operadores e administradores de cada tenant</strong>.
-              Foco em atendimento ao cliente e gestão do dia-a-dia.
+              {{ $t('cases.frontend.adminDashboard.description') }}
             </p>
 
-            <h4 class="text-blue-300 font-bold mb-3">Features:</h4>
+            <h4 class="text-blue-300 font-bold mb-3">{{ $t('cases.frontend.adminDashboard.featuresTitle') }}</h4>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">💬</span>
-                <span>Chat real-time com clientes (WebSocket)</span>
+                <span>{{ $t('cases.frontend.adminDashboard.features.chat') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">⏰</span>
-                <span>Handover management (timer 30min auto-return)</span>
+                <span>{{ $t('cases.frontend.adminDashboard.features.handover') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">📊</span>
-                <span>Dashboard de métricas do tenant</span>
+                <span>{{ $t('cases.frontend.adminDashboard.features.dashboard') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">👥</span>
-                <span>Lista de conversas ativas</span>
+                <span>{{ $t('cases.frontend.adminDashboard.features.conversations') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">📋</span>
-                <span>Histórico de atendimentos</span>
+                <span>{{ $t('cases.frontend.adminDashboard.features.history') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 mt-1">🔔</span>
-                <span>Notificações de novas mensagens</span>
+                <span>{{ $t('cases.frontend.adminDashboard.features.notifications') }}</span>
               </li>
             </ul>
           </div>
@@ -137,41 +134,40 @@
                 <span class="text-2xl">👑</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-purple-400">SuperAdmin Panel</h3>
-                <p class="text-sm text-gray-500">Porta 3001</p>
+                <h3 class="text-xl font-bold text-purple-400">{{ $t('cases.frontend.superAdminPanel.title') }}</h3>
+                <p class="text-sm text-gray-500">{{ $t('cases.frontend.superAdminPanel.port') }}</p>
               </div>
             </div>
             
             <p class="text-gray-400 text-sm mb-4">
-              Interface para <strong class="text-purple-300">gestão global da plataforma</strong>.
-              Configurações, provisioning de tenants, e monitoramento.
+              {{ $t('cases.frontend.superAdminPanel.description') }}
             </p>
 
-            <h4 class="text-purple-300 font-bold mb-3">Features:</h4>
+            <h4 class="text-purple-300 font-bold mb-3">{{ $t('cases.frontend.superAdminPanel.featuresTitle') }}</h4>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">🏢</span>
-                <span>Gestão de todos os tenants</span>
+                <span>{{ $t('cases.frontend.superAdminPanel.features.tenants') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">✨</span>
-                <span>Provisionamento de novos tenants</span>
+                <span>{{ $t('cases.frontend.superAdminPanel.features.provisioning') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">📝</span>
-                <span>Configuração de prompts por tenant</span>
+                <span>{{ $t('cases.frontend.superAdminPanel.features.prompts') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">🔑</span>
-                <span>LLM Pools & Key Groups management</span>
+                <span>{{ $t('cases.frontend.superAdminPanel.features.llmPools') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">🚦</span>
-                <span>Preflight panel (health checks)</span>
+                <span>{{ $t('cases.frontend.superAdminPanel.features.preflight') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">⚙️</span>
-                <span>System defaults (global configs)</span>
+                <span>{{ $t('cases.frontend.superAdminPanel.features.defaults') }}</span>
               </li>
             </ul>
           </div>
@@ -182,19 +178,17 @@
     <!-- Chat Real-time -->
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">💬 Chat Real-time com WebSocket</h2>
+        <h2 class="text-3xl font-bold mb-8">💬 {{ $t('cases.frontend.chatRealtime.title') }}</h2>
         
         <p class="text-gray-400 mb-8 max-w-3xl">
-          A interface de chat usa WebSocket para atualizações em tempo real.
-          Quando uma nova mensagem chega (WhatsApp, web, etc.), o operador 
-          vê <strong class="text-blue-400">instantaneamente</strong> sem refresh.
+          {{ $t('cases.frontend.chatRealtime.description') }}
         </p>
 
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-blue-400">Fluxo WebSocket</h3>
+            <h3 class="text-lg font-bold mb-4 text-blue-400">{{ $t('cases.frontend.chatRealtime.flowTitle') }}</h3>
             <div class="bg-gray-800 rounded-lg p-4">
-              <pre class="text-sm text-gray-300 overflow-x-auto"><code>// Frontend conecta ao WebSocket
+              <pre class="text-sm text-gray-300 overflow-x-auto"><code>// Frontend connects to WebSocket
 const ws = new WebSocket(
   'wss://api.webotify.io/api/conversations/ws'
 );
@@ -204,17 +198,17 @@ ws.onmessage = (event) => {
   
   switch(data.type) {
     case 'new_message':
-      // Adiciona mensagem na conversa
+      // Add message to conversation
       conversations.addMessage(data.payload);
       break;
       
     case 'conversation_updated':
-      // Atualiza status da conversa
+      // Update conversation status
       conversations.update(data.payload);
       break;
       
     case 'handover_started':
-      // Mostra timer de handover
+      // Show handover timer
       handover.start(data.payload);
       break;
   }
@@ -223,41 +217,41 @@ ws.onmessage = (event) => {
           </div>
 
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-blue-400">Eventos Suportados</h3>
+            <h3 class="text-lg font-bold mb-4 text-blue-400">{{ $t('cases.frontend.chatRealtime.eventsTitle') }}</h3>
             <div class="space-y-3">
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-green-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">new_message</div>
-                  <div class="text-xs text-gray-500">Nova mensagem na conversa</div>
+                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.newMessage') }}</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-yellow-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">conversation_updated</div>
-                  <div class="text-xs text-gray-500">Status ou metadata alterados</div>
+                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.conversationUpdated') }}</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-blue-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">handover_started</div>
-                  <div class="text-xs text-gray-500">Operador assumiu conversa</div>
+                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.handoverStarted') }}</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-purple-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">handover_ended</div>
-                  <div class="text-xs text-gray-500">Conversa retornou para IA</div>
+                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.handoverEnded') }}</div>
                 </div>
               </div>
               <div class="flex items-center gap-3 p-3 bg-gray-800 rounded-lg">
                 <span class="text-red-400">●</span>
                 <div>
                   <div class="font-bold text-white text-sm">typing</div>
-                  <div class="text-xs text-gray-500">Cliente está digitando</div>
+                  <div class="text-xs text-gray-500">{{ $t('cases.frontend.chatRealtime.events.typing') }}</div>
                 </div>
               </div>
             </div>
@@ -269,56 +263,51 @@ ws.onmessage = (event) => {
     <!-- Handover Management -->
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">⏰ Handover Management</h2>
+        <h2 class="text-3xl font-bold mb-8">⏰ {{ $t('cases.frontend.handoverManagement.title') }}</h2>
         
         <p class="text-gray-400 mb-8 max-w-3xl">
-          Quando um operador assume uma conversa (handover), a UI mostra um timer
-          de 30 minutos. Se não houver interação, a conversa 
-          <strong class="text-blue-400">retorna automaticamente para a IA</strong>.
+          {{ $t('cases.frontend.handoverManagement.description') }}
         </p>
 
         <div class="grid md:grid-cols-3 gap-6 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">🤖</div>
-            <h3 class="text-lg font-bold mb-3 text-blue-400">1. IA Atendendo</h3>
+            <h3 class="text-lg font-bold mb-3 text-blue-400">{{ $t('cases.frontend.handoverManagement.states.aiServing.title') }}</h3>
             <p class="text-gray-400 text-sm">
-              Estado normal. IA responde automaticamente. 
-              Operador pode visualizar mas não intervém.
+              {{ $t('cases.frontend.handoverManagement.states.aiServing.description') }}
             </p>
           </div>
 
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">👤</div>
-            <h3 class="text-lg font-bold mb-3 text-yellow-400">2. Handover Ativo</h3>
+            <h3 class="text-lg font-bold mb-3 text-yellow-400">{{ $t('cases.frontend.handoverManagement.states.handoverActive.title') }}</h3>
             <p class="text-gray-400 text-sm">
-              Operador assumiu. Timer de 30 min visível.
-              IA pausa, mensagens vão direto pro operador.
+              {{ $t('cases.frontend.handoverManagement.states.handoverActive.description') }}
             </p>
           </div>
 
           <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
             <div class="text-3xl mb-4">⏰</div>
-            <h3 class="text-lg font-bold mb-3 text-red-400">3. Timer Expira</h3>
+            <h3 class="text-lg font-bold mb-3 text-red-400">{{ $t('cases.frontend.handoverManagement.states.timerExpires.title') }}</h3>
             <p class="text-gray-400 text-sm">
-              Sem ação em 30min → auto-return para IA.
-              Operador é notificado antes (warning em 5min).
+              {{ $t('cases.frontend.handoverManagement.states.timerExpires.description') }}
             </p>
           </div>
         </div>
 
         <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-          <h4 class="text-blue-400 font-bold mb-4">Timer UI Component</h4>
+          <h4 class="text-blue-400 font-bold mb-4">{{ $t('cases.frontend.handoverManagement.timerUiTitle') }}</h4>
           <div class="bg-gray-800 rounded-lg p-4">
             <pre class="text-sm text-gray-300 overflow-x-auto"><code>&lt;template&gt;
   &lt;div class="handover-timer" :class="timerClass"&gt;
     &lt;div class="timer-display"&gt;
-      {{ formattedTime }}
+      {{ '\{\{ formattedTime \}\}' }}
     &lt;/div&gt;
     &lt;div class="timer-label"&gt;
-      {{ isWarning ? 'Retorno em breve!' : 'Tempo restante' }}
+      {{ '\{\{ isWarning ? \'' }}{{ $t('cases.frontend.handoverManagement.returningSoon') }}{{ '\' : \'' }}{{ $t('cases.frontend.handoverManagement.timeRemaining') }}{{ '\' \}\}' }}
     &lt;/div&gt;
     &lt;button @click="extendHandover" v-if="canExtend"&gt;
-      Estender +15min
+      {{ $t('cases.frontend.handoverManagement.extend') }}
     &lt;/button&gt;
   &lt;/div&gt;
 &lt;/template&gt;
@@ -342,101 +331,101 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <!-- SuperAdmin Features -->
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">👑 SuperAdmin: Gestão Global</h2>
+        <h2 class="text-3xl font-bold mb-8">👑 {{ $t('cases.frontend.superAdminFeatures.title') }}</h2>
         
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <!-- Tenant Management -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">🏢 Gestão de Tenants</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">🏢 {{ $t('cases.frontend.superAdminFeatures.tenantManagement.title') }}</h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Lista de tenants</strong> com status, vertical, e última atividade</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.list') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Criar tenant</strong> via wizard (escolhe vertical, configura identity)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.create') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Editar tenant</strong> (nome, timezone, locale, features)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.edit') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Desativar/Deletar</strong> com confirmação e soft-delete</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.tenantManagement.deactivate') }}</strong></span>
               </li>
             </ul>
           </div>
 
           <!-- Prompt Configuration -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">📝 Configuração de Prompts</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">📝 {{ $t('cases.frontend.superAdminFeatures.promptConfig.title') }}</h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">System prompt</strong> customizado por tenant</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.systemPrompt') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Greeting message</strong> (primeira mensagem da IA)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.greeting') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Intent classification</strong> prompt</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.intent') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Handover context</strong> (resumo para operador)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.handoverContext') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Variables override</strong> (assistant_name, rules, etc.)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.promptConfig.variables') }}</strong></span>
               </li>
             </ul>
           </div>
 
           <!-- LLM Pools -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">🔑 LLM Pools & Keys</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">🔑 {{ $t('cases.frontend.superAdminFeatures.llmPools.title') }}</h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Pools globais</strong> (chat, tools, embeddings)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.globalPools') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Key Groups</strong> com múltiplas API keys</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.keyGroups') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Reveal protegido</strong> (só superadmin vê keys)</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.reveal') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Health status</strong> de cada key/pool</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.llmPools.health') }}</strong></span>
               </li>
             </ul>
           </div>
 
           <!-- Preflight Panel -->
           <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-            <h3 class="text-lg font-bold mb-4 text-purple-400">🚦 Preflight Panel</h3>
+            <h3 class="text-lg font-bold mb-4 text-purple-400">🚦 {{ $t('cases.frontend.superAdminFeatures.preflightPanel.title') }}</h3>
             <ul class="space-y-3 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-green-400">●</span>
-                <span><strong class="text-white">OK</strong> - Todas configs válidas</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.ok') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-yellow-400">●</span>
-                <span><strong class="text-white">Warning</strong> - Usando defaults genéricos</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.warning') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-red-400">●</span>
-                <span><strong class="text-white">Critical</strong> - Falta assistant_name ou template vazio</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.critical') }}</strong></span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400">•</span>
-                <span><strong class="text-white">Source badges</strong> - Seeded vs Override vs Default</span>
+                <span><strong class="text-white">{{ $t('cases.frontend.superAdminFeatures.preflightPanel.sourceBadges') }}</strong></span>
               </li>
             </ul>
           </div>
@@ -447,34 +436,33 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <!-- Multi-tenant Dashboard -->
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">📊 Dashboard Multi-tenant</h2>
+        <h2 class="text-3xl font-bold mb-8">📊 {{ $t('cases.frontend.dashboard.title') }}</h2>
         
         <p class="text-gray-400 mb-8 max-w-3xl">
-          O Admin Dashboard mostra métricas específicas do tenant logado.
-          Conversas ativas, tempo médio de resposta, handovers, e mais.
+          {{ $t('cases.frontend.dashboard.description') }}
         </p>
 
         <div class="grid md:grid-cols-4 gap-4 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-blue-400 mb-2">247</div>
-            <div class="text-gray-400 text-sm">Conversas Hoje</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.conversationsToday') }}</div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-green-400 mb-2">12</div>
-            <div class="text-gray-400 text-sm">Ativas Agora</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.activeNow') }}</div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-yellow-400 mb-2">3</div>
-            <div class="text-gray-400 text-sm">Em Handover</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.inHandover') }}</div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-3xl font-bold text-purple-400 mb-2">1.2s</div>
-            <div class="text-gray-400 text-sm">Tempo Resposta</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.dashboard.metrics.responseTime') }}</div>
           </div>
         </div>
 
         <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-          <h4 class="text-blue-400 font-bold mb-4">Lista de Conversas</h4>
+          <h4 class="text-blue-400 font-bold mb-4">{{ $t('cases.frontend.dashboard.conversationsList.title') }}</h4>
           <div class="space-y-3">
             <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
               <div class="flex items-center gap-3">
@@ -487,8 +475,8 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-400">Última msg: 2min</div>
-                <span class="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded">IA Respondendo</span>
+                <div class="text-sm text-gray-400">{{ $t('cases.frontend.dashboard.conversationsList.lastMsg') }}: 2min</div>
+                <span class="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded">{{ $t('cases.frontend.dashboard.conversationsList.aiResponding') }}</span>
               </div>
             </div>
             <div class="flex items-center justify-between p-4 bg-gray-800 rounded-lg border border-yellow-500/30">
@@ -502,8 +490,8 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-400">Handover: 12min</div>
-                <span class="text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded">Operador: Carlos</span>
+                <div class="text-sm text-gray-400">{{ $t('cases.frontend.dashboard.conversationsList.handover') }}: 12min</div>
+                <span class="text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded">{{ $t('cases.frontend.dashboard.conversationsList.operator') }}: Carlos</span>
               </div>
             </div>
           </div>
@@ -514,49 +502,49 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <!-- Stack Técnico -->
     <section class="py-16 border-t border-gray-800 bg-gray-900/30">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">Stack Técnico</h2>
+        <h2 class="text-3xl font-bold mb-8">{{ $t('cases.frontend.techStack.title') }}</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">Framework</div>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.framework') }}</div>
             <p class="text-gray-400 text-sm">Vue.js 3 (Composition API)</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">Styling</div>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.styling') }}</div>
             <p class="text-gray-400 text-sm">Tailwind CSS</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">State</div>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.state') }}</div>
             <p class="text-gray-400 text-sm">Pinia (Vue Store)</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">Real-time</div>
-            <p class="text-gray-400 text-sm">WebSocket nativo</p>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.realtime') }}</div>
+            <p class="text-gray-400 text-sm">WebSocket</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">Router</div>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.router') }}</div>
             <p class="text-gray-400 text-sm">Vue Router 4</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">HTTP</div>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.http') }}</div>
             <p class="text-gray-400 text-sm">Axios / Fetch API</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">Build</div>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.build') }}</div>
             <p class="text-gray-400 text-sm">Vite</p>
           </div>
           <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-            <div class="text-blue-400 font-bold mb-2">Container</div>
-            <p class="text-gray-400 text-sm">Docker (2 portas)</p>
+            <div class="text-blue-400 font-bold mb-2">{{ $t('cases.frontend.techStack.container') }}</div>
+            <p class="text-gray-400 text-sm">Docker (2 ports)</p>
           </div>
         </div>
 
         <!-- API Integration -->
         <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-          <h4 class="text-blue-400 font-bold mb-4">Integração com Backend</h4>
+          <h4 class="text-blue-400 font-bold mb-4">{{ $t('cases.frontend.techStack.backendIntegration.title') }}</h4>
           <div class="grid md:grid-cols-2 gap-4">
             <div class="bg-gray-800 rounded-lg p-4">
-              <div class="font-bold text-white mb-2">REST APIs</div>
+              <div class="font-bold text-white mb-2">{{ $t('cases.frontend.techStack.backendIntegration.restApis') }}</div>
               <code class="text-xs text-gray-400">
                 GET /api/conversations<br>
                 POST /api/chat<br>
@@ -565,7 +553,7 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
               </code>
             </div>
             <div class="bg-gray-800 rounded-lg p-4">
-              <div class="font-bold text-white mb-2">WebSocket</div>
+              <div class="font-bold text-white mb-2">{{ $t('cases.frontend.techStack.backendIntegration.websocket') }}</div>
               <code class="text-xs text-gray-400">
                 wss://api.webotify.io/api/conversations/ws<br>
                 Events: new_message, handover_*, typing<br>
@@ -580,28 +568,28 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <!-- Resultados -->
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">Resultados</h2>
+        <h2 class="text-3xl font-bold mb-8">{{ $t('cases.frontend.results.title') }}</h2>
         
         <div class="grid md:grid-cols-4 gap-6 mb-12">
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">&lt;100ms</div>
-            <div class="text-gray-400 text-sm">Latência WebSocket</div>
-            <div class="text-gray-500 text-xs mt-1">Mensagens em tempo real</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.websocketLatency') }}</div>
+            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.websocketLatencyDesc') }}</div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">2</div>
-            <div class="text-gray-400 text-sm">Apps Especializadas</div>
-            <div class="text-gray-500 text-xs mt-1">Admin + SuperAdmin</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.specializedApps') }}</div>
+            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.specializedAppsDesc') }}</div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">RBAC</div>
-            <div class="text-gray-400 text-sm">Controle de Acesso</div>
-            <div class="text-gray-500 text-xs mt-1">admin vs superadmin</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.accessControl') }}</div>
+            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.accessControlDesc') }}</div>
           </div>
           <div class="bg-gray-800/50 rounded-xl p-6 text-center border border-gray-700">
             <div class="text-4xl font-bold text-blue-400 mb-2">30min</div>
-            <div class="text-gray-400 text-sm">Auto-return Handover</div>
-            <div class="text-gray-500 text-xs mt-1">Timer configurável</div>
+            <div class="text-gray-400 text-sm">{{ $t('cases.frontend.results.autoReturnHandover') }}</div>
+            <div class="text-gray-500 text-xs mt-1">{{ $t('cases.frontend.results.autoReturnHandoverDesc') }}</div>
           </div>
         </div>
       </div>
@@ -610,16 +598,15 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
     <!-- CTA -->
     <section class="py-16 border-t border-gray-800">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4">Precisa de interfaces para SaaS multi-tenant?</h2>
+        <h2 class="text-3xl font-bold mb-4">{{ $t('cases.frontend.cta.title') }}</h2>
         <p class="text-gray-400 mb-8">
-          Vue.js, real-time, dashboards, separação de roles - 
-          tenho experiência construindo interfaces enterprise.
+          {{ $t('cases.frontend.cta.description') }}
         </p>
         <NuxtLink 
           to="/contato" 
           class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors"
         >
-          Entrar em Contato
+          {{ $t('cases.frontend.cta.button') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -630,12 +617,14 @@ const timerClass = computed(() =&gt; isWarning.value ? 'warning' : 'normal');
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'Frontend Apps - Vue.js 3, WebSocket Real-time, Multi-tenant | Marcelo Marleta',
+  title: t('cases.frontend.meta.title'),
   meta: [
     { 
       name: 'description', 
-      content: 'Duas aplicações Vue.js 3: Admin Dashboard (3000) para operadores e SuperAdmin Panel (3001) para gestão global. WebSocket, Tailwind CSS, RBAC.' 
+      content: t('cases.frontend.meta.description')
     }
   ]
 })

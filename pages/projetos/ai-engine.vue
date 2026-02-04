@@ -7,9 +7,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
           </svg>
-          Voltar
+          {{ $t('cases.aiEngine.back') }}
         </NuxtLink>
-        <span class="text-gray-500 text-sm">Optimus AI Platform</span>
+        <span class="text-gray-500 text-sm">{{ $t('cases.aiEngine.platformName') }}</span>
       </div>
     </header>
 
@@ -18,40 +18,38 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-medium">
-            Core Service
+            {{ $t('cases.aiEngine.badge1') }}
           </span>
           <span class="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">
-            Arquitetura de IA
+            {{ $t('cases.aiEngine.badge2') }}
           </span>
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          AI Conversation
-          <span class="text-emerald-400"> Engine</span>
+          {{ $t('cases.aiEngine.title') }}
+          <span class="text-emerald-400"> {{ $t('cases.aiEngine.titleHighlight') }}</span>
         </h1>
         
         <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-          Motor de conversação enterprise que separa lógica determinística de linguagem natural. 
-          LangGraph orquestra 20+ nós especializados, FSM de 8 estados garante comportamentos 
-          críticos, e Semantic Router decide em &lt;10ms quando o LLM pode ser bypassado.
+          {{ $t('cases.aiEngine.subtitle') }}
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-emerald-400">20+</div>
-            <div class="text-sm text-gray-500">Nós LangGraph</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.aiEngine.stats.nodes') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-emerald-400">8</div>
-            <div class="text-sm text-gray-500">Estados FSM</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.aiEngine.stats.states') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-emerald-400">&lt;10ms</div>
-            <div class="text-sm text-gray-500">Semantic Routing</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.aiEngine.stats.routing') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-emerald-400">99.9%</div>
-            <div class="text-sm text-gray-500">Uptime</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.aiEngine.stats.uptime') }}</div>
           </div>
         </div>
       </div>
@@ -61,15 +59,15 @@
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <div class="flex gap-6 overflow-x-auto py-4 text-sm">
-          <a href="#problema" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Problema</a>
-          <a href="#arquitetura" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Arquitetura</a>
-          <a href="#semantic-routing" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Semantic Routing</a>
-          <a href="#fsm" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Booking FSM</a>
-          <a href="#context-composer" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Context Composer</a>
-          <a href="#fast-lane" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Pricing Fast Lane</a>
-          <a href="#reducer" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Flow Reducer</a>
-          <a href="#retry" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Retry Policies</a>
-          <a href="#resultados" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">Resultados</a>
+          <a href="#problema" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.problem') }}</a>
+          <a href="#arquitetura" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.architecture') }}</a>
+          <a href="#semantic-routing" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.semanticRouting') }}</a>
+          <a href="#fsm" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.fsm') }}</a>
+          <a href="#context-composer" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.contextComposer') }}</a>
+          <a href="#fast-lane" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.fastLane') }}</a>
+          <a href="#reducer" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.reducer') }}</a>
+          <a href="#retry" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.retry') }}</a>
+          <a href="#resultados" class="text-gray-400 hover:text-emerald-400 whitespace-nowrap transition-colors">{{ $t('cases.aiEngine.nav.results') }}</a>
         </div>
       </div>
     </nav>
@@ -81,43 +79,39 @@
       <section id="problema" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
-          O Problema
+          {{ $t('cases.aiEngine.sections.problem.title') }}
         </h2>
         
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Chatbots baseados puramente em LLMs sofrem de um problema fundamental: 
-            <strong class="text-white">não-determinismo</strong>. O mesmo input pode gerar outputs 
-            diferentes, e decisões críticas de negócio ficam à mercê de "temperatura" e contexto 
-            aleatório.
+            {{ $t('cases.aiEngine.sections.problem.content1') }}
+            <strong class="text-white">{{ $t('cases.aiEngine.sections.problem.nonDeterminism') }}</strong>{{ $t('cases.aiEngine.sections.problem.content2') }}
           </p>
           
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4">Cenários Inaceitáveis</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4">{{ $t('cases.aiEngine.sections.problem.scenariosTitle') }}</h4>
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">"Alucinação de horário":</strong> LLM confirma consulta às 14h quando o usuário disse 15h. Paciente perde consulta, clínica perde receita.</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.hallucination.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.hallucination.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">"Confirmação ambígua":</strong> Usuário diz "ok", LLM interpreta como confirmação. Mas era "ok, entendi" (acknowledgement), não "ok, confirma".</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.ambiguous.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.ambiguous.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">"Intent drift":</strong> Conversa sobre preço vira agendamento sem o usuário pedir. LLM "ajudando demais".</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.drift.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.drift.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">"Loop infinito":</strong> LLM chama ferramenta, falha, chama de novo, falha... até timeout ou custo explodir.</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.problem.scenarios.loop.title') }}</strong> {{ $t('cases.aiEngine.sections.problem.scenarios.loop.content') }}</span>
               </li>
             </ul>
           </div>
 
           <p class="text-gray-300 leading-relaxed">
-            Para um sistema de agendamento médico/odontológico enterprise, isso é inaceitável. 
-            A solução não é "melhorar o prompt" — é separar o que precisa ser determinístico 
-            (decisões de negócio) do que pode ser probabilístico (geração de linguagem natural).
+            {{ $t('cases.aiEngine.sections.problem.conclusion') }}
           </p>
         </div>
       </section>
@@ -126,19 +120,18 @@
       <section id="arquitetura" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">🏗️</span>
-          Arquitetura Híbrida
+          {{ $t('cases.aiEngine.sections.architecture.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            O AI Engine implementa uma arquitetura híbrida onde a <strong class="text-white">lógica de negócio 
-            é 100% determinística</strong> (FSM + regras) e o LLM é usado apenas para 
-            <strong class="text-white">tarefas onde criatividade é desejável</strong> (humanização, clarificação).
+            {{ $t('cases.aiEngine.sections.architecture.intro1') }} <strong class="text-white">{{ $t('cases.aiEngine.sections.architecture.introHighlight1') }}</strong> {{ $t('cases.aiEngine.sections.architecture.intro2') }}
+            <strong class="text-white">{{ $t('cases.aiEngine.sections.architecture.introHighlight2') }}</strong> {{ $t('cases.aiEngine.sections.architecture.intro3') }}
           </p>
 
           <!-- Architecture Diagram -->
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">Fluxo de Execução</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">{{ $t('cases.aiEngine.sections.architecture.diagramTitle') }}</h4>
             <div class="font-mono text-xs overflow-x-auto">
               <pre class="text-gray-400 leading-relaxed">
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -152,12 +145,12 @@
                                     │
                     ┌───────────────┴───────────────────────┐
                     │                                       │
-           [Alta Confiança]                        [Baixa Confiança]
+           [High Confidence]                       [Low Confidence]
                     │                                       │
                     ▼                                       ▼
 ┌───────────────────────────────┐       ┌─────────────────────────────────────┐
 │     BYPASS LLM (Fast Path)    │       │   structured_analysis_node (LLM)    │
-│     ~40% das requests         │       │   Intent + Entities Extraction      │
+│     ~40% of requests          │       │   Intent + Entities Extraction      │
 └───────────────┬───────────────┘       └─────────────────┬───────────────────┘
                 │                                         │
                 └────────────────────┬────────────────────┘
@@ -194,20 +187,20 @@
             </div>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">LangGraph: Por que não chains simples?</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.architecture.langGraphTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">graph_builder.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># LangGraph oferece controle granular sobre fluxo
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># LangGraph offers granular control over flow
 graph = StateGraph(
-    state_schema=ConversationState,  # Estado tipado
-    context_schema=ContextSchema,    # Contexto injetado
+    state_schema=ConversationState,  # State typed
+    context_schema=ContextSchema,    # Injected context
 )
 
-# Conditional edges baseados em estado
+# Conditional edges based on state
 graph.add_conditional_edges(
     "semantic_routing",
-    lambda state: route_by_intent(state),  # Função pura
+    lambda state: route_by_intent(state),  # Pure function
     {
         "pricing": "pricing_fast_lane",
         "appointment": "booking_flow_router",
@@ -216,20 +209,17 @@ graph.add_conditional_edges(
     }
 )
 
-# RetryPolicy diferenciada por tipo de erro
+# Differentiated RetryPolicy by error type
 retry_policy = RetryPolicy(
     max_attempts=3,
     initial_interval=0.5,
     backoff_factor=2.0,
-    retry_on=TRANSIENT_EXCEPTIONS,  # Só transient!
+    retry_on=TRANSIENT_EXCEPTIONS,  # Only transient!
 )</code></pre>
           </div>
 
           <p class="text-gray-300 leading-relaxed">
-            Chains são lineares — entrada → processamento → saída. Booking flow precisa de 
-            ramificações complexas: usuário pode cancelar no meio de um reschedule, pedir 
-            clarificação, ou escalar para humano a qualquer momento. LangGraph permite 
-            modelar isso como um grafo real.
+            {{ $t('cases.aiEngine.sections.architecture.langGraphExplanation') }}
           </p>
         </div>
       </section>
@@ -238,66 +228,63 @@ retry_policy = RetryPolicy(
       <section id="semantic-routing" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">🎯</span>
-          Semantic Routing
+          {{ $t('cases.aiEngine.sections.semanticRouting.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Antes de chamar o LLM para análise estruturada (caro, ~200ms), o Semantic Router 
-            tenta classificar o intent via embeddings (barato, &lt;10ms). Se a confiança for 
-            alta, bypassa o LLM completamente.
+            {{ $t('cases.aiEngine.sections.semanticRouting.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">semantic_routing.py</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">async def semantic_routing_node(state: dict, service: Any, config: Any):
     """
-    Roteamento Semântico (Pre-LLM).
+    Semantic Routing (Pre-LLM).
     
-    1. Verifica flags Priority-0 (Booking/Handover) → Se sim, ignora semantic
-    2. Chama SemanticRouter.classify() via embeddings
-    3. Se Alta Confiança:
-       a. Cria structured_analysis sintético
-       b. Valida via RoutingDecisionEngine (Policies/Circuit Breaker)
-       c. Define routing_decision + fast_path_taken=True
-    4. Se Baixa Confiança: adiciona hints, segue para LLM
+    1. Check Priority-0 flags (Booking/Handover) → If yes, ignore semantic
+    2. Call SemanticRouter.classify() via embeddings
+    3. If High Confidence:
+       a. Create synthetic structured_analysis
+       b. Validate via RoutingDecisionEngine (Policies/Circuit Breaker)
+       c. Set routing_decision + fast_path_taken=True
+    4. If Low Confidence: add hints, proceed to LLM
     """
     
-    # Priority-0: estados determinísticos têm prioridade absoluta
+    # Priority-0: deterministic states have absolute priority
     pending_action = state.get("pending_action", "")
     if pending_action.startswith("confirm_"):
-        # Usuário está confirmando algo - não reclassificar
+        # User is confirming something - don't reclassify
         return {"skip_semantic": True, "reason": "pending_confirmation"}
     
-    # Classificação via embeddings (~7ms p95)
+    # Classification via embeddings (~7ms p95)
     result = await semantic_router.classify(
         text=user_message,
         hybrid_alpha=0.7,        # 70% embedding, 30% keyword
-        abstain_threshold=0.55,  # Abaixo disso → vai pro LLM
-        bias_weight=0.03,        # Boost para intents prioritários
+        abstain_threshold=0.55,  # Below this → goes to LLM
+        bias_weight=0.03,        # Boost for priority intents
     )
     
     if result.confidence >= 0.85:
-        # Alta confiança: bypass LLM
+        # High confidence: bypass LLM
         return {
             "routing_decision": result.route,
             "fast_path_taken": True,
             "semantic_confidence": result.confidence,
         }
     else:
-        # Baixa confiança: hints para o LLM
+        # Low confidence: hints for the LLM
         return {
             "semantic_hints": result.top_routes,
             "fast_path_taken": False,
         }</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Hybrid Alpha: Embeddings + Keywords</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaTitle') }}</h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <p class="text-gray-400 mb-4">
-              Embeddings puros falham em casos onde palavras-chave são críticas (ex: "cancelar" vs 
-              "gostaria de remarcar"). O Semantic Router usa classificação híbrida:
+              {{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaExplanation') }}
             </p>
             <div class="font-mono text-sm bg-gray-800 rounded p-4">
               <span class="text-purple-400">score_final</span> = 
@@ -305,30 +292,29 @@ retry_policy = RetryPolicy(
               <span class="text-emerald-400">0.3</span> × keyword_match
             </div>
             <p class="text-gray-500 text-sm mt-4">
-              Configurável via env: <code>SEMANTIC_ROUTER_HYBRID_ALPHA=0.7</code>
+              {{ $t('cases.aiEngine.sections.semanticRouting.hybridAlphaConfig') }} <code>SEMANTIC_ROUTER_HYBRID_ALPHA=0.7</code>
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">HYBRID_ALPHA</h4>
-              <p class="text-sm text-gray-400">0.7 = 70% embeddings. Valores menores priorizam keywords.</p>
+              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.params.hybridAlpha.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.semanticRouting.params.hybridAlpha.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">ABSTAIN_THRESHOLD</h4>
-              <p class="text-sm text-gray-400">0.55 = confiança mínima. Abaixo disso, passa pro LLM.</p>
+              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.params.abstainThreshold.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.semanticRouting.params.abstainThreshold.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">BIAS_WEIGHT</h4>
-              <p class="text-sm text-gray-400">0.03 = boost para intents críticos (booking > greeting).</p>
+              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.params.biasWeight.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.semanticRouting.params.biasWeight.description') }}</p>
             </div>
           </div>
 
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-green-400 mb-2">✓ Resultado</h4>
+            <h4 class="font-semibold text-green-400 mb-2">{{ $t('cases.aiEngine.sections.semanticRouting.resultTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              ~40% das requests são classificadas com alta confiança e bypassam o LLM completamente. 
-              Economia de ~$0.002/request × 40% = redução significativa de custo OpenAI.
+              {{ $t('cases.aiEngine.sections.semanticRouting.resultContent') }}
             </p>
           </div>
         </div>
@@ -338,19 +324,17 @@ retry_policy = RetryPolicy(
       <section id="fsm" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">🔄</span>
-          Booking State Machine
+          {{ $t('cases.aiEngine.sections.fsm.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            O coração do booking flow é uma FSM (Finite State Machine) que define exatamente 
-            quais transições são válidas. Não importa o que o LLM "ache" — se a transição não 
-            está na tabela, não acontece.
+            {{ $t('cases.aiEngine.sections.fsm.intro') }}
           </p>
 
           <!-- FSM Diagram -->
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">Estados e Transições</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">{{ $t('cases.aiEngine.sections.fsm.diagramTitle') }}</h4>
             <div class="font-mono text-xs overflow-x-auto">
               <pre class="text-gray-400 leading-relaxed">
                                     ┌──────────┐
@@ -360,92 +344,92 @@ retry_policy = RetryPolicy(
                     ▼                   ▼                   ▼
           ┌─────────────────┐  ┌───────────────┐  ┌──────────────────┐
           │ discover_booking│  │ discover_slots│  │  clarification   │
-          │ (busca existing)│  │ (busca slots) │  │ (pede detalhes)  │
+          │ (search existing)│  │ (search slots) │  │ (ask details)  │
           └────────┬────────┘  └───────┬───────┘  └────────┬─────────┘
                    │                   │                   │
                    └─────────┬─────────┘                   │
                              ▼                             │
                    ┌─────────────────────┐                 │
                    │   await_selection   │◄────────────────┘
-                   │ (múltiplas opções)  │
+                   │ (multiple options)  │
                    └──────────┬──────────┘
                               ▼
                    ┌─────────────────────┐
                    │ await_confirmation  │
-                   │ (usuário confirma)  │
+                   │ (user confirms)     │
                    └──────────┬──────────┘
                               │
               ┌───────────────┼───────────────┐
               ▼               ▼               ▼
         ┌───────────┐  ┌────────────┐  ┌─────────────┐
         │ completed │  │  handover  │  │ (back loop) │
-        │ (sucesso) │  │ (humano)   │  │             │
+        │ (success) │  │ (human)    │  │             │
         └───────────┘  └────────────┘  └─────────────┘</pre>
             </div>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Transições Válidas (SSoT)</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.fsm.transitionsTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">booking_fsm_contract.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Single Source of Truth para transições
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Single Source of Truth for transitions
 FSM_TRANSITIONS = {
     "detect": {
-        "discover_booking",   # Buscar agendamento existente
-        "discover_slots",     # Buscar horários disponíveis
-        "await_confirmation", # Confirmação direta
-        "clarification",      # Pedir mais detalhes
-        "handover",           # Escalar para humano
+        "discover_booking",   # Search existing appointment
+        "discover_slots",     # Search available slots
+        "await_confirmation", # Direct confirmation
+        "clarification",      # Ask for more details
+        "handover",           # Escalate to human
     },
     "discover_booking": {
-        "await_selection",    # Múltiplos encontrados
-        "discover_slots",     # Precisa de slots
-        "await_confirmation", # Único encontrado
-        "clarification",      # Precisa de detalhes
+        "await_selection",    # Multiple found
+        "discover_slots",     # Needs slots
+        "await_confirmation", # Single found
+        "clarification",      # Needs details
         "handover",
     },
     "discover_slots": {
-        "await_selection",    # Múltiplos slots
-        "await_confirmation", # Slot único
+        "await_selection",    # Multiple slots
+        "await_confirmation", # Single slot
         "clarification",
         "handover",
     },
     "await_selection": {
-        "await_confirmation", # Usuário selecionou
-        "discover_slots",     # Nova busca
-        "discover_booking",   # Mudar booking
+        "await_confirmation", # User selected
+        "discover_slots",     # New search
+        "discover_booking",   # Change booking
         "handover",
     },
     "await_confirmation": {
-        "completed",          # ✅ ERP executado
-        "discover_slots",     # Usuário mudou de ideia
+        "completed",          # ✅ ERP executed
+        "discover_slots",     # User changed mind
         "discover_booking",
         "handover",
     },
-    # Estados terminais
+    # Terminal states
     "completed": {"completed", "handover"},
     "handover": {"handover"},
 }
 
 def is_valid_transition(from_state: str, to_state: str) -> bool:
-    """Valida se transição é permitida."""
+    """Validate if transition is allowed."""
     return to_state in FSM_TRANSITIONS.get(from_state, set())</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Operações Suportadas</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.fsm.operationsTitle') }}</h3>
 
           <div class="grid md:grid-cols-3 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-blue-400 mb-2">schedule</h4>
-              <p class="text-sm text-gray-400">Novo agendamento. Busca slots → seleção → confirmação → ERP create.</p>
+              <h4 class="font-semibold text-blue-400 mb-2">{{ $t('cases.aiEngine.sections.fsm.operations.schedule.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.fsm.operations.schedule.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-yellow-400 mb-2">reschedule</h4>
-              <p class="text-sm text-gray-400">Remarcar existente. Busca booking → slots → confirmação → ERP update.</p>
+              <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('cases.aiEngine.sections.fsm.operations.reschedule.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.fsm.operations.reschedule.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">cancel</h4>
-              <p class="text-sm text-gray-400">Cancelar existente. Busca booking → confirmação → ERP delete.</p>
+              <h4 class="font-semibold text-red-400 mb-2">{{ $t('cases.aiEngine.sections.fsm.operations.cancel.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.aiEngine.sections.fsm.operations.cancel.description') }}</p>
             </div>
           </div>
         </div>
@@ -455,14 +439,12 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
       <section id="context-composer" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">📝</span>
-          Context Composer (ECA)
+          {{ $t('cases.aiEngine.sections.contextComposer.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            O Context Composer implementa a Enhanced Context Architecture (ECA) — um sistema 
-            de montagem de contexto determinístico que busca dados de múltiplas fontes, aplica 
-            budget de tokens, e formata em blocos ordenados para o LLM.
+            {{ $t('cases.aiEngine.sections.contextComposer.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
@@ -499,14 +481,14 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
         Compose full context with budget enforcement.
         
         Block Priority (never truncated):
-        1. IDENTITY - quem é o assistente
-        2. RULES - regras de negócio do tenant  
-        3. INPUT - mensagem do usuário
+        1. IDENTITY - who the assistant is
+        2. RULES - tenant business rules  
+        3. INPUT - user message
         
-        Truncatable (em ordem de prioridade):
-        4. MEMORY - memória do cliente
-        5. HANDOVER - contexto de handover
-        6. FOCUS - contexto focado (RAG results)
+        Truncatable (in priority order):
+        4. MEMORY - customer memory
+        5. HANDOVER - handover context
+        6. FOCUS - focused context (RAG results)
         """
         # Fetch parallel (asyncio.gather)
         memory_ctx, handover_ctx = await asyncio.gather(
@@ -526,25 +508,24 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
         )</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Budget Management</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.contextComposer.budgetTitle') }}</h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <p class="text-gray-400 mb-4">
-              Com contexto de 1200 tokens e múltiplas fontes, é fácil estourar o budget. 
-              O Context Composer usa truncation inteligente:
+              {{ $t('cases.aiEngine.sections.contextComposer.budgetIntro') }}
             </p>
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-cyan-400 mt-1">1.</span>
-                <span><strong class="text-gray-200">Blocos intocáveis:</strong> IDENTITY, RULES, INPUT nunca são truncados</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.contextComposer.budgetRules.untouchable.title') }}</strong> {{ $t('cases.aiEngine.sections.contextComposer.budgetRules.untouchable.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-cyan-400 mt-1">2.</span>
-                <span><strong class="text-gray-200">Compressão semântica:</strong> MEMORY pode ser comprimido (90% redução via Memory Engine)</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.contextComposer.budgetRules.semantic.title') }}</strong> {{ $t('cases.aiEngine.sections.contextComposer.budgetRules.semantic.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-cyan-400 mt-1">3.</span>
-                <span><strong class="text-gray-200">Truncation por prioridade:</strong> FOCUS (RAG) é truncado primeiro se necessário</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.contextComposer.budgetRules.priority.title') }}</strong> {{ $t('cases.aiEngine.sections.contextComposer.budgetRules.priority.content') }}</span>
               </li>
             </ul>
           </div>
@@ -555,39 +536,37 @@ def is_valid_transition(from_state: str, to_state: str) -> bool:
       <section id="fast-lane" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400">⚡</span>
-          Pricing Fast Lane
+          {{ $t('cases.aiEngine.sections.fastLane.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Consultas de preço são o caso de uso mais comum (~35% das mensagens) e têm um padrão 
-            previsível: busca RAG + formatação. O Pricing Fast Lane executa isso diretamente, 
-            sem passar pelo agent_node (que faz iterações LLM caras).
+            {{ $t('cases.aiEngine.sections.fastLane.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">pricing_fast_lane.py</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># ==============================================================================
-# 🔧 NOTA SOBRE TOOL BUDGET (Tech Lead Review)
+# 🔧 NOTE ON TOOL BUDGET (Tech Lead Review)
 # ==============================================================================
-# Este módulo (pricing_fast_lane) NÃO está sujeito ao tool_budget porque:
-# 1. É um caminho OTIMIZADO que executa tool diretamente
-# 2. É DETERMINÍSTICO - não entra em loop de iterações
-# 3. O tool_budget é para controlar ITERAÇÕES do agente
-# 4. Se o fast lane falha, termina sem handover
+# This module (pricing_fast_lane) is NOT subject to tool_budget because:
+# 1. It's an OPTIMIZED path that executes tool directly
+# 2. It's DETERMINISTIC - doesn't enter iteration loop
+# 3. tool_budget is for controlling agent ITERATIONS
+# 4. If fast lane fails, terminates without handover
 # ==============================================================================
 
 async def pricing_fast_lane_node(state: dict, service: Any, config: Any):
     """
-    Caminho otimizado para consultas de preço.
+    Optimized path for price queries.
     
-    Fluxo:
+    Flow:
     1. Check cache (intelligent_cache_service)
-    2. Se miss: RAG search via docling_semantic_search_tool
-    3. Formata resposta diretamente (sem LLM)
-    4. Retorna com fast_lane_executed=True
+    2. If miss: RAG search via docling_semantic_search_tool
+    3. Format response directly (no LLM)
+    4. Return with fast_lane_executed=True
     """
-    # Intelligent cache com coalescing
+    # Intelligent cache with coalescing
     cache_key = build_intelligent_cache_key(
         tenant_id=config.tenant_id,
         query_normalized=normalize_query(user_message),
@@ -624,10 +603,9 @@ async def pricing_fast_lane_node(state: dict, service: Any, config: Any):
           </div>
 
           <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-yellow-400 mb-2">⚡ Resultado</h4>
+            <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('cases.aiEngine.sections.fastLane.resultTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              Fast lane reduz latência de ~2s (agent iteration) para ~200ms (RAG direto). 
-              Cache hit: &lt;50ms. Sem custo de tokens LLM para ~35% das requests.
+              {{ $t('cases.aiEngine.sections.fastLane.resultContent') }}
             </p>
           </div>
         </div>
@@ -637,19 +615,17 @@ async def pricing_fast_lane_node(state: dict, service: Any, config: Any):
       <section id="reducer" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">🔒</span>
-          Booking Flow Reducer
+          {{ $t('cases.aiEngine.sections.reducer.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            O Reducer é o guardião do booking_flow state. Todo update passa por ele, que valida 
-            whitelist de sources, monotonicity de turn_seq, e transições válidas. Se algo violar 
-            as invariantes, o update é rejeitado.
+            {{ $t('cases.aiEngine.sections.reducer.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">booking_flow_reducer.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Whitelist de sources permitidos
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Whitelist of allowed sources
 ALLOWED_UPDATERS = {
     "booking_flow_router",      # Main state machine router
     "discover_booking_node",    # Booking discovery (IO task)
@@ -700,21 +676,21 @@ class BookingFlowUpdate:
             )</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Por que Reducer?</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.aiEngine.sections.reducer.whyReducerTitle') }}</h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-green-400 mt-1">✓</span>
-                <span><strong class="text-gray-200">Previne race conditions:</strong> Múltiplos nós podem tentar atualizar o state simultaneamente. Reducer serializa e valida.</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.reducer.reasons.raceConditions.title') }}</strong> {{ $t('cases.aiEngine.sections.reducer.reasons.raceConditions.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 mt-1">✓</span>
-                <span><strong class="text-gray-200">Auditoria:</strong> Cada update é logado com source, turn_seq, e transição. Facilita debugging.</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.reducer.reasons.audit.title') }}</strong> {{ $t('cases.aiEngine.sections.reducer.reasons.audit.content') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 mt-1">✓</span>
-                <span><strong class="text-gray-200">Métricas:</strong> Prometheus counters para updates e rejections por reason.</span>
+                <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.reducer.reasons.metrics.title') }}</strong> {{ $t('cases.aiEngine.sections.reducer.reasons.metrics.content') }}</span>
               </li>
             </ul>
           </div>
@@ -725,25 +701,24 @@ class BookingFlowUpdate:
       <section id="retry" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400">🔁</span>
-          Retry Policies
+          {{ $t('cases.aiEngine.sections.retry.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Nem todo erro merece retry. Erros transientes (timeout, rate limit) são retriáveis. 
-            Erros permanentes (auth failure, bad request) não são — retry só gasta tempo e dinheiro.
+            {{ $t('cases.aiEngine.sections.retry.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">graph_builder.py</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># SOTA FIX (Dezembro 2025): Transient vs Permanent Exceptions
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># SOTA FIX (December 2025): Transient vs Permanent Exceptions
 
 TRANSIENT_EXCEPTIONS = (
     httpx.TimeoutException,
     httpx.ConnectError,
     httpx.ReadTimeout,
     openai.APIConnectionError,
-    openai.RateLimitError,       # Retriável com backoff
+    openai.RateLimitError,       # Retriable with backoff
     openai.APITimeoutError,
     ConnectionError,
     TimeoutError,
@@ -752,15 +727,15 @@ TRANSIENT_EXCEPTIONS = (
 
 # Permanent exceptions should NOT be retried
 PERMANENT_EXCEPTIONS = (
-    openai.AuthenticationError,   # API key inválida
-    openai.BadRequestError,       # Prompt malformado
-    openai.PermissionDeniedError, # Sem permissão
+    openai.AuthenticationError,   # Invalid API key
+    openai.BadRequestError,       # Malformed prompt
+    openai.PermissionDeniedError, # No permission
     ValueError,
     TypeError,
     KeyError,
 )
 
-# RetryPolicy usa whitelist (retry_on), não blacklist
+# RetryPolicy uses whitelist (retry_on), not blacklist
 retry_policy = RetryPolicy(
     max_attempts=3,
     initial_interval=0.5,         # 500ms
@@ -770,11 +745,9 @@ retry_policy = RetryPolicy(
           </div>
 
           <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-orange-400 mb-2">⚠️ Por que whitelist e não blacklist?</h4>
+            <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.aiEngine.sections.retry.warningTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              Blacklist é perigosa: se um novo tipo de erro permanente aparecer (ex: nova exception 
-              do OpenAI SDK), ele seria retriado por default. Whitelist é fail-safe: só retria o 
-              que conhecemos como transiente.
+              {{ $t('cases.aiEngine.sections.retry.warningContent') }}
             </p>
           </div>
         </div>
@@ -784,50 +757,50 @@ retry_policy = RetryPolicy(
       <section id="resultados" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
-          Resultados
+          {{ $t('cases.aiEngine.sections.results.title') }}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">~40%</div>
-            <div class="text-gray-400">Requests bypassam LLM via Semantic Routing</div>
+            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.bypass.value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.bypass.label') }}</div>
           </div>
           <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">&lt;10ms</div>
-            <div class="text-gray-400">Classificação via embeddings (p95)</div>
+            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.classification.value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.classification.label') }}</div>
           </div>
           <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">0</div>
-            <div class="text-gray-400">Transições inválidas de FSM em produção</div>
+            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.transitions.value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.transitions.label') }}</div>
           </div>
           <div class="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-emerald-400 mb-2">~200ms</div>
-            <div class="text-gray-400">Pricing Fast Lane (vs ~2s agent)</div>
+            <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.aiEngine.sections.results.metrics.fastLane.value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.aiEngine.sections.results.metrics.fastLane.label') }}</div>
           </div>
         </div>
 
         <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 mt-8">
-          <h3 class="text-xl font-semibold text-gray-200 mb-4">Decisões Técnicas Chave</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mb-4">{{ $t('cases.aiEngine.sections.results.decisionsTitle') }}</h3>
           <ul class="space-y-3 text-gray-400">
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">FSM separada do LLM:</strong> Decisões de negócio são determinísticas. LLM só humaniza.</span>
+              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.fsmSeparated.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.fsmSeparated.content') }}</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">Semantic routing pre-LLM:</strong> Classificação barata antes de gastar tokens.</span>
+              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.semanticPreLlm.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.semanticPreLlm.content') }}</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">Reducer com whitelist:</strong> Só sources autorizados atualizam estado crítico.</span>
+              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.reducerWhitelist.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.reducerWhitelist.content') }}</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">Retry com whitelist:</strong> Só transient exceptions são retriadas.</span>
+              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.retryWhitelist.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.retryWhitelist.content') }}</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-emerald-400 mt-1">→</span>
-              <span><strong class="text-gray-200">Fast lanes para padrões conhecidos:</strong> Pricing não precisa de iteração LLM.</span>
+              <span><strong class="text-gray-200">{{ $t('cases.aiEngine.sections.results.decisions.fastLanes.title') }}</strong> {{ $t('cases.aiEngine.sections.results.decisions.fastLanes.content') }}</span>
             </li>
           </ul>
         </div>
@@ -835,7 +808,7 @@ retry_policy = RetryPolicy(
 
       <!-- Tech Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Stack Técnico</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('cases.aiEngine.techStack.title') }}</h2>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Python 3.12</span>
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">LangGraph</span>
@@ -853,17 +826,17 @@ retry_policy = RetryPolicy(
       <!-- CTA -->
       <section class="border-t border-gray-800 pt-12">
         <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">Explore Outros Case Studies</h2>
-          <p class="text-gray-400 mb-8">Veja como outros componentes do Optimus foram construídos</p>
+          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.aiEngine.cta.title') }}</h2>
+          <p class="text-gray-400 mb-8">{{ $t('cases.aiEngine.cta.description') }}</p>
           <div class="flex flex-wrap justify-center gap-4">
             <NuxtLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Rules Engine →
+              {{ $t('cases.aiEngine.cta.rulesEngine') }}
             </NuxtLink>
             <NuxtLink to="/projetos/memory-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Memory Engine →
+              {{ $t('cases.aiEngine.cta.memoryEngine') }}
             </NuxtLink>
             <NuxtLink to="/projetos/llm-pool-management" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              LLM Pool Management →
+              {{ $t('cases.aiEngine.cta.llmPool') }}
             </NuxtLink>
           </div>
         </div>
@@ -874,17 +847,19 @@ retry_policy = RetryPolicy(
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-8 mt-12">
       <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
-        <p>Case Study: AI Conversation Engine — Optimus AI Platform</p>
+        <p>{{ $t('cases.aiEngine.footer') }}</p>
       </div>
     </footer>
   </div>
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'AI Conversation Engine - Optimus AI | Marcelo Marleta',
+  title: t('cases.aiEngine.meta.title'),
   meta: [
-    { name: 'description', content: 'Case study: Motor de conversação enterprise com LangGraph, FSM de 8 estados, Semantic Routing sub-10ms, e separação entre lógica determinística e linguagem natural.' }
+    { name: 'description', content: t('cases.aiEngine.meta.description') }
   ]
 })
 </script>

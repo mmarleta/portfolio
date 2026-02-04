@@ -11,32 +11,29 @@
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Voltar ao Portfolio
+          {{ $t('nav.backToPortfolio') }}
         </NuxtLink>
         
         <div class="max-w-4xl">
           <div class="flex items-center gap-4 mb-6">
             <span class="px-4 py-2 bg-amber-500/10 text-amber-400 rounded-full text-sm font-medium border border-amber-500/20">
-              Flutter App
+              {{ $t('cases.gratidiem.hero.tag1') }}
             </span>
             <span class="px-4 py-2 bg-purple-500/10 text-purple-400 rounded-full text-sm font-medium border border-purple-500/20">
-              Multi-Platform
+              {{ $t('cases.gratidiem.hero.tag2') }}
             </span>
             <span class="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full text-sm font-medium border border-blue-500/20">
-              Firebase
+              {{ $t('cases.gratidiem.hero.tag3') }}
             </span>
           </div>
           
           <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-            GratiDiem
+            {{ $t('cases.gratidiem.hero.title') }}
             <span class="text-amber-400">.</span>
           </h1>
           
           <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Aplicativo de gratidão e bem-estar com <span class="text-amber-400">508+ arquivos Dart</span>, 
-            <span class="text-amber-400">35+ telas</span>, <span class="text-amber-400">86+ serviços</span>. 
-            Clean Architecture com Riverpod, dual persistence (Hive + Firebase), IA integrada com Gemini, 
-            e sistema de monetização ética gamificado.
+            {{ $t('cases.gratidiem.hero.description') }}
           </p>
           
           <div class="flex flex-wrap gap-3">
@@ -56,40 +53,37 @@
     <!-- Visão Geral -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Visão Geral</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.overview.title') }}</h2>
         
         <div class="grid lg:grid-cols-2 gap-12">
           <div>
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">O Produto</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.overview.productTitle') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-6">
-              GratiDiem é um companheiro diário de gratidão — um aplicativo sofisticado que ajuda 
-              usuários a cultivar bem-estar através de práticas de gratidão, meditação guiada, 
-              desafios diários, e comunidade.
+              {{ $t('cases.gratidiem.overview.productDesc1') }}
             </p>
             <p class="text-gray-300 leading-relaxed">
-              O app suporta <strong class="text-white">6 plataformas</strong> (Android, iOS, Web, macOS, Windows, Linux), 
-              <strong class="text-white">3 idiomas</strong> (PT, EN, ES), e é construído para escalar para milhões de usuários.
+              {{ $t('cases.gratidiem.overview.productDesc2') }}
             </p>
           </div>
           
           <div>
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">Métricas do Codebase</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.overview.metricsTitle') }}</h3>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">508+</div>
-                <div class="text-gray-400 text-sm">Arquivos Dart</div>
+                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricFilesValue') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricFilesLabel') }}</div>
               </div>
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">35+</div>
-                <div class="text-gray-400 text-sm">Telas</div>
+                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricScreensValue') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricScreensLabel') }}</div>
               </div>
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">86+</div>
-                <div class="text-gray-400 text-sm">Services</div>
+                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricServicesValue') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricServicesLabel') }}</div>
               </div>
               <div class="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
-                <div class="text-3xl font-bold text-amber-400">126+</div>
-                <div class="text-gray-400 text-sm">Models</div>
+                <div class="text-3xl font-bold text-amber-400">{{ $t('cases.gratidiem.overview.metricModelsValue') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.gratidiem.overview.metricModelsLabel') }}</div>
               </div>
             </div>
           </div>
@@ -100,7 +94,7 @@
     <!-- Arquitetura -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Arquitetura Clean + Riverpod</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.architecture.title') }}</h2>
         
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-8 mb-12">
           <pre class="text-sm text-gray-300 overflow-x-auto"><code>┌─────────────────────────────────────────────────────────────────────────┐
@@ -144,9 +138,9 @@
             <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">📱</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Presentation</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.presentationTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              278+ arquivos, Material Design 3, responsive design, ConsumerWidget/ConsumerStatefulWidget
+              {{ $t('cases.gratidiem.architecture.presentationDesc') }}
             </p>
           </div>
           
@@ -154,9 +148,9 @@
             <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">🔄</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">State Management</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.stateTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Riverpod com AsyncNotifier/StateNotifier, stream subscriptions, real-time updates
+              {{ $t('cases.gratidiem.architecture.stateDesc') }}
             </p>
           </div>
           
@@ -164,9 +158,9 @@
             <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">⚙️</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Business Logic</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.businessTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Singleton services + Repository pattern, 113 arquivos com responsabilidades claras
+              {{ $t('cases.gratidiem.architecture.businessDesc') }}
             </p>
           </div>
           
@@ -174,9 +168,9 @@
             <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">💾</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Data Layer</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.architecture.dataTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Dual persistence: Hive CE (local-first) + Firebase Firestore (cloud sync)
+              {{ $t('cases.gratidiem.architecture.dataDesc') }}
             </p>
           </div>
         </div>
@@ -186,75 +180,69 @@
     <!-- Features -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Features do App</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.features.title') }}</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🙏 Gratitude Journal</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.gratitudeTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Diário de gratidão com entradas diárias, categorias, tags, e busca full-text. 
-              Suporte a imagens e compartilhamento social.
+              {{ $t('cases.gratidiem.features.gratitudeDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🧘 Meditação Guiada</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.meditationTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Player de áudio com sessões de meditação (manhã, dia, ansiedade, noite, profunda). 
-              Just Audio + Audio Session para background playback.
+              {{ $t('cases.gratidiem.features.meditationDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">⭕ Círculos (Tribos)</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.circlesTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Comunidades sociais com rituais em grupo, posts, desafios colaborativos, 
-              gamificação, e sync real-time via Firestore.
+              {{ $t('cases.gratidiem.features.circlesDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🏆 Challenges & Progression</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.challengesTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Desafios diários, streaks, sistema de níveis, árvore de progressão, 
-              achievements, e surprise rewards.
+              {{ $t('cases.gratidiem.features.challengesDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🌙 Night Ritual</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.nightRitualTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Ritual noturno guiado com meditação, reflexão, intenções para o próximo dia. 
-              Scheduling com notificações locais.
+              {{ $t('cases.gratidiem.features.nightRitualDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">💊 Adversity Support</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.adversityTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Módulo de saúde mental com jornada de adversidade, práticas terapêuticas, 
-              histórias inspiradoras, recursos de emergência.
+              {{ $t('cases.gratidiem.features.adversityDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">⏳ Time Capsule</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.timeCapsuleTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Cápsulas do tempo para guardar memórias e gratidões a serem abertas no futuro.
+              {{ $t('cases.gratidiem.features.timeCapsuleDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🎯 Values & Goals</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.valuesTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Definição de valores pessoais, visualização de metas, reviews periódicos.
+              {{ $t('cases.gratidiem.features.valuesDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">📊 Wellbeing Analytics</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.features.analyticsTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Assessments de bem-estar, gráficos de humor (fl_chart), calendário de atividades (table_calendar).
+              {{ $t('cases.gratidiem.features.analyticsDesc') }}
             </p>
           </div>
         </div>
@@ -264,14 +252,14 @@
     <!-- AI Integration -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Integração com IA</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.ai.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Motor de IA multi-backend com Google Gemini, Hugging Face, e modelos on-device (TensorFlow Lite).
+          {{ $t('cases.gratidiem.ai.description') }}
         </p>
         
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">AI Engine</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.ai.engineTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">class AIEngine {
   factory AIEngine() => _instance;
@@ -316,41 +304,41 @@
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">Capacidades de IA</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.ai.capabilitiesTitle') }}</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Análise de Sentimentos</span>
-                  <p class="text-gray-400 text-sm">Detecta emoções nas entradas de gratidão com cache para performance</p>
+                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.sentimentTitle') }}</span>
+                  <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.sentimentDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Detecção de Temas</span>
-                  <p class="text-gray-400 text-sm">Categoriza automaticamente entradas (família, trabalho, saúde, etc.)</p>
+                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.themesTitle') }}</span>
+                  <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.themesDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Respostas Personalizadas</span>
-                  <p class="text-gray-400 text-sm">Gera reflexões e sugestões baseadas no histórico do usuário</p>
+                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.responsesTitle') }}</span>
+                  <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.responsesDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">AI Premium Service</span>
-                  <p class="text-gray-400 text-sm">Features avançadas para usuários premium com Gemini Pro</p>
+                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.premiumTitle') }}</span>
+                  <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.premiumDesc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-amber-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">AI Analytics</span>
-                  <p class="text-gray-400 text-sm">Insights e tendências derivados das práticas de gratidão</p>
+                  <span class="text-white font-medium">{{ $t('cases.gratidiem.ai.aiAnalyticsTitle') }}</span>
+                  <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.ai.aiAnalyticsDesc') }}</p>
                 </div>
               </li>
             </ul>
@@ -362,55 +350,54 @@
     <!-- Monetization System -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Sistema de Monetização Ética</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.monetization.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Transformando anúncios em "momentos de gratidão" — monetização integrada ao conceito do app, 
-          criando experiência significativa ao invés de intrusiva.
+          {{ $t('cases.gratidiem.monetization.description') }}
         </p>
         
         <div class="grid lg:grid-cols-3 gap-6 mb-12">
           <div class="bg-gray-900/50 rounded-xl border border-amber-500/30 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🙏 Apelos Contextuais</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.monetization.appealsTitle') }}</h3>
             <p class="text-gray-400 text-sm mb-4">
-              Mensagens de gratidão personalizadas baseadas no contexto do usuário.
+              {{ $t('cases.gratidiem.monetization.appealsDesc') }}
             </p>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>• Pós-Ritual: "Se este app te ajudou..."</li>
-              <li>• Streak: "7 dias de gratidão! Retribua..."</li>
-              <li>• Alta Energia: "Sinta essa vibração positiva?"</li>
-              <li>• Conquistas: "Conquista desbloqueada!"</li>
+              <li>• {{ $t('cases.gratidiem.monetization.appealsExample1') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.appealsExample2') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.appealsExample3') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.appealsExample4') }}</li>
             </ul>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🎮 Economia de Tokens</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.monetization.tokensTitle') }}</h3>
             <p class="text-gray-400 text-sm mb-4">
-              Sistema gamificado com tokens que podem ser ganhos e usados no app.
+              {{ $t('cases.gratidiem.monetization.tokensDesc') }}
             </p>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>• Daily bonus com multiplicadores</li>
-              <li>• Streak multipliers</li>
-              <li>• Achievement rewards</li>
-              <li>• Challenge completion</li>
+              <li>• {{ $t('cases.gratidiem.monetization.tokensExample1') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.tokensExample2') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.tokensExample3') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.tokensExample4') }}</li>
             </ul>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">📊 Firebase Remote Config</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.monetization.remoteConfigTitle') }}</h3>
             <p class="text-gray-400 text-sm mb-4">
-              Controle dinâmico de toda a monetização sem deploy.
+              {{ $t('cases.gratidiem.monetization.remoteConfigDesc') }}
             </p>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>• Frequência de anúncios</li>
-              <li>• Cooldown periods</li>
-              <li>• A/B testing de mensagens</li>
-              <li>• Métricas de conversão</li>
+              <li>• {{ $t('cases.gratidiem.monetization.remoteConfigExample1') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.remoteConfigExample2') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.remoteConfigExample3') }}</li>
+              <li>• {{ $t('cases.gratidiem.monetization.remoteConfigExample4') }}</li>
             </ul>
           </div>
         </div>
         
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-          <h3 class="text-xl font-semibold text-amber-400 mb-4">Gratitude Triggers Service</h3>
+          <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.monetization.triggersTitle') }}</h3>
           <div class="bg-gray-950 rounded-lg p-4">
             <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">class GratitudeTriggersService {
   /// Detecta o momento ideal para exibir apelo de gratidão
@@ -449,11 +436,11 @@
     <!-- Firebase Stack -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Firebase Full Stack</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.firebase.title') }}</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🔐 Authentication</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.authTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Firebase Auth</li>
               <li>• Google Sign-In</li>
@@ -464,7 +451,7 @@
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">📦 Storage</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.storageTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Cloud Firestore</li>
               <li>• Firebase Storage</li>
@@ -475,7 +462,7 @@
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">📊 Analytics</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.analyticsTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Firebase Analytics</li>
               <li>• Crashlytics</li>
@@ -486,7 +473,7 @@
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">🔔 Messaging</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.firebase.messagingTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• FCM Push Notifications</li>
               <li>• Local Notifications</li>
@@ -502,15 +489,14 @@
     <!-- Dual Persistence -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Dual Persistence: Local-First</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.persistence.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Arquitetura local-first com Hive CE para performance e offline, 
-          sincronizando automaticamente com Firebase Firestore.
+          {{ $t('cases.gratidiem.persistence.description') }}
         </p>
         
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">Hive CE (Local)</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.persistence.hiveTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">// 126 models com TypeAdapters
 @HiveType(typeId: HiveTypeIds.gratitudeEntry)
@@ -543,12 +529,12 @@ class HiveTypeIds {
 }</code></pre>
             </div>
             <p class="text-gray-400 text-sm">
-              197 TypeIDs registrados, código gerado via build_runner, adapter registry centralizado.
+              {{ $t('cases.gratidiem.persistence.hiveDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-amber-400 mb-4">Sync Strategy</h3>
+            <h3 class="text-xl font-semibold text-amber-400 mb-4">{{ $t('cases.gratidiem.persistence.syncTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-dart">class SyncService {
   /// Sync com conflict resolution
@@ -581,8 +567,7 @@ class HiveTypeIds {
 }</code></pre>
             </div>
             <p class="text-gray-400 text-sm">
-              Last-write-wins com detecção de conflitos, queue de retry para offline, 
-              recovery service para reconexão.
+              {{ $t('cases.gratidiem.persistence.syncDesc') }}
             </p>
           </div>
         </div>
@@ -592,9 +577,9 @@ class HiveTypeIds {
     <!-- Navigation -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Navegação com GoRouter</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.gratidiem.navigation.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          100+ rotas declarativas com GoRouter, deep linking, redirect guards, e parâmetros tipados.
+          {{ $t('cases.gratidiem.navigation.description') }}
         </p>
         
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
@@ -651,33 +636,31 @@ final goRouter = GoRouter(
     <!-- Internationalization -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Internacionalização</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.i18n.title') }}</h2>
         
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-center">
             <div class="text-4xl mb-4">🇧🇷</div>
-            <h3 class="text-lg font-semibold text-white mb-2">Português</h3>
-            <p class="text-gray-400 text-sm">Idioma base (app_pt.arb)</p>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.i18n.portuguese') }}</h3>
+            <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.i18n.portugueseDesc') }}</p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-center">
             <div class="text-4xl mb-4">🇺🇸</div>
-            <h3 class="text-lg font-semibold text-white mb-2">English</h3>
-            <p class="text-gray-400 text-sm">app_en.arb</p>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.i18n.english') }}</h3>
+            <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.i18n.englishDesc') }}</p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-center">
             <div class="text-4xl mb-4">🇪🇸</div>
-            <h3 class="text-lg font-semibold text-white mb-2">Español</h3>
-            <p class="text-gray-400 text-sm">app_es.arb</p>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.gratidiem.i18n.spanish') }}</h3>
+            <p class="text-gray-400 text-sm">{{ $t('cases.gratidiem.i18n.spanishDesc') }}</p>
           </div>
         </div>
         
         <div class="mt-8 bg-gray-900/50 rounded-xl border border-gray-800 p-6">
           <p class="text-gray-400 text-sm">
-            <strong class="text-white">200+ strings</strong> traduzidas usando ARB format (Application Resource Bundle), 
-            geração automática via <code class="text-amber-400">flutter gen-l10n</code>, 
-            script Python para tradução em lote.
+            {{ $t('cases.gratidiem.i18n.summary') }}
           </p>
         </div>
       </div>
@@ -686,32 +669,32 @@ final goRouter = GoRouter(
     <!-- Platforms -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">6 Plataformas Suportadas</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.platforms.title') }}</h2>
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">🤖</div>
-            <div class="text-white font-medium">Android</div>
+            <div class="text-white font-medium">{{ $t('cases.gratidiem.platforms.android') }}</div>
           </div>
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">🍎</div>
-            <div class="text-white font-medium">iOS</div>
+            <div class="text-white font-medium">{{ $t('cases.gratidiem.platforms.ios') }}</div>
           </div>
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">🌐</div>
-            <div class="text-white font-medium">Web</div>
+            <div class="text-white font-medium">{{ $t('cases.gratidiem.platforms.web') }}</div>
           </div>
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">💻</div>
-            <div class="text-white font-medium">macOS</div>
+            <div class="text-white font-medium">{{ $t('cases.gratidiem.platforms.macos') }}</div>
           </div>
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">🪟</div>
-            <div class="text-white font-medium">Windows</div>
+            <div class="text-white font-medium">{{ $t('cases.gratidiem.platforms.windows') }}</div>
           </div>
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
             <div class="text-3xl mb-2">🐧</div>
-            <div class="text-white font-medium">Linux</div>
+            <div class="text-white font-medium">{{ $t('cases.gratidiem.platforms.linux') }}</div>
           </div>
         </div>
       </div>
@@ -720,11 +703,11 @@ final goRouter = GoRouter(
     <!-- Testing -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Testing & Quality</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.testing.title') }}</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">Unit Tests</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.unitTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• flutter_test</li>
               <li>• mockito + mocktail</li>
@@ -734,7 +717,7 @@ final goRouter = GoRouter(
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">Widget Tests</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.widgetTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• alchemist (golden tests)</li>
               <li>• bloc_test</li>
@@ -743,7 +726,7 @@ final goRouter = GoRouter(
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">Integration Tests</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.integrationTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• integration_test</li>
               <li>• flutter_driver</li>
@@ -752,7 +735,7 @@ final goRouter = GoRouter(
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-amber-400 mb-3">Code Quality</h3>
+            <h3 class="text-lg font-semibold text-amber-400 mb-3">{{ $t('cases.gratidiem.testing.qualityTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• flutter analyze</li>
               <li>• very_good_analysis</li>
@@ -766,7 +749,7 @@ final goRouter = GoRouter(
     <!-- Stack -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Stack Completa</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.gratidiem.stackSection.title') }}</h2>
         
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
@@ -824,16 +807,15 @@ final goRouter = GoRouter(
     <!-- CTA -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Quer ver mais projetos?</h2>
+        <h2 class="text-3xl font-bold text-white mb-6">{{ $t('cases.gratidiem.cta.title') }}</h2>
         <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-          Este é um dos meus projetos pessoais mais completos em Flutter. 
-          Explore também o iContei (rede social de contadores) e os projetos do Optimus.
+          {{ $t('cases.gratidiem.cta.description') }}
         </p>
         <NuxtLink 
           to="/" 
           class="inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
         >
-          Ver Todos os Projetos
+          {{ $t('common.viewAllProjects') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
@@ -844,10 +826,12 @@ final goRouter = GoRouter(
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'GratiDiem - App de Gratidão Flutter | Marcelo Marleta',
+  title: t('cases.gratidiem.meta.title'),
   meta: [
-    { name: 'description', content: 'Case study: App Flutter multi-plataforma de gratidão com Clean Architecture, Riverpod, Firebase, IA integrada com Gemini, e sistema de monetização ética.' }
+    { name: 'description', content: t('cases.gratidiem.meta.description') }
   ]
 })
 </script>

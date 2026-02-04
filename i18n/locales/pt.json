@@ -32,7 +32,14 @@
   "common": {
     "fullStack": "Full-Stack Platform",
     "realTime": "Real-time",
-    "multiPlatform": "Multi-Platform"
+    "multiPlatform": "Multi-Platform",
+    "back": "← Voltar",
+    "technicalStack": "Stack Técnica",
+    "next": "Próximo",
+    "personalProject": "Projeto Pessoal",
+    "exploreOtherProjects": "Explore Outros Projetos",
+    "seeOtherSystems": "Veja outros sistemas que construí",
+    "viewAllProjects": "Ver Todos os Projetos"
   },
   "cards": {
     "aiEngine": {
@@ -110,6 +117,975 @@
     "feedRss": {
       "title": "Feed-RSS Monitor",
       "description": "Pipeline de automação de conteúdo: RSS → Filter → OpenAI → Telegram/Discord. Roteiros de Shorts gerados automaticamente."
+    }
+  },
+  "cases": {
+    "automark": {
+      "meta": {
+        "title": "AutoMark - Affiliate Marketing Platform | Marcelo Marleta",
+        "description": "Case study: Plataforma SaaS multi-tenant de distribuição inteligente de ofertas afiliadas. Shopee, WhatsApp, anti-spam, scoring inteligente."
+      },
+      "header": {
+        "back": "Voltar",
+        "projectType": "Projeto Pessoal"
+      },
+      "hero": {
+        "tag1": "SaaS Platform",
+        "tag2": "Affiliate Marketing",
+        "title": "AutoMark",
+        "titleHighlight": " Platform",
+        "description": "Plataforma SaaS multi-tenant de distribuição inteligente de ofertas afiliadas. Conecta marketplaces (Shopee, ML, Amazon) a canais (WhatsApp, Telegram) com automações anti-spam, scoring inteligente e deduplicação.",
+        "stat1Value": "Multi",
+        "stat1Label": "Marketplace",
+        "stat2Value": "Multi",
+        "stat2Label": "Channel",
+        "stat3Value": "48h",
+        "stat3Label": "Dedupe Target",
+        "stat4Value": "0",
+        "stat4Label": "Spam/Ban"
+      },
+      "nav": {
+        "problem": "Problema",
+        "architecture": "Arquitetura",
+        "providers": "Providers",
+        "scoring": "Scoring",
+        "dedupe": "Dedupe",
+        "antiBan": "Anti-Ban",
+        "automations": "Automações",
+        "stack": "Stack"
+      },
+      "problem": {
+        "title": "O Problema",
+        "intro": "Afiliados enfrentam três problemas críticos na distribuição de ofertas:",
+        "issue1Title": "Distribuição manual não escala:",
+        "issue1Desc": "Postar links manualmente em grupos gera repetição, spam e ban. Tempo gasto vs conversão não compensa.",
+        "issue2Title": "Marketplaces são fragmentados:",
+        "issue2Desc": "Shopee, Mercado Livre, Amazon têm APIs diferentes, formatos diferentes, regras de afiliado diferentes.",
+        "issue3Title": "WhatsApp pune comportamento robótico:",
+        "issue3Desc": "Sem controle de cadência, dedupe e humanização: shadow ban, bloqueio, queda de engajamento.",
+        "objectiveTitle": "🎯 Objetivo",
+        "objectiveDesc": "Criar uma plataforma que pareça humana, poste o que converte, no lugar certo, na hora certa, sem spam."
+      },
+      "architecture": {
+        "title": "Arquitetura Multi-Tenant",
+        "intro": "A arquitetura segue princípios rígidos que permitem evolução sem breaking changes:",
+        "principle1Title": "Marketplace nunca hardcoded",
+        "principle1Desc": "Shopee é o primeiro conector, mas ML, Amazon, AliExpress são plug-and-play.",
+        "principle2Title": "Canal nunca hardcoded",
+        "principle2Desc": "WhatsApp é o primeiro, mas Telegram, Discord, Instagram seguem a mesma interface.",
+        "principle3Title": "Automação gera Post, não envia",
+        "principle3Desc": "Separação de concerns: Automação decide O QUE, Dispatcher decide COMO.",
+        "principle4Title": "Dedupe obrigatório",
+        "principle4Desc": "Nenhum envio acontece sem passar pelo dedupe. Zero spam garantido.",
+        "dataModelTitle": "Modelo de Dados",
+        "rolesTitle": "Papéis e Permissões",
+        "superAdminTitle": "SuperAdmin (Plataforma)",
+        "superAdminRole1": "Cria tenants",
+        "superAdminRole2": "Define quais marketplaces existem",
+        "superAdminRole3": "Controla feature flags",
+        "superAdminRole4": "Observa saúde global",
+        "tenantAdminTitle": "Tenant Admin (Cliente)",
+        "tenantAdminRole1": "Conecta canais (WhatsApp, Telegram)",
+        "tenantAdminRole2": "Conecta afiliados (Shopee, ML)",
+        "tenantAdminRole3": "Cria automações",
+        "tenantAdminRole4": "Vê histórico e métricas"
+      },
+      "providers": {
+        "title": "Provider Pattern",
+        "intro": "Cada marketplace implementa uma interface comum. O provider não sabe o que é tenant — tudo vem via tenant_connection. Isso permite adicionar novos marketplaces sem tocar no core.",
+        "shopeeTitle": "Shopee Provider",
+        "dedupeKeyTitle": "✓ Dedupe Key",
+        "dedupeKeyDesc": "O dedupe_key é a identidade real do produto: shopee:123:456. Nunca usar título para dedupe — variações de texto causariam spam."
+      },
+      "scoring": {
+        "title": "Offer Scoring",
+        "intro": "Nem toda oferta vale a pena postar. O sistema de scoring ranqueia ofertas por potencial de conversão, penalizando produtos suspeitos.",
+        "formulaTitle": "Fórmula de Score",
+        "weightsTitle": "Por que esses pesos?",
+        "weight1Pct": "40%",
+        "weight1Label": "Desconto:",
+        "weight1Desc": "Principal driver de clique. Ofertas com desconto alto convertem mais.",
+        "weight2Pct": "25%",
+        "weight2Label": "Rating:",
+        "weight2Desc": "Confiança do produto. Rating baixo = devolução = comissão cancelada.",
+        "weight3Pct": "20%",
+        "weight3Label": "Vendas:",
+        "weight3Desc": "Prova social. Produto muito vendido tem validação de mercado.",
+        "weight4Pct": "15%",
+        "weight4Label": "Comissão:",
+        "weight4Desc": "Retorno para o afiliado. Mas comissão alta demais é red flag."
+      },
+      "dedupe": {
+        "title": "Deduplicação Anti-Spam",
+        "intro": "O sistema de dedupe opera em dois escopos: por target (grupo específico) e por channel (todos os grupos do canal). Isso previne spam tanto vertical quanto horizontal.",
+        "targetScopeTitle": "Target Scope (48h)",
+        "targetScopeDesc": "Mesmo produto não pode ser enviado para o mesmo grupo em 48h. Evita repetição percebida pelos membros.",
+        "channelScopeTitle": "Channel Scope (2-5min)",
+        "channelScopeDesc": "Gap mínimo entre qualquer envio para qualquer grupo. Evita burst que parece bot.",
+        "cleanupTitle": "✓ Cleanup Automático",
+        "cleanupDesc": "Records expirados são deletados periodicamente via cleanup_expired(). A tabela não cresce indefinidamente."
+      },
+      "antiBan": {
+        "title": "Anti-Ban (WhatsApp)",
+        "intro": "WhatsApp detecta bots por padrões de envio. O sistema implementa múltiplas camadas de humanização para evitar banimento:",
+        "feature1Icon": "🖊️",
+        "feature1Title": "Typing Indicator:",
+        "feature1Desc": "Antes de enviar, simula \"digitando...\" por 2-5 segundos (Evolution API).",
+        "feature2Icon": "🎲",
+        "feature2Title": "Jitter Humano:",
+        "feature2Desc": "Delay aleatório entre mensagens. Nunca intervalos exatos.",
+        "feature3Icon": "🚦",
+        "feature3Title": "Rate Limit por Conta:",
+        "feature3Desc": "Semáforo Redis limita msgs/minuto por número. Múltiplas contas = mais throughput.",
+        "feature4Icon": "⚡",
+        "feature4Title": "Circuit Breaker:",
+        "feature4Desc": "Erro 429 ou 503 → pausa automática de 30min para aquela conta.",
+        "feature5Icon": "🌙",
+        "feature5Title": "Quiet Hours:",
+        "feature5Desc": "Configurável por target: não envia entre 23h-8h (ou custom)."
+      },
+      "automations": {
+        "title": "Sistema de Automações",
+        "intro": "Automações são o coração do sistema. Definem O QUE buscar, ONDE enviar, e QUANDO executar.",
+        "pipelineTitle": "Automation Pipeline",
+        "typesTitle": "Tipos de Automação",
+        "typeSearchTitle": "search",
+        "typeSearchDesc": "Busca ativa no marketplace. Executa a cada intervalo configurado.",
+        "typeFeedTitle": "feed",
+        "typeFeedDesc": "Usa ofertas já no banco (ingestão externa). Aplica ranking e distribui.",
+        "typeMonitorTitle": "monitor",
+        "typeMonitorDesc": "Monitora preço de produtos específicos. Alerta quando desconto atinge threshold.",
+        "targetTitle": "AutomationTarget (Limites)",
+        "targetConfigTitle": "Configuração por Grupo"
+      },
+      "stack": {
+        "title": "Stack Técnico",
+        "backendTitle": "Backend",
+        "frontendTitle": "Frontend",
+        "integrationsTitle": "Integrações",
+        "infraTitle": "Infra"
+      },
+      "results": {
+        "title": "Resultados",
+        "stat1Value": "0",
+        "stat1Label": "Bans de conta WhatsApp",
+        "stat2Value": "100%",
+        "stat2Label": "Dedupe coverage (zero spam)",
+        "stat3Value": "Plug",
+        "stat3Label": "& Play para novos marketplaces",
+        "stat4Value": "Multi",
+        "stat4Label": "Tenant desde o dia 1"
+      },
+      "cta": {
+        "title": "Explore Outros Projetos",
+        "description": "Veja outros sistemas que construí"
+      },
+      "footer": {
+        "caseStudy": "Case Study: AutoMark Platform — Affiliate Marketing Automation"
+      }
+    },
+    "icontei": {
+      "meta": {
+        "title": "iContei - Rede Social de Contadores | Marcelo Marleta",
+        "description": "Case study: Plataforma full-stack de contadores compartilháveis com Next.js 16, FastAPI, WebSocket real-time, e verificação por IA."
+      },
+      "hero": {
+        "tag1": "Full-Stack Platform",
+        "tag2": "Social Network",
+        "tag3": "Real-time",
+        "title": "iContei",
+        "description": "Rede social de contadores compartilháveis — desde estatísticas esportivas virais até marcos pessoais. Plataforma full-stack com Next.js 16, FastAPI, WebSockets, e verificação por IA."
+      },
+      "overview": {
+        "title": "Visão Geral",
+        "productTitle": "O Produto",
+        "productDesc1": "iContei é uma plataforma social dedicada a contadores de todos os tipos — desde estatísticas esportivas virais (\"Há 2.847 dias o Flamengo está sem título mundial\") até marcos pessoais (\"Faltam 127 dias para meu casamento\") e corporativos (\"1.567 dias sem acidentes de trabalho\").",
+        "productDesc2": "O foco é criar contadores visualmente impactantes para compartilhamento em redes sociais (TikTok, Instagram, Twitter) com previews dinâmicos, atualização em tempo real, e comunidade engajada.",
+        "useCasesTitle": "Casos de Uso",
+        "publicTitle": "📊 Públicos (Virais)",
+        "publicExample1": "\"Há 2.847 dias o Flamengo está sem título mundial\"",
+        "publicExample2": "\"Faltam 180 dias para a Copa do Mundo 2026\"",
+        "publicExample3": "\"Real Madrid há 45 dias sem perder no Bernabéu\"",
+        "personalTitle": "💑 Pessoais",
+        "personalExample1": "\"Faltam 127 dias para meu casamento\"",
+        "personalExample2": "\"Há 1.234 dias que nos conhecemos\"",
+        "corporateTitle": "🏢 Corporativos",
+        "corporateExample1": "\"1.567 dias sem acidentes de trabalho\"",
+        "corporateExample2": "\"890 dias como líder de mercado\""
+      },
+      "architecture": {
+        "title": "Arquitetura Full-Stack",
+        "frontendStackTitle": "Frontend Stack",
+        "backendStackTitle": "Backend Stack"
+      },
+      "realtime": {
+        "title": "Sistema Real-time",
+        "description": "Contadores atualizam a cada segundo no frontend. Para suportar milhares de conexões simultâneas, implementei um sistema de WebSocket com Redis pub/sub, heartbeat, e rate limiting inteligente.",
+        "websocketTitle": "WebSocket Manager",
+        "websocketDesc": "Rate limiting dual: por usuário autenticado (5 conexões) e por IP para anônimos (20 conexões, considerando NAT/CGNAT). Heartbeat via Redis Sorted Set para detectar conexões mortas.",
+        "pubsubTitle": "Redis Pub/Sub Distribution",
+        "pubsubDesc": "Com Redis pub/sub, posso escalar horizontalmente o backend — cada instância mantém suas conexões WebSocket e recebe atualizações via Redis.",
+        "presenceTitle": "Sistema de Presença",
+        "presenceStat1Value": "30s",
+        "presenceStat1Label": "Heartbeat interval",
+        "presenceStat2Value": "45s",
+        "presenceStat2Label": "Presence timeout",
+        "presenceStat3Value": "ZADD",
+        "presenceStat3Label": "Redis Sorted Set",
+        "presenceDesc": "Cliente envia heartbeat a cada 30s. Servidor usa ZRANGEBYSCORE para listar conexões ativas (timestamp > now - 45s). Conexões stale são removidas automaticamente."
+      },
+      "aiVerification": {
+        "title": "Verificação por IA",
+        "description": "Contadores oficiais passam por verificação automatizada com IA para garantir que datas e informações estão corretas. Sistema multi-provider com fallback.",
+        "serviceTitle": "AI Verification Service",
+        "pipelineTitle": "Pipeline Brave Search + Groq",
+        "pipelineDesc": "Para contadores que precisam de dados externos (ex: \"última vitória do time X\"), uso Brave Search para buscar informações recentes e Groq para extrair dados estruturados."
+      },
+      "rankings": {
+        "title": "Sistema de Rankings",
+        "description": "Rankings em tempo real usando Redis Sorted Sets com algoritmo de scoring 60/30/10 que balanceia likes, comentários e visualizações.",
+        "algorithmTitle": "Algoritmo de Scoring",
+        "redisTitle": "Redis Sorted Sets",
+        "redisDesc": "ZADD para inserir, ZREVRANGE para buscar top N, ZREMRANGEBYRANK para manter tamanho controlado. O(log N) para todas as operações."
+      },
+      "automation": {
+        "title": "Sistema de Automação",
+        "description": "Contadores podem ser atualizados automaticamente via regras configuráveis — desde agendamentos cron até triggers baseados em APIs externas.",
+        "scheduledTitle": "Scheduled",
+        "scheduledDesc": "Cron expressions para atualização periódica. Usa croniter para calcular próxima execução.",
+        "apiTriggerTitle": "API Trigger",
+        "apiTriggerDesc": "Integração com APIs externas (API-Football, etc.) para buscar dados automaticamente.",
+        "crowdsourcedTitle": "Crowdsourced",
+        "crowdsourcedDesc": "Usuários podem sugerir atualizações que passam por aprovação antes de serem aplicadas.",
+        "sportsProviderTitle": "Sports API Provider",
+        "sportsProviderDesc": "Provider Pattern permite adicionar novas fontes de dados facilmente. Cada provider implementa fetch_data() e retorna resposta padronizada."
+      },
+      "observability": {
+        "title": "Observabilidade",
+        "description": "Stack completa de observabilidade para monitorar a plataforma em produção.",
+        "prometheusTitle": "Prometheus + Metrics",
+        "otelTitle": "OpenTelemetry",
+        "loggingTitle": "Structured Logging"
+      },
+      "testing": {
+        "title": "Testes Automatizados",
+        "description": "Cobertura completa com pytest (backend) e vitest + Playwright (frontend).",
+        "backendTitle": "Backend (pytest)",
+        "backendTestCount": "267",
+        "backendTestLabel": "testes",
+        "backendStatus": "✓",
+        "backendStatusLabel": "passando",
+        "frontendTitle": "Frontend (vitest + Playwright)",
+        "frontendUnitCount": "21",
+        "frontendUnitLabel": "unit tests",
+        "frontendE2E": "E2E",
+        "frontendE2ELabel": "Playwright"
+      },
+      "workers": {
+        "title": "Background Workers",
+        "description": "Processamento assíncrono para tarefas pesadas, mantendo a API responsiva.",
+        "schedulerTitle": "Automation Scheduler",
+        "schedulerDesc": "Executa regras de automação a cada 5 minutos. Calcula próximo run com croniter.",
+        "rankingTitle": "Ranking Worker",
+        "rankingDesc": "Atualiza Redis Sorted Sets com scores calculados para cada período (24h, 7d, 30d, all).",
+        "reviewTitle": "Review Worker",
+        "reviewDesc": "Processa filas de verificação de contadores, coordena com AI Verification Service.",
+        "monitoringTitle": "AI Monitoring",
+        "monitoringDesc": "Monitora contadores marcados para verificação contínua, atualiza quando dados mudam."
+      },
+      "roadmap": {
+        "title": "Roadmap",
+        "phase1Title": "Fase 1 - MVP ✅",
+        "phase1Item1": "✓ CRUD de contadores",
+        "phase1Item2": "✓ Sistema de temas",
+        "phase1Item3": "✓ Rankings (Trending)",
+        "phase1Item4": "✓ OG images dinâmicas",
+        "phase1Item5": "✓ Autenticação",
+        "phase1Item6": "✓ Seguir + reações",
+        "phase2Title": "Fase 2 - Social",
+        "phase2Item1": "Feed personalizado",
+        "phase2Item2": "Comentários e discussões",
+        "phase2Item3": "Notificações push",
+        "phase2Item4": "Badges e gamificação",
+        "phase2Item5": "Perfis públicos robustos",
+        "phase3Title": "Fase 3 - Empresas",
+        "phase3Item1": "Perfis corporativos",
+        "phase3Item2": "Multi-usuário por org",
+        "phase3Item3": "Dashboards analytics",
+        "phase3Item4": "SSO corporativo",
+        "phase3Item5": "Temas licenciados",
+        "phase4Title": "Fase 4 - Creators",
+        "phase4Item1": "Geração de vídeos (Remotion)",
+        "phase4Item2": "SDK para redes sociais",
+        "phase4Item3": "API pública",
+        "phase4Item4": "Widgets embeddable",
+        "phase4Item5": "Marketplace de templates"
+      },
+      "stackSection": {
+        "title": "Stack Completa"
+      },
+      "cta": {
+        "title": "Quer ver mais projetos?",
+        "description": "Este é um dos meus projetos pessoais. Explore também o Optimus (plataforma de IA conversacional) e outros case studies no meu portfolio."
+      }
+    },
+    "gratidiem": {
+      "meta": {
+        "title": "GratiDiem - App de Gratidão Flutter | Marcelo Marleta",
+        "description": "Case study: App Flutter multi-plataforma de gratidão com Clean Architecture, Riverpod, Firebase, IA integrada com Gemini, e sistema de monetização ética."
+      },
+      "hero": {
+        "tag1": "Flutter App",
+        "tag2": "Multi-Platform",
+        "tag3": "Firebase",
+        "title": "GratiDiem",
+        "description": "Aplicativo de gratidão e bem-estar com 508+ arquivos Dart, 35+ telas, 86+ serviços. Clean Architecture com Riverpod, dual persistence (Hive + Firebase), IA integrada com Gemini, e sistema de monetização ética gamificado."
+      },
+      "overview": {
+        "title": "Visão Geral",
+        "productTitle": "O Produto",
+        "productDesc1": "GratiDiem é um companheiro diário de gratidão — um aplicativo sofisticado que ajuda usuários a cultivar bem-estar através de práticas de gratidão, meditação guiada, desafios diários, e comunidade.",
+        "productDesc2": "O app suporta 6 plataformas (Android, iOS, Web, macOS, Windows, Linux), 3 idiomas (PT, EN, ES), e é construído para escalar para milhões de usuários.",
+        "metricsTitle": "Métricas do Codebase",
+        "metricFilesValue": "508+",
+        "metricFilesLabel": "Arquivos Dart",
+        "metricScreensValue": "35+",
+        "metricScreensLabel": "Telas",
+        "metricServicesValue": "86+",
+        "metricServicesLabel": "Services",
+        "metricModelsValue": "126+",
+        "metricModelsLabel": "Models"
+      },
+      "architecture": {
+        "title": "Arquitetura Clean + Riverpod",
+        "presentationTitle": "Presentation",
+        "presentationDesc": "278+ arquivos, Material Design 3, responsive design, ConsumerWidget/ConsumerStatefulWidget",
+        "stateTitle": "State Management",
+        "stateDesc": "Riverpod com AsyncNotifier/StateNotifier, stream subscriptions, real-time updates",
+        "businessTitle": "Business Logic",
+        "businessDesc": "Singleton services + Repository pattern, 113 arquivos com responsabilidades claras",
+        "dataTitle": "Data Layer",
+        "dataDesc": "Dual persistence: Hive CE (local-first) + Firebase Firestore (cloud sync)"
+      },
+      "features": {
+        "title": "Features do App",
+        "gratitudeTitle": "🙏 Gratitude Journal",
+        "gratitudeDesc": "Diário de gratidão com entradas diárias, categorias, tags, e busca full-text. Suporte a imagens e compartilhamento social.",
+        "meditationTitle": "🧘 Meditação Guiada",
+        "meditationDesc": "Player de áudio com sessões de meditação (manhã, dia, ansiedade, noite, profunda). Just Audio + Audio Session para background playback.",
+        "circlesTitle": "⭕ Círculos (Tribos)",
+        "circlesDesc": "Comunidades sociais com rituais em grupo, posts, desafios colaborativos, gamificação, e sync real-time via Firestore.",
+        "challengesTitle": "🏆 Challenges & Progression",
+        "challengesDesc": "Desafios diários, streaks, sistema de níveis, árvore de progressão, achievements, e surprise rewards.",
+        "nightRitualTitle": "🌙 Night Ritual",
+        "nightRitualDesc": "Ritual noturno guiado com meditação, reflexão, intenções para o próximo dia. Scheduling com notificações locais.",
+        "adversityTitle": "💊 Adversity Support",
+        "adversityDesc": "Módulo de saúde mental com jornada de adversidade, práticas terapêuticas, histórias inspiradoras, recursos de emergência.",
+        "timeCapsuleTitle": "⏳ Time Capsule",
+        "timeCapsuleDesc": "Cápsulas do tempo para guardar memórias e gratidões a serem abertas no futuro.",
+        "valuesTitle": "🎯 Values & Goals",
+        "valuesDesc": "Definição de valores pessoais, visualização de metas, reviews periódicos.",
+        "analyticsTitle": "📊 Wellbeing Analytics",
+        "analyticsDesc": "Assessments de bem-estar, gráficos de humor (fl_chart), calendário de atividades (table_calendar)."
+      },
+      "ai": {
+        "title": "Integração com IA",
+        "description": "Motor de IA multi-backend com Google Gemini, Hugging Face, e modelos on-device (TensorFlow Lite).",
+        "engineTitle": "AI Engine",
+        "capabilitiesTitle": "Capacidades de IA",
+        "sentimentTitle": "Análise de Sentimentos",
+        "sentimentDesc": "Detecta emoções nas entradas de gratidão com cache para performance",
+        "themesTitle": "Detecção de Temas",
+        "themesDesc": "Categoriza automaticamente entradas (família, trabalho, saúde, etc.)",
+        "responsesTitle": "Respostas Personalizadas",
+        "responsesDesc": "Gera reflexões e sugestões baseadas no histórico do usuário",
+        "premiumTitle": "AI Premium Service",
+        "premiumDesc": "Features avançadas para usuários premium com Gemini Pro",
+        "aiAnalyticsTitle": "AI Analytics",
+        "aiAnalyticsDesc": "Insights e tendências derivados das práticas de gratidão"
+      },
+      "monetization": {
+        "title": "Sistema de Monetização Ética",
+        "description": "Transformando anúncios em \"momentos de gratidão\" — monetização integrada ao conceito do app, criando experiência significativa ao invés de intrusiva.",
+        "appealsTitle": "🙏 Apelos Contextuais",
+        "appealsDesc": "Mensagens de gratidão personalizadas baseadas no contexto do usuário.",
+        "appealsExample1": "Pós-Ritual: \"Se este app te ajudou...\"",
+        "appealsExample2": "Streak: \"7 dias de gratidão! Retribua...\"",
+        "appealsExample3": "Alta Energia: \"Sinta essa vibração positiva?\"",
+        "appealsExample4": "Conquistas: \"Conquista desbloqueada!\"",
+        "tokensTitle": "🎮 Economia de Tokens",
+        "tokensDesc": "Sistema gamificado com tokens que podem ser ganhos e usados no app.",
+        "tokensExample1": "Daily bonus com multiplicadores",
+        "tokensExample2": "Streak multipliers",
+        "tokensExample3": "Achievement rewards",
+        "tokensExample4": "Challenge completion",
+        "remoteConfigTitle": "📊 Firebase Remote Config",
+        "remoteConfigDesc": "Controle dinâmico de toda a monetização sem deploy.",
+        "remoteConfigExample1": "Frequência de anúncios",
+        "remoteConfigExample2": "Cooldown periods",
+        "remoteConfigExample3": "A/B testing de mensagens",
+        "remoteConfigExample4": "Métricas de conversão",
+        "triggersTitle": "Gratitude Triggers Service"
+      },
+      "firebase": {
+        "title": "Firebase Full Stack",
+        "authTitle": "🔐 Authentication",
+        "storageTitle": "📦 Storage",
+        "analyticsTitle": "📊 Analytics",
+        "messagingTitle": "🔔 Messaging"
+      },
+      "persistence": {
+        "title": "Dual Persistence: Local-First",
+        "description": "Arquitetura local-first com Hive CE para performance e offline, sincronizando automaticamente com Firebase Firestore.",
+        "hiveTitle": "Hive CE (Local)",
+        "hiveDesc": "197 TypeIDs registrados, código gerado via build_runner, adapter registry centralizado.",
+        "syncTitle": "Sync Strategy",
+        "syncDesc": "Last-write-wins com detecção de conflitos, queue de retry para offline, recovery service para reconexão."
+      },
+      "navigation": {
+        "title": "Navegação com GoRouter",
+        "description": "100+ rotas declarativas com GoRouter, deep linking, redirect guards, e parâmetros tipados."
+      },
+      "i18n": {
+        "title": "Internacionalização",
+        "portuguese": "Português",
+        "portugueseDesc": "Idioma base (app_pt.arb)",
+        "english": "English",
+        "englishDesc": "app_en.arb",
+        "spanish": "Español",
+        "spanishDesc": "app_es.arb",
+        "summary": "200+ strings traduzidas usando ARB format (Application Resource Bundle), geração automática via flutter gen-l10n, script Python para tradução em lote."
+      },
+      "platforms": {
+        "title": "6 Plataformas Suportadas",
+        "android": "Android",
+        "ios": "iOS",
+        "web": "Web",
+        "macos": "macOS",
+        "windows": "Windows",
+        "linux": "Linux"
+      },
+      "testing": {
+        "title": "Testing & Quality",
+        "unitTitle": "Unit Tests",
+        "widgetTitle": "Widget Tests",
+        "integrationTitle": "Integration Tests",
+        "qualityTitle": "Code Quality"
+      },
+      "stackSection": {
+        "title": "Stack Completa"
+      },
+      "cta": {
+        "title": "Quer ver mais projetos?",
+        "description": "Este é um dos meus projetos pessoais mais completos em Flutter. Explore também o iContei (rede social de contadores) e os projetos do Optimus."
+      }
+    },
+    "memory": {
+      "badge": "Sistema de Memória",
+      "title": "Memory Engine",
+      "description": "Sistema de memória hierárquico multi-tier (Hot/Warm/Cold) com compressão semântica inteligente, compliance automático LGPD/HIPAA, e context injection para continuidade AI ↔ Humano.",
+      "metrics": {
+        "latency": "Latência p99",
+        "tokenReduction": "Redução de Tokens",
+        "complianceRules": "Compliance Rules",
+        "durability": "Durabilidade"
+      },
+      "problem": {
+        "title": "O Problema",
+        "intro": "Chatbots enterprise precisam de memória de contexto. Quando um cliente retorna dias depois, o bot precisa lembrar conversas anteriores, preferências e histórico de atendimentos.",
+        "tokensCost": "Tokens são caros",
+        "tokensCostDesc": "Injetar todo o histórico no prompt explode os custos",
+        "latencyKillsUx": "Latência mata UX",
+        "latencyKillsUxDesc": "Busca em banco relacional adiciona 200-500ms",
+        "complianceMandatory": "Compliance obrigatório",
+        "complianceMandatoryDesc": "LGPD, CFM, CFO têm regras rígidas de retenção",
+        "handoverComplicates": "Handover complica",
+        "handoverComplicatesDesc": "AI precisa saber o que aconteceu quando humano atendeu"
+      },
+      "solution": {
+        "title": "A Solução",
+        "hotWarmCold": {
+          "title": "Arquitetura Hot/Warm/Cold",
+          "intro": "Sistema de armazenamento em 3 tiers com estratégia Write-Through:",
+          "hot": "HOT",
+          "hotDesc": "Redis · TTL 1min",
+          "hotLatency": "<10ms latência",
+          "warm": "WARM",
+          "warmDesc": "Redis · TTL 1h",
+          "warmLatency": "<50ms latência",
+          "cold": "COLD",
+          "coldDesc": "PostgreSQL",
+          "coldLatency": "~100ms · Permanente",
+          "writeThrough": "Write-Through",
+          "writeThroughDesc": "Toda escrita vai primeiro para PostgreSQL (durabilidade garantida), depois replica para Redis (performance)."
+        },
+        "customerFacts": {
+          "title": "Customer Facts Temporais",
+          "intro": "Em vez de armazenar conversas brutas, extraímos fatos estruturados com janela de validade temporal:",
+          "footer": "Histórico temporal completo para auditoria. Consulta O(1) para fatos atuais via índice parcial."
+        },
+        "semanticCompression": {
+          "title": "Compressão Semântica com LLM",
+          "intro": "Conversas longas são comprimidas usando OpenAI com templates verticais específicos (dental, médico, jurídico):",
+          "preserves": "Preserva",
+          "preservesDesc": "Fatos críticos, decisões, próximos passos",
+          "removes": "Remove",
+          "removesDesc": "Saudações, confirmações redundantes, detalhes operacionais",
+          "result": "Resultado",
+          "resultDesc": "90% redução com 100% preservação de informação relevante"
+        },
+        "compliance": {
+          "title": "Compliance Automático",
+          "intro": "Classificação e tratamento automático baseado no vertical:",
+          "lgpd": "LGPD",
+          "lgpdDesc": "Brasil",
+          "hipaa": "HIPAA",
+          "hipaaDesc": "EUA - Saúde",
+          "cfo": "CFO",
+          "cfoDesc": "Odontologia",
+          "cfm": "CFM",
+          "cfmDesc": "Medicina",
+          "oab": "OAB",
+          "oabDesc": "Advocacia",
+          "gdpr": "GDPR",
+          "gdprDesc": "Europa",
+          "footer": "Anonimização inteligente: CPF -> ***.***.***.00 | Email -> ***{'@'}domain.com"
+        },
+        "handover": {
+          "title": "Handover Summary",
+          "intro": "Continuidade perfeita quando atendente humano intervém:",
+          "step1": "Mensagens do operador → Buffer Redis (hot path)",
+          "step2": "Encerramento → Celery worker gera resumo com OpenAI",
+          "step3": "AI retoma → Recebe resumo estruturado injetado no contexto"
+        }
+      },
+      "architecture": {
+        "title": "Arquitetura",
+        "lastMsg": "Última msg",
+        "activeSession": "Sessão Ativa",
+        "completeHistory": "Histórico Completo",
+        "writeThroughStrategy": "Write-Through Strategy",
+        "sourceOfTruth": "(PostgreSQL = Source of Truth)",
+        "contextComposer": "CONTEXT COMPOSER v2",
+        "factsLogic": "Facts (Lógica)",
+        "summaryLanguage": "Summary (Linguagem)",
+        "recentChat": "Recent (Chat)",
+        "lastMsgs": "[últimas 5 msgs]"
+      },
+      "decisions": {
+        "title": "Decisões Técnicas",
+        "writeThrough": {
+          "question": "Por que Write-Through e não Write-Behind?",
+          "answer": "Write-Behind (async write to DB) é mais performático mas arriscado. Em atendimento ao cliente, perder uma mensagem é inaceitável. Write-Through garante durabilidade imediata com performance aceitável."
+        },
+        "schemaIsolation": {
+          "question": "Por que schema isolation e não row-level security?",
+          "answer": "RLS adiciona overhead em cada query. Com schemas separados (t_{tenant_id}), o isolamento é físico e a performance é máxima. Trade-off: mais complexidade operacional."
+        },
+        "temporalFacts": {
+          "question": "Por que Customer Facts temporais?",
+          "answer": "LLMs são péssimos em \"esquecer\". Se o cliente mudou de preferência, o modelo com histórico completo continuaria usando a preferência antiga. Facts temporais com valid_at/invalid_at resolvem isso elegantemente."
+        },
+        "factsSummary": {
+          "question": "Por que separar Facts vs Summary no Context Composer?",
+          "answer": "Facts são para lógica (o sistema usa para tomar decisões). Summary é para linguagem (o LLM usa para gerar respostas naturais). Essa separação evita que o LLM \"alucine\" sobre dados estruturados."
+        }
+      },
+      "nextProject": "Próximo: AI Conversation Engine →"
+    },
+    "backend": {
+      "badge": "Gateway Inteligente",
+      "title": "Backend Orchestrator",
+      "description": "Gateway enterprise multi-tenant com rate limiting distribuído, circuit breaker, handover dual-mode (operator + AI-initiated), WebSocket real-time e fail-closed resilience.",
+      "metrics": {
+        "gatewayLatency": "Gateway Latency",
+        "reqPerMinTenant": "Req/min/tenant",
+        "retryStrategies": "Retry Strategies",
+        "uptime": "Uptime"
+      },
+      "problem": {
+        "title": "O Problema",
+        "intro": "Em sistemas de atendimento multi-tenant, o gateway é o ponto crítico de falha. Problemas comuns:",
+        "noisyNeighbor": "Noisy Neighbor",
+        "noisyNeighborDesc": "Um tenant com tráfego alto derruba todos os outros",
+        "cascadingFailures": "Cascading Failures",
+        "cascadingFailuresDesc": "AI Engine lento bloqueia todo o sistema",
+        "handoverChaos": "Handover Chaos",
+        "handoverChaosDesc": "AI responde quando humano está atendendo",
+        "idempotencyBugs": "Idempotency Bugs",
+        "idempotencyBugsDesc": "Mesma mensagem processada múltiplas vezes",
+        "frontendDesync": "Frontend Desync",
+        "frontendDesyncDesc": "UI não reflete estado real das conversas"
+      },
+      "solution": {
+        "title": "A Solução",
+        "rateLimiting": {
+          "title": "Enterprise Rate Limiting",
+          "intro": "Sistema de rate limiting multi-camada com algoritmos adaptativos:",
+          "slidingWindow": "Sliding Window",
+          "slidingWindowDesc": "Precisão temporal com Redis ZSET",
+          "tokenBucket": "Token Bucket",
+          "tokenBucketDesc": "Burst handling com Lua scripts atômicos",
+          "localFallback": "Local Fallback",
+          "localFallbackDesc": "Cache local quando Redis indisponível",
+          "tenantTiers": "Tenant Tiers",
+          "tenantTiersDesc": "FREE (10 req/min) → BASIC (50) → PROFESSIONAL (200) → ENTERPRISE (unlimited)"
+        },
+        "circuitBreaker": {
+          "title": "Circuit Breaker Pattern",
+          "intro": "Proteção contra cascading failures com 3 estados:",
+          "closed": "CLOSED",
+          "open": "OPEN",
+          "halfOpen": "HALF_OPEN",
+          "failureThreshold": "failure_threshold",
+          "failureThresholdDesc": "5 falhas consecutivas abrem o circuito",
+          "recoveryTimeout": "recovery_timeout",
+          "recoveryTimeoutDesc": "60s antes de testar novamente",
+          "halfOpenMaxCalls": "half_open_max_calls",
+          "halfOpenMaxCallsDesc": "10 requests de teste antes de fechar"
+        },
+        "handover": {
+          "title": "Handover Dual-Mode",
+          "intro": "Dois modos de transição AI ↔ Humano:",
+          "operatorTakeover": "Operator Takeover",
+          "operatorTakeoverList": [
+            "Operador clica \"assumir conversa\"",
+            "Redis latch bloqueia AI instantaneamente",
+            "Timer auto-resume configurável por tenant",
+            "Lazy finalize: summary gerado ao retomar"
+          ],
+          "aiInitiated": "AI-Initiated",
+          "aiInitiatedList": [
+            "AI detecta problema (ERP failure, complexidade)",
+            "Context injection com prioridade máxima",
+            "Mensagem natural para cliente",
+            "Histórico multi-handover preservado"
+          ]
+        },
+        "failClosed": {
+          "title": "Fail-Closed Resilience",
+          "intro": "Quando Redis está indisponível, o sistema bloqueia AI (não fica silencioso):",
+          "comment": "# Fail-closed",
+          "customerReceives": "# Cliente recebe: \"Um momento, estamos te transferindo...\"",
+          "notSilent": "# NÃO: silêncio total (fail-open)",
+          "retryStrategy": "Retry Strategy",
+          "retryStrategyDesc": "3 tentativas com exponential backoff (50ms base) + jitter aleatório"
+        },
+        "websocket": {
+          "title": "WebSocket Real-Time",
+          "intro": "Broadcasting de eventos para sincronização frontend:",
+          "conversationUpdate": "conversation_update",
+          "conversationUpdateDesc": "Nova conversa ou mudança de status",
+          "newMessage": "new_message",
+          "newMessageDesc": "Mensagem cliente/AI normalizada",
+          "operatorMessage": "operator_message",
+          "operatorMessageDesc": "Mensagem do operador (WhatsApp/Web)",
+          "cacheInvalidation": "cache_invalidation",
+          "cacheInvalidationDesc": "Trigger de refetch no frontend"
+        },
+        "idempotency": {
+          "title": "Idempotency Gate",
+          "intro": "Proteção contra processamento duplicado:",
+          "step1": "Request chega com",
+          "step2": "Check Redis: já processado? → retorna cached response",
+          "step3": "Slot reservado → processa request",
+          "step4": "Response cacheada com TTL de 24h"
+        }
+      },
+      "architecture": {
+        "title": "Arquitetura",
+        "gatewayEnterprise": "(Gateway Enterprise)",
+        "rateLimiter": "Rate Limiter",
+        "multiTier": "(Multi-tier)",
+        "circuitBreaker": "Circuit Breaker",
+        "threeStates": "(3 states)",
+        "handoverGate": "Handover Gate",
+        "failClosed": "(Fail-closed)",
+        "chatOrchestrator": "Chat Orchestrator",
+        "idempotency": "+ Idempotency",
+        "aiEngine": "AI Engine",
+        "langGraph": "(LangGraph)",
+        "memoryEngine": "Memory Engine",
+        "postgresql": "(PostgreSQL)",
+        "websocketBroadcast": "WebSocket Broadcast",
+        "requestFlow": "Request Flow:",
+        "step1": "1. Rate Limit Check (per-tenant tier)",
+        "step2": "2. Circuit Breaker (protect downstream)",
+        "step3": "3. Handover Gate (AI blocking)",
+        "step4": "4. Idempotency Check (dedupe)",
+        "step5": "5. AI Engine Call (with timeout)",
+        "step6": "6. WebSocket Broadcast (real-time)",
+        "step7": "7. Cache Response (24h TTL)"
+      },
+      "decisions": {
+        "title": "Decisões Técnicas",
+        "failClosed": {
+          "question": "Por que fail-closed e não fail-open?",
+          "answer": "Em atendimento ao cliente, silêncio é pior que resposta de fallback. Fail-closed garante que o cliente sempre receba feedback (\"estamos te transferindo\") mesmo quando Redis está indisponível. Fail-open deixaria o cliente esperando indefinidamente."
+        },
+        "redisLatch": {
+          "question": "Por que Redis latch e não database flag?",
+          "answer": "Redis latch com TTL automático elimina a necessidade de cleanup workers. Se o operador esquecer de \"devolver\" a conversa, o TTL expira e AI retoma automaticamente. Database flags precisariam de cron jobs para timeout."
+        },
+        "slidingWindow": {
+          "question": "Por que sliding window e não fixed window?",
+          "answer": "Fixed window tem o problema de \"boundary burst\": 100 requests no segundo 59 + 100 no segundo 0 = 200 requests em 2 segundos. Sliding window distribui uniformemente e evita esse pico."
+        },
+        "luaScripts": {
+          "question": "Por que Lua scripts para token bucket?",
+          "answer": "Token bucket precisa de operações atômicas (read-modify-write). Sem Lua, teríamos race conditions entre GET e SET. Lua scripts executam atomicamente no servidor Redis, garantindo consistência mesmo com milhares de requests concorrentes."
+        }
+      },
+      "nextProject": "Próximo: Memory Engine →"
+    },
+    "rules": {
+      "badge": "Optimus Platform",
+      "badgeSecondary": "Business Intelligence",
+      "title": "Rules Engine",
+      "description": "Motor de regras Python-native que elimina o overhead interpretado do JSONLogic. Avaliação em sub-millisegundo, regras criadas em runtime por tenant, type safety completo.",
+      "tags": {
+        "pythonLambda": "Python Lambda",
+        "subMillisecond": "Sub-millisecond",
+        "multiTenant": "Multi-tenant",
+        "eventDriven": "Event-driven",
+        "typeSafe": "Type Safe",
+        "cacheCoherence": "Cache Coherence"
+      },
+      "problem": {
+        "title": "O Problema: Por que JSONLogic não escala",
+        "jsonLogicTrap": "JSONLogic - A Armadilha",
+        "simpleRule": "// Regra \"simples\" em JSONLogic",
+        "issues": {
+          "interpreted": "Interpretado recursivamente",
+          "interpretedDesc": "cada operador é uma chamada de função aninhada",
+          "limitedOps": "Operadores limitados",
+          "limitedOpsDesc": "só suporta {'<'}, {'>'}, ==, in, and, or",
+          "noTypeCheck": "Sem type checking",
+          "noTypeCheckDesc": "erros só aparecem em runtime",
+          "debugImpossible": "Debug impossível",
+          "debugImpossibleDesc": "stack traces incompreensíveis",
+          "slowPerf": "~50-200ms",
+          "slowPerfDesc": "para avaliar 100 regras complexas"
+        },
+        "pythonNativeSolution": "Python-Native - A Solução",
+        "sameRule": "# Mesma regra em Python-native",
+        "benefits": {
+          "compiledOnce": "Compilado uma vez",
+          "compiledOnceDesc": "bytecode Python nativo",
+          "fullPower": "Full Python power",
+          "fullPowerDesc": "regex, datetime, math, tudo",
+          "typeHints": "Type hints + mypy",
+          "typeHintsDesc": "erros antes do deploy",
+          "normalDebug": "Debug normal",
+          "normalDebugDesc": "pdb, breakpoints, stack traces",
+          "fastPerf": "<0.5ms",
+          "fastPerfDesc": "para avaliar 100 regras - 1000x mais rápido"
+        },
+        "benchmark": {
+          "title": "Benchmark Real: JSONLogic vs Python-Native",
+          "jsonLogic": "JSONLogic (100 regras)",
+          "pythonNative": "Python-Native (100 regras)",
+          "fasterCold": "Mais rápido (cold)",
+          "fasterCached": "Mais rápido (cached)"
+        }
+      },
+      "architecture": {
+        "title": "Arquitetura: Rules Engine + Coordinator",
+        "requestFlow": "Request Flow (sub-ms target)",
+        "clientRequest": "Client Request",
+        "backendOrchestrator": "Backend Orchestrator",
+        "rulesCoordinator": "Rules Coordinator",
+        "cacheFallback": "(Cache + Fallback)",
+        "rulesEngine": "Rules Engine",
+        "port": "(Port 8040)",
+        "redisCache": "Redis Cache",
+        "ttl15min": "(15 min)",
+        "postgresql": "PostgreSQL",
+        "rulesDb": "(Rules DB)",
+        "fallbackHierarchy": "Fallback Hierarchy (never fails)",
+        "primary": "1. Rules Engine API → Primary (target <50ms)",
+        "secondary": "2. Redis Cache      → Secondary (target <5ms)",
+        "basic": "3. Basic Fallback   → Always available (keyword-based)",
+        "components": {
+          "rulesEngine": {
+            "title": "Rules Engine",
+            "desc": "Microsserviço dedicado que compila e executa regras Python-native. Cada tenant tem suas próprias regras isoladas.",
+            "items": [
+              "Compilação de lambdas Python",
+              "Sandboxing de execução",
+              "Métricas por regra",
+              "Multi-vertical support"
+            ]
+          },
+          "rulesCoordinator": {
+            "title": "Rules Coordinator",
+            "desc": "Proxy inteligente no Backend Orchestrator com cache, circuit breaker e fallback multi-tier.",
+            "items": [
+              "Cache de avaliações (15min TTL)",
+              "Memory context enrichment",
+              "Circuit breaker protection",
+              "Graceful degradation"
+            ]
+          },
+          "contextEnrichment": {
+            "title": "Context Enrichment",
+            "desc": "Integração com Memory Engine para enriquecer fatos com contexto histórico do cliente.",
+            "items": [
+              "Frequência de interação",
+              "Nível de urgência detectado",
+              "Indicadores de dor/emergência",
+              "Padrões inteligentes"
+            ]
+          }
+        }
+      },
+      "runtimeCreation": {
+        "title": "Runtime Rule Creation: Cada Negócio é Único",
+        "intro": "O grande diferencial do Rules Engine é permitir que cada tenant crie suas próprias regras em tempo real, sem deploy, sem downtime, sem código.",
+        "apiTitle": "API de Criação de Regras",
+        "examples": {
+          "dental": {
+            "title": "🦷 Regra Dental",
+            "desc": "Lembrete de limpeza baseado em última visita + status do seguro. Se passou 6 meses e tem cobertura → agenda preventiva."
+          },
+          "ecommerce": {
+            "title": "🛒 Regra E-commerce",
+            "desc": "Carrinho abandonado há 2h + valor > R$200 + cliente recorrente → oferta de 10% desconto + frete grátis."
+          },
+          "legal": {
+            "title": "⚖️ Regra Legal",
+            "desc": "Prazo processual em 48h + cliente não respondeu última mensagem → alerta urgente + escalação para advogado responsável."
+          }
+        },
+        "multiTenant": {
+          "title": "🔒 Isolamento Multi-tenant Completo",
+          "clinic": {
+            "name": "Clínica ABC",
+            "rules": "47 regras ativas",
+            "vertical": "Vertical: dental",
+            "focus": "Foco: agendamento"
+          },
+          "store": {
+            "name": "Loja XYZ",
+            "rules": "89 regras ativas",
+            "vertical": "Vertical: e-commerce",
+            "focus": "Foco: conversão"
+          },
+          "law": {
+            "name": "Advocacia 123",
+            "rules": "23 regras ativas",
+            "vertical": "Vertical: legal",
+            "focus": "Foco: prazos"
+          },
+          "footer": "Cada tenant tem regras completamente isoladas. Nenhuma regra da Clínica ABC afeta a Loja XYZ. Zero vazamento de lógica de negócio entre clientes."
+        }
+      },
+      "deepDive": {
+        "title": "Deep Dive: Como Funciona",
+        "coordinator": {
+          "title": "Rules Coordinator: Cache + Fallback Inteligente",
+          "docstring": "🎯 Coordenador Central de Regras",
+          "responsibilities": [
+            "1. Proxy inteligente para Rules Engine com <50ms target",
+            "2. Cache Redis para performance otimizada",
+            "3. Integração com Memory Coordinator para contexto enriquecido",
+            "4. Fallback quando Rules Engine falha",
+            "5. Circuit breaker para proteção contra falhas"
+          ],
+          "comment1": "# 1. 🧠 Enriquecer dados com Memory Coordinator",
+          "comment2": "# 2. 🎯 Tentar Rules Engine (primary)",
+          "comment3": "# Cache para reuso futuro",
+          "comment4": "# 3. 🔄 Fallback para Redis cache",
+          "comment5": "# 4. 🚨 Basic fallback (keyword-based, nunca falha)"
+        },
+        "enrichment": {
+          "title": "Context Enrichment: Regras com Contexto Histórico",
+          "docstring": "Extrai padrões inteligentes do contexto de memória para regras mais sofisticadas",
+          "comments": {
+            "detectsUrgency": "# Detecta urgência (dor, emergência, sangramento)",
+            "detectsScheduling": "# Detecta necessidade de agendamento",
+            "analyzesFrequency": "# Analisa frequência de interação",
+            "result": "# Resultado: regras podem usar facts enriquecidos"
+          }
+        },
+        "eventTypes": {
+          "title": "Event-Driven: Triggers Automáticos",
+          "messageReceived": "message_received",
+          "messageReceivedDesc": "Nova mensagem do cliente",
+          "conversationStarted": "conversation_started",
+          "conversationStartedDesc": "Início de conversa",
+          "handoverCompleted": "handover_completed",
+          "handoverCompletedDesc": "Atendente finalizou",
+          "appointmentScheduled": "appointment_scheduled",
+          "appointmentScheduledDesc": "Agendamento confirmado",
+          "cartAbandoned": "cart_abandoned",
+          "cartAbandonedDesc": "Carrinho abandonado",
+          "deadlineApproaching": "deadline_approaching",
+          "deadlineApproachingDesc": "Prazo se aproximando",
+          "sentimentNegative": "sentiment_negative",
+          "sentimentNegativeDesc": "Cliente insatisfeito",
+          "timeBased": "time_based",
+          "timeBasedDesc": "Trigger por horário"
+        }
+      },
+      "results": {
+        "title": "Resultados: Regras que Escalam",
+        "latencyP95": "Latência P95",
+        "latencyP95Desc": "Target de performance",
+        "vsJsonLogic": "vs JSONLogic",
+        "vsJsonLogicDesc": "Com cache aquecido",
+        "rulesInProduction": "Regras em Produção",
+        "rulesInProductionDesc": "Dental + E-commerce + Medical",
+        "evaluationUptime": "Uptime Avaliação",
+        "evaluationUptimeDesc": "Fallback nunca falha",
+        "decisions": {
+          "title": "💡 Decisões Técnicas Chave",
+          "pythonLambda": {
+            "title": "Python Lambda vs DSL Customizada",
+            "desc": "Consideramos criar uma DSL (Domain-Specific Language) para regras, mas decidimos usar Python lambda diretamente. Razão: desenvolvedores já conhecem Python, debugging normal, type hints funcionam, ecosystem inteiro disponível. O sandboxing é feito via AST parsing + restricted builtins."
+          },
+          "cache15min": {
+            "title": "Cache de 15 minutos (não infinito)",
+            "desc": "Regras são cacheadas por 15 minutos, não infinitamente. Isso permite que alterações em regras (via API) sejam refletidas em tempo razoável sem necessidade de invalidação manual. O tradeoff entre performance e freshness foi calibrado em produção."
+          },
+          "keywordFallback": {
+            "title": "Fallback Keyword-Based (Sempre Funciona)",
+            "desc": "O último nível de fallback usa análise simples de keywords. Não é sofisticado, mas garante que o sistema NUNCA falha em avaliar uma mensagem. \"Dor\" → urgência, \"agendar\" → appointment. Simples, mas funcional como último recurso."
+          },
+          "separateMicroservice": {
+            "title": "Microsserviço Separado (não library)",
+            "desc": "Rules Engine é um microsserviço independente, não uma library importada. Isso permite escalar horizontalmente, deploy independente, e isolamento de falhas. Se o Rules Engine crashar, o Coordinator usa cache/fallback."
+          }
+        }
+      },
+      "technicalStack": {
+        "title": "Stack Técnico",
+        "runtime": "Runtime",
+        "runtimeDesc": "Python 3.11+ (bytecode optimized)",
+        "framework": "Framework",
+        "frameworkDesc": "FastAPI + Pydantic",
+        "cache": "Cache",
+        "cacheDesc": "Redis (cache + pub/sub)",
+        "storage": "Storage",
+        "storageDesc": "PostgreSQL (rules metadata)",
+        "isolation": "Isolation",
+        "isolationDesc": "Per-tenant rule namespaces",
+        "circuitBreaker": "Circuit Breaker",
+        "circuitBreakerDesc": "5 failures → 60s recovery",
+        "httpClient": "HTTP Client",
+        "httpClientDesc": "HTTPX async pooling",
+        "metrics": "Metrics",
+        "metricsDesc": "Prometheus + per-rule tracking"
+      },
+      "cta": {
+        "title": "Quer discutir mais sobre Rules Engines?",
+        "desc": "JSONLogic vs Python-native, DSLs customizadas, ou como fazer regras escalarem - adoro falar sobre esses temas.",
+        "contact": "Entrar em Contato"
+      },
+      "meta": {
+        "title": "Rules Engine - Python-Native 1000x mais rápido que JSONLogic | Marcelo Marleta",
+        "description": "Motor de regras Python-native que elimina JSONLogic. Avaliação sub-millisecond, regras em runtime por tenant, type safety completo."
+      }
     }
   }
 }

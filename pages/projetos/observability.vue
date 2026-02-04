@@ -4,7 +4,7 @@
     <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
       <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-          ← Voltar
+          {{ $t('cases.observability.backToPortfolio') }}
         </NuxtLink>
       </nav>
     </header>
@@ -13,67 +13,65 @@
       <!-- Hero -->
       <div class="mb-16">
         <span class="inline-block px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-sm mb-4">
-          Observabilidade Enterprise
+          {{ $t('cases.observability.badge') }}
         </span>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Observability Stack
+          {{ $t('cases.observability.title') }}
         </h1>
         <p class="text-xl text-gray-400 leading-relaxed">
-          Sistema completo de observabilidade com métricas de negócio, tracing distribuído, 
-          monitoramento de custos de tokens, telemetria de decisões de IA e alertas em tempo real.
+          {{ $t('cases.observability.description') }}
         </p>
       </div>
 
       <!-- Métricas -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-green-400">4</div>
-          <div class="text-sm text-gray-500 mt-1">Pilares MELT</div>
+          <div class="text-3xl font-bold text-green-400">{{ $t('cases.observability.metrics.meltPillars') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.observability.metrics.meltPillarsLabel') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-green-400">50+</div>
-          <div class="text-sm text-gray-500 mt-1">Métricas Custom</div>
+          <div class="text-3xl font-bold text-green-400">{{ $t('cases.observability.metrics.customMetrics') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.observability.metrics.customMetricsLabel') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-green-400">100%</div>
-          <div class="text-sm text-gray-500 mt-1">Trace Coverage</div>
+          <div class="text-3xl font-bold text-green-400">{{ $t('cases.observability.metrics.traceCoverage') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.observability.metrics.traceCoverageLabel') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-green-400">&lt;5min</div>
-          <div class="text-sm text-gray-500 mt-1">MTTR Debug</div>
+          <div class="text-3xl font-bold text-green-400">{{ $t('cases.observability.metrics.mttrDebug') }}</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.observability.metrics.mttrDebugLabel') }}</div>
         </div>
       </div>
 
       <!-- Por que Observabilidade? -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-red-400">⚡</span> Por Que Observabilidade é Crítica
+          <span class="text-red-400">{{ $t('cases.observability.whyObservability.title') }}</span>
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Em sistemas de IA conversacional, "não funcionou" não é um diagnóstico. 
-            Precisamos responder perguntas específicas:
+            {{ $t('cases.observability.whyObservability.intro') }}
           </p>
           <ul class="space-y-3 text-gray-400">
             <li class="flex items-start gap-2">
               <span class="text-yellow-400 mt-1">?</span>
-              <span><strong class="text-white">Debug</strong>: Por que o AI não entendeu "quero marcar amanhã"?</span>
+              <span><strong class="text-white">{{ $t('cases.observability.whyObservability.debug') }}</strong>{{ $t('cases.observability.whyObservability.debugQ') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-yellow-400 mt-1">?</span>
-              <span><strong class="text-white">Performance</strong>: Qual nó do LangGraph está lento?</span>
+              <span><strong class="text-white">{{ $t('cases.observability.whyObservability.performance') }}</strong>{{ $t('cases.observability.whyObservability.performanceQ') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-yellow-400 mt-1">?</span>
-              <span><strong class="text-white">Custos</strong>: Quanto estamos gastando em tokens por tenant?</span>
+              <span><strong class="text-white">{{ $t('cases.observability.whyObservability.costs') }}</strong>{{ $t('cases.observability.whyObservability.costsQ') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-yellow-400 mt-1">?</span>
-              <span><strong class="text-white">Negócio</strong>: Qual % das conversas resolvemos sem humano?</span>
+              <span><strong class="text-white">{{ $t('cases.observability.whyObservability.business') }}</strong>{{ $t('cases.observability.whyObservability.businessQ') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-yellow-400 mt-1">?</span>
-              <span><strong class="text-white">Qualidade</strong>: O RAG está retornando preços corretos?</span>
+              <span><strong class="text-white">{{ $t('cases.observability.whyObservability.quality') }}</strong>{{ $t('cases.observability.whyObservability.qualityQ') }}</span>
             </li>
           </ul>
         </div>
@@ -82,22 +80,22 @@
       <!-- Stack de Observabilidade -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-emerald-400">✨</span> Stack Completo
+          <span class="text-emerald-400">{{ $t('cases.observability.stack.title') }}</span>
         </h2>
         <div class="space-y-6">
           <!-- Business Metrics -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">📊 Business Metrics (Prometheus)</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.businessMetrics.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Métricas de negócio com ownership claro por serviço (evita double counting):
+              {{ $t('cases.observability.stack.businessMetrics.description') }}
             </p>
             <div class="overflow-x-auto mb-4">
               <table class="w-full text-sm">
                 <thead>
                   <tr class="text-left text-gray-500 border-b border-gray-800">
-                    <th class="pb-2">Métrica</th>
-                    <th class="pb-2">Owner</th>
-                    <th class="pb-2">Labels</th>
+                    <th class="pb-2">{{ $t('cases.observability.stack.businessMetrics.tableMetric') }}</th>
+                    <th class="pb-2">{{ $t('cases.observability.stack.businessMetrics.tableOwner') }}</th>
+                    <th class="pb-2">{{ $t('cases.observability.stack.businessMetrics.tableLabels') }}</th>
                   </tr>
                 </thead>
                 <tbody class="text-gray-400">
@@ -125,16 +123,15 @@
               </table>
             </div>
             <p class="text-gray-500 text-sm">
-              <strong class="text-gray-300">Ownership Table</strong>: Cada métrica tem um único serviço responsável 
-              por emiti-la, evitando contagem dupla em sistemas distribuídos.
+              <strong class="text-gray-300">{{ $t('cases.observability.stack.businessMetrics.ownershipNote') }}</strong>{{ $t('cases.observability.stack.businessMetrics.ownershipDesc') }}
             </p>
           </div>
 
           <!-- OpenTelemetry Tracing -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">🔍 Distributed Tracing (OpenTelemetry)</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.tracing.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Tracing end-to-end com propagação de contexto entre serviços:
+              {{ $t('cases.observability.stack.tracing.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4">
               <pre class="text-gray-300">
@@ -145,26 +142,26 @@ Request → Orchestrator → AI Engine → Memory Engine → PostgreSQL
    │           └── chat.orchestration span
    └── http.request span
 
-trace_id: a1b2c3d4... (propagado via headers)
+{{ $t('cases.observability.stack.tracing.propagatedVia') }}
               </pre>
             </div>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-emerald-400 font-semibold mb-2">Instrumentação Automática</div>
+                <div class="text-emerald-400 font-semibold mb-2">{{ $t('cases.observability.stack.tracing.autoInstrumentation') }}</div>
                 <ul class="text-gray-500 text-sm space-y-1">
-                  <li>• FastAPI requests/responses</li>
-                  <li>• HTTPX client calls</li>
-                  <li>• SQLAlchemy queries</li>
-                  <li>• Redis operations</li>
+                  <li>{{ $t('cases.observability.stack.tracing.fastapiRequests') }}</li>
+                  <li>{{ $t('cases.observability.stack.tracing.httpxCalls') }}</li>
+                  <li>{{ $t('cases.observability.stack.tracing.sqlalchemyQueries') }}</li>
+                  <li>{{ $t('cases.observability.stack.tracing.redisOps') }}</li>
                 </ul>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-purple-400 font-semibold mb-2">Spans Customizados</div>
+                <div class="text-purple-400 font-semibold mb-2">{{ $t('cases.observability.stack.tracing.customSpans') }}</div>
                 <ul class="text-gray-500 text-sm space-y-1">
-                  <li>• LangGraph node execution</li>
-                  <li>• RAG search decisions</li>
-                  <li>• Booking FSM transitions</li>
-                  <li>• LLM API calls + tokens</li>
+                  <li>{{ $t('cases.observability.stack.tracing.langGraphNode') }}</li>
+                  <li>{{ $t('cases.observability.stack.tracing.ragDecisions') }}</li>
+                  <li>{{ $t('cases.observability.stack.tracing.bookingFsm') }}</li>
+                  <li>{{ $t('cases.observability.stack.tracing.llmCalls') }}</li>
                 </ul>
               </div>
             </div>
@@ -172,9 +169,9 @@ trace_id: a1b2c3d4... (propagado via headers)
 
           <!-- Token Usage Reports -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">💰 Token Usage & Cost Tracking</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.tokenUsage.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Relatórios de uso de tokens via Jaeger traces para controle de custos:
+              {{ $t('cases.observability.stack.tokenUsage.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4">
               <pre class="text-gray-300">
@@ -184,7 +181,7 @@ GET /api/token-reports?tenant_id=clinic2&days=30
   "tenant_id": "clinic2",
   "total_input_tokens": 1_250_000,
   "total_output_tokens": 450_000,
-  "total_cost": 42.50,  // USD estimado
+  "total_cost": 42.50,  // USD estimated
   "models_breakdown": {
     "gpt-4o-mini": {"tokens": 1_500_000, "cost": 15.00},
     "gpt-4o": {"tokens": 200_000, "cost": 27.50}
@@ -197,16 +194,16 @@ GET /api/token-reports?tenant_id=clinic2&days=30
               </pre>
             </div>
             <p class="text-gray-500 text-sm">
-              Dados extraídos de spans OpenTelemetry com atributos <code class="text-emerald-400">llm.input_tokens</code>, 
+              {{ $t('cases.observability.stack.tokenUsage.dataExtracted') }} <code class="text-emerald-400">llm.input_tokens</code>, 
               <code class="text-emerald-400">llm.output_tokens</code>, <code class="text-emerald-400">llm.model</code>.
             </p>
           </div>
 
           <!-- State Snapshot Telemetry -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">📸 State Snapshot Telemetry</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.stateSnapshot.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Cada response inclui snapshot do estado para debug de conversas:
+              {{ $t('cases.observability.stack.stateSnapshot.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm overflow-x-auto">
               <pre class="text-gray-300">
@@ -227,19 +224,19 @@ response_metadata.state_snapshot = {
 
           <!-- Pricing Match Telemetry -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">🎯 RAG Decision Telemetry</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.ragTelemetry.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Explicabilidade de decisões do pipeline de pricing/RAG:
+              {{ $t('cases.observability.stack.ragTelemetry.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4">
               <pre class="text-gray-300">
 {
   "total_entries": 10,
   "match_types": {
-    "structured": 8,   // Match direto no catálogo
-    "semantic": 2,     // Match via embeddings
-    "alias": 0,        // Match via sinônimo
-    "fallback": 0      // Fallback genérico
+    "structured": 8,   // Direct catalog match
+    "semantic": 2,     // Embeddings match
+    "alias": 0,        // Synonym match
+    "fallback": 0      // Generic fallback
   },
   "score_stats": {"avg": 0.89, "min": 0.82, "max": 0.95},
   "fallback_rate": 0.0,
@@ -250,45 +247,45 @@ response_metadata.state_snapshot = {
               </pre>
             </div>
             <p class="text-gray-500 text-sm">
-              Permite identificar: catálogo incompleto, aliases faltando, threshold de score inadequado.
+              {{ $t('cases.observability.stack.ragTelemetry.allowsIdentify') }}
             </p>
           </div>
 
           <!-- Usage Monitoring -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">📡 Usage Monitoring Middleware</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.usageMonitoring.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Monitoramento de endpoints para decisões de deprecação:
+              {{ $t('cases.observability.stack.usageMonitoring.description') }}
             </p>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">Non-intrusive</strong>: Não bloqueia requests, apenas observa</span>
+                <span><strong class="text-white">{{ $t('cases.observability.stack.usageMonitoring.nonIntrusive') }}</strong>{{ $t('cases.observability.stack.usageMonitoring.nonIntrusiveDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">Sample rate</strong>: Configurável por ambiente (prod: 1%, dev: 100%)</span>
+                <span><strong class="text-white">{{ $t('cases.observability.stack.usageMonitoring.sampleRate') }}</strong>{{ $t('cases.observability.stack.usageMonitoring.sampleRateDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">30+ days data</strong>: Coleta dados antes de decisões de remoção</span>
+                <span><strong class="text-white">{{ $t('cases.observability.stack.usageMonitoring.thirtyDaysData') }}</strong>{{ $t('cases.observability.stack.usageMonitoring.thirtyDaysDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">Endpoint tracking</strong>: Identifica endpoints legados ainda em uso</span>
+                <span><strong class="text-white">{{ $t('cases.observability.stack.usageMonitoring.endpointTracking') }}</strong>{{ $t('cases.observability.stack.usageMonitoring.endpointTrackingDesc') }}</span>
               </li>
             </ul>
           </div>
 
           <!-- Detailed Metrics -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-green-400 mb-4">📈 Performance Thresholds</h3>
+            <h3 class="text-xl font-semibold text-green-400 mb-4">{{ $t('cases.observability.stack.performanceThresholds.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Thresholds automáticos para alertas:
+              {{ $t('cases.observability.stack.performanceThresholds.description') }}
             </p>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-yellow-400 font-semibold mb-2">⚠️ Warning</div>
+                <div class="text-yellow-400 font-semibold mb-2">{{ $t('cases.observability.stack.performanceThresholds.warning') }}</div>
                 <ul class="text-gray-500 text-sm space-y-1">
                   <li>• memory_retrieval_latency > 100ms</li>
                   <li>• cache_hit_rate < 80%</li>
@@ -296,7 +293,7 @@ response_metadata.state_snapshot = {
                 </ul>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4">
-                <div class="text-red-400 font-semibold mb-2">🚨 Critical</div>
+                <div class="text-red-400 font-semibold mb-2">{{ $t('cases.observability.stack.performanceThresholds.critical') }}</div>
                 <ul class="text-gray-500 text-sm space-y-1">
                   <li>• memory_retrieval_latency > 500ms</li>
                   <li>• cache_hit_rate < 60%</li>
@@ -311,47 +308,47 @@ response_metadata.state_snapshot = {
       <!-- Arquitetura -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-blue-400">🏗️</span> Arquitetura
+          <span class="text-blue-400">{{ $t('cases.observability.architecture.title') }}</span>
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8 overflow-x-auto">
           <pre class="text-sm text-gray-400 font-mono leading-relaxed">
 ┌─────────────────────────────────────────────────────────────┐
-│                 OBSERVABILITY STACK                          │
+│                 {{ $t('cases.observability.architecture.stackTitle') }}                          │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
-│   │ Orchestrator│  │  AI Engine  │  │Memory Engine│        │
-│   │  metrics    │  │  metrics    │  │  metrics    │        │
+│   │ {{ $t('cases.observability.architecture.orchestrator') }}│  │  {{ $t('cases.observability.architecture.aiEngine') }}  │  │{{ $t('cases.observability.architecture.memoryEngine') }}│        │
+│   │  {{ $t('cases.observability.architecture.metricsLabel') }}    │  │  {{ $t('cases.observability.architecture.metricsLabel') }}    │  │  {{ $t('cases.observability.architecture.metricsLabel') }}    │        │
 │   └──────┬──────┘  └──────┬──────┘  └──────┬──────┘        │
 │          │                │                │                │
 │          └────────────────┼────────────────┘                │
 │                           │                                 │
 │   ┌───────────────────────▼─────────────────────────────┐  │
-│   │              PROMETHEUS                              │  │
-│   │  - Business metrics (handover, booking, AI)         │  │
-│   │  - System metrics (latency, errors, cache)          │  │
-│   │  - Custom metrics (RAG, tool budget)                │  │
+│   │              {{ $t('cases.observability.architecture.prometheusSection') }}                              │  │
+│   │  {{ $t('cases.observability.architecture.prometheusLine1') }}         │  │
+│   │  {{ $t('cases.observability.architecture.prometheusLine2') }}          │  │
+│   │  {{ $t('cases.observability.architecture.prometheusLine3') }}                │  │
 │   └───────────────────────┬─────────────────────────────┘  │
 │                           │                                 │
 │   ┌───────────────────────▼─────────────────────────────┐  │
-│   │              GRAFANA DASHBOARDS                      │  │
-│   │  - Real-time KPIs per tenant                        │  │
-│   │  - Cost tracking & forecasting                      │  │
-│   │  - Alert rules & notifications                      │  │
+│   │              {{ $t('cases.observability.architecture.grafanaSection') }}                      │  │
+│   │  {{ $t('cases.observability.architecture.grafanaLine1') }}                        │  │
+│   │  {{ $t('cases.observability.architecture.grafanaLine2') }}                      │  │
+│   │  {{ $t('cases.observability.architecture.grafanaLine3') }}                      │  │
 │   └─────────────────────────────────────────────────────┘  │
 │                                                             │
 │   ┌─────────────────────────────────────────────────────┐  │
-│   │              OPENTELEMETRY + JAEGER                  │  │
-│   │  - Distributed traces across services               │  │
-│   │  - Token usage extraction from spans                │  │
-│   │  - Latency breakdown per operation                  │  │
+│   │              {{ $t('cases.observability.architecture.otelSection') }}                  │  │
+│   │  {{ $t('cases.observability.architecture.otelLine1') }}               │  │
+│   │  {{ $t('cases.observability.architecture.otelLine2') }}                │  │
+│   │  {{ $t('cases.observability.architecture.otelLine3') }}                  │  │
 │   └─────────────────────────────────────────────────────┘  │
 │                                                             │
 │   ┌─────────────────────────────────────────────────────┐  │
-│   │              LOKI + JSON LOGS                        │  │
-│   │  - Structured logging with trace correlation        │  │
-│   │  - trace_id + span_id in every log entry            │  │
-│   │  - Searchable by tenant, operation, error           │  │
+│   │              {{ $t('cases.observability.architecture.lokiSection') }}                        │  │
+│   │  {{ $t('cases.observability.architecture.lokiLine1') }}        │  │
+│   │  {{ $t('cases.observability.architecture.lokiLine2') }}            │  │
+│   │  {{ $t('cases.observability.architecture.lokiLine3') }}           │  │
 │   └─────────────────────────────────────────────────────┘  │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘</pre>
@@ -361,39 +358,31 @@ response_metadata.state_snapshot = {
       <!-- Decisões Técnicas -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-purple-400">🎯</span> Decisões Técnicas
+          <span class="text-purple-400">{{ $t('cases.observability.decisions.title') }}</span>
         </h2>
         <div class="space-y-4">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que ownership table para métricas?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.observability.decisions.ownershipQ') }}</h3>
             <p class="text-gray-400 text-sm">
-              Em sistemas distribuídos, múltiplos serviços podem observar o mesmo evento. Sem ownership 
-              claro, métricas de handover seriam emitidas pelo Orchestrator E pelo AI Engine, causando 
-              double counting. Ownership table define um único emissor por métrica.
+              {{ $t('cases.observability.decisions.ownershipA') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que extrair tokens de traces e não de logs?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.observability.decisions.tracesQ') }}</h3>
             <p class="text-gray-400 text-sm">
-              Traces têm estrutura padronizada (span attributes) e contexto (trace_id liga request a response). 
-              Logs são texto livre que requer parsing. Jaeger já indexa spans por atributo, facilitando queries 
-              como "total tokens por modelo no último mês".
+              {{ $t('cases.observability.decisions.tracesA') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que state snapshot em response_metadata?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.observability.decisions.snapshotQ') }}</h3>
             <p class="text-gray-400 text-sm">
-              Debugging de conversas requer saber o estado exato após cada turno. Incluir snapshot no response 
-              permite reproduzir problemas sem acessar logs ou traces. Frontend pode mostrar "estado interno" 
-              em modo debug.
+              {{ $t('cases.observability.decisions.snapshotA') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que sample rate configurável?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.observability.decisions.sampleRateQ') }}</h3>
             <p class="text-gray-400 text-sm">
-              Em produção com milhões de requests, 100% sampling é caro (storage, processing). 
-              1-10% sampling captura anomalias suficientes para debug. Em dev/staging, 100% 
-              permite debug completo de cada request.
+              {{ $t('cases.observability.decisions.sampleRateA') }}
             </p>
           </div>
         </div>
@@ -401,7 +390,7 @@ response_metadata.state_snapshot = {
 
       <!-- Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Stack Técnica</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('cases.observability.techStack.title') }}</h2>
         <div class="flex flex-wrap gap-3">
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">Prometheus</span>
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">Grafana</span>
@@ -420,9 +409,23 @@ response_metadata.state_snapshot = {
           to="/projetos/backend-orchestrator" 
           class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 rounded-lg transition-colors"
         >
-          Próximo: Backend Orchestrator →
+          {{ $t('cases.observability.cta.next') }}
         </NuxtLink>
       </div>
     </main>
   </div>
 </template>
+
+<script setup>
+const { t } = useI18n()
+
+useHead({
+  title: 'Observability Stack - Prometheus, OpenTelemetry, Grafana | Marcelo Marleta',
+  meta: [
+    { 
+      name: 'description', 
+      content: 'Complete observability system with business metrics, distributed tracing, token cost monitoring, AI decision telemetry and real-time alerts.' 
+    }
+  ]
+})
+</script>

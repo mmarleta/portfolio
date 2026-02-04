@@ -4,7 +4,7 @@
     <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
       <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-          ← Voltar
+          {{ $t('common.back') }}
         </NuxtLink>
       </nav>
     </header>
@@ -13,14 +13,13 @@
       <!-- Hero -->
       <div class="mb-16">
         <span class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-sm mb-4">
-          Sistema de Memória
+          {{ $t('cases.memory.badge') }}
         </span>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Memory Engine
+          {{ $t('cases.memory.title') }}
         </h1>
         <p class="text-xl text-gray-400 leading-relaxed">
-          Sistema de memória hierárquico multi-tier (Hot/Warm/Cold) com compressão semântica 
-          inteligente, compliance automático LGPD/HIPAA, e context injection para continuidade AI ↔ Humano.
+          {{ $t('cases.memory.description') }}
         </p>
       </div>
 
@@ -28,49 +27,47 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-emerald-400">&lt;100ms</div>
-          <div class="text-sm text-gray-500 mt-1">Latência p99</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.memory.metrics.latency') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-emerald-400">90%</div>
-          <div class="text-sm text-gray-500 mt-1">Redução de Tokens</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.memory.metrics.tokenReduction') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-emerald-400">6</div>
-          <div class="text-sm text-gray-500 mt-1">Compliance Rules</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.memory.metrics.complianceRules') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-emerald-400">99.9%</div>
-          <div class="text-sm text-gray-500 mt-1">Durabilidade</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.memory.metrics.durability') }}</div>
         </div>
       </div>
 
       <!-- Problema -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-red-400">⚡</span> O Problema
+          <span class="text-red-400">⚡</span> {{ $t('cases.memory.problem.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Chatbots enterprise precisam de <strong class="text-white">memória de contexto</strong>. 
-            Quando um cliente retorna dias depois, o bot precisa lembrar conversas anteriores, 
-            preferências e histórico de atendimentos.
+            {{ $t('cases.memory.problem.intro') }}
           </p>
           <ul class="space-y-3 text-gray-400">
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">Tokens são caros</strong>: Injetar todo o histórico no prompt explode os custos</span>
+              <span><strong class="text-white">{{ $t('cases.memory.problem.tokensCost') }}</strong>: {{ $t('cases.memory.problem.tokensCostDesc') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">Latência mata UX</strong>: Busca em banco relacional adiciona 200-500ms</span>
+              <span><strong class="text-white">{{ $t('cases.memory.problem.latencyKillsUx') }}</strong>: {{ $t('cases.memory.problem.latencyKillsUxDesc') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">Compliance obrigatório</strong>: LGPD, CFM, CFO têm regras rígidas de retenção</span>
+              <span><strong class="text-white">{{ $t('cases.memory.problem.complianceMandatory') }}</strong>: {{ $t('cases.memory.problem.complianceMandatoryDesc') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span><strong class="text-white">Handover complica</strong>: AI precisa saber o que aconteceu quando humano atendeu</span>
+              <span><strong class="text-white">{{ $t('cases.memory.problem.handoverComplicates') }}</strong>: {{ $t('cases.memory.problem.handoverComplicatesDesc') }}</span>
             </li>
           </ul>
         </div>
@@ -79,47 +76,45 @@
       <!-- Solução -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-emerald-400">✨</span> A Solução
+          <span class="text-emerald-400">✨</span> {{ $t('cases.memory.solution.title') }}
         </h2>
         <div class="space-y-6">
           <!-- Hot/Warm/Cold -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Arquitetura Hot/Warm/Cold</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.hotWarmCold.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Sistema de armazenamento em 3 tiers com estratégia <strong class="text-white">Write-Through</strong>:
+              {{ $t('cases.memory.solution.hotWarmCold.intro') }}
             </p>
             <div class="grid md:grid-cols-3 gap-4 mb-4">
               <div class="bg-gray-800/50 rounded-lg p-4 text-center">
                 <div class="text-2xl mb-2">🔥</div>
-                <div class="text-emerald-400 font-mono font-semibold">HOT</div>
-                <div class="text-gray-500 text-sm">Redis · TTL 1min</div>
-                <div class="text-gray-600 text-xs mt-1">&lt;10ms latência</div>
+                <div class="text-emerald-400 font-mono font-semibold">{{ $t('cases.memory.solution.hotWarmCold.hot') }}</div>
+                <div class="text-gray-500 text-sm">{{ $t('cases.memory.solution.hotWarmCold.hotDesc') }}</div>
+                <div class="text-gray-600 text-xs mt-1">{{ $t('cases.memory.solution.hotWarmCold.hotLatency') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4 text-center">
                 <div class="text-2xl mb-2">🌡️</div>
-                <div class="text-orange-400 font-mono font-semibold">WARM</div>
-                <div class="text-gray-500 text-sm">Redis · TTL 1h</div>
-                <div class="text-gray-600 text-xs mt-1">&lt;50ms latência</div>
+                <div class="text-orange-400 font-mono font-semibold">{{ $t('cases.memory.solution.hotWarmCold.warm') }}</div>
+                <div class="text-gray-500 text-sm">{{ $t('cases.memory.solution.hotWarmCold.warmDesc') }}</div>
+                <div class="text-gray-600 text-xs mt-1">{{ $t('cases.memory.solution.hotWarmCold.warmLatency') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-4 text-center">
                 <div class="text-2xl mb-2">🧊</div>
-                <div class="text-blue-400 font-mono font-semibold">COLD</div>
-                <div class="text-gray-500 text-sm">PostgreSQL</div>
-                <div class="text-gray-600 text-xs mt-1">~100ms · Permanente</div>
+                <div class="text-blue-400 font-mono font-semibold">{{ $t('cases.memory.solution.hotWarmCold.cold') }}</div>
+                <div class="text-gray-500 text-sm">{{ $t('cases.memory.solution.hotWarmCold.coldDesc') }}</div>
+                <div class="text-gray-600 text-xs mt-1">{{ $t('cases.memory.solution.hotWarmCold.coldLatency') }}</div>
               </div>
             </div>
             <p class="text-gray-500 text-sm">
-              <strong class="text-gray-300">Write-Through</strong>: Toda escrita vai primeiro para PostgreSQL 
-              (durabilidade garantida), depois replica para Redis (performance).
+              <strong class="text-gray-300">{{ $t('cases.memory.solution.hotWarmCold.writeThrough') }}</strong>: {{ $t('cases.memory.solution.hotWarmCold.writeThroughDesc') }}
             </p>
           </div>
 
           <!-- Customer Facts -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Customer Facts Temporais</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.customerFacts.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Em vez de armazenar conversas brutas, extraímos <strong class="text-white">fatos estruturados</strong> 
-              com janela de validade temporal:
+              {{ $t('cases.memory.solution.customerFacts.intro') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm overflow-x-auto">
               <pre class="text-gray-300">
@@ -127,9 +122,9 @@ CustomerFact:
   fact_key: "preferred_times"
   fact_value: {"morning": true}
   valid_at: 2025-01-01T10:00:00Z
-  invalid_at: null  ← fato atualmente ativo
+  invalid_at: null  ← fact currently active
 
-# Cliente mudou preferência 3 meses depois:
+# Customer changed preference 3 months later:
   fact_key: "preferred_times"
   fact_value: {"afternoon": true}
   valid_at: 2025-04-01T14:00:00Z
@@ -137,88 +132,87 @@ CustomerFact:
               </pre>
             </div>
             <p class="text-gray-500 text-sm mt-4">
-              Histórico temporal completo para auditoria. Consulta O(1) para fatos atuais via índice parcial.
+              {{ $t('cases.memory.solution.customerFacts.footer') }}
             </p>
           </div>
 
           <!-- Compressão Semântica -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Compressão Semântica com LLM</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.semanticCompression.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Conversas longas são comprimidas usando OpenAI com templates verticais específicos 
-              (dental, médico, jurídico):
+              {{ $t('cases.memory.solution.semanticCompression.intro') }}
             </p>
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">Preserva</strong>: Fatos críticos, decisões, próximos passos</span>
+                <span><strong class="text-white">{{ $t('cases.memory.solution.semanticCompression.preserves') }}</strong>: {{ $t('cases.memory.solution.semanticCompression.preservesDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">Remove</strong>: Saudações, confirmações redundantes, detalhes operacionais</span>
+                <span><strong class="text-white">{{ $t('cases.memory.solution.semanticCompression.removes') }}</strong>: {{ $t('cases.memory.solution.semanticCompression.removesDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 mt-1">✓</span>
-                <span><strong class="text-white">Resultado</strong>: 90% redução com 100% preservação de informação relevante</span>
+                <span><strong class="text-white">{{ $t('cases.memory.solution.semanticCompression.result') }}</strong>: {{ $t('cases.memory.solution.semanticCompression.resultDesc') }}</span>
               </li>
             </ul>
           </div>
 
           <!-- Compliance -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Compliance Automático</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.compliance.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Classificação e tratamento automático baseado no vertical:
+              {{ $t('cases.memory.solution.compliance.intro') }}
             </p>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">LGPD</div>
-                <div class="text-xs text-gray-500">Brasil</div>
+                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.lgpd') }}</div>
+                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.lgpdDesc') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">HIPAA</div>
-                <div class="text-xs text-gray-500">EUA - Saúde</div>
+                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.hipaa') }}</div>
+                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.hipaaDesc') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">CFO</div>
-                <div class="text-xs text-gray-500">Odontologia</div>
+                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.cfo') }}</div>
+                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.cfoDesc') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">CFM</div>
-                <div class="text-xs text-gray-500">Medicina</div>
+                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.cfm') }}</div>
+                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.cfmDesc') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">OAB</div>
-                <div class="text-xs text-gray-500">Advocacia</div>
+                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.oab') }}</div>
+                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.oabDesc') }}</div>
               </div>
               <div class="bg-gray-800/50 rounded-lg p-3 text-center">
-                <div class="text-sm font-semibold text-white">GDPR</div>
-                <div class="text-xs text-gray-500">Europa</div>
+                <div class="text-sm font-semibold text-white">{{ $t('cases.memory.solution.compliance.gdpr') }}</div>
+                <div class="text-xs text-gray-500">{{ $t('cases.memory.solution.compliance.gdprDesc') }}</div>
               </div>
             </div>
             <p class="text-gray-500 text-sm">
-              Anonimização inteligente: CPF → ***.***.***.00 · Email → ***@domain.com
+              {{ $t('cases.memory.solution.compliance.footer') }}
             </p>
           </div>
 
           <!-- Handover Summary -->
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Handover Summary</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.memory.solution.handover.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Continuidade perfeita quando atendente humano intervém:
+              {{ $t('cases.memory.solution.handover.intro') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 text-sm">
               <div class="flex items-center gap-2 mb-3">
                 <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs">1</span>
-                <span class="text-gray-300">Mensagens do operador → Buffer Redis (hot path)</span>
+                <span class="text-gray-300">{{ $t('cases.memory.solution.handover.step1') }}</span>
               </div>
               <div class="flex items-center gap-2 mb-3">
                 <span class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-xs">2</span>
-                <span class="text-gray-300">Encerramento → Celery worker gera resumo com OpenAI</span>
+                <span class="text-gray-300">{{ $t('cases.memory.solution.handover.step2') }}</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded text-xs">3</span>
-                <span class="text-gray-300">AI retoma → Recebe resumo estruturado injetado no contexto</span>
+                <span class="text-gray-300">{{ $t('cases.memory.solution.handover.step3') }}</span>
               </div>
             </div>
           </div>
@@ -228,7 +222,7 @@ CustomerFact:
       <!-- Arquitetura -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-blue-400">🏗️</span> Arquitetura
+          <span class="text-blue-400">🏗️</span> {{ $t('cases.memory.architecture.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8 overflow-x-auto">
           <pre class="text-sm text-gray-400 font-mono leading-relaxed">
@@ -237,27 +231,27 @@ CustomerFact:
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │   🔥 HOT (Redis)     🌡️ WARM (Redis)     🧊 COLD (PostgreSQL)
-│   TTL: 1 min         TTL: 1 hora          Permanente        │
-│   Latência: &lt;10ms    Latência: &lt;50ms      Latência: ~100ms  │
+│   TTL: 1 min         TTL: 1 hour          Permanent         │
+│   Latency: &lt;10ms     Latency: &lt;50ms       Latency: ~100ms   │
 │                                                             │
 │   ┌─────────┐        ┌─────────┐         ┌─────────────┐   │
-│   │ Última  │        │ Sessão  │         │ Histórico   │   │
-│   │ msg     │───────▶│ Ativa   │────────▶│ Completo    │   │
+│   │ {{ $t('cases.memory.architecture.lastMsg') }}  │        │ {{ $t('cases.memory.architecture.activeSession') }} │         │ {{ $t('cases.memory.architecture.completeHistory') }}   │   │
+│   │         │───────▶│         │────────▶│             │   │
 │   └─────────┘        └─────────┘         └─────────────┘   │
 │        │                   │                    │           │
 │        └───────────────────┴────────────────────┘           │
-│                    Write-Through Strategy                    │
-│              (PostgreSQL = Source of Truth)                 │
+│                    {{ $t('cases.memory.architecture.writeThroughStrategy') }}                    │
+│              {{ $t('cases.memory.architecture.sourceOfTruth') }}                 │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
-│                  CONTEXT COMPOSER v2                         │
+│                  {{ $t('cases.memory.architecture.contextComposer') }}                         │
 ├─────────────────────────────────────────────────────────────┤
-│  Facts (Lógica)  │  Summary (Linguagem)  │  Recent (Chat)   │
+│  {{ $t('cases.memory.architecture.factsLogic') }}  │  {{ $t('cases.memory.architecture.summaryLanguage') }}  │  {{ $t('cases.memory.architecture.recentChat') }}   │
 │  ───────────────  │  ────────────────────  │  ─────────────   │
-│  name: "João"     │  "Cliente preferiu"   │  [últimas 5 msgs]│
-│  phone: "11..."   │  "manhã, já agendou"  │                  │
-│  pref: morning    │  "2 consultas..."     │                  │
+│  name: "João"     │  "Customer preferred" │  {{ $t('cases.memory.architecture.lastMsgs') }}│
+│  phone: "11..."   │  "morning, already"   │                  │
+│  pref: morning    │  "scheduled 2..."     │                  │
 └─────────────────────────────────────────────────────────────┘</pre>
         </div>
       </section>
@@ -265,37 +259,31 @@ CustomerFact:
       <!-- Decisões Técnicas -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-purple-400">🎯</span> Decisões Técnicas
+          <span class="text-purple-400">🎯</span> {{ $t('cases.memory.decisions.title') }}
         </h2>
         <div class="space-y-4">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que Write-Through e não Write-Behind?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.writeThrough.question') }}</h3>
             <p class="text-gray-400 text-sm">
-              Write-Behind (async write to DB) é mais performático mas arriscado. Em atendimento ao cliente, 
-              perder uma mensagem é inaceitável. Write-Through garante durabilidade imediata com performance aceitável.
+              {{ $t('cases.memory.decisions.writeThrough.answer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que schema isolation e não row-level security?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.schemaIsolation.question') }}</h3>
             <p class="text-gray-400 text-sm">
-              RLS adiciona overhead em cada query. Com schemas separados (t_{tenant_id}), 
-              o isolamento é físico e a performance é máxima. Trade-off: mais complexidade operacional.
+              {{ $t('cases.memory.decisions.schemaIsolation.answer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que Customer Facts temporais?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.temporalFacts.question') }}</h3>
             <p class="text-gray-400 text-sm">
-              LLMs são péssimos em "esquecer". Se o cliente mudou de preferência, o modelo com histórico 
-              completo continuaria usando a preferência antiga. Facts temporais com valid_at/invalid_at 
-              resolvem isso elegantemente.
+              {{ $t('cases.memory.decisions.temporalFacts.answer') }}
             </p>
           </div>
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6">
-            <h3 class="font-semibold text-white mb-2">Por que separar Facts vs Summary no Context Composer?</h3>
+            <h3 class="font-semibold text-white mb-2">{{ $t('cases.memory.decisions.factsSummary.question') }}</h3>
             <p class="text-gray-400 text-sm">
-              Facts são para lógica (o sistema usa para tomar decisões). Summary é para linguagem 
-              (o LLM usa para gerar respostas naturais). Essa separação evita que o LLM "alucine" 
-              sobre dados estruturados.
+              {{ $t('cases.memory.decisions.factsSummary.answer') }}
             </p>
           </div>
         </div>
@@ -303,7 +291,7 @@ CustomerFact:
 
       <!-- Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Stack Técnica</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('common.technicalStack') }}</h2>
         <div class="flex flex-wrap gap-3">
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">Python 3.12</span>
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">FastAPI</span>
@@ -323,7 +311,7 @@ CustomerFact:
           to="/projetos/ai-engine" 
           class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
         >
-          Próximo: AI Conversation Engine →
+          {{ $t('cases.memory.nextProject') }}
         </NuxtLink>
       </div>
     </main>

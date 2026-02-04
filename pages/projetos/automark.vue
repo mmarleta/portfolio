@@ -7,9 +7,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
           </svg>
-          Voltar
+          {{ $t('cases.automark.header.back') }}
         </NuxtLink>
-        <span class="text-gray-500 text-sm">Projeto Pessoal</span>
+        <span class="text-gray-500 text-sm">{{ $t('cases.automark.header.projectType') }}</span>
       </div>
     </header>
 
@@ -18,40 +18,38 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm font-medium">
-            SaaS Platform
+            {{ $t('cases.automark.hero.tag1') }}
           </span>
           <span class="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">
-            Affiliate Marketing
+            {{ $t('cases.automark.hero.tag2') }}
           </span>
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          AutoMark
-          <span class="text-orange-400"> Platform</span>
+          {{ $t('cases.automark.hero.title') }}
+          <span class="text-orange-400">{{ $t('cases.automark.hero.titleHighlight') }}</span>
         </h1>
         
         <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-          Plataforma SaaS multi-tenant de distribuição inteligente de ofertas afiliadas. 
-          Conecta marketplaces (Shopee, ML, Amazon) a canais (WhatsApp, Telegram) com 
-          automações anti-spam, scoring inteligente e deduplicação.
+          {{ $t('cases.automark.hero.description') }}
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">Multi</div>
-            <div class="text-sm text-gray-500">Marketplace</div>
+            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat1Value') }}</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat1Label') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">Multi</div>
-            <div class="text-sm text-gray-500">Channel</div>
+            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat2Value') }}</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat2Label') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">48h</div>
-            <div class="text-sm text-gray-500">Dedupe Target</div>
+            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat3Value') }}</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat3Label') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">0</div>
-            <div class="text-sm text-gray-500">Spam/Ban</div>
+            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat4Value') }}</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat4Label') }}</div>
           </div>
         </div>
       </div>
@@ -61,14 +59,14 @@
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <div class="flex gap-6 overflow-x-auto py-4 text-sm">
-          <a href="#problema" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Problema</a>
-          <a href="#arquitetura" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Arquitetura</a>
-          <a href="#providers" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Providers</a>
-          <a href="#scoring" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Scoring</a>
-          <a href="#dedupe" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Dedupe</a>
-          <a href="#anti-ban" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Anti-Ban</a>
-          <a href="#automations" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Automações</a>
-          <a href="#stack" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">Stack</a>
+          <a href="#problema" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.problem') }}</a>
+          <a href="#arquitetura" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.architecture') }}</a>
+          <a href="#providers" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.providers') }}</a>
+          <a href="#scoring" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.scoring') }}</a>
+          <a href="#dedupe" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.dedupe') }}</a>
+          <a href="#anti-ban" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.antiBan') }}</a>
+          <a href="#automations" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.automations') }}</a>
+          <a href="#stack" class="text-gray-400 hover:text-orange-400 whitespace-nowrap transition-colors">{{ $t('cases.automark.nav.stack') }}</a>
         </div>
       </div>
     </nav>
@@ -80,12 +78,12 @@
       <section id="problema" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
-          O Problema
+          {{ $t('cases.automark.problem.title') }}
         </h2>
         
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Afiliados enfrentam três problemas críticos na distribuição de ofertas:
+            {{ $t('cases.automark.problem.intro') }}
           </p>
           
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
@@ -93,32 +91,31 @@
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
                 <div>
-                  <strong class="text-gray-200">Distribuição manual não escala:</strong>
-                  <p class="text-sm mt-1">Postar links manualmente em grupos gera repetição, spam e ban. Tempo gasto vs conversão não compensa.</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.problem.issue1Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.problem.issue1Desc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
                 <div>
-                  <strong class="text-gray-200">Marketplaces são fragmentados:</strong>
-                  <p class="text-sm mt-1">Shopee, Mercado Livre, Amazon têm APIs diferentes, formatos diferentes, regras de afiliado diferentes.</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.problem.issue2Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.problem.issue2Desc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
                 <div>
-                  <strong class="text-gray-200">WhatsApp pune comportamento robótico:</strong>
-                  <p class="text-sm mt-1">Sem controle de cadência, dedupe e humanização: shadow ban, bloqueio, queda de engajamento.</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.problem.issue3Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.problem.issue3Desc') }}</p>
                 </div>
               </li>
             </ul>
           </div>
 
           <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-orange-400 mb-2">🎯 Objetivo</h4>
+            <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.automark.problem.objectiveTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              Criar uma plataforma que <strong>pareça humana</strong>, poste <strong>o que converte</strong>, 
-              no <strong>lugar certo</strong>, na <strong>hora certa</strong>, sem spam.
+              {{ $t('cases.automark.problem.objectiveDesc') }}
             </p>
           </div>
         </div>
@@ -128,36 +125,36 @@
       <section id="arquitetura" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400">🏗️</span>
-          Arquitetura Multi-Tenant
+          {{ $t('cases.automark.architecture.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            A arquitetura segue princípios rígidos que permitem evolução sem breaking changes:
+            {{ $t('cases.automark.architecture.intro') }}
           </p>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-orange-400 mb-2">Marketplace nunca hardcoded</h4>
-              <p class="text-sm text-gray-400">Shopee é o primeiro conector, mas ML, Amazon, AliExpress são plug-and-play.</p>
+              <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.automark.architecture.principle1Title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.architecture.principle1Desc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-orange-400 mb-2">Canal nunca hardcoded</h4>
-              <p class="text-sm text-gray-400">WhatsApp é o primeiro, mas Telegram, Discord, Instagram seguem a mesma interface.</p>
+              <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.automark.architecture.principle2Title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.architecture.principle2Desc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-orange-400 mb-2">Automação gera Post, não envia</h4>
-              <p class="text-sm text-gray-400">Separação de concerns: Automação decide O QUE, Dispatcher decide COMO.</p>
+              <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.automark.architecture.principle3Title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.architecture.principle3Desc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-orange-400 mb-2">Dedupe obrigatório</h4>
-              <p class="text-sm text-gray-400">Nenhum envio acontece sem passar pelo dedupe. Zero spam garantido.</p>
+              <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.automark.architecture.principle4Title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.architecture.principle4Desc') }}</p>
             </div>
           </div>
 
           <!-- Entity Diagram -->
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">Modelo de Dados</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">{{ $t('cases.automark.architecture.dataModelTitle') }}</h4>
             <div class="font-mono text-xs overflow-x-auto">
               <pre class="text-gray-400 leading-relaxed">
 ┌─────────────────┐      ┌──────────────────┐      ┌─────────────────┐
@@ -196,25 +193,25 @@
             </div>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Papéis e Permissões</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.automark.architecture.rolesTitle') }}</h3>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">SuperAdmin (Plataforma)</h4>
+              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.automark.architecture.superAdminTitle') }}</h4>
               <ul class="text-sm text-gray-400 space-y-1">
-                <li>• Cria tenants</li>
-                <li>• Define quais marketplaces existem</li>
-                <li>• Controla feature flags</li>
-                <li>• Observa saúde global</li>
+                <li>• {{ $t('cases.automark.architecture.superAdminRole1') }}</li>
+                <li>• {{ $t('cases.automark.architecture.superAdminRole2') }}</li>
+                <li>• {{ $t('cases.automark.architecture.superAdminRole3') }}</li>
+                <li>• {{ $t('cases.automark.architecture.superAdminRole4') }}</li>
               </ul>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-blue-400 mb-2">Tenant Admin (Cliente)</h4>
+              <h4 class="font-semibold text-blue-400 mb-2">{{ $t('cases.automark.architecture.tenantAdminTitle') }}</h4>
               <ul class="text-sm text-gray-400 space-y-1">
-                <li>• Conecta canais (WhatsApp, Telegram)</li>
-                <li>• Conecta afiliados (Shopee, ML)</li>
-                <li>• Cria automações</li>
-                <li>• Vê histórico e métricas</li>
+                <li>• {{ $t('cases.automark.architecture.tenantAdminRole1') }}</li>
+                <li>• {{ $t('cases.automark.architecture.tenantAdminRole2') }}</li>
+                <li>• {{ $t('cases.automark.architecture.tenantAdminRole3') }}</li>
+                <li>• {{ $t('cases.automark.architecture.tenantAdminRole4') }}</li>
               </ul>
             </div>
           </div>
@@ -225,14 +222,12 @@
       <section id="providers" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">🔌</span>
-          Provider Pattern
+          {{ $t('cases.automark.providers.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Cada marketplace implementa uma interface comum. O provider não sabe o que é tenant — 
-            tudo vem via <code>tenant_connection</code>. Isso permite adicionar novos marketplaces 
-            sem tocar no core.
+            {{ $t('cases.automark.providers.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
@@ -267,7 +262,7 @@
         ...</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Shopee Provider</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.automark.providers.shopeeTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">providers/marketplace/shopee.py</div>
@@ -305,10 +300,9 @@
           </div>
 
           <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-green-400 mb-2">✓ Dedupe Key</h4>
+            <h4 class="font-semibold text-green-400 mb-2">{{ $t('cases.automark.providers.dedupeKeyTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              O <code>dedupe_key</code> é a identidade real do produto: <code>shopee:123:456</code>. 
-              Nunca usar título para dedupe — variações de texto causariam spam.
+              {{ $t('cases.automark.providers.dedupeKeyDesc') }}
             </p>
           </div>
         </div>
@@ -318,17 +312,16 @@
       <section id="scoring" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400">⭐</span>
-          Offer Scoring
+          {{ $t('cases.automark.scoring.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Nem toda oferta vale a pena postar. O sistema de scoring ranqueia ofertas por 
-            potencial de conversão, penalizando produtos suspeitos.
+            {{ $t('cases.automark.scoring.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Fórmula de Score</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.automark.scoring.formulaTitle') }}</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Score Components (0-10 each)
 discount_score = min(discount_percent, 80) / 80 * 10
 rating_score = (rating / 5) * 10
@@ -355,25 +348,25 @@ too_cheap:       price < R$5.00 → -0.5
 high_commission: commission > 20% → -1.0</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Por que esses pesos?</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.automark.scoring.weightsTitle') }}</h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
-                <span class="text-yellow-400 font-bold">40%</span>
-                <span><strong class="text-gray-200">Desconto:</strong> Principal driver de clique. Ofertas com desconto alto convertem mais.</span>
+                <span class="text-yellow-400 font-bold">{{ $t('cases.automark.scoring.weight1Pct') }}</span>
+                <span><strong class="text-gray-200">{{ $t('cases.automark.scoring.weight1Label') }}</strong> {{ $t('cases.automark.scoring.weight1Desc') }}</span>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-yellow-400 font-bold">25%</span>
-                <span><strong class="text-gray-200">Rating:</strong> Confiança do produto. Rating baixo = devolução = comissão cancelada.</span>
+                <span class="text-yellow-400 font-bold">{{ $t('cases.automark.scoring.weight2Pct') }}</span>
+                <span><strong class="text-gray-200">{{ $t('cases.automark.scoring.weight2Label') }}</strong> {{ $t('cases.automark.scoring.weight2Desc') }}</span>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-yellow-400 font-bold">20%</span>
-                <span><strong class="text-gray-200">Vendas:</strong> Prova social. Produto muito vendido tem validação de mercado.</span>
+                <span class="text-yellow-400 font-bold">{{ $t('cases.automark.scoring.weight3Pct') }}</span>
+                <span><strong class="text-gray-200">{{ $t('cases.automark.scoring.weight3Label') }}</strong> {{ $t('cases.automark.scoring.weight3Desc') }}</span>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-yellow-400 font-bold">15%</span>
-                <span><strong class="text-gray-200">Comissão:</strong> Retorno para o afiliado. Mas comissão alta demais é red flag.</span>
+                <span class="text-yellow-400 font-bold">{{ $t('cases.automark.scoring.weight4Pct') }}</span>
+                <span><strong class="text-gray-200">{{ $t('cases.automark.scoring.weight4Label') }}</strong> {{ $t('cases.automark.scoring.weight4Desc') }}</span>
               </li>
             </ul>
           </div>
@@ -384,23 +377,22 @@ high_commission: commission > 20% → -1.0</code></pre>
       <section id="dedupe" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">🔄</span>
-          Deduplicação Anti-Spam
+          {{ $t('cases.automark.dedupe.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            O sistema de dedupe opera em dois escopos: por target (grupo específico) e por channel 
-            (todos os grupos do canal). Isso previne spam tanto vertical quanto horizontal.
+            {{ $t('cases.automark.dedupe.intro') }}
           </p>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-blue-400 mb-2">Target Scope (48h)</h4>
-              <p class="text-sm text-gray-400">Mesmo produto não pode ser enviado para o mesmo grupo em 48h. Evita repetição percebida pelos membros.</p>
+              <h4 class="font-semibold text-blue-400 mb-2">{{ $t('cases.automark.dedupe.targetScopeTitle') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.dedupe.targetScopeDesc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">Channel Scope (2-5min)</h4>
-              <p class="text-sm text-gray-400">Gap mínimo entre qualquer envio para qualquer grupo. Evita burst que parece bot.</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.automark.dedupe.channelScopeTitle') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.dedupe.channelScopeDesc') }}</p>
             </div>
           </div>
 
@@ -446,10 +438,9 @@ high_commission: commission > 20% → -1.0</code></pre>
           </div>
 
           <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-blue-400 mb-2">✓ Cleanup Automático</h4>
+            <h4 class="font-semibold text-blue-400 mb-2">{{ $t('cases.automark.dedupe.cleanupTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              Records expirados são deletados periodicamente via <code>cleanup_expired()</code>. 
-              A tabela não cresce indefinidamente.
+              {{ $t('cases.automark.dedupe.cleanupDesc') }}
             </p>
           </div>
         </div>
@@ -459,50 +450,49 @@ high_commission: commission > 20% → -1.0</code></pre>
       <section id="anti-ban" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">🛡️</span>
-          Anti-Ban (WhatsApp)
+          {{ $t('cases.automark.antiBan.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            WhatsApp detecta bots por padrões de envio. O sistema implementa múltiplas 
-            camadas de humanização para evitar banimento:
+            {{ $t('cases.automark.antiBan.intro') }}
           </p>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <ul class="space-y-4 text-gray-400">
               <li class="flex items-start gap-3">
-                <span class="text-red-400 mt-1">🖊️</span>
+                <span class="text-red-400 mt-1">{{ $t('cases.automark.antiBan.feature1Icon') }}</span>
                 <div>
-                  <strong class="text-gray-200">Typing Indicator:</strong>
-                  <p class="text-sm mt-1">Antes de enviar, simula "digitando..." por 2-5 segundos (Evolution API).</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.antiBan.feature1Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.antiBan.feature1Desc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-red-400 mt-1">🎲</span>
+                <span class="text-red-400 mt-1">{{ $t('cases.automark.antiBan.feature2Icon') }}</span>
                 <div>
-                  <strong class="text-gray-200">Jitter Humano:</strong>
-                  <p class="text-sm mt-1">Delay aleatório entre mensagens. Nunca intervalos exatos.</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.antiBan.feature2Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.antiBan.feature2Desc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-red-400 mt-1">🚦</span>
+                <span class="text-red-400 mt-1">{{ $t('cases.automark.antiBan.feature3Icon') }}</span>
                 <div>
-                  <strong class="text-gray-200">Rate Limit por Conta:</strong>
-                  <p class="text-sm mt-1">Semáforo Redis limita msgs/minuto por número. Múltiplas contas = mais throughput.</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.antiBan.feature3Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.antiBan.feature3Desc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-red-400 mt-1">⚡</span>
+                <span class="text-red-400 mt-1">{{ $t('cases.automark.antiBan.feature4Icon') }}</span>
                 <div>
-                  <strong class="text-gray-200">Circuit Breaker:</strong>
-                  <p class="text-sm mt-1">Erro 429 ou 503 → pausa automática de 30min para aquela conta.</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.antiBan.feature4Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.antiBan.feature4Desc') }}</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-red-400 mt-1">🌙</span>
+                <span class="text-red-400 mt-1">{{ $t('cases.automark.antiBan.feature5Icon') }}</span>
                 <div>
-                  <strong class="text-gray-200">Quiet Hours:</strong>
-                  <p class="text-sm mt-1">Configurável por target: não envia entre 23h-8h (ou custom).</p>
+                  <strong class="text-gray-200">{{ $t('cases.automark.antiBan.feature5Title') }}</strong>
+                  <p class="text-sm mt-1">{{ $t('cases.automark.antiBan.feature5Desc') }}</p>
                 </div>
               </li>
             </ul>
@@ -514,16 +504,16 @@ high_commission: commission > 20% → -1.0</code></pre>
       <section id="automations" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">⚙️</span>
-          Sistema de Automações
+          {{ $t('cases.automark.automations.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Automações são o coração do sistema. Definem O QUE buscar, ONDE enviar, e QUANDO executar.
+            {{ $t('cases.automark.automations.intro') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Automation Pipeline</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.automark.automations.pipelineTitle') }}</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Pipeline de Execução (workers/tasks.py)
 
 1. tick_automations()
@@ -552,27 +542,27 @@ high_commission: commission > 20% → -1.0</code></pre>
        └─ Marca dedupe</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Tipos de Automação</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.automark.automations.typesTitle') }}</h3>
 
           <div class="grid md:grid-cols-3 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">search</h4>
-              <p class="text-sm text-gray-400">Busca ativa no marketplace. Executa a cada intervalo configurado.</p>
+              <h4 class="font-semibold text-purple-400 mb-2">{{ $t('cases.automark.automations.typeSearchTitle') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.automations.typeSearchDesc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-blue-400 mb-2">feed</h4>
-              <p class="text-sm text-gray-400">Usa ofertas já no banco (ingestão externa). Aplica ranking e distribui.</p>
+              <h4 class="font-semibold text-blue-400 mb-2">{{ $t('cases.automark.automations.typeFeedTitle') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.automations.typeFeedDesc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-green-400 mb-2">monitor</h4>
-              <p class="text-sm text-gray-400">Monitora preço de produtos específicos. Alerta quando desconto atinge threshold.</p>
+              <h4 class="font-semibold text-green-400 mb-2">{{ $t('cases.automark.automations.typeMonitorTitle') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.automark.automations.typeMonitorDesc') }}</p>
             </div>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">AutomationTarget (Limites)</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.automark.automations.targetTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Configuração por Grupo</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.automark.automations.targetConfigTitle') }}</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">automation_targets:
   - target_ref: "uuid-do-grupo"
     max_posts_per_day: 10      # Máximo de posts/dia neste grupo
@@ -587,13 +577,13 @@ high_commission: commission > 20% → -1.0</code></pre>
       <section id="stack" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">🛠️</span>
-          Stack Técnico
+          {{ $t('cases.automark.stack.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <div class="grid md:grid-cols-2 gap-6 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-3">Backend</h4>
+              <h4 class="font-semibold text-cyan-400 mb-3">{{ $t('cases.automark.stack.backendTitle') }}</h4>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">Python 3.12</span>
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">FastAPI</span>
@@ -606,7 +596,7 @@ high_commission: commission > 20% → -1.0</code></pre>
               </div>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-3">Frontend</h4>
+              <h4 class="font-semibold text-cyan-400 mb-3">{{ $t('cases.automark.stack.frontendTitle') }}</h4>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">Vue.js 3</span>
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">TypeScript</span>
@@ -615,7 +605,7 @@ high_commission: commission > 20% → -1.0</code></pre>
               </div>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-3">Integrações</h4>
+              <h4 class="font-semibold text-cyan-400 mb-3">{{ $t('cases.automark.stack.integrationsTitle') }}</h4>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">Shopee Affiliate API</span>
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">Evolution API</span>
@@ -623,7 +613,7 @@ high_commission: commission > 20% → -1.0</code></pre>
               </div>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-3">Infra</h4>
+              <h4 class="font-semibold text-cyan-400 mb-3">{{ $t('cases.automark.stack.infraTitle') }}</h4>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">Docker</span>
                 <span class="px-2 py-1 bg-gray-800 rounded text-xs">Docker Compose</span>
@@ -637,25 +627,25 @@ high_commission: commission > 20% → -1.0</code></pre>
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
-          Resultados
+          {{ $t('cases.automark.results.title') }}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 border border-orange-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-orange-400 mb-2">0</div>
-            <div class="text-gray-400">Bans de conta WhatsApp</div>
+            <div class="text-3xl font-bold text-orange-400 mb-2">{{ $t('cases.automark.results.stat1Value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.automark.results.stat1Label') }}</div>
           </div>
           <div class="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 border border-orange-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-orange-400 mb-2">100%</div>
-            <div class="text-gray-400">Dedupe coverage (zero spam)</div>
+            <div class="text-3xl font-bold text-orange-400 mb-2">{{ $t('cases.automark.results.stat2Value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.automark.results.stat2Label') }}</div>
           </div>
           <div class="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 border border-orange-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-orange-400 mb-2">Plug</div>
-            <div class="text-gray-400">& Play para novos marketplaces</div>
+            <div class="text-3xl font-bold text-orange-400 mb-2">{{ $t('cases.automark.results.stat3Value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.automark.results.stat3Label') }}</div>
           </div>
           <div class="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 border border-orange-500/20 rounded-lg p-6">
-            <div class="text-3xl font-bold text-orange-400 mb-2">Multi</div>
-            <div class="text-gray-400">Tenant desde o dia 1</div>
+            <div class="text-3xl font-bold text-orange-400 mb-2">{{ $t('cases.automark.results.stat4Value') }}</div>
+            <div class="text-gray-400">{{ $t('cases.automark.results.stat4Label') }}</div>
           </div>
         </div>
       </section>
@@ -663,8 +653,8 @@ high_commission: commission > 20% → -1.0</code></pre>
       <!-- CTA -->
       <section class="border-t border-gray-800 pt-12">
         <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">Explore Outros Projetos</h2>
-          <p class="text-gray-400 mb-8">Veja outros sistemas que construí</p>
+          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.automark.cta.title') }}</h2>
+          <p class="text-gray-400 mb-8">{{ $t('cases.automark.cta.description') }}</p>
           <div class="flex flex-wrap justify-center gap-4">
             <NuxtLink to="/projetos/feed-rss" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
               Feed-RSS Monitor →
@@ -684,17 +674,19 @@ high_commission: commission > 20% → -1.0</code></pre>
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-8 mt-12">
       <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
-        <p>Case Study: AutoMark Platform — Affiliate Marketing Automation</p>
+        <p>{{ $t('cases.automark.footer.caseStudy') }}</p>
       </div>
     </footer>
   </div>
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'AutoMark - Affiliate Marketing Platform | Marcelo Marleta',
+  title: t('cases.automark.meta.title'),
   meta: [
-    { name: 'description', content: 'Case study: Plataforma SaaS multi-tenant de distribuição inteligente de ofertas afiliadas. Shopee, WhatsApp, anti-spam, scoring inteligente.' }
+    { name: 'description', content: t('cases.automark.meta.description') }
   ]
 })
 </script>

@@ -4,7 +4,7 @@
     <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
       <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-          ← Voltar
+          {{ $t('cases.pricing.back') }}
         </NuxtLink>
       </nav>
     </header>
@@ -13,14 +13,13 @@
       <!-- Hero -->
       <div class="mb-16">
         <span class="inline-block px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-sm mb-4">
-          RAG + ML
+          {{ $t('cases.pricing.badge') }}
         </span>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Pricing Intelligence
+          {{ $t('cases.pricing.title') }}
         </h1>
         <p class="text-xl text-gray-400 leading-relaxed">
-          Sistema de consulta de preços com RAG otimizado, threshold adaptativo, 
-          request coalescing e cache multi-tier para respostas sub-segundo.
+          {{ $t('cases.pricing.description') }}
         </p>
       </div>
 
@@ -28,45 +27,43 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-purple-400">95%</div>
-          <div class="text-sm text-gray-500 mt-1">Precision</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.pricing.metrics.precision') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-purple-400">&lt;100ms</div>
-          <div class="text-sm text-gray-500 mt-1">Cache Hit</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.pricing.metrics.cacheHit') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-purple-400">80%</div>
-          <div class="text-sm text-gray-500 mt-1">Cache Rate</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.pricing.metrics.cacheRate') }}</div>
         </div>
         <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
           <div class="text-3xl font-bold text-purple-400">3072d</div>
-          <div class="text-sm text-gray-500 mt-1">Embedding Dim</div>
+          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.pricing.metrics.embeddingDim') }}</div>
         </div>
       </div>
 
       <!-- Problema -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-red-400">⚡</span> O Problema
+          <span class="text-red-400">⚡</span> {{ $t('cases.pricing.problem.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Consultas de preço em clínicas são complexas: pacientes perguntam por nomes diferentes 
-            ("raio-x", "radiografia", "rx do dente"), com erros de digitação, e esperam respostas 
-            instantâneas. RAG tradicional falha em:
+            {{ $t('cases.pricing.problem.intro') }}
           </p>
           <ul class="space-y-2 text-gray-400">
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span>Matching fuzzy de nomes de procedimentos</span>
+              <span>{{ $t('cases.pricing.problem.fuzzyMatching') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span>Múltiplos itens na mesma pergunta ("quanto custa limpeza e clareamento?")</span>
+              <span>{{ $t('cases.pricing.problem.multipleItems') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400 mt-1">✗</span>
-              <span>Latência aceitável sob carga (thundering herd)</span>
+              <span>{{ $t('cases.pricing.problem.acceptableLatency') }}</span>
             </li>
           </ul>
         </div>
@@ -75,60 +72,59 @@
       <!-- Solução -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-emerald-400">✨</span> A Solução
+          <span class="text-emerald-400">✨</span> {{ $t('cases.pricing.solution.title') }}
         </h2>
         <div class="space-y-6">
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">Pricing Fast Lane</h3>
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">{{ $t('cases.pricing.solution.pricingFastLane.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Bypass otimizado que detecta intent de preço e executa busca direta, 
-              sem passar pelo agent loop completo:
+              {{ $t('cases.pricing.solution.pricingFastLane.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 font-mono text-sm text-gray-400">
-              <div class="text-green-400"># Fluxo Fast Lane</div>
+              <div class="text-green-400">{{ $t('cases.pricing.solution.pricingFastLane.fastLaneComment') }}</div>
               <div>semantic_routing → <span class="text-purple-400">pricing_fast_lane</span> → format_response</div>
-              <div class="text-gray-600 mt-2"># vs Fluxo Normal</div>
+              <div class="text-gray-600 mt-2">{{ $t('cases.pricing.solution.pricingFastLane.normalFlowComment') }}</div>
               <div class="text-gray-600">semantic_routing → structured_analysis → agent → tools → format</div>
             </div>
           </div>
 
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">Adaptive Threshold v2</h3>
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">{{ $t('cases.pricing.solution.adaptiveThreshold.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Threshold de similaridade dinâmico baseado em características da query:
+              {{ $t('cases.pricing.solution.adaptiveThreshold.description') }}
             </p>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">Query curta</strong> (&lt;3 palavras): threshold mais baixo (0.75)</span>
+                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.shortQuery') }}</strong> {{ $t('cases.pricing.solution.adaptiveThreshold.shortQueryDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">Query com números</strong>: threshold ajustado para abbreviations</span>
+                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.numbersQuery') }}</strong>: {{ $t('cases.pricing.solution.adaptiveThreshold.numbersQueryDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">Query multi-item</strong>: threshold relaxado + diversificação</span>
+                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.multiItemQuery') }}</strong>: {{ $t('cases.pricing.solution.adaptiveThreshold.multiItemQueryDesc') }}</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 mt-1">→</span>
-                <span><strong class="text-white">LLM override</strong>: modelo pode sugerir threshold específico</span>
+                <span><strong class="text-white">{{ $t('cases.pricing.solution.adaptiveThreshold.llmOverride') }}</strong>: {{ $t('cases.pricing.solution.adaptiveThreshold.llmOverrideDesc') }}</span>
               </li>
             </ul>
           </div>
 
           <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">Request Coalescing</h3>
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">{{ $t('cases.pricing.solution.requestCoalescing.title') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Prevenção de thundering herd via lock distribuído:
+              {{ $t('cases.pricing.solution.requestCoalescing.description') }}
             </p>
             <div class="bg-gray-800/50 rounded-lg p-4 text-sm">
-              <p class="text-gray-400 mb-2">Quando múltiplas requests chegam para a mesma query:</p>
+              <p class="text-gray-400 mb-2">{{ $t('cases.pricing.solution.requestCoalescing.intro') }}</p>
               <ol class="space-y-1 text-gray-500">
-                <li>1. Primeira request adquire lock e computa resultado</li>
-                <li>2. Requests subsequentes aguardam (com timeout)</li>
-                <li>3. Resultado é compartilhado entre todas</li>
-                <li>4. Cache é populado para próximas requests</li>
+                <li>1. {{ $t('cases.pricing.solution.requestCoalescing.step1') }}</li>
+                <li>2. {{ $t('cases.pricing.solution.requestCoalescing.step2') }}</li>
+                <li>3. {{ $t('cases.pricing.solution.requestCoalescing.step3') }}</li>
+                <li>4. {{ $t('cases.pricing.solution.requestCoalescing.step4') }}</li>
               </ol>
             </div>
           </div>
@@ -138,7 +134,7 @@
       <!-- Cache Architecture -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-blue-400">🏗️</span> Arquitetura de Cache
+          <span class="text-blue-400">🏗️</span> {{ $t('cases.pricing.cacheArchitecture.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8 overflow-x-auto">
           <pre class="text-sm text-gray-400 font-mono leading-relaxed">
@@ -171,26 +167,27 @@
       <!-- Intelligent Cache Key -->
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-yellow-400">🔑</span> Cache Key Inteligente
+          <span class="text-yellow-400">🔑</span> {{ $t('cases.pricing.intelligentCacheKey.title') }}
         </h2>
         <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-8">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Em vez de hash da query bruta (que falha com variações), usamos 
-            <strong class="text-white">assinatura semântica</strong> baseada nos itens detectados:
+            {{ $t('cases.pricing.intelligentCacheKey.intro') }}
+            <strong class="text-white">{{ $t('cases.pricing.intelligentCacheKey.semanticSignature') }}</strong>
+            {{ $t('cases.pricing.intelligentCacheKey.basedOnItems') }}
           </p>
           <div class="grid md:grid-cols-2 gap-4 text-sm">
             <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
-              <div class="text-red-400 font-semibold mb-2">❌ Cache Key Tradicional</div>
+              <div class="text-red-400 font-semibold mb-2">❌ {{ $t('cases.pricing.intelligentCacheKey.traditional') }}</div>
               <div class="text-gray-500 font-mono">
-                hash("quanto custa limpeza?") ≠<br/>
-                hash("valor da limpeza dental")
+                hash("how much does cleaning cost?") ≠<br/>
+                hash("price of dental cleaning")
               </div>
             </div>
             <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
-              <div class="text-emerald-400 font-semibold mb-2">✅ Cache Key Semântica</div>
+              <div class="text-emerald-400 font-semibold mb-2">✅ {{ $t('cases.pricing.intelligentCacheKey.semantic') }}</div>
               <div class="text-gray-500 font-mono">
-                signature(["limpeza"]) ==<br/>
-                signature(["limpeza"])
+                signature(["cleaning"]) ==<br/>
+                signature(["cleaning"])
               </div>
             </div>
           </div>
@@ -199,7 +196,7 @@
 
       <!-- Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Stack Técnica</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('cases.pricing.techStack') }}</h2>
         <div class="flex flex-wrap gap-3">
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">pgvector</span>
           <span class="px-4 py-2 bg-gray-800 rounded-lg text-sm">HNSW Index</span>
@@ -217,7 +214,7 @@
           to="/projetos/document-processing" 
           class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
         >
-          Próximo: Document Processing →
+          {{ $t('cases.pricing.nextProject') }}
         </NuxtLink>
       </div>
     </main>

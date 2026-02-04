@@ -11,32 +11,28 @@
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Voltar ao Portfolio
+          {{ $t('nav.backToPortfolio') }}
         </NuxtLink>
         
         <div class="max-w-4xl">
           <div class="flex items-center gap-4 mb-6">
             <span class="px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-medium border border-emerald-500/20">
-              Full-Stack Platform
+              {{ $t('cases.icontei.hero.tag1') }}
             </span>
             <span class="px-4 py-2 bg-purple-500/10 text-purple-400 rounded-full text-sm font-medium border border-purple-500/20">
-              Social Network
+              {{ $t('cases.icontei.hero.tag2') }}
             </span>
             <span class="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full text-sm font-medium border border-blue-500/20">
-              Real-time
+              {{ $t('cases.icontei.hero.tag3') }}
             </span>
           </div>
           
           <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-            iContei
+            {{ $t('cases.icontei.hero.title') }}
             <span class="text-emerald-400">.</span>
           </h1>
           
-          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Rede social de contadores compartilháveis — desde estatísticas esportivas virais até marcos pessoais.
-            Plataforma full-stack com <span class="text-emerald-400">Next.js 16</span>, 
-            <span class="text-emerald-400">FastAPI</span>, <span class="text-emerald-400">WebSockets</span>, 
-            e <span class="text-emerald-400">verificação por IA</span>.
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed" v-html="$t('cases.icontei.hero.description')">
           </p>
           
           <div class="flex flex-wrap gap-3">
@@ -56,47 +52,42 @@
     <!-- Visão Geral -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Visão Geral</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.icontei.overview.title') }}</h2>
         
         <div class="grid lg:grid-cols-2 gap-12">
           <div>
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">O Produto</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.overview.productTitle') }}</h3>
             <p class="text-gray-300 leading-relaxed mb-6">
-              iContei é uma plataforma social dedicada a contadores de todos os tipos — desde 
-              estatísticas esportivas virais ("Há 2.847 dias o Flamengo está sem título mundial") 
-              até marcos pessoais ("Faltam 127 dias para meu casamento") e corporativos 
-              ("1.567 dias sem acidentes de trabalho").
+              {{ $t('cases.icontei.overview.productDesc1') }}
             </p>
             <p class="text-gray-300 leading-relaxed">
-              O foco é criar contadores visualmente impactantes para compartilhamento em redes 
-              sociais (TikTok, Instagram, Twitter) com previews dinâmicos, atualização em tempo 
-              real, e comunidade engajada.
+              {{ $t('cases.icontei.overview.productDesc2') }}
             </p>
           </div>
           
           <div>
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Casos de Uso</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.overview.useCasesTitle') }}</h3>
             <div class="space-y-4">
               <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                <h4 class="text-white font-medium mb-2">📊 Públicos (Virais)</h4>
+                <h4 class="text-white font-medium mb-2">{{ $t('cases.icontei.overview.publicTitle') }}</h4>
                 <ul class="text-gray-400 text-sm space-y-1">
-                  <li>• "Há 2.847 dias o Flamengo está sem título mundial"</li>
-                  <li>• "Faltam 180 dias para a Copa do Mundo 2026"</li>
-                  <li>• "Real Madrid há 45 dias sem perder no Bernabéu"</li>
+                  <li>• {{ $t('cases.icontei.overview.publicExample1') }}</li>
+                  <li>• {{ $t('cases.icontei.overview.publicExample2') }}</li>
+                  <li>• {{ $t('cases.icontei.overview.publicExample3') }}</li>
                 </ul>
               </div>
               <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                <h4 class="text-white font-medium mb-2">💑 Pessoais</h4>
+                <h4 class="text-white font-medium mb-2">{{ $t('cases.icontei.overview.personalTitle') }}</h4>
                 <ul class="text-gray-400 text-sm space-y-1">
-                  <li>• "Faltam 127 dias para meu casamento"</li>
-                  <li>• "Há 1.234 dias que nos conhecemos"</li>
+                  <li>• {{ $t('cases.icontei.overview.personalExample1') }}</li>
+                  <li>• {{ $t('cases.icontei.overview.personalExample2') }}</li>
                 </ul>
               </div>
               <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                <h4 class="text-white font-medium mb-2">🏢 Corporativos</h4>
+                <h4 class="text-white font-medium mb-2">{{ $t('cases.icontei.overview.corporateTitle') }}</h4>
                 <ul class="text-gray-400 text-sm space-y-1">
-                  <li>• "1.567 dias sem acidentes de trabalho"</li>
-                  <li>• "890 dias como líder de mercado"</li>
+                  <li>• {{ $t('cases.icontei.overview.corporateExample1') }}</li>
+                  <li>• {{ $t('cases.icontei.overview.corporateExample2') }}</li>
                 </ul>
               </div>
             </div>
@@ -108,7 +99,7 @@
     <!-- Arquitetura -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Arquitetura Full-Stack</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.icontei.architecture.title') }}</h2>
         
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-8 mb-12">
           <pre class="text-sm text-gray-300 overflow-x-auto"><code>┌─────────────────────────────────────────────────────────────────────────┐
@@ -151,7 +142,7 @@
         <!-- Stack Cards -->
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Frontend Stack</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.architecture.frontendStackTitle') }}</h3>
             <ul class="space-y-3 text-gray-300">
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
@@ -168,19 +159,19 @@
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Framer Motion</span> — Animações fluidas
+                  <span class="text-white font-medium">Framer Motion</span> — Fluid animations
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Remotion</span> — Geração de vídeos programática
+                  <span class="text-white font-medium">Remotion</span> — Programmatic video generation
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Sentry</span> — Error tracking e performance
+                  <span class="text-white font-medium">Sentry</span> — Error tracking & performance
                 </div>
               </li>
               <li class="flex items-start gap-3">
@@ -193,7 +184,7 @@
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Backend Stack</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.architecture.backendStackTitle') }}</h3>
             <ul class="space-y-3 text-gray-300">
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
@@ -204,13 +195,13 @@
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">Domain-Driven Design</span> — Camadas bem separadas
+                  <span class="text-white font-medium">Domain-Driven Design</span> — Well-separated layers
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">AsyncPG + SQLAlchemy</span> — PostgreSQL async
+                  <span class="text-white font-medium">AsyncPG + SQLAlchemy</span> — Async PostgreSQL
                 </div>
               </li>
               <li class="flex items-start gap-3">
@@ -228,7 +219,7 @@
               <li class="flex items-start gap-3">
                 <span class="text-emerald-400 mt-1">▸</span>
                 <div>
-                  <span class="text-white font-medium">MinIO</span> — Object storage (imagens)
+                  <span class="text-white font-medium">MinIO</span> — Object storage (images)
                 </div>
               </li>
             </ul>
@@ -240,15 +231,14 @@
     <!-- Real-time System -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Sistema Real-time</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.realtime.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Contadores atualizam a cada segundo no frontend. Para suportar milhares de conexões simultâneas, 
-          implementei um sistema de WebSocket com Redis pub/sub, heartbeat, e rate limiting inteligente.
+          {{ $t('cases.icontei.realtime.description') }}
         </p>
         
         <div class="grid lg:grid-cols-2 gap-8 mb-12">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">WebSocket Manager</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.realtime.websocketTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python">class WebSocketManager:
     """
@@ -292,13 +282,12 @@
         await self._broadcast_presence(counter_id)</code></pre>
             </div>
             <p class="text-gray-400 text-sm">
-              Rate limiting dual: por usuário autenticado (5 conexões) e por IP para anônimos (20 conexões, 
-              considerando NAT/CGNAT). Heartbeat via Redis Sorted Set para detectar conexões mortas.
+              {{ $t('cases.icontei.realtime.websocketDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Redis Pub/Sub Distribution</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.realtime.pubsubTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python">async def start_redis_listener(self):
     """
@@ -334,32 +323,30 @@ async def publish_update(self, counter_id: str, payload: dict):
     )</code></pre>
             </div>
             <p class="text-gray-400 text-sm">
-              Com Redis pub/sub, posso escalar horizontalmente o backend — cada instância 
-              mantém suas conexões WebSocket e recebe atualizações via Redis.
+              {{ $t('cases.icontei.realtime.pubsubDesc') }}
             </p>
           </div>
         </div>
         
         <!-- Presence System -->
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-          <h3 class="text-xl font-semibold text-emerald-400 mb-4">Sistema de Presença</h3>
+          <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.realtime.presenceTitle') }}</h3>
           <div class="grid md:grid-cols-3 gap-6">
             <div class="text-center p-4 bg-gray-950 rounded-lg">
-              <div class="text-3xl font-bold text-emerald-400 mb-2">30s</div>
-              <div class="text-gray-400 text-sm">Heartbeat interval</div>
+              <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.icontei.realtime.presenceStat1Value') }}</div>
+              <div class="text-gray-400 text-sm">{{ $t('cases.icontei.realtime.presenceStat1Label') }}</div>
             </div>
             <div class="text-center p-4 bg-gray-950 rounded-lg">
-              <div class="text-3xl font-bold text-emerald-400 mb-2">45s</div>
-              <div class="text-gray-400 text-sm">Presence timeout</div>
+              <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.icontei.realtime.presenceStat2Value') }}</div>
+              <div class="text-gray-400 text-sm">{{ $t('cases.icontei.realtime.presenceStat2Label') }}</div>
             </div>
             <div class="text-center p-4 bg-gray-950 rounded-lg">
-              <div class="text-3xl font-bold text-emerald-400 mb-2">ZADD</div>
-              <div class="text-gray-400 text-sm">Redis Sorted Set</div>
+              <div class="text-3xl font-bold text-emerald-400 mb-2">{{ $t('cases.icontei.realtime.presenceStat3Value') }}</div>
+              <div class="text-gray-400 text-sm">{{ $t('cases.icontei.realtime.presenceStat3Label') }}</div>
             </div>
           </div>
           <p class="text-gray-400 mt-4 text-sm">
-            Cliente envia heartbeat a cada 30s. Servidor usa <code class="text-emerald-400">ZRANGEBYSCORE</code> 
-            para listar conexões ativas (timestamp > now - 45s). Conexões stale são removidas automaticamente.
+            {{ $t('cases.icontei.realtime.presenceDesc') }}
           </p>
         </div>
       </div>
@@ -368,15 +355,14 @@ async def publish_update(self, counter_id: str, payload: dict):
     <!-- AI Verification -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Verificação por IA</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.aiVerification.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Contadores oficiais passam por verificação automatizada com IA para garantir 
-          que datas e informações estão corretas. Sistema multi-provider com fallback.
+          {{ $t('cases.icontei.aiVerification.description') }}
         </p>
         
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">AI Verification Service</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.aiVerification.serviceTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python">class AIVerificationService:
     """
@@ -424,7 +410,7 @@ async def publish_update(self, counter_id: str, payload: dict):
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Pipeline Brave Search + Groq</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.aiVerification.pipelineTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python">class GroqClient:
     """
@@ -468,8 +454,7 @@ async def publish_update(self, counter_id: str, payload: dict):
                 await asyncio.sleep(delay)</code></pre>
             </div>
             <p class="text-gray-400 text-sm">
-              Para contadores que precisam de dados externos (ex: "última vitória do time X"), 
-              uso Brave Search para buscar informações recentes e Groq para extrair dados estruturados.
+              {{ $t('cases.icontei.aiVerification.pipelineDesc') }}
             </p>
           </div>
         </div>
@@ -479,15 +464,14 @@ async def publish_update(self, counter_id: str, payload: dict):
     <!-- Ranking System -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Sistema de Rankings</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.rankings.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Rankings em tempo real usando Redis Sorted Sets com algoritmo de scoring 60/30/10 
-          que balanceia likes, comentários e visualizações.
+          {{ $t('cases.icontei.rankings.description') }}
         </p>
         
         <div class="grid lg:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Algoritmo de Scoring</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.rankings.algorithmTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python">async def calculate_counter_score(self, counter: Counter) -> float:
     """
@@ -524,7 +508,7 @@ async def publish_update(self, counter_id: str, payload: dict):
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Redis Sorted Sets</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.rankings.redisTitle') }}</h3>
             <div class="bg-gray-950 rounded-lg p-4 mb-4">
               <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python"># Estrutura de chaves Redis
 ranking:24h   # Trending últimas 24 horas
@@ -561,9 +545,7 @@ async def update_rankings(self, period: str = "24h") -> dict:
     await self.redis.zremrangebyrank(f"ranking:{period}", 0, -1001)</code></pre>
             </div>
             <p class="text-gray-400 text-sm">
-              <code class="text-emerald-400">ZADD</code> para inserir, <code class="text-emerald-400">ZREVRANGE</code> para 
-              buscar top N, <code class="text-emerald-400">ZREMRANGEBYRANK</code> para manter tamanho controlado. 
-              O(log N) para todas as operações.
+              {{ $t('cases.icontei.rankings.redisDesc') }}
             </p>
           </div>
         </div>
@@ -573,10 +555,9 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- Automation System -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Sistema de Automação</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.automation.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Contadores podem ser atualizados automaticamente via regras configuráveis — 
-          desde agendamentos cron até triggers baseados em APIs externas.
+          {{ $t('cases.icontei.automation.description') }}
         </p>
         
         <div class="grid lg:grid-cols-3 gap-6 mb-12">
@@ -584,10 +565,9 @@ async def update_rankings(self, period: str = "24h") -> dict:
             <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">⏰</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Scheduled</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.icontei.automation.scheduledTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Cron expressions para atualização periódica. Usa <code class="text-emerald-400">croniter</code> 
-              para calcular próxima execução.
+              {{ $t('cases.icontei.automation.scheduledDesc') }}
             </p>
           </div>
           
@@ -595,9 +575,9 @@ async def update_rankings(self, period: str = "24h") -> dict:
             <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">🔌</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">API Trigger</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.icontei.automation.apiTriggerTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Integração com APIs externas (API-Football, etc.) para buscar dados automaticamente.
+              {{ $t('cases.icontei.automation.apiTriggerDesc') }}
             </p>
           </div>
           
@@ -605,15 +585,15 @@ async def update_rankings(self, period: str = "24h") -> dict:
             <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">👥</span>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Crowdsourced</h3>
+            <h3 class="text-lg font-semibold text-white mb-2">{{ $t('cases.icontei.automation.crowdsourcedTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Usuários podem sugerir atualizações que passam por aprovação antes de serem aplicadas.
+              {{ $t('cases.icontei.automation.crowdsourcedDesc') }}
             </p>
           </div>
         </div>
         
         <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-          <h3 class="text-xl font-semibold text-emerald-400 mb-4">Sports API Provider</h3>
+          <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.automation.sportsProviderTitle') }}</h3>
           <div class="bg-gray-950 rounded-lg p-4 mb-4">
             <pre class="text-sm text-gray-300 overflow-x-auto"><code class="language-python">class SportsAPIProvider(BaseDataProvider):
     """
@@ -652,8 +632,7 @@ async def update_rankings(self, period: str = "24h") -> dict:
         )</code></pre>
           </div>
           <p class="text-gray-400 text-sm">
-            Provider Pattern permite adicionar novas fontes de dados facilmente. 
-            Cada provider implementa <code class="text-emerald-400">fetch_data()</code> e retorna resposta padronizada.
+            {{ $t('cases.icontei.automation.sportsProviderDesc') }}
           </p>
         </div>
       </div>
@@ -662,14 +641,14 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- Observability -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Observabilidade</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.observability.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Stack completa de observabilidade para monitorar a plataforma em produção.
+          {{ $t('cases.icontei.observability.description') }}
         </p>
         
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-4">Prometheus + Metrics</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.observability.prometheusTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• HTTP request duration histograms</li>
               <li>• Request count by status code</li>
@@ -681,7 +660,7 @@ async def update_rankings(self, period: str = "24h") -> dict:
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-4">OpenTelemetry</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.observability.otelTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li>• Distributed tracing</li>
               <li>• Auto-instrumentation FastAPI</li>
@@ -693,10 +672,10 @@ async def update_rankings(self, period: str = "24h") -> dict:
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-4">Structured Logging</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.observability.loggingTitle') }}</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>• structlog para logs estruturados</li>
-              <li>• JSON format em produção</li>
+              <li>• structlog for structured logs</li>
+              <li>• JSON format in production</li>
               <li>• Request/response middleware</li>
               <li>• Correlation IDs</li>
               <li>• Error context enrichment</li>
@@ -710,51 +689,51 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- Testing -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Testes Automatizados</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.testing.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Cobertura completa com pytest (backend) e vitest + Playwright (frontend).
+          {{ $t('cases.icontei.testing.description') }}
         </p>
         
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Backend (pytest)</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.testing.backendTitle') }}</h3>
             <div class="grid grid-cols-2 gap-4 mb-4">
               <div class="text-center p-4 bg-gray-950 rounded-lg">
-                <div class="text-3xl font-bold text-emerald-400">267</div>
-                <div class="text-gray-400 text-sm">testes</div>
+                <div class="text-3xl font-bold text-emerald-400">{{ $t('cases.icontei.testing.backendTestCount') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.icontei.testing.backendTestLabel') }}</div>
               </div>
               <div class="text-center p-4 bg-gray-950 rounded-lg">
-                <div class="text-3xl font-bold text-emerald-400">✓</div>
-                <div class="text-gray-400 text-sm">passando</div>
+                <div class="text-3xl font-bold text-emerald-400">{{ $t('cases.icontei.testing.backendStatus') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.icontei.testing.backendStatusLabel') }}</div>
               </div>
             </div>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>• Endpoints críticos (health, counters, rankings)</li>
-              <li>• Validação de paginação e filtros</li>
-              <li>• Tratamento de erros (404, 400, 403)</li>
-              <li>• Rate limiting (RATE_LIMIT_ENABLED=false para testes)</li>
-              <li>• Admin routes e auth flows</li>
+              <li>• Critical endpoints (health, counters, rankings)</li>
+              <li>• Pagination and filter validation</li>
+              <li>• Error handling (404, 400, 403)</li>
+              <li>• Rate limiting (RATE_LIMIT_ENABLED=false for tests)</li>
+              <li>• Admin routes and auth flows</li>
             </ul>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-xl font-semibold text-emerald-400 mb-4">Frontend (vitest + Playwright)</h3>
+            <h3 class="text-xl font-semibold text-emerald-400 mb-4">{{ $t('cases.icontei.testing.frontendTitle') }}</h3>
             <div class="grid grid-cols-2 gap-4 mb-4">
               <div class="text-center p-4 bg-gray-950 rounded-lg">
-                <div class="text-3xl font-bold text-emerald-400">21</div>
-                <div class="text-gray-400 text-sm">unit tests</div>
+                <div class="text-3xl font-bold text-emerald-400">{{ $t('cases.icontei.testing.frontendUnitCount') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.icontei.testing.frontendUnitLabel') }}</div>
               </div>
               <div class="text-center p-4 bg-gray-950 rounded-lg">
-                <div class="text-3xl font-bold text-emerald-400">E2E</div>
-                <div class="text-gray-400 text-sm">Playwright</div>
+                <div class="text-3xl font-bold text-emerald-400">{{ $t('cases.icontei.testing.frontendE2E') }}</div>
+                <div class="text-gray-400 text-sm">{{ $t('cases.icontei.testing.frontendE2ELabel') }}</div>
               </div>
             </div>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>• API client completo (getCounters, getTrending, etc)</li>
-              <li>• Construção de URLs com parâmetros</li>
-              <li>• Tratamento de erros (APIError)</li>
-              <li>• Mock do fetch global</li>
-              <li>• E2E com Playwright (headless e headed)</li>
+              <li>• Complete API client (getCounters, getTrending, etc)</li>
+              <li>• URL construction with parameters</li>
+              <li>• Error handling (APIError)</li>
+              <li>• Global fetch mock</li>
+              <li>• E2E with Playwright (headless and headed)</li>
             </ul>
           </div>
         </div>
@@ -764,37 +743,37 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- Workers -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-4">Background Workers</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ $t('cases.icontei.workers.title') }}</h2>
         <p class="text-gray-400 mb-12 max-w-3xl">
-          Processamento assíncrono para tarefas pesadas, mantendo a API responsiva.
+          {{ $t('cases.icontei.workers.description') }}
         </p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Automation Scheduler</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">{{ $t('cases.icontei.workers.schedulerTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Executa regras de automação a cada 5 minutos. Calcula próximo run com croniter.
+              {{ $t('cases.icontei.workers.schedulerDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Ranking Worker</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">{{ $t('cases.icontei.workers.rankingTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Atualiza Redis Sorted Sets com scores calculados para cada período (24h, 7d, 30d, all).
+              {{ $t('cases.icontei.workers.rankingDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Review Worker</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">{{ $t('cases.icontei.workers.reviewTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Processa filas de verificação de contadores, coordena com AI Verification Service.
+              {{ $t('cases.icontei.workers.reviewDesc') }}
             </p>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-2">AI Monitoring</h3>
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">{{ $t('cases.icontei.workers.monitoringTitle') }}</h3>
             <p class="text-gray-400 text-sm">
-              Monitora contadores marcados para verificação contínua, atualiza quando dados mudam.
+              {{ $t('cases.icontei.workers.monitoringDesc') }}
             </p>
           </div>
         </div>
@@ -804,51 +783,51 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- Roadmap -->
     <section class="py-20 bg-gray-900/30 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Roadmap</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.icontei.roadmap.title') }}</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-gray-900/50 rounded-xl border border-emerald-500/30 p-6">
-            <div class="text-emerald-400 font-semibold mb-2">Fase 1 - MVP ✅</div>
+            <div class="text-emerald-400 font-semibold mb-2">{{ $t('cases.icontei.roadmap.phase1Title') }}</div>
             <ul class="space-y-1 text-gray-400 text-sm">
-              <li>✓ CRUD de contadores</li>
-              <li>✓ Sistema de temas</li>
-              <li>✓ Rankings (Trending)</li>
-              <li>✓ OG images dinâmicas</li>
-              <li>✓ Autenticação</li>
-              <li>✓ Seguir + reações</li>
+              <li>{{ $t('cases.icontei.roadmap.phase1Item1') }}</li>
+              <li>{{ $t('cases.icontei.roadmap.phase1Item2') }}</li>
+              <li>{{ $t('cases.icontei.roadmap.phase1Item3') }}</li>
+              <li>{{ $t('cases.icontei.roadmap.phase1Item4') }}</li>
+              <li>{{ $t('cases.icontei.roadmap.phase1Item5') }}</li>
+              <li>{{ $t('cases.icontei.roadmap.phase1Item6') }}</li>
             </ul>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="text-purple-400 font-semibold mb-2">Fase 2 - Social</div>
+            <div class="text-purple-400 font-semibold mb-2">{{ $t('cases.icontei.roadmap.phase2Title') }}</div>
             <ul class="space-y-1 text-gray-400 text-sm">
-              <li>• Feed personalizado</li>
-              <li>• Comentários e discussões</li>
-              <li>• Notificações push</li>
-              <li>• Badges e gamificação</li>
-              <li>• Perfis públicos robustos</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase2Item1') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase2Item2') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase2Item3') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase2Item4') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase2Item5') }}</li>
             </ul>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="text-blue-400 font-semibold mb-2">Fase 3 - Empresas</div>
+            <div class="text-blue-400 font-semibold mb-2">{{ $t('cases.icontei.roadmap.phase3Title') }}</div>
             <ul class="space-y-1 text-gray-400 text-sm">
-              <li>• Perfis corporativos</li>
-              <li>• Multi-usuário por org</li>
-              <li>• Dashboards analytics</li>
-              <li>• SSO corporativo</li>
-              <li>• Temas licenciados</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase3Item1') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase3Item2') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase3Item3') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase3Item4') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase3Item5') }}</li>
             </ul>
           </div>
           
           <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="text-orange-400 font-semibold mb-2">Fase 4 - Creators</div>
+            <div class="text-orange-400 font-semibold mb-2">{{ $t('cases.icontei.roadmap.phase4Title') }}</div>
             <ul class="space-y-1 text-gray-400 text-sm">
-              <li>• Geração de vídeos (Remotion)</li>
-              <li>• SDK para redes sociais</li>
-              <li>• API pública</li>
-              <li>• Widgets embeddable</li>
-              <li>• Marketplace de templates</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase4Item1') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase4Item2') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase4Item3') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase4Item4') }}</li>
+              <li>• {{ $t('cases.icontei.roadmap.phase4Item5') }}</li>
             </ul>
           </div>
         </div>
@@ -858,7 +837,7 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- Métricas -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-white mb-12">Stack Completa</h2>
+        <h2 class="text-3xl font-bold text-white mb-12">{{ $t('cases.icontei.stackSection.title') }}</h2>
         
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           <div class="bg-gray-900/50 rounded-lg p-4 text-center border border-gray-800">
@@ -916,16 +895,15 @@ async def update_rankings(self, period: str = "24h") -> dict:
     <!-- CTA -->
     <section class="py-20 border-t border-gray-800">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Quer ver mais projetos?</h2>
+        <h2 class="text-3xl font-bold text-white mb-6">{{ $t('cases.icontei.cta.title') }}</h2>
         <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-          Este é um dos meus projetos pessoais. Explore também o Optimus (plataforma de IA conversacional) 
-          e outros case studies no meu portfolio.
+          {{ $t('cases.icontei.cta.description') }}
         </p>
         <NuxtLink 
           to="/" 
           class="inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
         >
-          Ver Todos os Projetos
+          {{ $t('common.viewAllProjects') }}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
@@ -936,10 +914,12 @@ async def update_rankings(self, period: str = "24h") -> dict:
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'iContei - Rede Social de Contadores | Marcelo Marleta',
+  title: t('cases.icontei.meta.title'),
   meta: [
-    { name: 'description', content: 'Case study: Plataforma full-stack de contadores compartilháveis com Next.js 16, FastAPI, WebSocket real-time, e verificação por IA.' }
+    { name: 'description', content: t('cases.icontei.meta.description') }
   ]
 })
 </script>

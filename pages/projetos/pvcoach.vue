@@ -7,9 +7,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
           </svg>
-          Voltar
+          {{ $t('nav.back') }}
         </NuxtLink>
-        <span class="text-gray-500 text-sm">Projeto Pessoal</span>
+        <span class="text-gray-500 text-sm">{{ $t('caseStudies.common.personalProject') }}</span>
       </div>
     </header>
 
@@ -18,40 +18,38 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm font-medium">
-            Chess + AI
+            {{ $t('caseStudies.pvcoach.tag') }}
           </span>
           <span class="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">
-            Training Tool
+            {{ $t('caseStudies.pvcoach.tagSecondary') }}
           </span>
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          PVCoach
+          {{ $t('caseStudies.pvcoach.title') }}
           <span class="text-amber-400"> ♔</span>
         </h1>
         
         <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-          Coach de xadrez que combina Stockfish com LLM para explicar movimentos. 
-          Análise MultiPV, hints progressivos, explicações fundamentadas nas variações 
-          do engine, e validação automática para evitar alucinações.
+          {{ $t('caseStudies.pvcoach.description') }}
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-amber-400">5</div>
-            <div class="text-sm text-gray-500">LLM Providers</div>
+            <div class="text-sm text-gray-500">{{ $t('caseStudies.pvcoach.stats.llmProviders') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-amber-400">MultiPV</div>
-            <div class="text-sm text-gray-500">Top-N Analysis</div>
+            <div class="text-sm text-gray-500">{{ $t('caseStudies.pvcoach.stats.topNAnalysis') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-amber-400">3</div>
-            <div class="text-sm text-gray-500">Hint Levels</div>
+            <div class="text-sm text-gray-500">{{ $t('caseStudies.pvcoach.stats.hintLevels') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-amber-400">Grounded</div>
-            <div class="text-sm text-gray-500">Explanations</div>
+            <div class="text-sm text-gray-500">{{ $t('caseStudies.pvcoach.stats.groundedExplanations') }}</div>
           </div>
         </div>
       </div>
@@ -61,13 +59,13 @@
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <div class="flex gap-6 overflow-x-auto py-4 text-sm">
-          <a href="#problema" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Problema</a>
-          <a href="#arquitetura" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Arquitetura</a>
-          <a href="#multipv" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">MultiPV</a>
-          <a href="#grounded" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Grounded Explanations</a>
-          <a href="#hints" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Progressive Hints</a>
-          <a href="#providers" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Multi-Provider</a>
-          <a href="#api" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">API</a>
+          <a href="#problema" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.problem') }}</a>
+          <a href="#arquitetura" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.architecture') }}</a>
+          <a href="#multipv" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.multipv') }}</a>
+          <a href="#grounded" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.grounded') }}</a>
+          <a href="#hints" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.hints') }}</a>
+          <a href="#providers" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.providers') }}</a>
+          <a href="#api" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">{{ $t('caseStudies.pvcoach.nav.api') }}</a>
         </div>
       </div>
     </nav>
@@ -79,39 +77,31 @@
       <section id="problema" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
-          O Problema
+          {{ $t('caseStudies.pvcoach.problem.title') }}
         </h2>
         
         <div class="prose prose-invert max-w-none">
-          <p class="text-gray-300 leading-relaxed mb-4">
-            Engines de xadrez como Stockfish são extremamente fortes, mas suas "explicações" são 
-            apenas números (centipawns) e variações brutas. Jogadores intermediários não conseguem 
-            entender <em>por que</em> um lance é melhor.
-          </p>
+          <p class="text-gray-300 leading-relaxed mb-4" v-html="$t('caseStudies.pvcoach.problem.intro')"></p>
           
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4">O Gap de Entendimento</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4">{{ $t('caseStudies.pvcoach.problem.gapTitle') }}</h4>
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Engine diz:</strong> "e4 +0.35, d4 +0.20" — Ok, mas por quê?</span>
+                <span><strong class="text-gray-200">{{ $t('caseStudies.pvcoach.problem.engineSays') }}</strong> {{ $t('caseStudies.pvcoach.problem.engineExample') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">LLM puro alucina:</strong> "Nf3 ataca a dama" — Não, não ataca.</span>
+                <span><strong class="text-gray-200">{{ $t('caseStudies.pvcoach.problem.llmHallucinates') }}</strong> {{ $t('caseStudies.pvcoach.problem.llmExample') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Análises humanas são caras:</strong> Coaches cobram $50-100/hora.</span>
+                <span><strong class="text-gray-200">{{ $t('caseStudies.pvcoach.problem.humanExpensive') }}</strong> {{ $t('caseStudies.pvcoach.problem.humanExample') }}</span>
               </li>
             </ul>
           </div>
 
-          <p class="text-gray-300 leading-relaxed">
-            A solução foi combinar a precisão do Stockfish com a capacidade explicativa do LLM, 
-            mas <strong class="text-white">ancorando as explicações nas variações reais do engine</strong> 
-            para evitar alucinações.
-          </p>
+          <p class="text-gray-300 leading-relaxed" v-html="$t('caseStudies.pvcoach.problem.solution')"></p>
         </div>
       </section>
 
@@ -119,20 +109,20 @@
       <section id="arquitetura" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center text-amber-400">🏗️</span>
-          Arquitetura
+          {{ $t('caseStudies.pvcoach.architecture.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">Pipeline de Análise</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">{{ $t('caseStudies.pvcoach.architecture.pipelineTitle') }}</h4>
             <div class="font-mono text-sm text-center">
               <div class="inline-block bg-gray-800 rounded-lg px-4 py-2 mb-4">
-                <span class="text-amber-400">FEN Position</span>
+                <span class="text-amber-400">{{ $t('caseStudies.pvcoach.architecture.fenPosition') }}</span>
               </div>
               <div class="text-amber-400 mb-2">↓</div>
               <div class="inline-block bg-blue-500/20 border border-blue-500/40 rounded-lg px-4 py-2 mb-4">
-                <span class="text-blue-400">Stockfish MultiPV</span>
-                <span class="text-gray-500 text-xs block">depth=14, multipv=3</span>
+                <span class="text-blue-400">{{ $t('caseStudies.pvcoach.architecture.stockfishMultipv') }}</span>
+                <span class="text-gray-500 text-xs block">{{ $t('caseStudies.pvcoach.architecture.depthMultipv') }}</span>
               </div>
               <div class="text-amber-400 mb-2">↓</div>
               <div class="flex justify-center gap-4 mb-4">
@@ -151,13 +141,13 @@
               </div>
               <div class="text-amber-400 mb-2">↓</div>
               <div class="inline-block bg-purple-500/20 border border-purple-500/40 rounded-lg px-4 py-2 mb-4">
-                <span class="text-purple-400">LLM (Grounded Prompt)</span>
-                <span class="text-gray-500 text-xs block">Explicação baseada nas PVs</span>
+                <span class="text-purple-400">{{ $t('caseStudies.pvcoach.architecture.llmGrounded') }}</span>
+                <span class="text-gray-500 text-xs block">{{ $t('caseStudies.pvcoach.architecture.explanationPv') }}</span>
               </div>
               <div class="text-amber-400 mb-2">↓</div>
               <div class="inline-block bg-green-500/20 border border-green-500/40 rounded-lg px-4 py-2">
-                <span class="text-green-400">Validation</span>
-                <span class="text-gray-500 text-xs block">Cross-check com engine</span>
+                <span class="text-green-400">{{ $t('caseStudies.pvcoach.architecture.validation') }}</span>
+                <span class="text-gray-500 text-xs block">{{ $t('caseStudies.pvcoach.architecture.crossCheck') }}</span>
               </div>
             </div>
           </div>
@@ -168,15 +158,11 @@
       <section id="multipv" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">📊</span>
-          MultiPV Analysis
+          {{ $t('caseStudies.pvcoach.multipv.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
-          <p class="text-gray-300 leading-relaxed mb-6">
-            Em vez de pedir só o "melhor lance", o sistema pede os top-N lances com suas variações 
-            completas. Isso permite comparar alternativas e explicar <em>por que</em> um lance é 
-            melhor que outro.
-          </p>
+          <p class="text-gray-300 leading-relaxed mb-6" v-html="$t('caseStudies.pvcoach.multipv.intro')"></p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">stockfish_engine.py</div>
@@ -221,10 +207,7 @@
 
           <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 my-6">
             <h4 class="font-semibold text-blue-400 mb-2">💡 delta_cp</h4>
-            <p class="text-sm text-gray-300">
-              O <code>delta_cp</code> mostra quanto cada alternativa "perde" em relação ao melhor lance. 
-              Ex: se e4 = +35cp e d4 = +20cp, então delta_cp de d4 = 15cp (perde 0.15 peões).
-            </p>
+            <p class="text-sm text-gray-300" v-html="$t('caseStudies.pvcoach.multipv.deltaExplanation')"></p>
           </div>
         </div>
       </section>
@@ -233,15 +216,11 @@
       <section id="grounded" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">📝</span>
-          Grounded Explanations
+          {{ $t('caseStudies.pvcoach.grounded.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
-          <p class="text-gray-300 leading-relaxed mb-6">
-            O segredo para evitar alucinações é <strong class="text-white">ancorar o LLM nas variações 
-            reais do engine</strong>. O prompt inclui as PVs formatadas, e a validação verifica se a 
-            explicação menciona lances que realmente existem.
-          </p>
+          <p class="text-gray-300 leading-relaxed mb-6" v-html="$t('caseStudies.pvcoach.grounded.intro')"></p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Prompt Template</div>
@@ -266,7 +245,7 @@ Top candidates for this position:
 """</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Validação Automática</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('caseStudies.pvcoach.grounded.validationTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">api_server.py</div>
@@ -297,10 +276,9 @@ Top candidates for this position:
           </div>
 
           <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 my-6">
-            <h4 class="font-semibold text-purple-400 mb-2">🛡️ Resultado</h4>
+            <h4 class="font-semibold text-purple-400 mb-2">🛡️ {{ $t('caseStudies.pvcoach.grounded.resultTitle') }}</h4>
             <p class="text-sm text-gray-300">
-              Se o LLM menciona um lance que não existe nas PVs, o sistema retorna um warning. 
-              Isso permite detectar alucinações antes de mostrar ao usuário.
+              {{ $t('caseStudies.pvcoach.grounded.resultText') }}
             </p>
           </div>
         </div>
@@ -310,30 +288,29 @@ Top candidates for this position:
       <section id="hints" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">💡</span>
-          Progressive Hints
+          {{ $t('caseStudies.pvcoach.hints.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Para treino, revelar o lance imediatamente não ajuda. O sistema oferece dicas 
-            progressivas em 3 níveis, do mais vago ao mais específico.
+            {{ $t('caseStudies.pvcoach.hints.intro') }}
           </p>
 
           <div class="grid md:grid-cols-3 gap-4 my-6">
             <div class="bg-gray-900/50 border border-green-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-green-400 mb-2">Level 1: Pista</h4>
-              <p class="text-sm text-gray-400 mb-2">"Pense em mover seu cavalo."</p>
-              <p class="text-xs text-gray-500">Indica a peça, não a casa. Se há captura ou xeque, adiciona nota.</p>
+              <h4 class="font-semibold text-green-400 mb-2">{{ $t('caseStudies.pvcoach.hints.level1Title') }}</h4>
+              <p class="text-sm text-gray-400 mb-2">{{ $t('caseStudies.pvcoach.hints.level1Example') }}</p>
+              <p class="text-xs text-gray-500">{{ $t('caseStudies.pvcoach.hints.level1Desc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-yellow-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-yellow-400 mb-2">Level 2: Plano</h4>
-              <p class="text-sm text-gray-400 mb-2">"Melhor lance: Nf3. Compare com d4, Nc3."</p>
-              <p class="text-xs text-gray-500">Revela o lance + alternativas + delta_cp.</p>
+              <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('caseStudies.pvcoach.hints.level2Title') }}</h4>
+              <p class="text-sm text-gray-400 mb-2">{{ $t('caseStudies.pvcoach.hints.level2Example') }}</p>
+              <p class="text-xs text-gray-500">{{ $t('caseStudies.pvcoach.hints.level2Desc') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-red-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">Level 3: Variante</h4>
-              <p class="text-sm text-gray-400 mb-2">"Nf3 → d5 d4 Nf6 c4 e6"</p>
-              <p class="text-xs text-gray-500">PV completa + explicação LLM (opcional).</p>
+              <h4 class="font-semibold text-red-400 mb-2">{{ $t('caseStudies.pvcoach.hints.level3Title') }}</h4>
+              <p class="text-sm text-gray-400 mb-2">{{ $t('caseStudies.pvcoach.hints.level3Example') }}</p>
+              <p class="text-xs text-gray-500">{{ $t('caseStudies.pvcoach.hints.level3Desc') }}</p>
             </div>
           </div>
 
@@ -379,31 +356,30 @@ Top candidates for this position:
       <section id="providers" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">🔌</span>
-          Multi-Provider LLM
+          {{ $t('caseStudies.pvcoach.providers.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            O sistema suporta 5 providers de LLM, permitindo escolher por custo, velocidade, 
-            ou preferência. Configurável via env vars ou per-request.
+            {{ $t('caseStudies.pvcoach.providers.intro') }}
           </p>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
               <h4 class="font-semibold text-cyan-400 mb-2">OpenAI</h4>
-              <p class="text-sm text-gray-400">GPT-4, GPT-3.5 — Chat Completions API.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.providers.openai') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
               <h4 class="font-semibold text-cyan-400 mb-2">Anthropic</h4>
-              <p class="text-sm text-gray-400">Claude 3.5 Sonnet, Haiku — Messages API.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.providers.anthropic') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
               <h4 class="font-semibold text-cyan-400 mb-2">Google</h4>
-              <p class="text-sm text-gray-400">Gemini 1.5 Flash, Pro — GenerativeAI.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.providers.google') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
               <h4 class="font-semibold text-cyan-400 mb-2">OpenRouter</h4>
-              <p class="text-sm text-gray-400">Proxy para múltiplos modelos — OpenAI-compatible.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.providers.openrouter') }}</p>
             </div>
           </div>
 
@@ -441,7 +417,7 @@ Top candidates for this position:
       <section id="api" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400">🔗</span>
-          API Endpoints
+          {{ $t('caseStudies.pvcoach.api.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
@@ -451,7 +427,7 @@ Top candidates for this position:
                 <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
                 <span class="font-mono text-gray-300">/api/evaluate_position</span>
               </div>
-              <p class="text-sm text-gray-400">Avaliação MultiPV pura (sem LLM). Retorna top-N candidatos com PVs e scores.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.api.evaluatePosition') }}</p>
             </div>
 
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
@@ -459,7 +435,7 @@ Top candidates for this position:
                 <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
                 <span class="font-mono text-gray-300">/api/explain_position</span>
               </div>
-              <p class="text-sm text-gray-400">Avaliação + explicação LLM grounded. Inclui warnings de validação.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.api.explainPosition') }}</p>
             </div>
 
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
@@ -467,7 +443,7 @@ Top candidates for this position:
                 <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
                 <span class="font-mono text-gray-300">/api/hints_position</span>
               </div>
-              <p class="text-sm text-gray-400">Hints progressivos (level 1-3). Level 3 pode incluir explicação.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.api.hintsPosition') }}</p>
             </div>
 
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
@@ -475,7 +451,7 @@ Top candidates for this position:
                 <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
                 <span class="font-mono text-gray-300">/api/analyze</span>
               </div>
-              <p class="text-sm text-gray-400">Baixa partidas do Lichess e analisa em batch.</p>
+              <p class="text-sm text-gray-400">{{ $t('caseStudies.pvcoach.api.analyze') }}</p>
             </div>
           </div>
         </div>
@@ -483,7 +459,7 @@ Top candidates for this position:
 
       <!-- Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Stack Técnico</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('caseStudies.common.technicalStack') }}</h2>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Python</span>
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">FastAPI</span>
@@ -501,25 +477,25 @@ Top candidates for this position:
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
-          Resultados
+          {{ $t('caseStudies.common.results') }}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-amber-400 mb-2">0</div>
-            <div class="text-gray-400">Alucinações com validação ativa</div>
+            <div class="text-gray-400">{{ $t('caseStudies.pvcoach.results.hallucinations') }}</div>
           </div>
           <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-amber-400 mb-2">5</div>
-            <div class="text-gray-400">Providers LLM suportados</div>
+            <div class="text-gray-400">{{ $t('caseStudies.pvcoach.results.providers') }}</div>
           </div>
           <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-amber-400 mb-2">Cache</div>
-            <div class="text-gray-400">TTL para avaliações e explicações</div>
+            <div class="text-gray-400">{{ $t('caseStudies.pvcoach.results.cache') }}</div>
           </div>
           <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-amber-400 mb-2">3</div>
-            <div class="text-gray-400">Níveis de hints progressivos</div>
+            <div class="text-gray-400">{{ $t('caseStudies.pvcoach.results.hintLevels') }}</div>
           </div>
         </div>
       </section>
@@ -527,8 +503,8 @@ Top candidates for this position:
       <!-- CTA -->
       <section class="border-t border-gray-800 pt-12">
         <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">Explore Outros Projetos</h2>
-          <p class="text-gray-400 mb-8">Veja outros sistemas que construí</p>
+          <h2 class="text-2xl font-bold mb-4">{{ $t('caseStudies.pvcoach.cta.title') }}</h2>
+          <p class="text-gray-400 mb-8">{{ $t('caseStudies.pvcoach.cta.subtitle') }}</p>
           <div class="flex flex-wrap justify-center gap-4">
             <NuxtLink to="/projetos/automark" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
               AutoMark Platform →
@@ -548,7 +524,7 @@ Top candidates for this position:
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-8 mt-12">
       <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
-        <p>Case Study: PVCoach — Chess Training with AI</p>
+        <p>{{ $t('caseStudies.pvcoach.footer') }}</p>
       </div>
     </footer>
   </div>
@@ -558,7 +534,7 @@ Top candidates for this position:
 useHead({
   title: 'PVCoach - Chess AI Coach | Marcelo Marleta',
   meta: [
-    { name: 'description', content: 'Case study: Coach de xadrez que combina Stockfish com LLM. MultiPV analysis, grounded explanations, progressive hints, validação anti-alucinação.' }
+    { name: 'description', content: 'Case study: Chess coach combining Stockfish with LLM. MultiPV analysis, grounded explanations, progressive hints, anti-hallucination validation.' }
   ]
 })
 </script>

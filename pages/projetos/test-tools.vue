@@ -7,9 +7,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
           </svg>
-          Voltar
+          {{ $t('cases.testTools.back') }}
         </NuxtLink>
-        <span class="text-gray-500 text-sm">Optimus AI Platform</span>
+        <span class="text-gray-500 text-sm">{{ $t('cases.testTools.platformName') }}</span>
       </div>
     </header>
 
@@ -18,40 +18,38 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
-            Quality Assurance
+            {{ $t('cases.testTools.badge') }}
           </span>
           <span class="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">
-            AI Testing
+            {{ $t('cases.testTools.badgeSecondary') }}
           </span>
         </div>
         
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          AI Testing
-          <span class="text-purple-400"> Tools</span>
+          {{ $t('cases.testTools.title') }}
+          <span class="text-purple-400"> {{ $t('cases.testTools.titleHighlight') }}</span>
         </h1>
         
         <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-          Suite completa de testes para AI conversacional: interface de simulação multi-canal, 
-          detector de alucinações, quality scorer multi-dimensional, e cenários realísticos 
-          com personalidades de cliente configuráveis.
+          {{ $t('cases.testTools.description') }}
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-purple-400">5</div>
-            <div class="text-sm text-gray-500">Analyzers</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.testTools.metrics.analyzers') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
             <div class="text-2xl font-bold text-purple-400">4</div>
-            <div class="text-sm text-gray-500">Personalidades</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.testTools.metrics.personalities') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-purple-400">Real-time</div>
-            <div class="text-sm text-gray-500">WebSocket</div>
+            <div class="text-2xl font-bold text-purple-400">{{ $t('cases.testTools.metrics.realtime') }}</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.testTools.metrics.websocket') }}</div>
           </div>
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-purple-400">Multi</div>
-            <div class="text-sm text-gray-500">Channel</div>
+            <div class="text-2xl font-bold text-purple-400">{{ $t('cases.testTools.metrics.multichannel') }}</div>
+            <div class="text-sm text-gray-500">{{ $t('cases.testTools.metrics.channel') }}</div>
           </div>
         </div>
       </div>
@@ -61,12 +59,12 @@
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <div class="flex gap-6 overflow-x-auto py-4 text-sm">
-          <a href="#problema" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">Problema</a>
-          <a href="#interface" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">Interface</a>
-          <a href="#hallucination" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">Hallucination Detector</a>
-          <a href="#quality" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">Quality Scorer</a>
-          <a href="#scenarios" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">Cenários</a>
-          <a href="#runner" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">Test Runner</a>
+          <a href="#problema" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.problem') }}</a>
+          <a href="#interface" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.interface') }}</a>
+          <a href="#hallucination" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.hallucination') }}</a>
+          <a href="#quality" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.quality') }}</a>
+          <a href="#scenarios" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.scenarios') }}</a>
+          <a href="#runner" class="text-gray-400 hover:text-purple-400 whitespace-nowrap transition-colors">{{ $t('cases.testTools.nav.runner') }}</a>
         </div>
       </div>
     </nav>
@@ -78,41 +76,38 @@
       <section id="problema" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
-          O Problema
+          {{ $t('cases.testTools.problem.title') }}
         </h2>
         
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-4">
-            Testar sistemas de AI conversacional é fundamentalmente diferente de testar software 
-            tradicional. Outputs são probabilísticos, contexto importa, e "correto" é subjetivo.
+            {{ $t('cases.testTools.problem.description') }}
           </p>
           
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
-            <h4 class="text-lg font-semibold text-gray-200 mb-4">Desafios Específicos de AI Testing</h4>
+            <h4 class="text-lg font-semibold text-gray-200 mb-4">{{ $t('cases.testTools.problem.challengesTitle') }}</h4>
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Alucinações:</strong> AI inventa informações que parecem plausíveis mas são falsas. Em contexto médico/dental, isso é perigoso.</span>
+                <span><strong class="text-gray-200">Hallucinations:</strong> {{ $t('cases.testTools.problem.challenges.hallucinations') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Consistência:</strong> Mesma pergunta pode gerar respostas diferentes. Como testar isso?</span>
+                <span><strong class="text-gray-200">Consistency:</strong> {{ $t('cases.testTools.problem.challenges.consistency') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Contexto multi-turno:</strong> Resposta do turno 5 depende dos turnos 1-4. Testes isolados não capturam isso.</span>
+                <span><strong class="text-gray-200">Multi-turn context:</strong> {{ $t('cases.testTools.problem.challenges.multiTurn') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-red-400 mt-1">✗</span>
-                <span><strong class="text-gray-200">Subjetividade:</strong> "Resposta boa" depende de tom, empatia, completude — métricas difíceis de quantificar.</span>
+                <span><strong class="text-gray-200">Subjectivity:</strong> {{ $t('cases.testTools.problem.challenges.subjectivity') }}</span>
               </li>
             </ul>
           </div>
 
           <p class="text-gray-300 leading-relaxed">
-            A solução foi criar uma suite de ferramentas especializadas: interface de simulação 
-            para testes manuais, analyzers automáticos para detecção de problemas, e um framework 
-            de cenários realísticos para testes de regressão.
+            {{ $t('cases.testTools.problem.solution') }}
           </p>
         </div>
       </section>
@@ -121,32 +116,30 @@
       <section id="interface" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">🎭</span>
-          Interface de Simulação
+          {{ $t('cases.testTools.interface.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Interface web Flask + SocketIO para testes manuais interativos. Simula diferentes 
-            canais (WhatsApp, Web, API) com headers corretos, gerencia handover, e mostra 
-            métricas em tempo real.
+            {{ $t('cases.testTools.interface.description') }}
           </p>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">🎭 Channel Profiles</h4>
-              <p class="text-sm text-gray-400">WhatsApp, Web, API — cada um com headers específicos (X-Request-Source).</p>
+              <h4 class="font-semibold text-purple-400 mb-2">🎭 {{ $t('cases.testTools.interface.features.channelProfiles.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.channelProfiles.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">🤝 Handover Management</h4>
-              <p class="text-sm text-gray-400">Takeover, Return to AI, Operator Messages — testa fluxo completo.</p>
+              <h4 class="font-semibold text-purple-400 mb-2">🤝 {{ $t('cases.testTools.interface.features.handover.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.handover.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">📱 Multi-Session</h4>
-              <p class="text-sm text-gray-400">Múltiplas sessões simultâneas para simular carga.</p>
+              <h4 class="font-semibold text-purple-400 mb-2">📱 {{ $t('cases.testTools.interface.features.multiSession.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.multiSession.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-400 mb-2">⚡ Real-time</h4>
-              <p class="text-sm text-gray-400">WebSocket para feedback instantâneo de respostas.</p>
+              <h4 class="font-semibold text-purple-400 mb-2">⚡ {{ $t('cases.testTools.interface.features.realtime.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.interface.features.realtime.description') }}</p>
             </div>
           </div>
 
@@ -183,24 +176,24 @@ def _get_channel_headers(self, session: TestSession, sender_type: str):
     return headers</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Test Scenarios Pré-definidos</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.interface.scenariosTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Cenários Built-in</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Built-in Scenarios</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">scenarios = [
     TestScenario(
-        name="Saudação Básica",
-        messages=["Olá!", "Meu nome é João Silva", "Gostaria de agendar"],
+        name="Basic Greeting",
+        messages=["Hello!", "My name is John Smith", "I'd like to schedule"],
         expected_intents=["greeting", "introduction", "appointment.request"]
     ),
     TestScenario(
-        name="Emergência Dental",
-        messages=["Socorro! Dor de dente!", "A dor é muito forte"],
+        name="Dental Emergency",
+        messages=["Help! Toothache!", "The pain is very intense"],
         expected_intents=["emergency.dental", "emergency.pain"]
     ),
     TestScenario(
-        name="Cancelamento",
-        messages=["Preciso cancelar minha consulta", "É para amanhã às 14h"],
+        name="Cancellation",
+        messages=["I need to cancel my appointment", "It's for tomorrow at 2pm"],
         expected_intents=["appointment.cancel", "appointment.details"]
     ),
 ]</code></pre>
@@ -212,13 +205,12 @@ def _get_channel_headers(self, session: TestSession, sender_type: str):
       <section id="hallucination" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">🚨</span>
-          Hallucination Detector
+          {{ $t('cases.testTools.hallucination.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Detecta alucinações e erros factuais em respostas. Crítico para contexto médico/dental 
-            onde informações falsas podem causar danos reais.
+            {{ $t('cases.testTools.hallucination.description') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
@@ -246,47 +238,47 @@ class HallucinationAnalysisResult:
     warnings: List[str]</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Tipos de Alucinação Detectados</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.hallucination.typesTitle') }}</h3>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-red-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">factual_error</h4>
-              <p class="text-sm text-gray-400">Informação contradiz fatos conhecidos (ex: "limpeza custa R$5000").</p>
+              <h4 class="font-semibold text-red-400 mb-2">{{ $t('cases.testTools.hallucination.types.factualError.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.factualError.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-orange-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-orange-400 mb-2">invented_info</h4>
-              <p class="text-sm text-gray-400">AI inventa detalhes específicos não fornecidos (ex: nome do dentista).</p>
+              <h4 class="font-semibold text-orange-400 mb-2">{{ $t('cases.testTools.hallucination.types.inventedInfo.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.inventedInfo.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-yellow-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-yellow-400 mb-2">impossible_claim</h4>
-              <p class="text-sm text-gray-400">Afirmações logicamente impossíveis (ex: "consulta de 5 minutos").</p>
+              <h4 class="font-semibold text-yellow-400 mb-2">{{ $t('cases.testTools.hallucination.types.impossibleClaim.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.impossibleClaim.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-red-500/30 rounded-lg p-4">
-              <h4 class="font-semibold text-red-400 mb-2">medical_misinformation</h4>
-              <p class="text-sm text-gray-400">Informações médicas incorretas ou perigosas.</p>
+              <h4 class="font-semibold text-red-400 mb-2">{{ $t('cases.testTools.hallucination.types.medicalMisinfo.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.hallucination.types.medicalMisinfo.description') }}</p>
             </div>
           </div>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Knowledge Base para Validação</div>
-            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Fatos dentais conhecidos para validação
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.testTools.hallucination.knowledgeBaseTitle') }}</div>
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300"># Known dental facts for validation
 dental_facts = {
     "pricing": {
         "ranges": {
-            "consulta": (50, 300),      # R$50-300 é plausível
-            "limpeza": (80, 250),
-            "canal": (300, 1500),
-            "implante": (1500, 5000),
+            "consultation": (50, 300),      # $50-300 is plausible
+            "cleaning": (80, 250),
+            "root_canal": (300, 1500),
+            "implant": (1500, 5000),
         }
     },
     "timing": {
-        "consultation": "30-60 minutos",
-        "cleaning": "45-90 minutos",
-        "root_canal": "60-120 minutos",
+        "consultation": "30-60 minutes",
+        "cleaning": "45-90 minutes",
+        "root_canal": "60-120 minutes",
     },
     "medical_constraints": [
-        "diagnóstico apenas com exame clínico",
-        "receita apenas por dentista",
+        "diagnosis only with clinical exam",
+        "prescription only by dentist",
     ]
 }</code></pre>
           </div>
@@ -297,13 +289,12 @@ dental_facts = {
       <section id="quality" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">📊</span>
-          Quality Scorer
+          {{ $t('cases.testTools.quality.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Avalia qualidade de respostas em múltiplas dimensões. Não é só "certo ou errado" — 
-            é readability, relevância, empatia, completude, tom.
+            {{ $t('cases.testTools.quality.description') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
@@ -313,55 +304,55 @@ class QualityMetrics:
     """Quality metrics for an AI response."""
     overall_score: float        # 0.0 - 1.0
     readability_score: float    # Flesch-Kincaid
-    relevance_score: float      # Responde a pergunta?
-    helpfulness_score: float    # Ajuda o usuário?
-    accuracy_score: float       # Informações corretas?
-    completeness_score: float   # Resposta completa?
-    tone_score: float           # Tom apropriado?
-    safety_score: float         # Seguro para o contexto?
+    relevance_score: float      # Does it answer the question?
+    helpfulness_score: float    # Does it help the user?
+    accuracy_score: float       # Correct information?
+    completeness_score: float   # Complete response?
+    tone_score: float           # Appropriate tone?
+    safety_score: float         # Safe for the context?
     warnings: List[str]
     recommendations: List[str]</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Dimensões de Qualidade</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.quality.dimensionsTitle') }}</h3>
 
           <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
             <ul class="space-y-3 text-gray-400">
               <li class="flex items-start gap-3">
                 <span class="text-green-400 font-bold">Readability</span>
-                <span>Flesch-Kincaid grade level. Respostas devem ser acessíveis ao público geral.</span>
+                <span>{{ $t('cases.testTools.quality.dimensions.readability') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 font-bold">Empathy</span>
-                <span>Detecta indicadores de empatia: "entendo", "compreendo", "lamento".</span>
+                <span>{{ $t('cases.testTools.quality.dimensions.empathy') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 font-bold">Call-to-Action</span>
-                <span>Resposta leva a próximo passo? "agendar", "ligar", "visitar".</span>
+                <span>{{ $t('cases.testTools.quality.dimensions.callToAction') }}</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-green-400 font-bold">Professional Language</span>
-                <span>Uso de termos profissionais: "consulta", "tratamento", "procedimento".</span>
+                <span>{{ $t('cases.testTools.quality.dimensions.professionalLanguage') }}</span>
               </li>
             </ul>
           </div>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Quality Detractors (reduzem score)</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">{{ $t('cases.testTools.quality.detractorsTitle') }}</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">quality_detractors = {
     "vague_responses": [
-        r"\btalvez\b",
-        r"\bpossível\b",
-        r"\bdepende\b",  # Sem contexto adicional
+        r"\bmaybe\b",
+        r"\bpossible\b",
+        r"\bdepends\b",  # Without additional context
     ],
     "overpromising": [
-        r"\bgarantido\b",
-        r"\bsem dor\b",
+        r"\bguaranteed\b",
+        r"\bpainless\b",
         r"\b100%\b",
     ],
     "unprofessional": [
-        r"\bgíria\b",
-        r"\bemoji excessivo\b",
+        r"\bslang\b",
+        r"\bexcessive emoji\b",
     ]
 }</code></pre>
           </div>
@@ -372,30 +363,29 @@ class QualityMetrics:
       <section id="scenarios" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">🎭</span>
-          Cenários Realísticos
+          {{ $t('cases.testTools.scenarios.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Geração de cenários de teste com diferentes níveis de complexidade e personalidades 
-            de cliente. Permite testar edge cases e regressões de forma sistemática.
+            {{ $t('cases.testTools.scenarios.description') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
             <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">suites/integration/test_realistic_scenarios.py</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">class ScenarioComplexity(Enum):
-    SIMPLE = "simple"       # 2-3 turnos, intent direto
-    MEDIUM = "medium"       # 4-6 turnos, mudança de contexto
-    COMPLEX = "complex"     # 7+ turnos, handover, edge cases
+    SIMPLE = "simple"       # 2-3 turns, direct intent
+    MEDIUM = "medium"       # 4-6 turns, context change
+    COMPLEX = "complex"     # 7+ turns, handover, edge cases
 
 class CustomerPersonality(Enum):
-    POLITE = "polite"       # Educado, segue fluxo
-    URGENT = "urgent"       # Pressa, interrompe
-    CONFUSED = "confused"   # Perguntas vagas, muda de assunto
-    DETAILED = "detailed"   # Muitas perguntas específicas
-    ANXIOUS = "anxious"     # Preocupado, precisa de reassurance
+    POLITE = "polite"       # Polite, follows flow
+    URGENT = "urgent"       # In a hurry, interrupts
+    CONFUSED = "confused"   # Vague questions, changes subject
+    DETAILED = "detailed"   # Many specific questions
+    ANXIOUS = "anxious"     # Worried, needs reassurance
 
-# Uso
+# Usage
 scenario = generator.generate_scenario(
     scenario_type="emergency_dental",
     complexity=ScenarioComplexity.COMPLEX,
@@ -403,10 +393,10 @@ scenario = generator.generate_scenario(
 )</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Validações por Cenário</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.scenarios.validationsTitle') }}</h3>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
-            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Assertions de Cenário</div>
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Scenario Assertions</div>
             <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">def test_complex_emergency_scenario(self):
     """Test complex emergency dental scenario."""
     scenario = generator.generate_scenario(
@@ -419,8 +409,8 @@ scenario = generator.generate_scenario(
         results = self._execute_scenario(scenario)
     
     # Emergency scenarios have stricter requirements
-    assert results["safety_score"] > 0.9      # MUITO alto
-    assert results["empathy_score"] > 0.7     # Deve mostrar empatia
+    assert results["safety_score"] > 0.9      # VERY high
+    assert results["empathy_score"] > 0.7     # Must show empathy
     assert results["avg_response_time"] < 3000  # &lt;3s
     assert len(results["critical_errors"]) == 0</code></pre>
           </div>
@@ -431,13 +421,12 @@ scenario = generator.generate_scenario(
       <section id="runner" class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">🏃</span>
-          Test Suite Runner
+          {{ $t('cases.testTools.runner.title') }}
         </h2>
 
         <div class="prose prose-invert max-w-none">
           <p class="text-gray-300 leading-relaxed mb-6">
-            Orquestrador de testes com suporte a paralelização, coverage, e relatórios HTML. 
-            Integra com pytest e oferece CLI rica via Rich.
+            {{ $t('cases.testTools.runner.description') }}
           </p>
 
           <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
@@ -474,24 +463,24 @@ scenario = generator.generate_scenario(
         return subprocess.run(cmd)</code></pre>
           </div>
 
-          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Custom Pytest Markers</h3>
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">{{ $t('cases.testTools.runner.markersTitle') }}</h3>
 
           <div class="grid md:grid-cols-2 gap-4 my-6">
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">@pytest.mark.slow</h4>
-              <p class="text-sm text-gray-400">Testes lentos, skipped por default. Use --runslow para incluir.</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.slow.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.slow.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">@pytest.mark.integration</h4>
-              <p class="text-sm text-gray-400">Testes que precisam de services rodando.</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.integration.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.integration.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">@pytest.mark.ai_quality</h4>
-              <p class="text-sm text-gray-400">Testes de qualidade de AI (hallucination, quality score).</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.aiQuality.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.aiQuality.description') }}</p>
             </div>
             <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
-              <h4 class="font-semibold text-cyan-400 mb-2">@pytest.mark.security</h4>
-              <p class="text-sm text-gray-400">Testes de segurança (SQL injection, XSS).</p>
+              <h4 class="font-semibold text-cyan-400 mb-2">{{ $t('cases.testTools.runner.markers.security.title') }}</h4>
+              <p class="text-sm text-gray-400">{{ $t('cases.testTools.runner.markers.security.description') }}</p>
             </div>
           </div>
         </div>
@@ -499,7 +488,7 @@ scenario = generator.generate_scenario(
 
       <!-- Stack -->
       <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-6">Stack Técnico</h2>
+        <h2 class="text-2xl font-bold mb-6">{{ $t('cases.testTools.techStack') }}</h2>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Python 3.12</span>
           <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Flask</span>
@@ -517,25 +506,25 @@ scenario = generator.generate_scenario(
       <section class="mb-16">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
           <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
-          Resultados
+          {{ $t('cases.testTools.results.title') }}
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-purple-400 mb-2">5</div>
-            <div class="text-gray-400">Analyzers especializados</div>
+            <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.analyzers') }}</div>
           </div>
           <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-purple-400 mb-2">100%</div>
-            <div class="text-gray-400">Cobertura de cenários críticos</div>
+            <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.coverage') }}</div>
           </div>
           <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-purple-400 mb-2">&lt;0.1%</div>
-            <div class="text-gray-400">Alucinações em produção</div>
+            <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.hallucinations') }}</div>
           </div>
           <div class="bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-lg p-6">
             <div class="text-3xl font-bold text-purple-400 mb-2">Real-time</div>
-            <div class="text-gray-400">Feedback via WebSocket</div>
+            <div class="text-gray-400">{{ $t('cases.testTools.results.metrics.realtime') }}</div>
           </div>
         </div>
       </section>
@@ -543,8 +532,8 @@ scenario = generator.generate_scenario(
       <!-- CTA -->
       <section class="border-t border-gray-800 pt-12">
         <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">Explore Outros Case Studies</h2>
-          <p class="text-gray-400 mb-8">Veja como outros componentes do Optimus foram construídos</p>
+          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.testTools.cta.title') }}</h2>
+          <p class="text-gray-400 mb-8">{{ $t('cases.testTools.cta.description') }}</p>
           <div class="flex flex-wrap justify-center gap-4">
             <NuxtLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
               AI Conversation Engine →
@@ -564,17 +553,19 @@ scenario = generator.generate_scenario(
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-8 mt-12">
       <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
-        <p>Case Study: AI Testing Tools — Optimus AI Platform</p>
+        <p>{{ $t('cases.testTools.footer') }}</p>
       </div>
     </footer>
   </div>
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'AI Testing Tools - Optimus AI | Marcelo Marleta',
+  title: t('cases.testTools.meta.title'),
   meta: [
-    { name: 'description', content: 'Case study: Suite de testes para AI conversacional com hallucination detector, quality scorer, cenários realísticos e interface de simulação multi-canal.' }
+    { name: 'description', content: t('cases.testTools.meta.description') }
   ]
 })
 </script>
