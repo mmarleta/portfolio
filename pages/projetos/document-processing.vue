@@ -188,14 +188,16 @@
       </section>
 
       <!-- CTA -->
-      <div class="text-center pt-8 border-t border-gray-800">
-        <NuxtLink 
-          to="/projetos/mcp-servers" 
-          class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
-        >
-          {{ $t('cases.documentProcessing.cta.next') }}
-        </NuxtLink>
-      </div>
+      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+        <template #actions>
+          <LocaleLink 
+            to="/projetos/mcp-servers" 
+            class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
+          >
+            {{ $t('cases.documentProcessing.cta.next') }}
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
     </main>
   </div>
 </template>

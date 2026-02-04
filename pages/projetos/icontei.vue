@@ -846,13 +846,16 @@ async def update_rankings(self, period: str = "24h") -> dict:
     </section>
 
     <!-- CTA -->
-    <section class="py-20 border-t border-gray-800">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">{{ $t('cases.icontei.cta.title') }}</h2>
-        <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-          {{ $t('cases.icontei.cta.description') }}
-        </p>
-        <NuxtLink 
+    <ProjectCTA
+      title-key="cases.icontei.cta.title"
+      description-key="cases.icontei.cta.description"
+      section-class="py-20 border-t border-gray-800"
+      container-class="container mx-auto px-6 text-center"
+      title-class="text-3xl font-bold text-white mb-6"
+      description-class="text-gray-400 mb-8 max-w-2xl mx-auto"
+    >
+      <template #actions>
+        <LocaleLink 
           to="/" 
           class="inline-flex items-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
         >
@@ -860,9 +863,9 @@ async def update_rankings(self, period: str = "24h") -> dict:
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
-        </NuxtLink>
-      </div>
-    </section>
+        </LocaleLink>
+      </template>
+    </ProjectCTA>
   </div>
 </template>
 

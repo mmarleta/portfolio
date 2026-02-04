@@ -773,23 +773,25 @@ retry_policy = RetryPolicy(
       </section>
 
       <!-- CTA -->
-      <section class="border-t border-gray-800 pt-12">
-        <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.aiEngine.cta.title') }}</h2>
-          <p class="text-gray-400 mb-8">{{ $t('cases.aiEngine.cta.description') }}</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <NuxtLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              {{ $t('cases.aiEngine.cta.rulesEngine') }}
-            </NuxtLink>
-            <NuxtLink to="/projetos/memory-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              {{ $t('cases.aiEngine.cta.memoryEngine') }}
-            </NuxtLink>
-            <NuxtLink to="/projetos/llm-pool-management" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              {{ $t('cases.aiEngine.cta.llmPool') }}
-            </NuxtLink>
-          </div>
-        </div>
-      </section>
+      <ProjectCTA
+        title-key="cases.aiEngine.cta.title"
+        description-key="cases.aiEngine.cta.description"
+        section-class="border-t border-gray-800 pt-12"
+        container-class="text-center"
+        title-class="text-2xl font-bold mb-4"
+      >
+        <template #actions>
+          <LocaleLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            {{ $t('cases.aiEngine.cta.rulesEngine') }}
+          </LocaleLink>
+          <LocaleLink to="/projetos/memory-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            {{ $t('cases.aiEngine.cta.memoryEngine') }}
+          </LocaleLink>
+          <LocaleLink to="/projetos/llm-pool-management" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            {{ $t('cases.aiEngine.cta.llmPool') }}
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
 
     </main>
 

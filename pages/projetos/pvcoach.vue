@@ -450,23 +450,25 @@ Top candidates for this position:
       </section>
 
       <!-- CTA -->
-      <section class="border-t border-gray-800 pt-12">
-        <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.pvcoach.cta.title') }}</h2>
-          <p class="text-gray-400 mb-8">{{ $t('cases.pvcoach.cta.subtitle') }}</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <NuxtLink to="/projetos/automark" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              AutoMark Platform →
-            </NuxtLink>
-            <NuxtLink to="/projetos/feed-rss" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Feed-RSS Monitor →
-            </NuxtLink>
-            <NuxtLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              AI Conversation Engine →
-            </NuxtLink>
-          </div>
-        </div>
-      </section>
+      <ProjectCTA
+        title-key="cases.pvcoach.cta.title"
+        description-key="cases.pvcoach.cta.subtitle"
+        section-class="border-t border-gray-800 pt-12"
+        container-class="text-center"
+        title-class="text-2xl font-bold mb-4"
+      >
+        <template #actions>
+          <LocaleLink to="/projetos/automark" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            AutoMark Platform →
+          </LocaleLink>
+          <LocaleLink to="/projetos/feed-rss" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Feed-RSS Monitor →
+          </LocaleLink>
+          <LocaleLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            AI Conversation Engine →
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
 
     </main>
 

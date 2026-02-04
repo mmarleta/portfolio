@@ -600,23 +600,25 @@ high_commission: commission > 20% → -1.0</code></pre>
       </section>
 
       <!-- CTA -->
-      <section class="border-t border-gray-800 pt-12">
-        <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.automark.cta.title') }}</h2>
-          <p class="text-gray-400 mb-8">{{ $t('cases.automark.cta.description') }}</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <NuxtLink to="/projetos/feed-rss" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Feed-RSS Monitor →
-            </NuxtLink>
-            <NuxtLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              AI Conversation Engine →
-            </NuxtLink>
-            <NuxtLink to="/projetos/whatsapp-integration" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              WhatsApp Integration →
-            </NuxtLink>
-          </div>
-        </div>
-      </section>
+      <ProjectCTA
+        title-key="cases.automark.cta.title"
+        description-key="cases.automark.cta.description"
+        section-class="border-t border-gray-800 pt-12"
+        container-class="text-center"
+        title-class="text-2xl font-bold mb-4"
+      >
+        <template #actions>
+          <LocaleLink to="/projetos/feed-rss" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Feed-RSS Monitor →
+          </LocaleLink>
+          <LocaleLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            AI Conversation Engine →
+          </LocaleLink>
+          <LocaleLink to="/projetos/whatsapp-integration" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            WhatsApp Integration →
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
 
     </main>
 

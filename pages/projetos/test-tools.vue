@@ -479,23 +479,25 @@ scenario = generator.generate_scenario(
       </section>
 
       <!-- CTA -->
-      <section class="border-t border-gray-800 pt-12">
-        <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.testTools.cta.title') }}</h2>
-          <p class="text-gray-400 mb-8">{{ $t('cases.testTools.cta.description') }}</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <NuxtLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              AI Conversation Engine →
-            </NuxtLink>
-            <NuxtLink to="/projetos/observability" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Observability Stack →
-            </NuxtLink>
-            <NuxtLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Rules Engine →
-            </NuxtLink>
-          </div>
-        </div>
-      </section>
+      <ProjectCTA
+        title-key="cases.testTools.cta.title"
+        description-key="cases.testTools.cta.description"
+        section-class="border-t border-gray-800 pt-12"
+        container-class="text-center"
+        title-class="text-2xl font-bold mb-4"
+      >
+        <template #actions>
+          <LocaleLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            AI Conversation Engine →
+          </LocaleLink>
+          <LocaleLink to="/projetos/observability" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Observability Stack →
+          </LocaleLink>
+          <LocaleLink to="/projetos/rules-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Rules Engine →
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
 
     </main>
 

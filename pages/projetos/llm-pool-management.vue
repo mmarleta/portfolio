@@ -321,14 +321,16 @@ Pool: "gpt4o-mini-chat"
       </section>
 
       <!-- CTA -->
-      <div class="text-center pt-8 border-t border-gray-800">
-        <NuxtLink 
-          to="/projetos/ai-engine" 
-          class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-600 hover:bg-yellow-500 rounded-lg transition-colors"
-        >
-          {{ $t('cases.llmPool.nextProject') }}
-        </NuxtLink>
-      </div>
+      <ProjectCTA section-class="pt-8 border-t border-gray-800" container-class="text-center" actions-class="flex justify-center">
+        <template #actions>
+          <LocaleLink 
+            to="/projetos/ai-engine" 
+            class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-600 hover:bg-yellow-500 rounded-lg transition-colors"
+          >
+            {{ $t('cases.llmPool.nextProject') }}
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
     </main>
   </div>
 </template>

@@ -641,14 +641,10 @@ except Exception:
     </section>
 
     <!-- CTA -->
-    <section class="py-16 border-t border-gray-800">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4">{{ $t('cases.audio.cta.title') }}</h2>
-        <p class="text-gray-400 mb-8">
-          {{ $t('cases.audio.cta.description') }}
-        </p>
-        <a 
-          href="mailto:marcelomarleta@gmail.com" 
+    <ProjectCTA title-key="cases.audio.cta.title" description-key="cases.audio.cta.description">
+      <template #actions>
+        <a
+          :href="`mailto:${SITE.contactEmail}`"
           class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-lg transition-colors"
         >
           {{ $t('cases.audio.cta.contact') }}
@@ -656,13 +652,14 @@ except Exception:
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-      </div>
-    </section>
+      </template>
+    </ProjectCTA>
   </div>
 </template>
 
 <script setup>
 import { heroGradientBySlug } from '~/data/project-heroes'
+import { SITE } from '~/data/site'
 
 const heroConfig = heroGradientBySlug.audioProcessor
 const { t } = useI18n()

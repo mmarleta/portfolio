@@ -784,23 +784,25 @@ docker exec optimus_redis_8_production redis-cli info memory</code></pre>
       </section>
 
       <!-- CTA -->
-      <section class="border-t border-gray-800 pt-12">
-        <div class="text-center">
-          <h2 class="text-2xl font-bold mb-4">{{ $t('cases.infraDevops.cta.title') }}</h2>
-          <p class="text-gray-400 mb-8">{{ $t('cases.infraDevops.cta.description') }}</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <NuxtLink to="/projetos/observability" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Observability Stack →
-            </NuxtLink>
-            <NuxtLink to="/projetos/backend-orchestrator" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Backend Orchestrator →
-            </NuxtLink>
-            <NuxtLink to="/projetos/memory-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
-              Memory Engine →
-            </NuxtLink>
-          </div>
-        </div>
-      </section>
+      <ProjectCTA
+        title-key="cases.infraDevops.cta.title"
+        description-key="cases.infraDevops.cta.description"
+        section-class="border-t border-gray-800 pt-12"
+        container-class="text-center"
+        title-class="text-2xl font-bold mb-4"
+      >
+        <template #actions>
+          <LocaleLink to="/projetos/observability" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Observability Stack →
+          </LocaleLink>
+          <LocaleLink to="/projetos/backend-orchestrator" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Backend Orchestrator →
+          </LocaleLink>
+          <LocaleLink to="/projetos/memory-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+            Memory Engine →
+          </LocaleLink>
+        </template>
+      </ProjectCTA>
 
     </main>
 
