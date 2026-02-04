@@ -176,6 +176,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- Observability -->
+              <NuxtLink 
+                to="/projetos/observability" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-green-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">📊</span>
+                  <span class="text-xs text-gray-600 group-hover:text-green-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-green-400 transition-colors">
+                  Observability Stack
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Métricas de negócio, tracing distribuído, token cost tracking, 
+                  RAG decision telemetry e state snapshots para debug.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Prometheus</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">OpenTelemetry</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Jaeger</span>
+                </div>
+              </NuxtLink>
+
               <!-- Document Processing -->
               <NuxtLink 
                 to="/projetos/document-processing" 
