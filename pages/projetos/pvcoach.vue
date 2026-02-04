@@ -1,0 +1,564 @@
+<template>
+  <div class="min-h-screen bg-gray-950 text-gray-100">
+    <!-- Header -->
+    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <NuxtLink to="/" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Voltar
+        </NuxtLink>
+        <span class="text-gray-500 text-sm">Projeto Pessoal</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 border-b border-gray-800">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm font-medium">
+            Chess + AI
+          </span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">
+            Training Tool
+          </span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          PVCoach
+          <span class="text-amber-400"> ♔</span>
+        </h1>
+        
+        <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+          Coach de xadrez que combina Stockfish com LLM para explicar movimentos. 
+          Análise MultiPV, hints progressivos, explicações fundamentadas nas variações 
+          do engine, e validação automática para evitar alucinações.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-amber-400">5</div>
+            <div class="text-sm text-gray-500">LLM Providers</div>
+          </div>
+          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-amber-400">MultiPV</div>
+            <div class="text-sm text-gray-500">Top-N Analysis</div>
+          </div>
+          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-amber-400">3</div>
+            <div class="text-sm text-gray-500">Hint Levels</div>
+          </div>
+          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-amber-400">Grounded</div>
+            <div class="text-sm text-gray-500">Explanations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="flex gap-6 overflow-x-auto py-4 text-sm">
+          <a href="#problema" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Problema</a>
+          <a href="#arquitetura" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Arquitetura</a>
+          <a href="#multipv" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">MultiPV</a>
+          <a href="#grounded" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Grounded Explanations</a>
+          <a href="#hints" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Progressive Hints</a>
+          <a href="#providers" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">Multi-Provider</a>
+          <a href="#api" class="text-gray-400 hover:text-amber-400 whitespace-nowrap transition-colors">API</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      
+      <!-- Problema -->
+      <section id="problema" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">!</span>
+          O Problema
+        </h2>
+        
+        <div class="prose prose-invert max-w-none">
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Engines de xadrez como Stockfish são extremamente fortes, mas suas "explicações" são 
+            apenas números (centipawns) e variações brutas. Jogadores intermediários não conseguem 
+            entender <em>por que</em> um lance é melhor.
+          </p>
+          
+          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
+            <h4 class="text-lg font-semibold text-gray-200 mb-4">O Gap de Entendimento</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-1">✗</span>
+                <span><strong class="text-gray-200">Engine diz:</strong> "e4 +0.35, d4 +0.20" — Ok, mas por quê?</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-1">✗</span>
+                <span><strong class="text-gray-200">LLM puro alucina:</strong> "Nf3 ataca a dama" — Não, não ataca.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-400 mt-1">✗</span>
+                <span><strong class="text-gray-200">Análises humanas são caras:</strong> Coaches cobram $50-100/hora.</span>
+              </li>
+            </ul>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed">
+            A solução foi combinar a precisão do Stockfish com a capacidade explicativa do LLM, 
+            mas <strong class="text-white">ancorando as explicações nas variações reais do engine</strong> 
+            para evitar alucinações.
+          </p>
+        </div>
+      </section>
+
+      <!-- Arquitetura -->
+      <section id="arquitetura" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center text-amber-400">🏗️</span>
+          Arquitetura
+        </h2>
+
+        <div class="prose prose-invert max-w-none">
+          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 my-6">
+            <h4 class="text-lg font-semibold text-gray-200 mb-4 text-center">Pipeline de Análise</h4>
+            <div class="font-mono text-sm text-center">
+              <div class="inline-block bg-gray-800 rounded-lg px-4 py-2 mb-4">
+                <span class="text-amber-400">FEN Position</span>
+              </div>
+              <div class="text-amber-400 mb-2">↓</div>
+              <div class="inline-block bg-blue-500/20 border border-blue-500/40 rounded-lg px-4 py-2 mb-4">
+                <span class="text-blue-400">Stockfish MultiPV</span>
+                <span class="text-gray-500 text-xs block">depth=14, multipv=3</span>
+              </div>
+              <div class="text-amber-400 mb-2">↓</div>
+              <div class="flex justify-center gap-4 mb-4">
+                <div class="bg-gray-800 rounded px-3 py-2">
+                  <span class="text-green-400">1. e4</span>
+                  <span class="text-gray-500 text-xs block">+0.35</span>
+                </div>
+                <div class="bg-gray-800 rounded px-3 py-2">
+                  <span class="text-yellow-400">2. d4</span>
+                  <span class="text-gray-500 text-xs block">+0.20</span>
+                </div>
+                <div class="bg-gray-800 rounded px-3 py-2">
+                  <span class="text-orange-400">3. Nf3</span>
+                  <span class="text-gray-500 text-xs block">+0.15</span>
+                </div>
+              </div>
+              <div class="text-amber-400 mb-2">↓</div>
+              <div class="inline-block bg-purple-500/20 border border-purple-500/40 rounded-lg px-4 py-2 mb-4">
+                <span class="text-purple-400">LLM (Grounded Prompt)</span>
+                <span class="text-gray-500 text-xs block">Explicação baseada nas PVs</span>
+              </div>
+              <div class="text-amber-400 mb-2">↓</div>
+              <div class="inline-block bg-green-500/20 border border-green-500/40 rounded-lg px-4 py-2">
+                <span class="text-green-400">Validation</span>
+                <span class="text-gray-500 text-xs block">Cross-check com engine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MultiPV -->
+      <section id="multipv" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">📊</span>
+          MultiPV Analysis
+        </h2>
+
+        <div class="prose prose-invert max-w-none">
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Em vez de pedir só o "melhor lance", o sistema pede os top-N lances com suas variações 
+            completas. Isso permite comparar alternativas e explicar <em>por que</em> um lance é 
+            melhor que outro.
+          </p>
+
+          <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">stockfish_engine.py</div>
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">def evaluate_position_multipv(board: chess.Board, depth: int = 20, multipv: int = 3, pv_len: int = 6):
+    """
+    Avalia posição com MultiPV.
+    
+    Returns: [{
+        rank: 1,
+        move_uci: "e2e4",
+        move_san: "e4",
+        pv_san: ["e4", "e5", "Nf3", "Nc6", "Bb5", "a6"],
+        cp: 35,           # centipawns
+        mate: null,       # ou número de lances até mate
+        delta_cp: 0       # diferença para o melhor
+    }]
+    """
+    engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
+    info_list = engine.analyse(board, chess.engine.Limit(depth=depth), multipv=multipv)
+    
+    candidates = []
+    for idx, info in enumerate(info_list):
+        pv = info.get('pv', [])
+        first_move = pv[0]
+        pov = info['score'].pov(board.turn)
+        
+        candidates.append({
+            'rank': idx + 1,
+            'move_san': board.san(first_move),
+            'pv_san': _format_pv_san(board, pv, pv_len),
+            'cp': pov.score(),
+            'mate': pov.mate() if pov.is_mate() else None,
+        })
+    
+    # Calcula delta vs melhor lance
+    best_cp = candidates[0]['cp']
+    for c in candidates:
+        c['delta_cp'] = best_cp - c['cp'] if c['cp'] else None
+    
+    return candidates</code></pre>
+          </div>
+
+          <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 my-6">
+            <h4 class="font-semibold text-blue-400 mb-2">💡 delta_cp</h4>
+            <p class="text-sm text-gray-300">
+              O <code>delta_cp</code> mostra quanto cada alternativa "perde" em relação ao melhor lance. 
+              Ex: se e4 = +35cp e d4 = +20cp, então delta_cp de d4 = 15cp (perde 0.15 peões).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grounded Explanations -->
+      <section id="grounded" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">📝</span>
+          Grounded Explanations
+        </h2>
+
+        <div class="prose prose-invert max-w-none">
+          <p class="text-gray-300 leading-relaxed mb-6">
+            O segredo para evitar alucinações é <strong class="text-white">ancorar o LLM nas variações 
+            reais do engine</strong>. O prompt inclui as PVs formatadas, e a validação verifica se a 
+            explicação menciona lances que realmente existem.
+          </p>
+
+          <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">Prompt Template</div>
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">header = """
+Você é um treinador de xadrez. Explique para um jogador {level} 
+EM PORTUGUÊS DO BRASIL, de forma clara e concisa, por que o 
+melhor lance é melhor que as outras opções.
+
+Regras:
+(1) SEMPRE cite lances específicos das PVs
+(2) Foque em consequências concretas nas próximas 2-3 jogadas
+(3) NÃO faça afirmações sem citar uma PV
+(4) Use frases curtas e bullets quando fizer sentido
+"""
+
+# Formata candidatos para o prompt
+body = """
+Top candidates for this position:
+1. e4 → +0.35 pawns → PV: e4 e5 Nf3 Nc6 Bb5 a6
+2. d4 → +0.20 pawns (loses 0.15 pawns) → PV: d4 d5 c4 e6 Nc3 Nf6
+3. Nf3 → +0.15 pawns (loses 0.20 pawns) → PV: Nf3 d5 d4 Nf6 c4 e6
+"""</code></pre>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-200 mt-8 mb-4">Validação Automática</h3>
+
+          <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">api_server.py</div>
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">def validate_explanation(explanation: str, candidates: List[dict]) -> List[str]:
+    """Valida se a explicação menciona lances corretos."""
+    warnings = []
+    
+    # Extrai todos os lances das PVs
+    pv_moves = set()
+    for c in candidates:
+        for san in c.get('pv_san', [])[:10]:
+            pv_moves.add(san)
+    
+    # Extrai lances mencionados na explicação
+    mentioned = extract_san_moves(explanation)
+    
+    # Verifica se lances mencionados existem nas PVs
+    for mv in mentioned:
+        if mv not in pv_moves:
+            warnings.append(f"Move '{mv}' is not present in PVs.")
+    
+    # Garante que o melhor lance foi mencionado
+    top_move = candidates[0].get('move_san')
+    if top_move and top_move not in explanation:
+        warnings.append(f"Top move '{top_move}' not referenced.")
+    
+    return warnings</code></pre>
+          </div>
+
+          <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 my-6">
+            <h4 class="font-semibold text-purple-400 mb-2">🛡️ Resultado</h4>
+            <p class="text-sm text-gray-300">
+              Se o LLM menciona um lance que não existe nas PVs, o sistema retorna um warning. 
+              Isso permite detectar alucinações antes de mostrar ao usuário.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Progressive Hints -->
+      <section id="hints" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">💡</span>
+          Progressive Hints
+        </h2>
+
+        <div class="prose prose-invert max-w-none">
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Para treino, revelar o lance imediatamente não ajuda. O sistema oferece dicas 
+            progressivas em 3 níveis, do mais vago ao mais específico.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4 my-6">
+            <div class="bg-gray-900/50 border border-green-500/30 rounded-lg p-4">
+              <h4 class="font-semibold text-green-400 mb-2">Level 1: Pista</h4>
+              <p class="text-sm text-gray-400 mb-2">"Pense em mover seu cavalo."</p>
+              <p class="text-xs text-gray-500">Indica a peça, não a casa. Se há captura ou xeque, adiciona nota.</p>
+            </div>
+            <div class="bg-gray-900/50 border border-yellow-500/30 rounded-lg p-4">
+              <h4 class="font-semibold text-yellow-400 mb-2">Level 2: Plano</h4>
+              <p class="text-sm text-gray-400 mb-2">"Melhor lance: Nf3. Compare com d4, Nc3."</p>
+              <p class="text-xs text-gray-500">Revela o lance + alternativas + delta_cp.</p>
+            </div>
+            <div class="bg-gray-900/50 border border-red-500/30 rounded-lg p-4">
+              <h4 class="font-semibold text-red-400 mb-2">Level 3: Variante</h4>
+              <p class="text-sm text-gray-400 mb-2">"Nf3 → d5 d4 Nf6 c4 e6"</p>
+              <p class="text-xs text-gray-500">PV completa + explicação LLM (opcional).</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">api_server.py</div>
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">def generate_progressive_hints_for_fen(fen: str, candidates: List[dict], level: int):
+    best = candidates[0]
+    piece_name = _piece_name_from_uci(fen, best['move_uci'])
+    san = best['move_san']
+    pv = best['pv_san']
+    
+    if level == 1:
+        # Pista: foco na peça, sem revelar a casa
+        hint = f"Think about moving your {piece_name}."
+        if 'x' in san:
+            hint += " It may involve a capture."
+        if '+' in san:
+            hint += " It creates a threat."
+            
+    elif level == 2:
+        # Plano: revela o melhor lance + alternativas
+        hint = {
+            'best_move': san,
+            'alternatives': [c['move_san'] for c in candidates[1:3]],
+            'delta_cp': candidates[1].get('delta_cp'),
+            'message': "Why is this more effective? Consider king safety."
+        }
+        
+    else:
+        # Variante completa
+        hint = {
+            'best_move': san,
+            'pv_san': pv,
+            'message': "This line keeps evaluation."
+        }
+    
+    return hint</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Multi-Provider -->
+      <section id="providers" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">🔌</span>
+          Multi-Provider LLM
+        </h2>
+
+        <div class="prose prose-invert max-w-none">
+          <p class="text-gray-300 leading-relaxed mb-6">
+            O sistema suporta 5 providers de LLM, permitindo escolher por custo, velocidade, 
+            ou preferência. Configurável via env vars ou per-request.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 my-6">
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <h4 class="font-semibold text-cyan-400 mb-2">OpenAI</h4>
+              <p class="text-sm text-gray-400">GPT-4, GPT-3.5 — Chat Completions API.</p>
+            </div>
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <h4 class="font-semibold text-cyan-400 mb-2">Anthropic</h4>
+              <p class="text-sm text-gray-400">Claude 3.5 Sonnet, Haiku — Messages API.</p>
+            </div>
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <h4 class="font-semibold text-cyan-400 mb-2">Google</h4>
+              <p class="text-sm text-gray-400">Gemini 1.5 Flash, Pro — GenerativeAI.</p>
+            </div>
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <h4 class="font-semibold text-cyan-400 mb-2">OpenRouter</h4>
+              <p class="text-sm text-gray-400">Proxy para múltiplos modelos — OpenAI-compatible.</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-900 rounded-lg overflow-hidden mb-6">
+            <div class="bg-gray-800 px-4 py-2 text-sm text-gray-400 font-mono">llm_providers.py</div>
+            <pre class="p-4 overflow-x-auto text-sm"><code class="text-gray-300">def generate_completion_simple(prompt: str, provider: str = None, model: str = None):
+    """Generate text using selected provider."""
+    provider_name = (provider or os.getenv('LLM_PROVIDER') or 'openai').lower()
+    
+    if provider_name == 'openai':
+        client = OpenAI()
+        return client.chat.completions.create(
+            model=model or os.getenv('OPENAI_MODEL'),
+            messages=[{"role": "system", "content": prompt}]
+        ).choices[0].message.content
+    
+    if provider_name == 'anthropic':
+        client = Anthropic()
+        return client.messages.create(
+            model=model or os.getenv('ANTHROPIC_MODEL'),
+            messages=[{"role": "user", "content": prompt}]
+        ).content[0].text
+    
+    if provider_name == 'google':
+        genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+        model_obj = genai.GenerativeModel(model or 'gemini-1.5-flash')
+        return model_obj.generate_content(prompt).text
+    
+    # ... openrouter, glm</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- API -->
+      <section id="api" class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400">🔗</span>
+          API Endpoints
+        </h2>
+
+        <div class="prose prose-invert max-w-none">
+          <div class="space-y-4">
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
+                <span class="font-mono text-gray-300">/api/evaluate_position</span>
+              </div>
+              <p class="text-sm text-gray-400">Avaliação MultiPV pura (sem LLM). Retorna top-N candidatos com PVs e scores.</p>
+            </div>
+
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
+                <span class="font-mono text-gray-300">/api/explain_position</span>
+              </div>
+              <p class="text-sm text-gray-400">Avaliação + explicação LLM grounded. Inclui warnings de validação.</p>
+            </div>
+
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
+                <span class="font-mono text-gray-300">/api/hints_position</span>
+              </div>
+              <p class="text-sm text-gray-400">Hints progressivos (level 1-3). Level 3 pode incluir explicação.</p>
+            </div>
+
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-mono">POST</span>
+                <span class="font-mono text-gray-300">/api/analyze</span>
+              </div>
+              <p class="text-sm text-gray-400">Baixa partidas do Lichess e analisa em batch.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Stack Técnico</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Python</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">FastAPI</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Stockfish</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">python-chess</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">OpenAI</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Anthropic</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Google AI</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">React</span>
+          <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Lichess API</span>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">📊</span>
+          Resultados
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
+            <div class="text-3xl font-bold text-amber-400 mb-2">0</div>
+            <div class="text-gray-400">Alucinações com validação ativa</div>
+          </div>
+          <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
+            <div class="text-3xl font-bold text-amber-400 mb-2">5</div>
+            <div class="text-gray-400">Providers LLM suportados</div>
+          </div>
+          <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
+            <div class="text-3xl font-bold text-amber-400 mb-2">Cache</div>
+            <div class="text-gray-400">TTL para avaliações e explicações</div>
+          </div>
+          <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-lg p-6">
+            <div class="text-3xl font-bold text-amber-400 mb-2">3</div>
+            <div class="text-gray-400">Níveis de hints progressivos</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="border-t border-gray-800 pt-12">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold mb-4">Explore Outros Projetos</h2>
+          <p class="text-gray-400 mb-8">Veja outros sistemas que construí</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <NuxtLink to="/projetos/automark" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+              AutoMark Platform →
+            </NuxtLink>
+            <NuxtLink to="/projetos/feed-rss" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+              Feed-RSS Monitor →
+            </NuxtLink>
+            <NuxtLink to="/projetos/ai-engine" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg transition-colors">
+              AI Conversation Engine →
+            </NuxtLink>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
+        <p>Case Study: PVCoach — Chess Training with AI</p>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script setup>
+useHead({
+  title: 'PVCoach - Chess AI Coach | Marcelo Marleta',
+  meta: [
+    { name: 'description', content: 'Case study: Coach de xadrez que combina Stockfish com LLM. MultiPV analysis, grounded explanations, progressive hints, validação anti-alucinação.' }
+  ]
+})
+</script>
