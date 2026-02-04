@@ -4,10 +4,11 @@
     <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
       <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <span class="text-xl font-bold text-emerald-400">MM</span>
-        <div class="flex gap-6">
-          <a href="#projetos" class="text-gray-400 hover:text-white transition-colors">Projetos</a>
-          <a href="#stack" class="text-gray-400 hover:text-white transition-colors">Stack</a>
-          <NuxtLink to="/sobre" class="text-gray-400 hover:text-white transition-colors">Sobre</NuxtLink>
+        <div class="flex items-center gap-6">
+          <a href="#projetos" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.projects') }}</a>
+          <a href="#stack" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.stack') }}</a>
+          <NuxtLink :to="localePath('/sobre')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.about') }}</NuxtLink>
+          <LanguageSwitcher />
         </div>
       </nav>
     </header>
@@ -17,14 +18,13 @@
       <section class="max-w-6xl mx-auto px-6 py-24">
         <div class="max-w-3xl">
           <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Marcelo Marleta
+            {{ $t('hero.title') }}
           </h1>
           <p class="text-xl md:text-2xl text-gray-400 mb-4">
-            Senior Backend & AI Engineer
+            {{ $t('hero.subtitle') }}
           </p>
           <p class="text-lg text-gray-500 leading-relaxed mb-8">
-            Arquiteturas de conversação enterprise com LangGraph, RAG otimizado e sistemas 
-            multi-tenant. Foco em separação de lógica determinística e linguagem natural.
+            {{ $t('hero.description') }}
           </p>
           <div class="flex gap-4">
             <a 
@@ -32,14 +32,14 @@
               target="_blank"
               class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
             >
-              GitHub
+              {{ $t('hero.github') }}
             </a>
             <a 
               href="https://linkedin.com/in/mmarleta" 
               target="_blank"
               class="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition-colors"
             >
-              LinkedIn
+              {{ $t('hero.linkedin') }}
             </a>
           </div>
         </div>
@@ -48,22 +48,21 @@
       <!-- Projetos -->
       <section id="projetos" class="bg-gray-900/30 py-24">
         <div class="max-w-6xl mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-4">Projetos</h2>
+          <h2 class="text-3xl font-bold mb-4">{{ $t('projects.title') }}</h2>
           <p class="text-gray-500 mb-12 max-w-2xl">
-            Sistemas de produção com foco em IA conversacional, processamento de documentos 
-            e ferramentas de desenvolvimento.
+            {{ $t('projects.description') }}
           </p>
 
           <!-- Optimus Platform -->
           <div class="mb-12">
             <h3 class="text-lg text-emerald-400 font-semibold mb-6 flex items-center gap-2">
               <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-              Optimus Platform
+              {{ $t('projects.optimusPlatform') }}
             </h3>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- AI Engine -->
               <NuxtLink 
-                to="/projetos/ai-engine" 
+                :to="localePath('/projetos/ai-engine')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -71,11 +70,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
-                  AI Conversation Engine
+                  {{ $t('cards.aiEngine.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  LangGraph + FSM para separação de lógica determinística e linguagem natural. 
-                  20+ nós especializados, 8 estados de booking.
+                  {{ $t('cards.aiEngine.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">LangGraph</span>
@@ -86,7 +84,7 @@
 
               <!-- LLM Pool Management -->
               <NuxtLink 
-                to="/projetos/llm-pool-management" 
+                :to="localePath('/projetos/llm-pool-management')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -94,11 +92,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-yellow-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors">
-                  LLM Pool Management
+                  {{ $t('cards.llmPool.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Pools separados chat vs tools, key groups com vault criptografado, 
-                  rotação automática e fallback inteligente. 40% redução de custos.
+                  {{ $t('cards.llmPool.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-Provider</span>
@@ -109,7 +106,7 @@
 
               <!-- Pricing Intelligence -->
               <NuxtLink 
-                to="/projetos/pricing-intelligence" 
+                :to="localePath('/projetos/pricing-intelligence')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -117,11 +114,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
-                  Pricing Intelligence
+                  {{ $t('cards.pricing.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  RAG otimizado com threshold adaptativo, request coalescing e cache multi-tier. 
-                  95% precision, &lt;100ms cache hit.
+                  {{ $t('cards.pricing.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">pgvector</span>
@@ -132,7 +128,7 @@
 
               <!-- Memory Engine -->
               <NuxtLink 
-                to="/projetos/memory-engine" 
+                :to="localePath('/projetos/memory-engine')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -140,160 +136,131 @@
                   <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
-                  Memory Engine
+                  {{ $t('cards.memory.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Sistema hierárquico Hot/Warm/Cold com compressão semântica (90% redução), 
-                  compliance LGPD/HIPAA automático e context injection.
+                  {{ $t('cards.memory.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Write-Through</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Compliance</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fernet</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">LGPD</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Compression</span>
                 </div>
               </NuxtLink>
 
               <!-- Backend Orchestrator -->
               <NuxtLink 
-                to="/projetos/backend-orchestrator" 
-                class="group bg-gray-900/50 border border-gray-800 hover:border-blue-500/50 rounded-xl p-6 transition-all"
-              >
-                <div class="flex justify-between items-start mb-4">
-                  <span class="text-2xl">🚀</span>
-                  <span class="text-xs text-gray-600 group-hover:text-blue-400 transition-colors">→</span>
-                </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
-                  Backend Orchestrator
-                </h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Gateway enterprise com rate limiting distribuído, circuit breaker, 
-                  handover dual-mode e fail-closed resilience.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Rate Limiting</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Circuit Breaker</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
-                </div>
-              </NuxtLink>
-
-              <!-- Observability -->
-              <NuxtLink 
-                to="/projetos/observability" 
-                class="group bg-gray-900/50 border border-gray-800 hover:border-green-500/50 rounded-xl p-6 transition-all"
-              >
-                <div class="flex justify-between items-start mb-4">
-                  <span class="text-2xl">📊</span>
-                  <span class="text-xs text-gray-600 group-hover:text-green-400 transition-colors">→</span>
-                </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-green-400 transition-colors">
-                  Observability Stack
-                </h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Métricas de negócio, tracing distribuído, token cost tracking, 
-                  RAG decision telemetry e state snapshots para debug.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Prometheus</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">OpenTelemetry</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Jaeger</span>
-                </div>
-              </NuxtLink>
-
-              <!-- Document Processing -->
-              <NuxtLink 
-                to="/projetos/document-processing" 
+                :to="localePath('/projetos/backend-orchestrator')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-orange-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
-                  <span class="text-2xl">📄</span>
+                  <span class="text-2xl">⚙️</span>
                   <span class="text-xs text-gray-600 group-hover:text-orange-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-orange-400 transition-colors">
-                  Document Processing
+                  {{ $t('cards.backend.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Pipeline com Docling para detecção de tabelas, chunking estratégico 
-                  (tablerow vs semantic) e geração automática de catálogos.
+                  {{ $t('cards.backend.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Docling</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Celery</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Embeddings</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">FastAPI</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fail-closed</span>
                 </div>
               </NuxtLink>
 
               <!-- Rules Engine -->
               <NuxtLink 
-                to="/projetos/rules-engine" 
-                class="group bg-gray-900/50 border border-gray-800 hover:border-rose-500/50 rounded-xl p-6 transition-all"
+                :to="localePath('/projetos/rules-engine')" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-red-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
-                  <span class="text-2xl">⚡</span>
-                  <span class="text-xs text-gray-600 group-hover:text-rose-400 transition-colors">→</span>
+                  <span class="text-2xl">📜</span>
+                  <span class="text-xs text-gray-600 group-hover:text-red-400 transition-colors">→</span>
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-rose-400 transition-colors">
-                  Rules Engine
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-red-400 transition-colors">
+                  {{ $t('cards.rules.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Motor Python-native 1000x mais rápido que JSONLogic. Regras em runtime 
-                  por tenant, avaliação sub-millisecond, multi-vertical.
+                  {{ $t('cards.rules.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Python Lambda</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Event-driven</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">YAML</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fast-lane</span>
                 </div>
               </NuxtLink>
 
               <!-- WhatsApp Integration -->
               <NuxtLink 
-                to="/projetos/whatsapp-integration" 
+                :to="localePath('/projetos/whatsapp-integration')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-green-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
-                  <span class="text-2xl">📱</span>
+                  <span class="text-2xl">💬</span>
                   <span class="text-xs text-gray-600 group-hover:text-green-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-green-400 transition-colors">
-                  WhatsApp Integration
+                  {{ $t('cards.whatsapp.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Message Aggregator com 5s debounce resolve "split messages". 
-                  Redis isolado, graceful degradation, Evolution API.
+                  {{ $t('cards.whatsapp.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Aggregator</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Redis Isolado</span>
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Degradation</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Redis</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">WebSocket</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Webhooks</span>
                 </div>
               </NuxtLink>
 
               <!-- Audio Processor -->
               <NuxtLink 
-                to="/projetos/audio-processor" 
-                class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
+                :to="localePath('/projetos/audio-processor')" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-pink-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
-                  <span class="text-2xl">🎤</span>
-                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
+                  <span class="text-2xl">🎙️</span>
+                  <span class="text-xs text-gray-600 group-hover:text-pink-400 transition-colors">→</span>
                 </div>
-                <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
-                  Audio Processor
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-pink-400 transition-colors">
+                  {{ $t('cards.audio.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Multi-provider STT (Groq Whisper) e TTS (ElevenLabs). 
-                  Processamento assíncrono Celery, storage MinIO, 8 formatos.
+                  {{ $t('cards.audio.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Groq Whisper</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Whisper</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">ElevenLabs</span>
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Celery</span>
                 </div>
               </NuxtLink>
 
+              <!-- Observability -->
+              <NuxtLink 
+                :to="localePath('/projetos/observability')" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-yellow-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">📊</span>
+                  <span class="text-xs text-gray-600 group-hover:text-yellow-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors">
+                  {{ $t('cards.observability.title') }}
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  {{ $t('cards.observability.description') }}
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Prometheus</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">OpenTelemetry</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">structlog</span>
+                </div>
+              </NuxtLink>
+
               <!-- Frontend Apps -->
               <NuxtLink 
-                to="/projetos/frontend" 
+                :to="localePath('/projetos/frontend')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-blue-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -301,11 +268,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-blue-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
-                  Frontend Apps
+                  {{ $t('cards.frontend.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Admin Dashboard (3000) + SuperAdmin Panel (3001). 
-                  Vue.js 3, WebSocket real-time, handover management, RBAC.
+                  {{ $t('cards.frontend.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Vue.js 3</span>
@@ -316,7 +282,7 @@
 
               <!-- Test Tools -->
               <NuxtLink 
-                to="/projetos/test-tools" 
+                :to="localePath('/projetos/test-tools')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -324,11 +290,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
-                  AI Testing Tools
+                  {{ $t('cards.testTools.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Hallucination detector, quality scorer, cenários realísticos 
-                  com personalidades, interface de simulação multi-canal.
+                  {{ $t('cards.testTools.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">pytest</span>
@@ -339,7 +304,7 @@
 
               <!-- Infra DevOps -->
               <NuxtLink 
-                to="/projetos/infra-devops" 
+                :to="localePath('/projetos/infra-devops')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -347,11 +312,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
-                  Infra & DevOps
+                  {{ $t('cards.infraDevops.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Docker Compose overlays, Nginx LB com scaling horizontal, 
-                  Redis Sentinel HA, CI/CD com guardrails de arquitetura.
+                  {{ $t('cards.infraDevops.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Docker</span>
@@ -362,7 +326,7 @@
 
               <!-- Optimus Case Study -->
               <NuxtLink 
-                to="/projetos/optimus" 
+                :to="localePath('/projetos/optimus')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -370,11 +334,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
-                  Arquitetura Completa
+                  {{ $t('cards.architecture.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Visão geral da plataforma: 4 microserviços, multi-tenant, 
-                  integração WhatsApp, Memory Engine hierárquico.
+                  {{ $t('cards.architecture.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Microservices</span>
@@ -389,12 +352,12 @@
           <div>
             <h3 class="text-lg text-gray-400 font-semibold mb-6 flex items-center gap-2">
               <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
-              Outros Projetos
+              {{ $t('projects.otherProjects') }}
             </h3>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- MCP Servers -->
               <NuxtLink 
-                to="/projetos/mcp-servers" 
+                :to="localePath('/projetos/mcp-servers')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -402,11 +365,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
-                  MCP Servers
+                  {{ $t('cards.mcp.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Servidores Model Context Protocol para Claude Code. 
-                  Debugging, validação arquitetural e navegação de codebase.
+                  {{ $t('cards.mcp.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">MCP</span>
@@ -417,7 +379,7 @@
 
               <!-- AutoMark -->
               <NuxtLink 
-                to="/projetos/automark" 
+                :to="localePath('/projetos/automark')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-orange-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -425,11 +387,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-orange-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-orange-400 transition-colors">
-                  AutoMark Platform
+                  {{ $t('cards.automark.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  SaaS multi-tenant de distribuição de ofertas afiliadas. 
-                  Shopee → WhatsApp com anti-spam, scoring e dedupe.
+                  {{ $t('cards.automark.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Multi-tenant</span>
@@ -440,7 +401,7 @@
 
               <!-- iContei -->
               <NuxtLink 
-                to="/projetos/icontei" 
+                :to="localePath('/projetos/icontei')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -448,11 +409,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-emerald-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-emerald-400 transition-colors">
-                  iContei
+                  {{ $t('cards.icontei.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Rede social de contadores compartilháveis. Next.js 16, FastAPI, 
-                  WebSocket real-time, verificação por IA, rankings com Redis.
+                  {{ $t('cards.icontei.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Next.js 16</span>
@@ -463,7 +423,7 @@
 
               <!-- GratiDiem -->
               <NuxtLink 
-                to="/projetos/gratidiem" 
+                :to="localePath('/projetos/gratidiem')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-amber-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -471,11 +431,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-amber-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-amber-400 transition-colors">
-                  GratiDiem
+                  {{ $t('cards.gratidiem.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  App Flutter de gratidão com 508+ arquivos, 6 plataformas. 
-                  Riverpod, dual persistence (Hive+Firebase), IA com Gemini.
+                  {{ $t('cards.gratidiem.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Flutter</span>
@@ -486,7 +445,7 @@
 
               <!-- PVCoach -->
               <NuxtLink 
-                to="/projetos/pvcoach" 
+                :to="localePath('/projetos/pvcoach')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-amber-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -494,11 +453,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-amber-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-amber-400 transition-colors">
-                  PVCoach
+                  {{ $t('cards.pvcoach.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Chess coach com Stockfish + LLM. MultiPV analysis, 
-                  explicações grounded, hints progressivos.
+                  {{ $t('cards.pvcoach.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">Stockfish</span>
@@ -509,7 +467,7 @@
 
               <!-- Feed-RSS -->
               <NuxtLink 
-                to="/projetos/feed-rss" 
+                :to="localePath('/projetos/feed-rss')" 
                 class="group bg-gray-900/50 border border-gray-800 hover:border-pink-500/50 rounded-xl p-6 transition-all"
               >
                 <div class="flex justify-between items-start mb-4">
@@ -517,11 +475,10 @@
                   <span class="text-xs text-gray-600 group-hover:text-pink-400 transition-colors">→</span>
                 </div>
                 <h4 class="text-xl font-semibold mb-2 group-hover:text-pink-400 transition-colors">
-                  Feed-RSS Monitor
+                  {{ $t('cards.feedRss.title') }}
                 </h4>
                 <p class="text-gray-500 text-sm leading-relaxed mb-4">
-                  Pipeline de automação de conteúdo: RSS → Filter → OpenAI → Telegram/Discord. 
-                  Roteiros de Shorts gerados automaticamente.
+                  {{ $t('cards.feedRss.description') }}
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="text-xs px-2 py-1 bg-gray-800 rounded">async</span>
@@ -537,41 +494,38 @@
       <!-- Stack -->
       <section id="stack" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-12">Stack</h2>
+          <h2 class="text-3xl font-bold mb-12">{{ $t('stack.title') }}</h2>
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Backend -->
             <div>
-              <h3 class="text-emerald-400 font-semibold mb-4">Backend</h3>
+              <h3 class="text-emerald-400 font-semibold mb-4">{{ $t('stack.backend') }}</h3>
               <ul class="space-y-2 text-gray-400">
-                <li>Python 3.12</li>
-                <li>FastAPI</li>
-                <li>PostgreSQL + pgvector</li>
-                <li>Redis</li>
-                <li>Celery</li>
-                <li>Docker</li>
+                <li>Python / FastAPI</li>
+                <li>PostgreSQL / Redis</li>
+                <li>Celery / RabbitMQ</li>
+                <li>Docker / Kubernetes</li>
               </ul>
             </div>
+            
             <!-- AI/ML -->
             <div>
-              <h3 class="text-purple-400 font-semibold mb-4">AI / ML</h3>
+              <h3 class="text-emerald-400 font-semibold mb-4">{{ $t('stack.ai') }}</h3>
               <ul class="space-y-2 text-gray-400">
-                <li>LangChain / LangGraph</li>
-                <li>OpenAI GPT-4</li>
-                <li>text-embedding-3-large</li>
-                <li>HNSW Index</li>
-                <li>RAG Pipelines</li>
-                <li>Semantic Search</li>
+                <li>LangGraph / LangChain</li>
+                <li>OpenAI / Anthropic</li>
+                <li>pgvector / FAISS</li>
+                <li>Whisper / ElevenLabs</li>
               </ul>
             </div>
+            
             <!-- Infra -->
             <div>
-              <h3 class="text-cyan-400 font-semibold mb-4">Infra / DevOps</h3>
+              <h3 class="text-emerald-400 font-semibold mb-4">{{ $t('stack.infra') }}</h3>
               <ul class="space-y-2 text-gray-400">
-                <li>AWS / GCP</li>
-                <li>Kubernetes</li>
-                <li>Prometheus + Grafana</li>
-                <li>GitHub Actions</li>
-                <li>Terraform</li>
+                <li>GitHub Actions / CI/CD</li>
+                <li>Prometheus / Grafana</li>
+                <li>OpenTelemetry / Jaeger</li>
+                <li>Nginx / Redis Sentinel</li>
               </ul>
             </div>
           </div>
@@ -580,14 +534,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 py-8">
-      <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <span class="text-gray-600">© 2025 Marcelo Marleta</span>
-        <div class="flex gap-4">
-          <a href="https://github.com/mmarleta" target="_blank" class="text-gray-600 hover:text-white transition-colors">GitHub</a>
-          <a href="https://linkedin.com/in/mmarleta" target="_blank" class="text-gray-600 hover:text-white transition-colors">LinkedIn</a>
-        </div>
+    <footer class="border-t border-gray-800 py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
+        <p>© {{ new Date().getFullYear() }} Marcelo Marleta</p>
       </div>
     </footer>
   </div>
 </template>
+
+<script setup>
+const localePath = useLocalePath()
+
+useHead({
+  title: 'Marcelo Marleta | Full-Stack Developer',
+  meta: [
+    { name: 'description', content: 'Full-Stack Developer especializado em sistemas AI/LLM e arquiteturas escaláveis.' },
+  ],
+})
+</script>

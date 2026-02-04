@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "projects": "Projetos",
+    "stack": "Stack",
+    "about": "Sobre",
+    "backToPortfolio": "Voltar ao Portfolio"
+  },
+  "hero": {
+    "title": "Marcelo Marleta",
+    "subtitle": "Senior Backend & AI Engineer",
+    "description": "Arquiteturas de conversação enterprise com LangGraph, RAG otimizado e sistemas multi-tenant. Foco em separação de lógica determinística e linguagem natural.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Sistemas de produção com foco em IA conversacional, processamento de documentos e ferramentas de desenvolvimento.",
+    "optimusPlatform": "Optimus Platform",
+    "otherProjects": "Outros Projetos",
+    "viewMore": "Ver Todos os Projetos"
+  },
+  "stack": {
+    "title": "Stack",
+    "backend": "Backend",
+    "ai": "AI/ML",
+    "infra": "Infra"
+  },
+  "cta": {
+    "wantToSeeMore": "Quer ver mais projetos?",
+    "exploreOther": "Explore também outros case studies no meu portfolio."
+  },
+  "common": {
+    "fullStack": "Full-Stack Platform",
+    "realTime": "Real-time",
+    "multiPlatform": "Multi-Platform"
+  },
+  "cards": {
+    "aiEngine": {
+      "title": "AI Conversation Engine",
+      "description": "LangGraph + FSM para separação de lógica determinística e linguagem natural. 20+ nós especializados, 8 estados de booking."
+    },
+    "llmPool": {
+      "title": "LLM Pool Management",
+      "description": "Pools separados chat vs tools, key groups com vault criptografado, rotação automática e fallback inteligente. 40% redução de custos."
+    },
+    "pricing": {
+      "title": "Pricing Intelligence",
+      "description": "RAG otimizado com threshold adaptativo, request coalescing e cache multi-tier. 95% precision, <100ms cache hit."
+    },
+    "memory": {
+      "title": "Memory Engine",
+      "description": "Sistema hierárquico Hot/Warm/Cold com compressão semântica (90% redução), compliance LGPD/HIPAA automático e context injection."
+    },
+    "backend": {
+      "title": "Backend Orchestrator",
+      "description": "Central hub FastAPI com fail-closed design, tenant isolation, handover atendente, circuit breakers."
+    },
+    "rules": {
+      "title": "Rules Engine",
+      "description": "Python Lambda DSL para regras de negócio, fast-lane patterns, coordenação backend + AI engine."
+    },
+    "whatsapp": {
+      "title": "WhatsApp Integration",
+      "description": "Redis isolado, webhook processing, WebSocket broadcaster, integração Memory Engine para histórico."
+    },
+    "audio": {
+      "title": "Audio Processor",
+      "description": "Multi-provider STT/TTS (Whisper, ElevenLabs, Azure), async processing com Celery, formatos diversos."
+    },
+    "observability": {
+      "title": "Observability",
+      "description": "Prometheus + OpenTelemetry + structlog. Distributed tracing, métricas customizadas, dashboards."
+    },
+    "frontend": {
+      "title": "Frontend Apps",
+      "description": "Admin Dashboard (3000) + SuperAdmin Panel (3001). Vue.js 3, WebSocket real-time, handover management, RBAC."
+    },
+    "testTools": {
+      "title": "AI Testing Tools",
+      "description": "Hallucination detector, quality scorer, cenários realísticos com personalidades, interface de simulação multi-canal."
+    },
+    "infraDevops": {
+      "title": "Infra & DevOps",
+      "description": "Docker Compose overlays, Nginx LB com scaling horizontal, Redis Sentinel HA, CI/CD com guardrails de arquitetura."
+    },
+    "architecture": {
+      "title": "Arquitetura Completa",
+      "description": "Visão geral da plataforma: 4 microserviços, multi-tenant, integração WhatsApp, Memory Engine hierárquico."
+    },
+    "mcp": {
+      "title": "MCP Servers",
+      "description": "Servidores Model Context Protocol para Claude Code. Debugging, validação arquitetural e navegação de codebase."
+    },
+    "automark": {
+      "title": "AutoMark Platform",
+      "description": "SaaS multi-tenant de distribuição de ofertas afiliadas. Shopee → WhatsApp com anti-spam, scoring e dedupe."
+    },
+    "icontei": {
+      "title": "iContei",
+      "description": "Rede social de contadores compartilháveis. Next.js 16, FastAPI, WebSocket real-time, verificação por IA, rankings com Redis."
+    },
+    "gratidiem": {
+      "title": "GratiDiem",
+      "description": "App Flutter de gratidão com 508+ arquivos, 6 plataformas. Riverpod, dual persistence (Hive+Firebase), IA com Gemini."
+    },
+    "pvcoach": {
+      "title": "PVCoach",
+      "description": "Chess coach com Stockfish + LLM. MultiPV analysis, explicações grounded, hints progressivos."
+    },
+    "feedRss": {
+      "title": "Feed-RSS Monitor",
+      "description": "Pipeline de automação de conteúdo: RSS → Filter → OpenAI → Telegram/Discord. Roteiros de Shorts gerados automaticamente."
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "stack": "Stack",
+    "about": "About",
+    "backToPortfolio": "Back to Portfolio"
+  },
+  "hero": {
+    "title": "Marcelo Marleta",
+    "subtitle": "Senior Backend & AI Engineer",
+    "description": "Enterprise conversation architectures with LangGraph, optimized RAG and multi-tenant systems. Focus on separation of deterministic logic and natural language.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Production systems focused on conversational AI, document processing and development tools.",
+    "optimusPlatform": "Optimus Platform",
+    "otherProjects": "Other Projects",
+    "viewMore": "View All Projects"
+  },
+  "stack": {
+    "title": "Stack",
+    "backend": "Backend",
+    "ai": "AI/ML",
+    "infra": "Infra"
+  },
+  "cta": {
+    "wantToSeeMore": "Want to see more projects?",
+    "exploreOther": "Also explore other case studies in my portfolio."
+  },
+  "common": {
+    "fullStack": "Full-Stack Platform",
+    "realTime": "Real-time",
+    "multiPlatform": "Multi-Platform"
+  },
+  "cards": {
+    "aiEngine": {
+      "title": "AI Conversation Engine",
+      "description": "LangGraph + FSM for separation of deterministic logic and natural language. 20+ specialized nodes, 8 booking states."
+    },
+    "llmPool": {
+      "title": "LLM Pool Management",
+      "description": "Separate pools for chat vs tools, key groups with encrypted vault, automatic rotation and intelligent fallback. 40% cost reduction."
+    },
+    "pricing": {
+      "title": "Pricing Intelligence",
+      "description": "Optimized RAG with adaptive threshold, request coalescing and multi-tier cache. 95% precision, <100ms cache hit."
+    },
+    "memory": {
+      "title": "Memory Engine",
+      "description": "Hierarchical Hot/Warm/Cold system with semantic compression (90% reduction), automatic LGPD/HIPAA compliance and context injection."
+    },
+    "backend": {
+      "title": "Backend Orchestrator",
+      "description": "Central FastAPI hub with fail-closed design, tenant isolation, agent handover, circuit breakers."
+    },
+    "rules": {
+      "title": "Rules Engine",
+      "description": "Python Lambda DSL for business rules, fast-lane patterns, backend + AI engine coordination."
+    },
+    "whatsapp": {
+      "title": "WhatsApp Integration",
+      "description": "Isolated Redis, webhook processing, WebSocket broadcaster, Memory Engine integration for history."
+    },
+    "audio": {
+      "title": "Audio Processor",
+      "description": "Multi-provider STT/TTS (Whisper, ElevenLabs, Azure), async processing with Celery, various formats."
+    },
+    "observability": {
+      "title": "Observability",
+      "description": "Prometheus + OpenTelemetry + structlog. Distributed tracing, custom metrics, dashboards."
+    },
+    "frontend": {
+      "title": "Frontend Apps",
+      "description": "Admin Dashboard (3000) + SuperAdmin Panel (3001). Vue.js 3, real-time WebSocket, handover management, RBAC."
+    },
+    "testTools": {
+      "title": "AI Testing Tools",
+      "description": "Hallucination detector, quality scorer, realistic scenarios with personalities, multi-channel simulation interface."
+    },
+    "infraDevops": {
+      "title": "Infra & DevOps",
+      "description": "Docker Compose overlays, Nginx LB with horizontal scaling, Redis Sentinel HA, CI/CD with architecture guardrails."
+    },
+    "architecture": {
+      "title": "Complete Architecture",
+      "description": "Platform overview: 4 microservices, multi-tenant, WhatsApp integration, hierarchical Memory Engine."
+    },
+    "mcp": {
+      "title": "MCP Servers",
+      "description": "Model Context Protocol servers for Claude Code. Debugging, architectural validation and codebase navigation."
+    },
+    "automark": {
+      "title": "AutoMark Platform",
+      "description": "Multi-tenant SaaS for affiliate offer distribution. Shopee → WhatsApp with anti-spam, scoring and dedupe."
+    },
+    "icontei": {
+      "title": "iContei",
+      "description": "Social network for shareable counters. Next.js 16, FastAPI, real-time WebSocket, AI verification, Redis rankings."
+    },
+    "gratidiem": {
+      "title": "GratiDiem",
+      "description": "Flutter gratitude app with 508+ files, 6 platforms. Riverpod, dual persistence (Hive+Firebase), AI with Gemini."
+    },
+    "pvcoach": {
+      "title": "PVCoach",
+      "description": "Chess coach with Stockfish + LLM. MultiPV analysis, grounded explanations, progressive hints."
+    },
+    "feedRss": {
+      "title": "Feed-RSS Monitor",
+      "description": "Content automation pipeline: RSS → Filter → OpenAI → Telegram/Discord. Auto-generated Shorts scripts."
+    }
+  }
+}
