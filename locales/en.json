@@ -2415,9 +2415,9 @@
       "title": "Optimus",
       "subtitle": "AI Chatbot Platform for Millions of Users",
       "problem": {
-        "title": "The Problem A company needed a chatbot platform that could serve clinics, e-commerce, law offices — any business vertical. The system had to scale to millions of users, keep long-conversation context, and fully isolate data between clients. Generic chatbots don't cut it. They forget what you said 5 messages ago and don't understand that \"tooth 36\" in a clinic is critical information that cannot be lost.",
-        "p1": "The Problem A company needed a chatbot platform that could serve clinics, e-commerce, law offices — any business vertical. The system had to scale to millions of users, keep long-conversation context, and fully isolate data between clients. Generic chatbots don't cut it. They forget what you said 5 messages ago and don't understand that \"tooth 36\" in a clinic is critical information that cannot be lost.",
-        "p2": "The Problem A company needed a chatbot platform that could serve clinics, e-commerce, law offices — any business vertical. The system had to scale to millions of users, keep long-conversation context, and fully isolate data between clients. Generic chatbots don't cut it. They forget what you said 5 messages ago and don't understand that \"tooth 36\" in a clinic is critical information that cannot be lost."
+        "title": "The Problem",
+        "p1": "A company needed a chatbot platform that could serve clinics, e-commerce, law offices — any business vertical. The system had to scale to millions of users, keep long-conversation context, and fully isolate data between clients.",
+        "p2": "Generic chatbots don’t cut it. They forget what you said 5 messages ago and don’t understand that “tooth 36” in a clinic is critical information that cannot be lost."
       },
       "solution": {
         "title": "The Solution",

@@ -879,9 +879,9 @@
       "title": "Optimus",
       "subtitle": "Plataforma de chatbots de IA para millones de usuarios",
       "problem": {
-        "title": "El Problema Una empresa necesitaba una plataforma de chatbots que atendiera clínicas, e-commerce, despachos de abogados — cualquier vertical de negocio. El sistema debía escalar a millones de usuarios, mantener el contexto de conversaciones largas y aislar completamente los datos entre clientes. Los chatbots genéricos no sirven. Olvidan lo que dijiste hace 5 mensajes y no entienden que \"diente 36\" en una clínica es información crítica que no puede perderse.",
-        "p1": "El Problema Una empresa necesitaba una plataforma de chatbots que atendiera clínicas, e-commerce, despachos de abogados — cualquier vertical de negocio. El sistema debía escalar a millones de usuarios, mantener el contexto de conversaciones largas y aislar completamente los datos entre clientes. Los chatbots genéricos no sirven. Olvidan lo que dijiste hace 5 mensajes y no entienden que \"diente 36\" en una clínica es información crítica que no puede perderse.",
-        "p2": "El Problema Una empresa necesitaba una plataforma de chatbots que atendiera clínicas, e-commerce, despachos de abogados — cualquier vertical de negocio. El sistema debía escalar a millones de usuarios, mantener el contexto de conversaciones largas y aislar completamente los datos entre clientes. Los chatbots genéricos no sirven. Olvidan lo que dijiste hace 5 mensajes y no entienden que \"diente 36\" en una clínica es información crítica que no puede perderse."
+        "title": "El Problema",
+        "p1": "Una empresa necesitaba una plataforma de chatbots que atendiera clínicas, e-commerces, oficinas de abogados — cualquier vertical de negocio. El sistema debía escalar a millones de usuarios, mantener contexto de conversaciones largas y aislar completamente los datos entre clientes.",
+        "p2": "Los chatbots genéricos no resuelven. Olvidan lo que dijiste hace 5 mensajes y no entienden que “diente 36” en una clínica es información crítica que no puede perderse."
       },
       "solution": {
         "title": "La Solución",

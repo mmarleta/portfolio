@@ -2415,9 +2415,9 @@
       "title": "Optimus",
       "subtitle": "Plataforma de Chatbots AI para Milhões de Usuários",
       "problem": {
-        "title": "O Problema Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes. Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir.",
-        "p1": "O Problema Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes. Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir.",
-        "p2": "O Problema Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes. Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir."
+        "title": "O Problema",
+        "p1": "Uma empresa precisava de uma plataforma de chatbots que atendesse clínicas, e-commerces, escritórios de advocacia — qualquer vertical de negócio. O sistema precisava escalar pra milhões de usuários, manter contexto de conversas longas, e isolar completamente os dados entre clientes.",
+        "p2": "Chatbots genéricos não resolvem. Eles esquecem o que você disse 5 mensagens atrás e não entendem que \"dente 36\" numa clínica é informação crítica que não pode sumir."
       },
       "solution": {
         "title": "A Solução",
