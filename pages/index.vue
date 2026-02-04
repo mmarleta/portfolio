@@ -314,6 +314,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- Infra DevOps -->
+              <NuxtLink 
+                to="/projetos/infra-devops" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">🐳</span>
+                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
+                  Infra & DevOps
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Docker Compose overlays, Nginx LB com scaling horizontal, 
+                  Redis Sentinel HA, CI/CD com guardrails de arquitetura.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Docker</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Redis Sentinel</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">GitHub Actions</span>
+                </div>
+              </NuxtLink>
+
               <!-- Optimus Case Study -->
               <NuxtLink 
                 to="/projetos/optimus" 
