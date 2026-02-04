@@ -1,54 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-950">
-    <!-- Hero Section -->
-    <section class="relative py-24 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-gray-950 to-purple-900/20"></div>
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      
-      <div class="container mx-auto px-6 relative z-10">
-        <NuxtLink to="/" class="inline-flex items-center text-gray-400 hover:text-emerald-400 mb-8 transition-colors">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-          {{ $t('nav.backToPortfolio') }}
-        </NuxtLink>
-        
-        <div class="max-w-4xl">
-          <div class="flex items-center gap-4 mb-6">
-            <span class="px-4 py-2 bg-amber-500/10 text-amber-400 rounded-full text-sm font-medium border border-amber-500/20">
-              {{ $t('cases.gratidiem.hero.tag1') }}
-            </span>
-            <span class="px-4 py-2 bg-purple-500/10 text-purple-400 rounded-full text-sm font-medium border border-purple-500/20">
-              {{ $t('cases.gratidiem.hero.tag2') }}
-            </span>
-            <span class="px-4 py-2 bg-blue-500/10 text-blue-400 rounded-full text-sm font-medium border border-blue-500/20">
-              {{ $t('cases.gratidiem.hero.tag3') }}
-            </span>
-          </div>
-          
-          <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-            {{ $t('cases.gratidiem.hero.title') }}
-            <span class="text-amber-400">.</span>
-          </h1>
-          
-          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            {{ $t('cases.gratidiem.hero.description') }}
-          </p>
-          
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">Flutter 3.7+</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">Riverpod</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">Firebase</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">Hive CE</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">Google Gemini</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">AdMob</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">GoRouter</span>
-            <span class="px-3 py-1 bg-gray-800/50 text-gray-300 rounded text-sm">i18n</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ProjectHero :config="heroConfig" />
 
     <!-- Visão Geral -->
     <section class="py-20 border-t border-gray-800">
@@ -826,6 +778,9 @@ final goRouter = GoRouter(
 </template>
 
 <script setup>
+import { heroGradientBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroGradientBySlug.gratidiem
 const { t } = useI18n()
 
 useHead({

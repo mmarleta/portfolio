@@ -1,48 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Hero Section -->
-    <section class="relative py-20 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-emerald-950/50 via-gray-950 to-gray-950"></div>
-      <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-10 right-10 w-96 h-96 bg-emerald-600/5 rounded-full blur-3xl"></div>
-      
-      <div class="container mx-auto px-6 relative z-10">
-        <NuxtLink to="/" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-8 transition-colors">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-          {{ $t('nav.backToPortfolio') }}
-        </NuxtLink>
-        
-        <div class="flex items-center gap-4 mb-6">
-          <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-medium border border-emerald-500/30">
-            {{ $t('cases.rules.badge') }}
-          </span>
-          <span class="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm">
-            {{ $t('cases.rules.badgeSecondary') }}
-          </span>
-        </div>
-        
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
-            {{ $t('cases.rules.title') }}
-          </span>
-        </h1>
-        
-        <p class="text-xl text-gray-400 max-w-3xl mb-8">
-          {{ $t('cases.rules.description') }}
-        </p>
-
-        <div class="flex flex-wrap gap-3">
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.rules.tags.pythonLambda') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.rules.tags.subMillisecond') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.rules.tags.multiTenant') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.rules.tags.eventDriven') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.rules.tags.typeSafe') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.rules.tags.cacheCoherence') }}</span>
-        </div>
-      </div>
-    </section>
+    <ProjectHero :config="heroConfig" />
 
     <!-- O Problema do JSONLogic -->
     <section class="py-16 border-t border-gray-800">
@@ -629,6 +587,9 @@ lambda facts: (
 </template>
 
 <script setup>
+import { heroGradientBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroGradientBySlug.rulesEngine
 const { t } = useI18n()
 
 useHead({

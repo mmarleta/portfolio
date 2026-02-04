@@ -1,3 +1,5 @@
+import { resolve } from 'pathe'
+
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   
@@ -11,6 +13,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    restructureDir: '.',
     locales: [
       { code: 'pt', name: 'Português', file: 'pt.json' },
       { code: 'en', name: 'English', file: 'en.json' },
@@ -46,6 +49,14 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  vite: {
+    resolve: {
+      alias: {
+        '#app-manifest': resolve('./app.manifest.json'),
+      },
+    },
   },
 
   compatibilityDate: '2024-04-03'

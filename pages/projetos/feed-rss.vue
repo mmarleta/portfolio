@@ -1,50 +1,13 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <NuxtLink to="/" class="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-          ← {{ $t('nav.back') }}
-        </NuxtLink>
-        <a 
-          href="https://github.com/mmarleta/feed-rss" 
-          target="_blank"
-          class="text-gray-400 hover:text-white transition-colors"
-        >
-          GitHub →
-        </a>
-      </nav>
-    </header>
+    <ProjectHeader
+      back-label-key="nav.back"
+      right-href="https://github.com/mmarleta/feed-rss"
+      right-label="GitHub →"
+    />
 
     <main class="max-w-4xl mx-auto px-6 py-16">
-      <!-- Hero -->
-      <div class="mb-16">
-        <span class="inline-block px-3 py-1 bg-pink-500/10 text-pink-400 rounded-full text-sm mb-4">
-          {{ $t('cases.feedRss.tag') }}
-        </span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {{ $t('cases.feedRss.title') }}
-        </h1>
-        <p class="text-xl text-gray-400 leading-relaxed">
-          {{ $t('cases.feedRss.description') }}
-        </p>
-      </div>
-
-      <!-- Métricas -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-pink-400">6+</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.feedRss.stats.monitoredFeeds') }}</div>
-        </div>
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-pink-400">15+</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.feedRss.stats.aiKeywords') }}</div>
-        </div>
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-pink-400">Async</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.feedRss.stats.asyncPipeline') }}</div>
-        </div>
-      </div>
+      <ProjectHeroBlock :config="heroConfig" />
 
       <!-- Visão Geral -->
       <section class="mb-16">
@@ -218,3 +181,9 @@
     </main>
   </div>
 </template>
+
+<script setup>
+import { heroBlocksBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroBlocksBySlug.feedRss
+</script>

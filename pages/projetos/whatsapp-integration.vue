@@ -1,48 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Hero Section -->
-    <section class="relative py-20 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-emerald-950/50 via-gray-950 to-gray-950"></div>
-      <div class="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-10 right-10 w-96 h-96 bg-green-600/5 rounded-full blur-3xl"></div>
-      
-      <div class="container mx-auto px-6 relative z-10">
-        <NuxtLink to="/" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-8 transition-colors">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-          {{ $t('cases.whatsapp.backToPortfolio') }}
-        </NuxtLink>
-        
-        <div class="flex items-center gap-4 mb-6">
-          <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium border border-green-500/30">
-            Optimus Platform
-          </span>
-          <span class="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm">
-            {{ $t('cases.whatsapp.badge') }}
-          </span>
-        </div>
-        
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-green-400 via-green-300 to-emerald-400 bg-clip-text text-transparent">
-            {{ $t('cases.whatsapp.title') }}
-          </span>
-        </h1>
-        
-        <p class="text-xl text-gray-400 max-w-3xl mb-8">
-          {{ $t('cases.whatsapp.description') }}
-        </p>
-
-        <div class="flex flex-wrap gap-3">
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.whatsapp.tags.aggregator') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.whatsapp.tags.debounce') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.whatsapp.tags.evolution') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.whatsapp.tags.redis') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.whatsapp.tags.degradation') }}</span>
-          <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">{{ $t('cases.whatsapp.tags.websocket') }}</span>
-        </div>
-      </div>
-    </section>
+    <ProjectHero :config="heroConfig" />
 
     <!-- O Problema das Mensagens Fragmentadas -->
     <section class="py-16 border-t border-gray-800">
@@ -666,6 +624,9 @@
 </template>
 
 <script setup>
+import { heroGradientBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroGradientBySlug.whatsappIntegration
 const { t } = useI18n()
 
 useHead({

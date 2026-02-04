@@ -1,47 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <NuxtLink to="/" class="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-          {{ $t('cases.llmPool.back') }}
-        </NuxtLink>
-      </nav>
-    </header>
+    <ProjectHeader back-label-key="nav.back" />
 
     <main class="max-w-4xl mx-auto px-6 py-16">
-      <!-- Hero -->
-      <div class="mb-16">
-        <span class="inline-block px-3 py-1 bg-yellow-500/10 text-yellow-400 rounded-full text-sm mb-4">
-          {{ $t('cases.llmPool.badge') }}
-        </span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {{ $t('cases.llmPool.title') }}
-        </h1>
-        <p class="text-xl text-gray-400 leading-relaxed">
-          {{ $t('cases.llmPool.description') }}
-        </p>
-      </div>
-
-      <!-- Métricas -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-yellow-400">40%</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.llmPool.metrics.costReduction') }}</div>
-        </div>
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-yellow-400">&lt;200ms</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.llmPool.metrics.latencyP95') }}</div>
-        </div>
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-yellow-400">99.9%</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.llmPool.metrics.availability') }}</div>
-        </div>
-        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-          <div class="text-3xl font-bold text-yellow-400">N</div>
-          <div class="text-sm text-gray-500 mt-1">{{ $t('cases.llmPool.metrics.simultaneousProviders') }}</div>
-        </div>
-      </div>
+      <ProjectHeroBlock :config="heroConfig" />
 
       <!-- Problema -->
       <section class="mb-16">
@@ -370,3 +332,9 @@ Pool: "gpt4o-mini-chat"
     </main>
   </div>
 </template>
+
+<script setup>
+import { heroBlocksBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroBlocksBySlug.llmPool
+</script>

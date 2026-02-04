@@ -1,34 +1,13 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <NuxtLink to="/" class="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-          ← {{ $t('nav.back') }}
-        </NuxtLink>
-        <a 
-          href="https://github.com/mmarleta/mcp_servers" 
-          target="_blank"
-          class="text-gray-400 hover:text-white transition-colors"
-        >
-          GitHub →
-        </a>
-      </nav>
-    </header>
+    <ProjectHeader
+      back-label-key="nav.back"
+      right-href="https://github.com/mmarleta/mcp_servers"
+      right-label="GitHub →"
+    />
 
     <main class="max-w-4xl mx-auto px-6 py-16">
-      <!-- Hero -->
-      <div class="mb-16">
-        <span class="inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm mb-4">
-          {{ $t('cases.mcpServers.tag') }}
-        </span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {{ $t('cases.mcpServers.title') }}
-        </h1>
-        <p class="text-xl text-gray-400 leading-relaxed">
-          {{ $t('cases.mcpServers.description') }}
-        </p>
-      </div>
+      <ProjectHeroBlock :config="heroConfig" />
 
       <!-- O que é MCP -->
       <section class="mb-16">
@@ -169,3 +148,9 @@
     </main>
   </div>
 </template>
+
+<script setup>
+import { heroBlocksBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroBlocksBySlug.mcpServers
+</script>

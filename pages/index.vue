@@ -1,18 +1,5 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <span class="text-xl font-bold text-emerald-400">MM</span>
-        <div class="flex items-center gap-6">
-          <a href="#projetos" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.projects') }}</a>
-          <a href="#stack" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.stack') }}</a>
-          <NuxtLink :to="localePath('/sobre')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.about') }}</NuxtLink>
-          <LanguageSwitcher />
-        </div>
-      </nav>
-    </header>
-
     <main>
       <!-- Hero -->
       <section class="max-w-6xl mx-auto px-6 py-24">
@@ -28,14 +15,14 @@
           </p>
           <div class="flex gap-4">
             <a 
-              href="https://github.com/mmarleta" 
+              :href="SITE.githubUrl" 
               target="_blank"
               class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg transition-colors"
             >
               {{ $t('hero.github') }}
             </a>
             <a 
-              href="https://www.linkedin.com/in/marcelo-marleta-026403190/" 
+              :href="SITE.linkedinUrl" 
               target="_blank"
               class="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition-colors"
             >
@@ -533,16 +520,12 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800 py-12">
-      <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
-        <p>© {{ new Date().getFullYear() }} Marcelo Marleta</p>
-      </div>
-    </footer>
   </div>
 </template>
 
 <script setup>
+import { SITE } from '~/data/site'
+
 const localePath = useLocalePath()
 
 useHead({

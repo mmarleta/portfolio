@@ -1,59 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <NuxtLink to="/" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-          </svg>
-          {{ $t('cases.automark.header.back') }}
-        </NuxtLink>
-        <span class="text-gray-500 text-sm">{{ $t('cases.automark.header.projectType') }}</span>
-      </div>
-    </header>
+    <ProjectHeader back-label-key="cases.automark.header.back" subtitle-key="cases.automark.header.projectType" />
 
-    <!-- Hero Section -->
-    <section class="py-16 px-4 border-b border-gray-800">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm font-medium">
-            {{ $t('cases.automark.hero.tag1') }}
-          </span>
-          <span class="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">
-            {{ $t('cases.automark.hero.tag2') }}
-          </span>
-        </div>
-        
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {{ $t('cases.automark.hero.title') }}
-          <span class="text-orange-400">{{ $t('cases.automark.hero.titleHighlight') }}</span>
-        </h1>
-        
-        <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-          {{ $t('cases.automark.hero.description') }}
-        </p>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat1Value') }}</div>
-            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat1Label') }}</div>
-          </div>
-          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat2Value') }}</div>
-            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat2Label') }}</div>
-          </div>
-          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat3Value') }}</div>
-            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat3Label') }}</div>
-          </div>
-          <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4 text-center">
-            <div class="text-2xl font-bold text-orange-400">{{ $t('cases.automark.hero.stat4Value') }}</div>
-            <div class="text-sm text-gray-500">{{ $t('cases.automark.hero.stat4Label') }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ProjectHeroBlock :config="heroConfig" />
 
     <!-- Navigation -->
     <nav class="sticky top-16 z-40 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
@@ -671,16 +620,19 @@ high_commission: commission > 20% → -1.0</code></pre>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800 py-8 mt-12">
+    <!-- Closing Note -->
+    <section class="border-t border-gray-800 py-8 mt-12">
       <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
         <p>{{ $t('cases.automark.footer.caseStudy') }}</p>
       </div>
-    </footer>
+    </section>
   </div>
 </template>
 
 <script setup>
+import { heroBlocksBySlug } from '~/data/project-heroes'
+
+const heroConfig = heroBlocksBySlug.automark
 const { t } = useI18n()
 
 useHead({
