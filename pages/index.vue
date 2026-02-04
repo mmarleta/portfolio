@@ -107,6 +107,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- Memory Engine -->
+              <NuxtLink 
+                to="/projetos/memory-engine" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">🧠</span>
+                  <span class="text-xs text-gray-600 group-hover:text-cyan-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
+                  Memory Engine
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Sistema hierárquico Hot/Warm/Cold com compressão semântica (90% redução), 
+                  compliance LGPD/HIPAA automático e context injection.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Write-Through</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Compliance</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Fernet</span>
+                </div>
+              </NuxtLink>
+
               <!-- Document Processing -->
               <NuxtLink 
                 to="/projetos/document-processing" 
