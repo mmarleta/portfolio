@@ -2492,8 +2492,8 @@
       "sections": {
         "problem": {
           "title": "O Problema",
-          "content1": "Chatbots baseados puramente em LLMs sofrem de um problema fundamental: não-determinismo. O mesmo input pode gerar outputs diferentes, e decisões críticas de negócio ficam à mercê de \"temperatura\" e contexto aleatório.",
-          "nonDeterminism": "Chatbots baseados puramente em LLMs sofrem de um problema fundamental: não-determinismo. O mesmo input pode gerar outputs diferentes, e decisões críticas de negócio ficam à mercê de \"temperatura\" e contexto aleatório.",
+          "content1": "Chatbots baseados puramente em LLMs sofrem de um problema fundamental:",
+          "nonDeterminism": "não-determinismo",
           "scenariosTitle": "Cenários Inaceitáveis",
           "scenarios": {
             "hallucination": {
