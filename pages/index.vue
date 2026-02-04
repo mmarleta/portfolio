@@ -268,6 +268,29 @@
                 </div>
               </NuxtLink>
 
+              <!-- Audio Processor -->
+              <NuxtLink 
+                to="/projetos/audio-processor" 
+                class="group bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all"
+              >
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-2xl">🎤</span>
+                  <span class="text-xs text-gray-600 group-hover:text-purple-400 transition-colors">→</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 group-hover:text-purple-400 transition-colors">
+                  Audio Processor
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                  Multi-provider STT (Groq Whisper) e TTS (ElevenLabs). 
+                  Processamento assíncrono Celery, storage MinIO, 8 formatos.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Groq Whisper</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">ElevenLabs</span>
+                  <span class="text-xs px-2 py-1 bg-gray-800 rounded">Celery</span>
+                </div>
+              </NuxtLink>
+
               <!-- Optimus Case Study -->
               <NuxtLink 
                 to="/projetos/optimus" 
